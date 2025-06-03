@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DatePicker - UI11 Design System</title>
+  <link href="/src/style.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-markup.min.js"></script>
+</head>
+<body class="min-h-screen bg-white dark:bg-neutral-950">
+  <!-- Page Layout Container -->
+  <div class="flex min-h-screen">
+    <!-- Sidebar will be injected here -->
+    <div id="sidebar-container"></div>
+    
+    <!-- Main Content Area -->
+    <div class="flex-1 flex flex-col ml-64 mt-16">
+      <!-- Header will be injected here -->
+      <div id="header-container"></div>
+      
+      <!-- Page Content -->
+      <main class="flex-1 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 overflow-hidden">
+        <!-- Breadcrumb -->
+        <nav class="flex mb-8" aria-label="Breadcrumb">
+          <ol class="flex items-center space-x-4">
+            <li>
+              <a href="/documentation/" class="text-neutral-600 dark:text-neutral-400 hover:text-primary-500 dark:hover:text-primary-400 transition-colors duration-normal">Documentation</a>
+            </li>
+            <li class="flex items-center">
+              <svg class="w-4 h-4 text-neutral-400 dark:text-neutral-500 mx-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+              </svg>
+              <span class="text-neutral-500 dark:text-neutral-400">Atomic Elements</span>
+            </li>
+            <li class="flex items-center">
+              <svg class="w-4 h-4 text-neutral-400 dark:text-neutral-500 mx-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+              </svg>
+              <span class="text-primary-600 dark:text-primary-400 font-medium">DatePicker</span>
+            </li>
+          </ol>
+        </nav>
+
+        <!-- Page Header -->
+        <div class="mb-12">
+          <h1 class="text-4xl font-semibold text-neutral-900 dark:text-neutral-100 mb-4">DatePicker</h1>
+          <p class="text-lg text-neutral-600 dark:text-neutral-400 mb-6 max-w-3xl leading-relaxed">
+            Date selection components with calendar interface. Perfect for forms, booking systems, and filtering date ranges with intuitive visual controls.
+          </p>
+        </div>
+
+        <!-- Single Date Section -->
+        <section id="single-date" class="mb-16">
+          <!-- Clean Section Header -->
+          <div class="mb-8">
+            <div class="flex items-center justify-between mb-6">
+              <div>
+                <h2 class="text-2xl font-semibold text-neutral-900 dark:text-neutral-100 mb-2">Single Date</h2>
+                <p class="text-neutral-600 dark:text-neutral-400">Basic date picker for selecting individual dates with clean calendar interface.</p>
+              </div>
+              <div class="flex items-center gap-3">
+                <button data-theme-toggle class="p-2 rounded-lg bg-neutral-100 dark:bg-neutral-800 hover:bg-neutral-200 dark:hover:bg-neutral-700 text-neutral-600 dark:text-neutral-400 transition-colors duration-normal" aria-label="Toggle theme">
+                  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path>
+                  </svg>
+                </button>
+                <button 
+                  id="copy-single-btn"
+                  class="flex items-center gap-2 px-4 py-2 bg-neutral-100 dark:bg-neutral-800 hover:bg-neutral-200 dark:hover:bg-neutral-700 text-neutral-700 dark:text-neutral-300 rounded-lg text-sm font-medium transition-colors duration-normal"
+                >
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
+                  </svg>
+                  Copy
+                </button>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Tabs -->
+          <div class="mb-6">
+            <nav class="inline-flex bg-neutral-100 dark:bg-neutral-800 rounded-lg p-1">
+              <button class="tab-button active px-4 py-2 rounded-md bg-white dark:bg-neutral-700 text-neutral-900 dark:text-neutral-100 font-medium text-sm shadow-sm transition-all duration-normal" data-tab="single-preview">
+                Preview
+              </button>
+              <button class="tab-button px-4 py-2 rounded-md text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-100 font-medium text-sm transition-all duration-normal" data-tab="single-html">
+                HTML
+              </button>
+            </nav>
+          </div>
+
+          <!-- Preview Tab -->
+          <div id="single-preview" class="tab-content">
+            <div class="bg-white dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700 rounded-lg p-8">
+              <div class="space-y-6 max-w-md">
+                <!-- Date Input -->
+                <div class="space-y-2">
+                  <label for="single-date-input" class="block text-sm font-medium text-neutral-700 dark:text-neutral-300">Select Date</label>
+                  <div class="relative">
+                    <input 
+                      type="date" 
+                      id="single-date-input"
+                      class="w-full px-4 py-3 bg-white dark:bg-neutral-700 border border-neutral-200 dark:border-neutral-600 rounded-lg text-neutral-900 dark:text-neutral-100 placeholder-neutral-500 dark:placeholder-neutral-400 focus:ring-2 focus:ring-primary-500 dark:focus:ring-primary-400 focus:border-primary-500 dark:focus:border-primary-400 transition-colors duration-normal"
+                    >
+                    <div class="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none">
+                      <svg class="w-5 h-5 text-neutral-400 dark:text-neutral-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- HTML Tab -->
+          <div id="single-html" class="tab-content hidden w-[768px]">
+            <div class="bg-neutral-900 dark:bg-neutral-950 rounded-lg overflow-hidden">
+              <div class="w-full">
+                <pre class="p-6 text-sm overflow-x-auto"><code class="language-html whitespace-pre break-words" style="word-break: break-all; max-width: 100%;">&lt;!-- Single Date Input --&gt;
+&lt;div class="space-y-2"&gt;
+  &lt;label for="single-date-input" class="block text-sm font-medium text-neutral-700 dark:text-neutral-300"&gt;Select Date&lt;/label&gt;
+  &lt;div class="relative"&gt;
+    &lt;input 
+      type="date" 
+      id="single-date-input"
+      class="w-full px-4 py-3 bg-white dark:bg-neutral-700 border border-neutral-200 dark:border-neutral-600 rounded-lg text-neutral-900 dark:text-neutral-100 placeholder-neutral-500 dark:placeholder-neutral-400 focus:ring-2 focus:ring-primary-500 dark:focus:ring-primary-400 focus:border-primary-500 dark:focus:border-primary-400 transition-colors duration-normal"
+    &gt;
+    &lt;div class="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none"&gt;
+      &lt;svg class="w-5 h-5 text-neutral-400 dark:text-neutral-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"&gt;
+        &lt;path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"&gt;&lt;/path&gt;
+      &lt;/svg&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Date Range Section -->
+        <section id="date-range" class="mb-16">
+          <!-- Clean Section Header -->
+          <div class="mb-8">
+            <div class="flex items-center justify-between mb-6">
+              <div>
+                <h2 class="text-2xl font-semibold text-neutral-900 dark:text-neutral-100 mb-2">Date Range</h2>
+                <p class="text-neutral-600 dark:text-neutral-400">Range picker for selecting start and end dates, perfect for booking systems and filtering.</p>
+              </div>
+              <div class="flex items-center gap-3">
+                <button data-theme-toggle class="p-2 rounded-lg bg-neutral-100 dark:bg-neutral-800 hover:bg-neutral-200 dark:hover:bg-neutral-700 text-neutral-600 dark:text-neutral-400 transition-colors duration-normal" aria-label="Toggle theme">
+                  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path>
+                  </svg>
+                </button>
+                <button 
+                  id="copy-range-btn"
+                  class="flex items-center gap-2 px-4 py-2 bg-neutral-100 dark:bg-neutral-800 hover:bg-neutral-200 dark:hover:bg-neutral-700 text-neutral-700 dark:text-neutral-300 rounded-lg text-sm font-medium transition-colors duration-normal"
+                >
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
+                  </svg>
+                  Copy
+                </button>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Tabs -->
+          <div class="mb-6">
+            <nav class="inline-flex bg-neutral-100 dark:bg-neutral-800 rounded-lg p-1">
+              <button class="tab-button active px-4 py-2 rounded-md bg-white dark:bg-neutral-700 text-neutral-900 dark:text-neutral-100 font-medium text-sm shadow-sm transition-all duration-normal" data-tab="range-preview">
+                Preview
+              </button>
+              <button class="tab-button px-4 py-2 rounded-md text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-100 font-medium text-sm transition-all duration-normal" data-tab="range-html">
+                HTML
+              </button>
+            </nav>
+          </div>
+
+          <!-- Preview Tab -->
+          <div id="range-preview" class="tab-content">
+            <div class="bg-white dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700 rounded-lg p-8">
+              <div class="space-y-6 max-w-md">
+                <!-- Date Range -->
+                <div class="space-y-4">
+                  <label class="block text-sm font-medium text-neutral-700 dark:text-neutral-300">Select Date Range</label>
+                  <div class="grid grid-cols-2 gap-4">
+                    <div class="space-y-2">
+                      <label for="start-date" class="block text-xs font-medium text-neutral-600 dark:text-neutral-400">Start Date</label>
+                      <input 
+                        type="date" 
+                        id="start-date"
+                        class="w-full px-3 py-2 bg-white dark:bg-neutral-700 border border-neutral-200 dark:border-neutral-600 rounded-lg text-sm text-neutral-900 dark:text-neutral-100 focus:ring-2 focus:ring-primary-500 dark:focus:ring-primary-400 focus:border-primary-500 dark:focus:border-primary-400 transition-colors duration-normal"
+                      >
+                    </div>
+                    <div class="space-y-2">
+                      <label for="end-date" class="block text-xs font-medium text-neutral-600 dark:text-neutral-400">End Date</label>
+                      <input 
+                        type="date" 
+                        id="end-date"
+                        class="w-full px-3 py-2 bg-white dark:bg-neutral-700 border border-neutral-200 dark:border-neutral-600 rounded-lg text-sm text-neutral-900 dark:text-neutral-100 focus:ring-2 focus:ring-primary-500 dark:focus:ring-primary-400 focus:border-primary-500 dark:focus:border-primary-400 transition-colors duration-normal"
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- HTML Tab -->
+          <div id="range-html" class="tab-content hidden w-[768px]">
+            <div class="bg-neutral-900 dark:bg-neutral-950 rounded-lg overflow-hidden">
+              <div class="w-full">
+                <pre class="p-6 text-sm overflow-x-auto"><code class="language-html whitespace-pre break-words" style="word-break: break-all; max-width: 100%;">&lt;!-- Date Range Picker --&gt;
+&lt;div class="space-y-4"&gt;
+  &lt;label class="block text-sm font-medium text-neutral-700 dark:text-neutral-300"&gt;Select Date Range&lt;/label&gt;
+  &lt;div class="grid grid-cols-2 gap-4"&gt;
+    &lt;div class="space-y-2"&gt;
+      &lt;label for="start-date" class="block text-xs font-medium text-neutral-600 dark:text-neutral-400"&gt;Start Date&lt;/label&gt;
+      &lt;input 
+        type="date" 
+        id="start-date"
+        class="w-full px-3 py-2 bg-white dark:bg-neutral-700 border border-neutral-200 dark:border-neutral-600 rounded-lg text-sm text-neutral-900 dark:text-neutral-100 focus:ring-2 focus:ring-primary-500 dark:focus:ring-primary-400 focus:border-primary-500 dark:focus:border-primary-400 transition-colors duration-normal"
+      &gt;
+    &lt;/div&gt;
+    &lt;div class="space-y-2"&gt;
+      &lt;label for="end-date" class="block text-xs font-medium text-neutral-600 dark:text-neutral-400"&gt;End Date&lt;/label&gt;
+      &lt;input 
+        type="date" 
+        id="end-date"
+        class="w-full px-3 py-2 bg-white dark:bg-neutral-700 border border-neutral-200 dark:border-neutral-600 rounded-lg text-sm text-neutral-900 dark:text-neutral-100 focus:ring-2 focus:ring-primary-500 dark:focus:ring-primary-400 focus:border-primary-500 dark:focus:border-primary-400 transition-colors duration-normal"
+      &gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Disabled State Section -->
+        <section id="disabled-state" class="mb-16">
+          <!-- Clean Section Header -->
+          <div class="mb-8">
+            <div class="flex items-center justify-between mb-6">
+              <div>
+                <h2 class="text-2xl font-semibold text-neutral-900 dark:text-neutral-100 mb-2">Disabled State</h2>
+                <p class="text-neutral-600 dark:text-neutral-400">Disabled date picker showing unavailable state with consistent visual treatment.</p>
+              </div>
+              <div class="flex items-center gap-3">
+                <button data-theme-toggle class="p-2 rounded-lg bg-neutral-100 dark:bg-neutral-800 hover:bg-neutral-200 dark:hover:bg-neutral-700 text-neutral-600 dark:text-neutral-400 transition-colors duration-normal" aria-label="Toggle theme">
+                  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path>
+                  </svg>
+                </button>
+                <button 
+                  id="copy-disabled-btn"
+                  class="flex items-center gap-2 px-4 py-2 bg-neutral-100 dark:bg-neutral-800 hover:bg-neutral-200 dark:hover:bg-neutral-700 text-neutral-700 dark:text-neutral-300 rounded-lg text-sm font-medium transition-colors duration-normal"
+                >
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
+                  </svg>
+                  Copy
+                </button>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Tabs -->
+          <div class="mb-6">
+            <nav class="inline-flex bg-neutral-100 dark:bg-neutral-800 rounded-lg p-1">
+              <button class="tab-button active px-4 py-2 rounded-md bg-white dark:bg-neutral-700 text-neutral-900 dark:text-neutral-100 font-medium text-sm shadow-sm transition-all duration-normal" data-tab="disabled-preview">
+                Preview
+              </button>
+              <button class="tab-button px-4 py-2 rounded-md text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-100 font-medium text-sm transition-all duration-normal" data-tab="disabled-html">
+                HTML
+              </button>
+            </nav>
+          </div>
+
+          <!-- Preview Tab -->
+          <div id="disabled-preview" class="tab-content">
+            <div class="bg-white dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700 rounded-lg p-8">
+              <div class="space-y-6 max-w-md">
+                <!-- Disabled Date Input -->
+                <div class="space-y-2">
+                  <label for="disabled-date" class="block text-sm font-medium text-neutral-400 dark:text-neutral-600">Event Date (Premium Feature)</label>
+                  <div class="relative">
+                    <input 
+                      type="date" 
+                      id="disabled-date"
+                      disabled
+                      value="2024-12-31"
+                      class="w-full px-4 py-3 bg-neutral-50 dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700 rounded-lg text-neutral-400 dark:text-neutral-600 cursor-not-allowed opacity-60"
+                    >
+                    <div class="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none">
+                      <svg class="w-5 h-5 text-neutral-300 dark:text-neutral-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- HTML Tab -->
+          <div id="disabled-html" class="tab-content hidden w-[768px]">
+            <div class="bg-neutral-900 dark:bg-neutral-950 rounded-lg overflow-hidden">
+              <div class="w-full">
+                <pre class="p-6 text-sm overflow-x-auto"><code class="language-html whitespace-pre break-words" style="word-break: break-all; max-width: 100%;">&lt;!-- Disabled Date Input --&gt;
+&lt;div class="space-y-2"&gt;
+  &lt;label for="disabled-date" class="block text-sm font-medium text-neutral-400 dark:text-neutral-600"&gt;Event Date (Premium Feature)&lt;/label&gt;
+  &lt;div class="relative"&gt;
+    &lt;input 
+      type="date" 
+      id="disabled-date"
+      disabled
+      value="2024-12-31"
+      class="w-full px-4 py-3 bg-neutral-50 dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700 rounded-lg text-neutral-400 dark:text-neutral-600 cursor-not-allowed opacity-60"
+    &gt;
+    &lt;div class="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none"&gt;
+      &lt;svg class="w-5 h-5 text-neutral-300 dark:text-neutral-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"&gt;
+        &lt;path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"&gt;&lt;/path&gt;
+      &lt;/svg&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- DateTime Picker Section -->
+        <section id="datetime-picker" class="mb-16">
+          <!-- Clean Section Header -->
+          <div class="mb-8">
+            <div class="flex items-center justify-between mb-6">
+              <div>
+                <h2 class="text-2xl font-semibold text-neutral-900 dark:text-neutral-100 mb-2">DateTime Picker</h2>
+                <p class="text-neutral-600 dark:text-neutral-400">Combined date and time picker for precise scheduling and appointment systems.</p>
+              </div>
+              <div class="flex items-center gap-3">
+                <button data-theme-toggle class="p-2 rounded-lg bg-neutral-100 dark:bg-neutral-800 hover:bg-neutral-200 dark:hover:bg-neutral-700 text-neutral-600 dark:text-neutral-400 transition-colors duration-normal" aria-label="Toggle theme">
+                  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path>
+                  </svg>
+                </button>
+                <button 
+                  id="copy-datetime-btn"
+                  class="flex items-center gap-2 px-4 py-2 bg-neutral-100 dark:bg-neutral-800 hover:bg-neutral-200 dark:hover:bg-neutral-700 text-neutral-700 dark:text-neutral-300 rounded-lg text-sm font-medium transition-colors duration-normal"
+                >
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
+                  </svg>
+                  Copy
+                </button>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Tabs -->
+          <div class="mb-6">
+            <nav class="inline-flex bg-neutral-100 dark:bg-neutral-800 rounded-lg p-1">
+              <button class="tab-button active px-4 py-2 rounded-md bg-white dark:bg-neutral-700 text-neutral-900 dark:text-neutral-100 font-medium text-sm shadow-sm transition-all duration-normal" data-tab="datetime-preview">
+                Preview
+              </button>
+              <button class="tab-button px-4 py-2 rounded-md text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-100 font-medium text-sm transition-all duration-normal" data-tab="datetime-html">
+                HTML
+              </button>
+            </nav>
+          </div>
+
+          <!-- Preview Tab -->
+          <div id="datetime-preview" class="tab-content">
+            <div class="bg-white dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700 rounded-lg p-8">
+              <div class="space-y-6 max-w-md">
+                <!-- DateTime Input -->
+                <div class="space-y-4">
+                  <label class="block text-sm font-medium text-neutral-700 dark:text-neutral-300">Appointment Date & Time</label>
+                  <div class="grid grid-cols-2 gap-4">
+                    <div class="space-y-2">
+                      <label for="appointment-date" class="block text-xs font-medium text-neutral-600 dark:text-neutral-400">Date</label>
+                      <input 
+                        type="date" 
+                        id="appointment-date"
+                        class="w-full px-3 py-2 bg-white dark:bg-neutral-700 border border-neutral-200 dark:border-neutral-600 rounded-lg text-sm text-neutral-900 dark:text-neutral-100 focus:ring-2 focus:ring-primary-500 dark:focus:ring-primary-400 focus:border-primary-500 dark:focus:border-primary-400 transition-colors duration-normal"
+                      >
+                    </div>
+                    <div class="space-y-2">
+                      <label for="appointment-time" class="block text-xs font-medium text-neutral-600 dark:text-neutral-400">Time</label>
+                      <input 
+                        type="time" 
+                        id="appointment-time"
+                        class="w-full px-3 py-2 bg-white dark:bg-neutral-700 border border-neutral-200 dark:border-neutral-600 rounded-lg text-sm text-neutral-900 dark:text-neutral-100 focus:ring-2 focus:ring-primary-500 dark:focus:ring-primary-400 focus:border-primary-500 dark:focus:border-primary-400 transition-colors duration-normal"
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- HTML Tab -->
+          <div id="datetime-html" class="tab-content hidden w-[768px]">
+            <div class="bg-neutral-900 dark:bg-neutral-950 rounded-lg overflow-hidden">
+              <div class="w-full">
+                <pre class="p-6 text-sm overflow-x-auto"><code class="language-html whitespace-pre break-words" style="word-break: break-all; max-width: 100%;">&lt;!-- DateTime Picker --&gt;
+&lt;div class="space-y-4"&gt;
+  &lt;label class="block text-sm font-medium text-neutral-700 dark:text-neutral-300"&gt;Appointment Date &amp; Time&lt;/label&gt;
+  &lt;div class="grid grid-cols-2 gap-4"&gt;
+    &lt;div class="space-y-2"&gt;
+      &lt;label for="appointment-date" class="block text-xs font-medium text-neutral-600 dark:text-neutral-400"&gt;Date&lt;/label&gt;
+      &lt;input 
+        type="date" 
+        id="appointment-date"
+        class="w-full px-3 py-2 bg-white dark:bg-neutral-700 border border-neutral-200 dark:border-neutral-600 rounded-lg text-sm text-neutral-900 dark:text-neutral-100 focus:ring-2 focus:ring-primary-500 dark:focus:ring-primary-400 focus:border-primary-500 dark:focus:border-primary-400 transition-colors duration-normal"
+      &gt;
+    &lt;/div&gt;
+    &lt;div class="space-y-2"&gt;
+      &lt;label for="appointment-time" class="block text-xs font-medium text-neutral-600 dark:text-neutral-400"&gt;Time&lt;/label&gt;
+      &lt;input 
+        type="time" 
+        id="appointment-time"
+        class="w-full px-3 py-2 bg-white dark:bg-neutral-700 border border-neutral-200 dark:border-neutral-600 rounded-lg text-sm text-neutral-900 dark:text-neutral-100 focus:ring-2 focus:ring-primary-500 dark:focus:ring-primary-400 focus:border-primary-500 dark:focus:border-primary-400 transition-colors duration-normal"
+      &gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Usage Guidelines -->
+        <div class="bg-white dark:bg-neutral-950 border border-neutral-900 dark:border-neutral-100 rounded-lg p-4 mb-8">
+          <h3 class="text-sm font-medium text-neutral-900 dark:text-neutral-100 mb-2">Usage Guidelines</h3>
+          <ul class="text-sm text-neutral-900 dark:text-neutral-100 space-y-1">
+            <li>• Use single date pickers for simple date selection like birth dates or deadlines</li>
+            <li>• Use date range pickers for booking systems, filtering, and report generation</li>
+            <li>• Combine date and time pickers for precise scheduling and appointments</li>
+            <li>• Consider disabled state for unavailable features or past dates</li>
+            <li>• Always provide clear labels and helpful placeholder text</li>
+          </ul>
+        </div>
+
+        <!-- Accessibility Features -->
+        <div class="bg-white dark:bg-neutral-950 border border-neutral-900 dark:border-neutral-100 rounded-lg p-4">
+          <h3 class="text-sm font-medium text-neutral-900 dark:text-neutral-100 mb-2">Accessibility Features</h3>
+          <ul class="text-sm text-neutral-900 dark:text-neutral-100 space-y-1">
+            <li>• Native HTML date inputs provide built-in accessibility support</li>
+            <li>• Keyboard navigation with arrow keys for date selection</li>
+            <li>• Screen reader compatibility with proper label associations</li>
+            <li>• High contrast focus indicators for visual clarity</li>
+            <li>• Clear error states and validation messages when needed</li>
+          </ul>
+        </div>
+      </main>
+
+      <!-- Footer will be injected here -->
+      <div id="footer-container"></div>
+    </div>
+  </div>
+
+  <!-- Initialize shared components and functionality -->
+  <script type="module">
+    import { generateHeader, generateSidebar, generateFooter, initializeSharedComponents } from '/src/shared/components.js';
+    import { themeManager } from '/src/shared/theme.js';
+    import { toast } from '/src/shared/toast.js';
+
+    // Initialize page
+    document.addEventListener('DOMContentLoaded', function() {
+      // Inject shared components
+      document.getElementById('header-container').innerHTML = generateHeader('documentation');
+      document.getElementById('sidebar-container').innerHTML = generateSidebar('datepicker');
+      document.getElementById('footer-container').innerHTML = generateFooter();
+
+      // Initialize shared functionality
+      initializeSharedComponents();
+      themeManager.initializeToggleButtons();
+
+      // Tab functionality
+      const tabButtons = document.querySelectorAll('.tab-button');
+      
+      tabButtons.forEach(button => {
+        button.addEventListener('click', () => {
+          const targetTab = button.getAttribute('data-tab');
+          const section = button.closest('section');
+          
+          // Remove active class from all tab buttons in this section
+          section.querySelectorAll('.tab-button').forEach(btn => {
+            btn.classList.remove('active', 'bg-white', 'dark:bg-neutral-700', 'text-neutral-900', 'dark:text-neutral-100', 'shadow-sm');
+            btn.classList.add('text-neutral-600', 'dark:text-neutral-400');
+          });
+          
+          // Add active class to clicked button
+          button.classList.add('active', 'bg-white', 'dark:bg-neutral-700', 'text-neutral-900', 'dark:text-neutral-100', 'shadow-sm');
+          button.classList.remove('text-neutral-600', 'dark:text-neutral-400');
+          
+          // Hide all tab contents in this section
+          section.querySelectorAll('.tab-content').forEach(content => {
+            content.classList.add('hidden');
+          });
+          
+          // Show target tab content
+          const targetContent = section.querySelector(`#${targetTab}`);
+          if (targetContent) {
+            targetContent.classList.remove('hidden');
+          }
+        });
+      });
+
+      // Copy functionality
+      const copyButtons = document.querySelectorAll('[id^="copy-"]');
+      copyButtons.forEach(button => {
+        button.addEventListener('click', () => {
+          const section = button.closest('section');
+          const htmlTab = section.querySelector('[id$="-html"]');
+          
+          if (htmlTab) {
+            const codeElement = htmlTab.querySelector('code');
+            if (codeElement) {
+              navigator.clipboard.writeText(codeElement.textContent).then(() => {
+                toast.success('Code copied to clipboard!');
+              }).catch(() => {
+                toast.error('Failed to copy code');
+              });
+            }
+          }
+        });
+      });
+
+      // Date range validation
+      const startDate = document.getElementById('start-date');
+      const endDate = document.getElementById('end-date');
+      
+      if (startDate && endDate) {
+        startDate.addEventListener('change', () => {
+          endDate.min = startDate.value;
+        });
+        
+        endDate.addEventListener('change', () => {
+          startDate.max = endDate.value;
+        });
+      }
+    });
+  </script>
+</body>
+</html> 

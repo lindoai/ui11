@@ -1,0 +1,1028 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+# UI Design System Rules
+
+## 🛠️ Tech Stack
+- **HTML** + **Tailwind CSS 3.4.17** + **Vanilla JS**
+- Build with **Vite** for development
+- **Icons**: [Tabler Icons](mdc:https:/tabler.io/icons) - 5944+ free SVG icons
+
+## 🎨 Visual Design Style - Apple-Inspired
+
+### Design Philosophy
+**Clean. Elegant. Purposeful.**
+- **Minimalism**: Remove everything unnecessary, keep only what serves a purpose
+- **Hierarchy**: Clear visual relationships through typography, spacing, and color
+- **Breathing Room**: Generous white space and padding for clarity
+- **Subtle Details**: Refined micro-interactions and gentle animations
+- **Premium Feel**: High-quality materials, precise alignments, sophisticated colors
+
+### Color Palette
+```javascript
+// tailwind.config.js - Extend with Black-primary Apple-inspired colors
+colors: {
+  primary: {
+    50: '#f8fafc',   // Very light gray - use: bg-primary-50
+    100: '#f1f5f9',  // Light gray - use: bg-primary-100  
+    500: '#0f172a',  // Main black (Apple-like) - use: bg-primary-500
+    600: '#020617',  // Darker black - use: bg-primary-600
+    900: '#000000'   // Pure black - use: bg-primary-900
+  },
+  neutral: {
+    50: '#fafafa',   // Almost white - use: bg-neutral-50
+    100: '#f5f5f5',  // Very light gray - use: bg-neutral-100
+    200: '#e5e5e5',  // Light gray - use: bg-neutral-200
+    300: '#d4d4d4',  // Medium light gray - use: bg-neutral-300
+    400: '#a3a3a3',  // Medium gray - use: bg-neutral-400
+    500: '#737373',  // True gray - use: bg-neutral-500
+    600: '#525252',  // Dark gray - use: bg-neutral-600
+    700: '#404040',  // Very dark gray - use: bg-neutral-700
+    800: '#262626',  // Almost black - use: bg-neutral-800
+    900: '#171717'   // Near black - use: bg-neutral-900
+  },
+  success: {
+    50: '#f0fdf4',   // Very light green - use: bg-success-50
+    500: '#22c55e',  // Success green - use: bg-success-500
+    600: '#16a34a'   // Darker green - use: bg-success-600
+  },
+  warning: {
+    50: '#fffbeb',   // Very light amber - use: bg-warning-50
+    500: '#f59e0b',  // Warning amber - use: bg-warning-500
+    600: '#d97706'   // Darker amber - use: bg-warning-600
+  },
+  error: {
+    50: '#fef2f2',   // Very light red - use: bg-error-50
+    500: '#ef4444',  // Error red - use: bg-error-500
+    600: '#dc2626'   // Darker red - use: bg-error-600
+  }
+}
+```
+
+### Typography Scale
+```javascript
+// tailwind.config.js - Apple system fonts and custom sizes
+fontFamily: {
+  sans: ['-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', 'sans-serif']
+},
+fontSize: {
+  // Display Text - Hero Headlines
+  '7xl': ['60px', { lineHeight: '1.1', fontWeight: '600' }], // Large hero - use: text-7xl
+  '6xl': ['48px', { lineHeight: '1.1', fontWeight: '600' }], // Medium hero - use: text-6xl  
+  '5xl': ['36px', { lineHeight: '1.1', fontWeight: '600' }], // Small hero - use: text-5xl
+
+  // Heading Text - Section Titles
+  '4xl': ['30px', { lineHeight: '1.2', fontWeight: '600' }], // Large heading - use: text-4xl
+  '3xl': ['24px', { lineHeight: '1.3', fontWeight: '600' }], // Medium heading - use: text-3xl
+  '2xl': ['20px', { lineHeight: '1.4', fontWeight: '600' }], // Small heading - use: text-2xl
+
+  // Body Text - Content  
+  'lg': ['18px', { lineHeight: '1.6', fontWeight: '400' }],  // Large body - use: text-lg
+  'base': ['16px', { lineHeight: '1.6', fontWeight: '400' }], // Regular body - use: text-base
+  'sm': ['14px', { lineHeight: '1.5', fontWeight: '400' }],   // Small body - use: text-sm
+  'xs': ['12px', { lineHeight: '1.4', fontWeight: '500' }]    // Caption/label - use: text-xs
+},
+fontWeight: {
+  normal: '400',    // Regular text - use: font-normal
+  medium: '500',    // Slightly emphasized - use: font-medium  
+  semibold: '600'   // Headings and important text - use: font-semibold
+}
+```
+
+### Spacing System
+```javascript
+// tailwind.config.js - Apple-like generous spacing
+spacing: {
+  // Apple-like Spacing - Generous and Rhythmic
+  '1': '4px',   // Micro spacing - use: p-1, m-1
+  '2': '8px',   // Tiny spacing - use: p-2, m-2
+  '3': '12px',  // Small spacing - use: p-3, m-3
+  '4': '16px',  // Base unit - use: p-4, m-4
+  '5': '20px',  // Medium spacing - use: p-5, m-5
+  '6': '24px',  // Large spacing - use: p-6, m-6
+  '8': '32px',  // XL spacing - use: p-8, m-8
+  '10': '40px', // XXL spacing - use: p-10, m-10
+  '12': '48px', // Section spacing - use: p-12, m-12
+  '16': '64px', // Large section spacing - use: p-16, m-16
+  '20': '80px', // Hero spacing - use: p-20, m-20
+  '24': '96px'  // Page spacing - use: p-24, m-24
+}
+```
+
+### Border Radius
+```javascript
+// tailwind.config.js - Subtle and refined curves
+borderRadius: {
+  'sm': '4px',    // Small elements (tags, badges) - use: rounded-sm
+  'md': '8px',    // Medium elements (buttons, inputs) - use: rounded-md
+  'lg': '12px',   // Large elements (cards, modals) - use: rounded-lg
+  'xl': '16px',   // XL elements (hero sections) - use: rounded-xl
+  '2xl': '24px',  // Special elements - use: rounded-2xl
+  'full': '9999px' // Pills and avatars - use: rounded-full
+}
+```
+
+### Shadows & Elevation
+```javascript
+// tailwind.config.js - Sophisticated Apple-like shadows
+boxShadow: {
+  // Sophisticated Drop Shadows - Apple-like Subtlety
+  'sm': '0 1px 2px rgba(0, 0, 0, 0.05)',                                           // use: shadow-sm
+  'md': '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)', // use: shadow-md
+  'lg': '0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)', // use: shadow-lg
+  'xl': '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)', // use: shadow-xl
+  '2xl': '0 25px 50px -12px rgba(0, 0, 0, 0.25)',                                 // use: shadow-2xl
+  
+  // Inner Shadows for Inputs
+  'inner': 'inset 0 2px 4px rgba(0, 0, 0, 0.06)'                                  // use: shadow-inner
+}
+```
+
+### Animation & Transitions
+```javascript
+// tailwind.config.js - Smooth and natural motion
+transitionDuration: {
+  'fast': '150ms',    // Quick interactions - use: duration-fast
+  'normal': '200ms',  // Standard transitions - use: duration-normal  
+  'slow': '300ms'     // Deliberate animations - use: duration-slow
+},
+transitionTimingFunction: {
+  // Apple-like Easing Curves
+  'out': 'cubic-bezier(0.16, 1, 0.3, 1)',           // Standard ease out - use: ease-out
+  'in-out': 'cubic-bezier(0.4, 0, 0.2, 1)',         // Smooth both ways - use: ease-in-out
+  'spring': 'cubic-bezier(0.175, 0.885, 0.32, 1.275)' // Gentle bounce - use: ease-spring
+}
+```
+
+### Component Styling Guidelines
+
+#### Buttons
+- **Primary**: `bg-primary-500 hover:bg-primary-600 text-white shadow-apple-md rounded-lg px-6 py-3 font-medium transition-all duration-normal ease-apple-out dark:bg-primary-600 dark:hover:bg-primary-700`
+- **Secondary**: `bg-neutral-100 hover:bg-neutral-200 text-neutral-700 border border-neutral-200 rounded-lg px-6 py-3 font-medium transition-all duration-normal ease-apple-out dark:bg-neutral-800 dark:hover:bg-neutral-700 dark:text-neutral-200 dark:border-neutral-700`
+- **Ghost**: `bg-transparent hover:bg-primary-50 text-primary-500 rounded-lg px-6 py-3 font-medium transition-all duration-normal ease-apple-out dark:hover:bg-primary-900/20 dark:text-primary-400`
+- **Sizes**: `px-4 py-2` (small), `px-6 py-3` (medium), `px-8 py-4` (large)
+
+#### Input Fields
+- **Base**: `bg-white border border-neutral-200 focus:border-primary-500 focus:ring-3 focus:ring-primary-100 rounded-lg px-4 py-3 text-base font-normal placeholder:text-neutral-400 shadow-inner dark:bg-neutral-800 dark:border-neutral-700 dark:text-neutral-200 dark:placeholder:text-neutral-500 dark:focus:border-primary-400 dark:focus:ring-primary-900/20`
+- **Error**: `border-error-500 focus:border-error-500 focus:ring-error-100 dark:border-error-400 dark:focus:border-error-400 dark:focus:ring-error-900/20`
+- **Success**: `border-success-500 focus:border-success-500 focus:ring-success-100 dark:border-success-400 dark:focus:border-success-400 dark:focus:ring-success-900/20`
+
+#### Cards
+- **Base**: `bg-white border border-neutral-100 rounded-lg shadow-apple-sm hover:shadow-apple-md p-6 transition-shadow duration-normal ease-apple-out dark:bg-neutral-800 dark:border-neutral-700`
+- **Spacing**: `space-y-4` between elements
+
+#### Section Headers (Element Pages)
+- **Clean Design**: Use simple text-based headers without gradients or complex backgrounds
+- **Structure**: Title + description + action buttons (theme toggle, copy button) aligned to the right
+- **Title Style**: `text-2xl font-semibold text-neutral-900 dark:text-neutral-100 mb-2`
+- **Description Style**: `text-neutral-600 dark:text-neutral-400`
+- **Action Button Style**: `bg-neutral-100 dark:bg-neutral-800 hover:bg-neutral-200 dark:hover:bg-neutral-700 text-neutral-600 dark:text-neutral-400 transition-colors duration-normal`
+- **Layout**: `flex items-center justify-between mb-6` for header row
+- **Spacing**: `mb-8` on section header container, `mb-6` on header content before tabs
+
+#### Typography Hierarchy
+- **Hero**: `text-6xl font-semibold text-neutral-900 dark:text-neutral-100`
+- **Section Headings**: `text-3xl font-semibold text-neutral-800 dark:text-neutral-200`
+- **Subsection**: `text-2xl font-semibold text-neutral-700 dark:text-neutral-300`
+- **Body**: `text-base font-normal text-neutral-600 leading-relaxed dark:text-neutral-400`
+- **Caption**: `text-sm font-medium text-neutral-500 dark:text-neutral-500`
+
+#### Interactive States
+- **Hover**: Add `hover:` prefix to color shifts and shadow increases
+- **Focus**: Use `focus:ring-3 focus:ring-primary-100 dark:focus:ring-primary-900/20` for clean focus rings
+- **Active**: Add `active:scale-98 active:shadow-lg` for slight scale and deeper shadows
+- **Disabled**: Use `disabled:opacity-40 disabled:cursor-not-allowed`
+
+#### White Space Rules
+- **Between sections**: `space-y-16` to `space-y-24` (64px - 96px)
+- **Between components**: `space-y-8` to `space-y-12` (32px - 48px)
+- **Between related elements**: `space-y-4` to `space-y-6` (16px - 24px)
+- **Internal padding**: `p-4` to `p-6` (16px - 24px)
+
+#### Background Color System (CRITICAL)
+**Universal background consistency across all pages and components:**
+
+##### Primary Backgrounds
+- **Light Mode**: `bg-white` - Clean white background for all pages, components, and layouts
+- **Dark Mode**: `bg-neutral-950` - Deep dark background for all pages, components, and layouts
+
+##### Secondary Backgrounds (for contrast and hierarchy)
+- **Light Mode**: `bg-neutral-50` - Very light gray for input fields, search boxes, and subtle differentiation
+- **Dark Mode**: `bg-neutral-800` - Darker gray for input fields, buttons, and interactive elements
+
+##### Implementation Rules
+- **Body elements**: Always use `bg-white dark:bg-neutral-950`
+- **Header/Sidebar/Footer**: Always use `bg-white dark:bg-neutral-950`
+- **Cards and containers**: Use `bg-white dark:bg-neutral-950` or `bg-neutral-50 dark:bg-neutral-800` for layering
+- **Input fields**: Use `bg-neutral-50 dark:bg-neutral-800` for better contrast
+- **Interactive elements**: Use `bg-neutral-100 dark:bg-neutral-700` for buttons and hover states
+
+#### Color Usage Guidelines
+- **Text**: Use `text-neutral-900 dark:text-neutral-100` to `text-neutral-500 dark:text-neutral-500` for hierarchy
+- **Primary Backgrounds**: `bg-white dark:bg-neutral-950` for all major page areas and containers
+- **Secondary Backgrounds**: `bg-neutral-50 dark:bg-neutral-800` for input fields and subtle differentiation
+- **Interactive Backgrounds**: `bg-neutral-100 dark:bg-neutral-700` for buttons and interactive elements
+- **Accents**: `text-primary-500 dark:text-primary-400`, `bg-primary-500 dark:bg-primary-600` sparingly for CTAs and links
+- **Semantic**: `text-success-500 dark:text-success-400`, `text-warning-500 dark:text-warning-400`, `text-error-500 dark:text-error-400` only when needed
+- **Borders**: `border-neutral-200 dark:border-neutral-700` for subtle divisions
+
+### Micro-Interaction Principles
+1. **Subtle Feedback**: Every interaction has gentle visual response
+2. **Purposeful Animation**: Motion serves a functional purpose
+3. **Consistent Timing**: Same duration for similar interactions
+4. **Natural Easing**: Use Apple-like ease curves
+5. **Contextual Response**: Feedback matches interaction intensity
+
+### Icon System (Tabler Icons)
+**Official Icon Library**: [Tabler Icons](mdc:https:/tabler.io/icons) - 5944+ free and open-source SVG icons
+
+#### Icon Usage Guidelines
+- **Consistent Style**: Use only Tabler Icons for consistency across the design system
+- **SVG Format**: Always use SVG format for crisp, scalable icons
+- **Size Standards**: `w-4 h-4` (16px), `w-5 h-5` (20px), `w-6 h-6` (24px)
+- **Color Inheritance**: Use `stroke="currentColor"` to inherit text color
+- **Accessibility**: Always include `aria-label` for icon-only buttons
+
+#### Icon Implementation
+```html
+<!-- Standard icon usage -->
+<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+  <!-- Tabler icon path here -->
+</svg>
+
+<!-- Icon-only button (accessibility required) -->
+<button aria-label="Settings">
+  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+    <!-- Tabler icon path here -->
+  </svg>
+</button>
+```
+
+#### Common Icon Categories
+- **Interface**: arrows, chevrons, plus, minus, close, menu
+- **Actions**: edit, delete, save, copy, download, upload
+- **Status**: check, alert, info, warning, error
+- **Navigation**: home, back, forward, external-link
+- **Communication**: mail, phone, message, notification
+- **Media**: play, pause, volume, camera, image
+
+### Layout Principles
+1. **Grid Alignment**: Everything aligns to 8px grid
+2. **Optical Balance**: Visual weight distribution, not just mathematical
+3. **Breathing Room**: Generous padding and margins
+4. **Focal Hierarchy**: Clear primary, secondary, tertiary elements
+5. **Responsive Grace**: Fluid scaling maintains proportions
+
+## 🏗️ Library Structure
+
+### 3-Tier System
+```
+src/
+├── atomic/        # Basic elements (35 items, 147 variations)
+├── components/    # UI components (20 items, 76 variations) 
+├── blocks/        # Page sections (35 items, 108 variations)
+└── examples/      # Usage demos
+```
+
+### Website Structure
+```
+website/
+├── index.html              # Home page (about UI system)
+│   ├── documentation/          # Documentation section
+│   │   ├── index.html         # Documentation hub
+│   │   ├── atomic/            # Atomic elements showcase
+│   │   │   ├── button/
+│   │   │   ├── input/
+│   │   │   └── ...
+│   │   ├── components/        # Components showcase
+│   │   │   ├── card/
+│   │   │   ├── modal/
+│   │   │   └── ...
+│   │   └── getting-started/   # Installation & setup guides
+│   ├── blocks/                # Blocks gallery
+│   │   ├── index.html         # Block categories overview
+│   │   ├── hero-sections/     # Hero category page
+│   │   ├── content-sections/  # Content category page
+│   │   ├── navigation-blocks/ # Navigation category page
+│   │   ├── e-commerce/        # E-commerce category page
+│   │   ├── media-communication/ # Media category page
+│   │   ├── feedback-status/   # Feedback category page
+│   │   └── specialized/       # Specialized category page
+│   └── assets/                # Shared assets
+│       ├── css/
+│       ├── js/
+│       └── images/
+```
+
+### File Structure (per element)
+```
+button/
+├── index.html     # Demo & examples
+├── button.js      # Behavior (if needed)
+└── README.md      # Usage docs
+```
+
+## 🌐 Website Structure Requirements
+
+### 1. Home Page ✅
+- [ ] **Hero Section** - Design system introduction and value proposition
+- [ ] **Feature Highlights** - Key benefits and capabilities
+- [ ] **Quick Start** - Installation and basic usage guide
+- [ ] **Component Preview** - Visual showcase of popular elements
+- [ ] **Statistics** - Component counts and coverage
+- [ ] **Getting Started CTA** - Clear path to documentation
+- [ ] **Footer** - Links to GitHub, documentation, and resources
+
+### 2. Documentation Section ✅
+- [ ] **Documentation Hub** - Central landing page for all docs
+- [ ] **Sidebar Navigation** - Hierarchical menu with search
+  - [ ] Getting Started
+  - [ ] Design Tokens
+  - [ ] Atomic Elements (35 items)
+  - [ ] Components (20 items)
+  - [ ] Installation Guide
+  - [ ] Customization Guide
+  - [ ] Accessibility Guide
+- [ ] **Search Functionality** - Global search across all elements
+- [ ] **Breadcrumb Navigation** - Clear location context
+- [ ] **Version Selector** - Switch between versions
+- [ ] **Theme Toggle** - Light/dark mode throughout
+
+### 3. Blocks Gallery ✅
+- [ ] **Blocks Overview Page** - Grid of category cards
+- [ ] **Category Cards** - Visual preview with description
+  - [ ] Hero Sections (4 items)
+  - [ ] Content Sections (8 items) 
+  - [ ] Navigation Blocks (4 items)
+  - [ ] E-commerce (5 items)
+  - [ ] Media & Communication (6 items)
+  - [ ] Feedback & Status (4 items)
+  - [ ] Specialized (4 items)
+- [ ] **Category Pages** - List of variations per category
+- [ ] **Block Preview** - Live demo with responsive preview
+- [ ] **Filter & Search** - Find blocks by type or feature
+- [ ] **Copy Code** - One-click HTML/CSS copying
+
+### 4. Global Navigation ✅
+- [ ] **Header Navigation** - Consistent across all pages
+  - [ ] Logo/Home link
+  - [ ] Documentation link
+  - [ ] Blocks link
+  - [ ] GitHub link
+  - [ ] Search (Ctrl+/)
+  - [ ] Theme toggle
+- [ ] **Mobile Navigation** - Responsive hamburger menu
+- [ ] **Active States** - Highlight current section
+- [ ] **Breadcrumbs** - Show current location
+
+## 📋 Showcase Framework Checklist
+
+### Page Structure Checklist
+For every element showcase page, ensure all items are completed:
+
+#### 1. Header Navigation ✅
+- [ ] **Logo/Brand** - Design system name and version
+- [ ] **Search Bar** - Quick search with Ctrl+/ shortcut
+- [ ] **Theme Toggle** - Light/dark mode switcher
+- [ ] **External Links** - GitHub, documentation, etc.
+- [ ] **Version Badge** - Current version display
+- [ ] **Responsive** - Mobile hamburger menu
+
+#### 2. Sidebar Navigation ✅
+- [ ] **Dynamic Menu** - Auto-generated from all elements
+- [ ] **Categories** - Atomic, Components, Blocks sections
+- [ ] **Search Filter** - Filter items by name
+- [ ] **Active State** - Highlight current page
+- [ ] **Scroll Position** - Remember scroll position
+- [ ] **Collapsible** - Mobile-friendly collapse/expand
+
+#### 3. Main Content Area ✅
+- [ ] **Element Title** - Clear, descriptive name
+- [ ] **Description** - Purpose and use cases (1-2 sentences)
+- [ ] **Usage Guidelines** - When and how to use
+- [ ] **Accessibility Notes** - ARIA attributes and keyboard support
+
+#### 4. Variation Sections ✅
+For each variation (2a, 2b, 2c, etc.):
+
+##### Variation Header
+- [ ] **Variation Title** - Descriptive name (e.g., "Types", "Sizes", "States")
+- [ ] **Variation Description** - Brief explanation of the variants
+- [ ] **Usage Context** - When to use each variant
+
+##### Interactive Tabs
+- [ ] **Preview Tab** - Live, interactive examples
+- [ ] **HTML Tab** - Clean, formatted source code
+- [ ] **Copy Button** - One-click code copying
+- [ ] **Theme Toggle** - Preview in light/dark mode
+- [ ] **Responsive Toggle** - Test mobile/tablet/desktop views
+
+##### Preview Section
+- [ ] **Live Examples** - Fully functional components
+- [ ] **Proper Spacing** - Adequate padding and margins
+- [ ] **Background Options** - Light/dark/colored backgrounds
+- [ ] **Interactive States** - Hover, focus, active, disabled
+- [ ] **Realistic Content** - Meaningful text and data
+
+##### Code Section
+- [ ] **Syntax Highlighting** - Prism.js with dark theme
+- [ ] **Proper Indentation** - Clean, readable formatting
+- [ ] **Complete Code** - All necessary HTML/CSS/JS
+- [ ] **Copy Functionality** - Working copy-to-clipboard
+- [ ] **Line Numbers** - For easy reference
+
+#### 5. Table of Contents (Right Sidebar) ✅
+- [ ] **Page Sections** - Auto-generated TOC
+- [ ] **Variation Links** - Jump to specific variations
+- [ ] **Smooth Scrolling** - Animated scroll to sections
+- [ ] **Active Highlighting** - Current section indicator
+- [ ] **Sticky Position** - Stays visible while scrolling
+
+#### 6. Technical Implementation ✅
+- [ ] **Prism.js Integration** - For code highlighting
+- [ ] **Copy-to-Clipboard** - JavaScript functionality
+- [ ] **Responsive Design** - Works on all devices
+- [ ] **Fast Loading** - Optimized performance
+- [ ] **SEO Friendly** - Proper meta tags and structure
+
+### Quality Standards Checklist
+
+#### Accessibility Requirements ✅
+- [ ] **Keyboard Navigation** - Tab through all elements
+- [ ] **Screen Reader Support** - Proper ARIA labels
+- [ ] **Color Contrast** - WCAG AA compliance
+- [ ] **Focus Indicators** - Visible focus states
+- [ ] **Semantic HTML** - Proper heading hierarchy
+
+#### Performance Requirements ✅
+- [ ] **Fast Load Time** - Under 3 seconds
+- [ ] **Small Bundle Size** - Optimized assets
+- [ ] **Lazy Loading** - Images and heavy content
+- [ ] **Minimal JavaScript** - Only when necessary
+- [ ] **Responsive Images** - Proper sizing and formats
+
+#### Browser Compatibility ✅
+- [ ] **Chrome** - Latest 2 versions
+- [ ] **Firefox** - Latest 2 versions
+- [ ] **Safari** - Latest 2 versions
+- [ ] **Edge** - Latest 2 versions
+- [ ] **Mobile Safari** - iOS 14+
+- [ ] **Chrome Mobile** - Android 8+
+
+## ⚛️ Atomic Elements (35 items, 147 variations)
+
+### Form Elements (15 items)
+- **Button** (9 variations): primary, secondary, outline, ghost, danger, success, icon, loading, disabled
+- **Input** (8 variations): text, email, password, number, search, disabled, error, success
+- **Textarea** (4 variations): resizable, disabled, error, character count
+- **Select** (5 variations): single, multi, searchable, disabled, grouped
+- **Checkbox** (4 variations): checked, unchecked, indeterminate, disabled
+- **Radio** (4 variations): selected, unselected, disabled, grouped
+- **Switch/Toggle** (4 variations): on, off, disabled, loading
+- **Slider** (4 variations): single, range, disabled, marks
+- **DatePicker** (4 variations): single date, range, disabled, time picker
+- **TimePicker** (4 variations): 12h, 24h, disabled, seconds
+- **ColorPicker** (4 variations): hex, rgb, palette, disabled
+- **FileUpload** (4 variations): drag & drop, multiple, progress, disabled
+- **Rating** (4 variations): stars, numbers, half values, disabled
+- **Snackbar** (5 variations): success, error, warning, info, closable
+- **Loading** (4 variations): spinner, dots, bars, skeleton
+
+### Display Elements (12 items)
+- **Avatar** (5 variations): image, initials, icon, sizes, badge
+- **Badge** (4 variations): number, dot, status, colors
+- **Tag** (3 variations): closable, colors, sizes
+- **Label** (3 variations): required, optional, help text
+- **Tooltip** (3 variations): placement, trigger, colors
+- **Progress** (4 variations): linear, circular, indeterminate, labeled
+- **Skeleton Loader** (4 variations): text, image, card, custom shapes
+- **Divider** (3 variations): horizontal, vertical, with text
+- **Icon** (4 variations): outline, filled, sizes, colors
+- **Image** (4 variations): lazy load, placeholder, error state, zoom
+- **Banner** (3 variations): announcement, warning, promotion
+- **Error** (2 variations): inline error states, validation messages
+
+### Navigation Elements (4 items)
+- **Link** (4 variations): internal, external, disabled, underline
+- **Breadcrumb** (3 variations): separator, max items, overflow
+- **Pagination** (3 variations): simple, full, size options
+- **Anchor** (3 variations): smooth scroll, offset, active state
+
+### Layout Elements (4 items)
+- **Container** (3 variations): fluid, fixed, responsive breakpoints
+- **Grid** (3 variations): 12 column, responsive, gutters
+- **Spacer** (3 variations): margin, padding, responsive
+- **Flex** (4 variations): direction, wrap, align, justify
+
+## 🧩 Components (20 items, 76 variations)
+
+### Interactive Components (8 items)
+- **Card** (4 variations): basic, image, actions, hover effects
+- **Modal** (4 variations): sizes, backdrop, scrollable, nested
+- **Sidebar** (3 variations): collapsible, overlay, mini variant
+- **Tabs** (4 variations): horizontal, vertical, scrollable, lazy load
+- **Accordion** (3 variations): single, multiple, controlled
+- **Carousel** (4 variations): auto-play, navigation, indicators, responsive
+- **Steps** (4 variations): process, navigation, status, vertical
+- **Dropdown** (3 variations): select-like, with search, multi-select
+
+### Data Components (7 items)
+- **Table** (4 variations): sortable, filterable, pagination, responsive
+- **List** (4 variations): basic, avatar, actions, nested
+- **Timeline** (3 variations): vertical, horizontal, custom icons
+- **Stats** (4 variations): counters, metrics, trends, comparisons
+- **Gallery** (3 variations): image grid, lightbox, filtering
+- **Profile** (4 variations): user info, avatar, social links, stats
+- **Review** (4 variations): ratings, comments, user info, helpful votes
+
+### Form Components (5 items)
+- **Form** (4 variations): validation, layout, fieldsets, multi-step
+- **Contact** (4 variations): contact form, map, info, validation
+- **Login** (4 variations): sign in, sign up, forgot password, social
+- **SearchBox** (4 variations): suggestions, recent, filters, results
+- **Shopping Cart** (4 variations): items, quantities, totals, checkout
+
+## 🏢 Blocks (35 items, 108 variations)
+
+### Hero Sections (4 items)
+- **Hero** (3 variations): basic hero with title, subtitle, CTA
+- **Feature** (2 variations): hero with feature highlights, screenshots
+- **Call to Action** (2 variations): focused CTA section, newsletter signup
+- **Weather** (3 variations): weather widget, location-based, forecast
+
+### Content Sections (8 items)
+- **Article** (3 variations): blog post layout, content, related posts
+- **Blog** (4 variations): blog grid, featured posts, categories, pagination
+- **News** (3 variations): news feed, latest updates, categories
+- **FAQ** (4 variations): accordion style, search, categories, popular
+- **Testimonial** (3 variations): customer quotes, ratings, photos
+- **Team** (3 variations): team member cards, bios, social links
+- **Gallery** (3 variations): photo/video gallery, grid, lightbox
+- **Pricing** (4 variations): pricing tables, plans, features, toggle
+
+### Navigation Blocks (4 items)
+- **Header** (5 variations): logo, navigation, search, user menu, mobile
+- **Footer** (4 variations): links, social, newsletter, company info
+- **Breadcrumb** (2 variations): page navigation, hierarchical structure
+- **Sidebar** (3 variations): navigation sidebar, filters, categories
+
+### E-commerce (5 items)
+- **Shopping Cart** (3 variations): cart items, quantities, checkout
+- **Profile** (3 variations): user dashboard, settings, order history
+- **Review** (3 variations): product reviews, ratings, filters
+- **Product** (3 variations): product showcase, details, variants
+- **Checkout** (3 variations): payment flow, shipping, confirmation
+
+### Media & Communication (6 items)
+- **Carousel** (2 variations): image/content slider, testimonials
+- **Timeline** (3 variations): company history, updates, milestones
+- **Stats** (3 variations): key metrics, achievements, counters
+- **Contact** (3 variations): contact forms, map, office info
+- **Social** (2 variations): social media feeds, share buttons
+- **Newsletter** (2 variations): signup forms, preferences
+
+### Feedback & Status (4 items)
+- **Error** (3 variations): 404 pages, error messages, recovery
+- **Loading** (3 variations): page loading, progress, skeleton states
+- **Modal** (4 variations): popups, confirmations, forms, gallery
+- **Banner** (3 variations): announcements, promotions, updates
+
+### Specialized (4 items)
+- **Login** (3 variations): authentication pages, forms, social login
+- **Steps** (3 variations): onboarding, checkout process, tutorials
+- **Table** (3 variations): data tables, reports, dashboards
+- **Tabs** (3 variations): tabbed content, settings, navigation
+
+## 🎯 Core Rules
+
+### 1. Build Order
+1. **Atomic elements first** (button, input, text)
+2. **Components second** (use atomic elements)
+3. **Blocks last** (use both atomic + components)
+
+### 2. Consistency Rules
+- **Same design tokens** across all levels
+- **Same behavior patterns** (hover, focus, active)
+- **Same naming convention** (BEM or utility classes)
+
+### 3. File Rules
+- **One folder per element** (button/, card/, hero/)
+- **Demo in index.html** (show all variations)
+- **Behavior in element.js** (if needed)
+- **Documentation in README.md**
+
+### 4. Code Rules
+- **Mobile first** (responsive design)
+- **Accessible** (ARIA, keyboard nav)
+- **No dependencies** (pure HTML/CSS/JS)
+- **Semantic HTML** (proper tags)
+- **TAILWIND ONLY** - Never write custom CSS, only use Tailwind classes
+- **No style attributes** - All styling through Tailwind utility classes
+
+### 5. Development Rules
+- **Build one complete** before starting next
+- **Test each variation** before moving on
+- **Keep it simple** - avoid complexity
+- **Document everything** as you build
+
+### 6. Progress Tracking Rules (CRITICAL)
+- **Always update tasks.md** immediately after completing any task
+- **Check tasks as done** using `- [x]` format when completed
+- **Update progress percentages** in the progress tracking section
+- **Commit progress** regularly to maintain accurate tracking
+- **Review tasks.md** before starting new work to see current status
+
+### 7. Tailwind CSS Rules (STRICT)
+- **Only Tailwind utilities** - Never write custom CSS
+- **Configure Tailwind** for custom colors, spacing, shadows instead of CSS
+- **Use arbitrary values** sparingly (only when exact design token needed)
+- **Extend Tailwind config** for Apple-inspired design tokens
+- **No inline styles** - All styling through Tailwind classes
+- **No custom CSS files** - Everything through Tailwind utilities
+
+## 📝 Naming Rules
+
+### Folders & Files
+- **kebab-case**: `button/`, `input-field/`, `hero-section/`
+- **No abbreviations**: `navigation-bar/` not `nav-bar/`
+
+### CSS Classes
+- **Tailwind utilities ONLY**: `bg-blue-500 text-white px-4 py-2`
+- **Custom classes**: `.ds-button` (design system prefix) - ONLY if absolutely necessary
+- **Prefer composition**: Combine utilities rather than custom classes
+
+### JavaScript
+- **camelCase**: `initButton()`, `handleClick()`
+- **Constants**: `DEFAULT_OPTIONS`
+
+## ✅ Quality Checklist
+
+Before marking any item "done":
+- [ ] Works on mobile, tablet, desktop
+- [ ] Accessible (keyboard navigation, screen reader)
+- [ ] **Has complete dark mode support** (`dark:` classes for all elements)
+- [ ] **Theme toggle works properly** (switches between light/dark)
+- [ ] **Dark mode WCAG compliant** (proper contrast ratios)
+- [ ] **Instant theme switching** (no transition animations on theme changes)
+- [ ] Documentation with examples
+- [ ] No JavaScript errors
+- [ ] Clean, semantic HTML
+- [ ] **Uses ONLY Tailwind classes - no custom CSS**
+- [ ] **All design tokens configured in Tailwind config**
+- [ ] **Dark mode tested in all variations**
+
+## 🚫 What NOT to Do
+
+- **Don't build everything at once** - one item at a time
+- **Don't write custom CSS** - use Tailwind utilities only
+- **Don't use style attributes** - all styling through Tailwind classes
+- **Don't ignore mobile** - design mobile-first
+- **Don't forget accessibility** - it's not optional
+- **Don't add features mid-development** - finish current item first
+- **Don't create custom CSS files** - extend Tailwind config instead
+
+## 🗺️ Build Plan
+
+### Step 1: Foundation & Essential Atomics
+**Goal**: Setup project and build core interactive elements
+- Setup Vite + Tailwind + project structure
+- Define design tokens (colors, spacing, typography)
+- **Button** (all 9 variations)
+- **Input** (text, email, password variations)
+- **Label** (required, optional, help text)
+
+### Step 2: Form & Interaction Atomics
+**Goal**: Complete form building blocks
+- **Textarea** (all 4 variations)
+- **Select** (all 5 variations)
+- **Checkbox** (all 4 variations)
+- **Radio** (all 4 variations)
+- **Switch/Toggle** (all 4 variations)
+
+### Step 3: Display & Feedback Atomics
+**Goal**: Visual elements and user feedback
+- **Avatar** (all 5 variations)
+- **Badge** (all 4 variations)
+- **Tag** (all 3 variations)
+- **Icon** (all 4 variations)
+- **Loading** (all 4 variations: spinner, dots, bars, skeleton)
+- **Progress** (all 4 variations)
+
+### Step 4: Navigation & Layout Atomics
+**Goal**: Structure and navigation primitives
+- **Link** (all 4 variations)
+- **Divider** (all 3 variations)
+- **Container** (all 3 variations)
+- **Grid** (all 3 variations)
+- **Flex** (all 4 variations)
+
+### Step 5: Advanced Form & Media Atomics
+**Goal**: Complex inputs and media handling
+- **DatePicker** (all 4 variations)
+- **TimePicker** (all 4 variations)
+- **FileUpload** (all 4 variations)
+- **Image** (all 4 variations)
+- **Rating** (all 4 variations)
+
+### Step 6: Interactive Components
+**Goal**: Build reusable UI components
+- **Card** (all 4 variations)
+- **Modal** (all 4 variations)
+- **Tabs** (all 4 variations)
+- **Dropdown** (all 3 variations)
+- **Accordion** (all 3 variations)
+
+### Step 7: Data & Form Components
+**Goal**: Complex data display and form handling
+- **Table** (all 4 variations)
+- **List** (all 4 variations)
+- **Form** (all 4 variations)
+- **SearchBox** (all 4 variations)
+
+### Step 8: Hero & Content Blocks
+**Goal**: Landing page and content sections
+- **Hero** (all 3 variations)
+- **Feature** (all 2 variations)
+- **Call to Action** (all 2 variations)
+- **Article** (all 3 variations)
+- **FAQ** (all 4 variations)
+
+### Step 9: E-commerce & Social Blocks
+**Goal**: Business and social features
+- **Pricing** (all 4 variations)
+- **Product** (all 3 variations)
+- **Shopping Cart** (all 3 variations)
+- **Testimonial** (all 3 variations)
+- **Team** (all 3 variations)
+
+### Step 10: Navigation & Communication Blocks
+**Goal**: Site structure and user communication
+- **Header** (all 5 variations)
+- **Footer** (all 4 variations)
+- **Contact** (all 3 variations)
+- **Newsletter** (all 2 variations)
+- **Social** (all 2 variations)
+
+### Step 11: Polish & Documentation
+**Goal**: Complete the design system
+- Create comprehensive documentation site
+- Build example pages using all components
+- Performance optimization
+- Cross-browser testing
+- Accessibility audit
+
+---
+
+**Keep it simple. Build one thing at a time. Make it work, then move on.**
+
+## 🌙 Dark Mode Requirements (CRITICAL)
+
+### Universal Dark Mode Rules
+- **Every element MUST have dark mode classes** - No exceptions
+- **Dark mode toggle MUST work everywhere** - All pages, all components, all variations
+- **Consistent dark theme** - Use same dark color palette across all elements
+- **Automatic system preference detection** - Respect user's OS dark mode setting
+- **Manual toggle override** - Allow users to manually switch themes
+- **Persistent preference** - Remember user's theme choice in localStorage
+- **Instant theme switching** - NO transition animations for theme changes. Theme should switch immediately without delay
+
+### Theme Transition Rules (CRITICAL)
+- **NO transition-colors on static elements** - Remove `transition-colors duration-normal` from elements that only change due to theme switching
+- **Interactive transitions ONLY** - Keep transitions only on user interactions (hover, focus, active states)
+- **Instant theme response** - Theme switching must be immediate and fast, not animated
+- **User experience priority** - Slow theme animations create poor user experience
+- **Global transition disabling** - Use CSS `!important` rules to temporarily disable ALL transitions during theme switching
+- **Automatic re-enabling** - Re-enable transitions after theme change is complete (10ms delay)
+
+### Dark Mode Implementation Checklist
+For every single element, component, and block:
+- [ ] **Background colors** - Add `dark:bg-*` classes for all backgrounds
+- [ ] **Text colors** - Add `dark:text-*` classes for all text
+- [ ] **Border colors** - Add `dark:border-*` classes for all borders
+- [ ] **Shadow adjustments** - Modify shadows for dark backgrounds
+- [ ] **Interactive states** - Dark versions of hover, focus, active states
+- [ ] **Icon colors** - Dark mode versions of all icons
+- [ ] **Image handling** - Consider dark mode image variants where needed
+
+### Dark Mode Color Mapping
+```javascript
+// Light → Dark color mappings
+bg-white → dark:bg-neutral-900
+bg-neutral-50 → dark:bg-neutral-800
+bg-neutral-100 → dark:bg-neutral-700
+text-neutral-900 → dark:text-neutral-100
+text-neutral-600 → dark:text-neutral-400
+border-neutral-200 → dark:border-neutral-700
+bg-primary-500 → dark:bg-primary-600
+text-primary-500 → dark:text-primary-400
+```
+
+### Dark Mode JavaScript Requirements
+- **Theme detection** - Detect system preference on load
+- **Theme toggle** - Implement toggle functionality
+- **Theme persistence** - Save preference to localStorage
+- **Theme application** - Apply theme class to document root
+- **Theme synchronization** - Sync across all pages and components
+
+### Dark Mode Testing Checklist
+For every element:
+- [ ] **Visual contrast** - Ensure WCAG AA compliance in dark mode
+- [ ] **Readability** - All text readable in dark mode
+- **Interactive feedback** - All hover/focus states work in dark mode
+- [ ] **Consistency** - Dark theme consistent across all variations
+- [ ] **Toggle functionality** - Theme toggle works on every page
+
+### 7. Dark Mode Rules (CRITICAL)
+- **Universal dark mode** - Every element must have dark mode classes
+- **Theme toggle everywhere** - Dark/light toggle must work on all pages
+- **Consistent dark palette** - Use same dark colors across all elements
+- **System preference detection** - Respect OS dark mode setting
+- **Manual override** - Allow users to manually switch themes
+- **Persistent storage** - Remember theme choice in localStorage
+- **WCAG compliance** - Maintain accessibility in both themes
+
+## 🏗️ Modular Layout System (CRITICAL)
+
+### Universal Layout Structure
+**Every element page MUST use this standardized 4-part layout:**
+1. **Header Navigation** - Consistent site navigation with logo, links, search, theme toggle
+2. **Sidebar Navigation** - Comprehensive element library navigation with search and categories
+3. **Main Content Area** - Element showcase with variations, demos, and documentation
+4. **Footer** - Site-wide footer with company links, documentation, and social media
+
+### Required Layout Structure
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Standard meta tags, title, Tailwind CSS -->
+</head>
+<body class="bg-white dark:bg-neutral-900 text-neutral-900 dark:text-neutral-100">
+  <div class="flex min-h-screen">
+    <!-- Sidebar Container (Injected) -->
+    <div id="sidebar-container"></div>
+    
+    <!-- Main Layout -->
+    <div class="flex-1 flex flex-col">
+      <!-- Header Container (Injected) -->
+      <div id="header-container"></div>
+      
+      <!-- Main Content -->
+      <main class="flex-1 p-6 lg:p-8">
+        <!-- Page-specific content -->
+      </main>
+      
+      <!-- Footer Container (Injected) -->
+      <div id="footer-container"></div>
+    </div>
+  </div>
+  
+  <!-- JavaScript imports and initialization -->
+</body>
+</html>
+```
+
+### Shared Component System
+**All layout components are generated and injected from shared modules:**
+
+#### 1. Components Module (`src/shared/components.js`)
+```javascript
+// Exports: generateHeader(), generateSidebar(), generateFooter(), initializeSharedComponents()
+export { generateHeader, generateSidebar, generateFooter, initializeSharedComponents }
+```
+
+#### 2. Theme Manager (`src/shared/theme.js`)
+```javascript
+// Exports: ThemeManager class and themeManager instance
+export { ThemeManager, themeManager }
+```
+
+#### 3. Toast System (`src/shared/toast.js`)
+```javascript
+// Exports: ToastManager class and toast instance
+export { ToastManager, toast }
+```
+
+### Required JavaScript Initialization Pattern
+**Every element page MUST include this initialization code:**
+
+```javascript
+import { generateHeader, generateSidebar, generateFooter, initializeSharedComponents } from '/src/shared/components.js';
+import { themeManager } from '/src/shared/theme.js';
+import { toast } from '/src/shared/toast.js';
+
+document.addEventListener('DOMContentLoaded', function() {
+  // 1. Inject shared components
+  document.getElementById('header-container').innerHTML = generateHeader('documentation');
+  document.getElementById('sidebar-container').innerHTML = generateSidebar('element-name');
+  document.getElementById('footer-container').innerHTML = generateFooter();
+  
+  // 2. Initialize shared functionality
+  initializeSharedComponents();
+  themeManager.initializeToggleButtons();
+  
+  // 3. Page-specific functionality
+  // Add element-specific JavaScript here...
+});
+```
+
+### ACCEPTED LAYOUT FORMAT (Button Page Standard)
+**This is the exact structure and content format that every element page MUST follow:**
+
+#### Page Content Structure:
+1. **Page Header** - Element title, description, clean layout
+2. **Multiple Sections** - Each representing a different variation category 
+3. **Section Headers** - Clean text-based headers without gradients
+   - Title + description + action buttons (theme toggle, copy button) aligned right
+   - Layout: `flex items-center justify-between mb-6`
+4. **Pill-Style Tabs** - Preview/HTML tabs for each section
+5. **Preview Area** - Live interactive examples with proper spacing
+6. **HTML Code Area** - Formatted code with copy functionality, width constrained to `w-[768px]`
+7. **Usage Guidelines** - At bottom of page with white bg, black border
+8. **Accessibility Features** - At bottom of page with white bg, black border
+
+#### Section Header Format:
+```html
+<div class="flex items-center justify-between mb-6">
+  <div>
+    <h2 class="text-2xl font-semibold text-neutral-900 dark:text-neutral-100 mb-2">Section Title</h2>
+    <p class="text-neutral-600 dark:text-neutral-400">Section description.</p>
+  </div>
+  <div class="flex items-center gap-3">
+    <button data-theme-toggle class="p-2 rounded-lg bg-neutral-100 dark:bg-neutral-800 hover:bg-neutral-200 dark:hover:bg-neutral-700 text-neutral-600 dark:text-neutral-400 transition-colors duration-normal" aria-label="Toggle theme">
+      <!-- Theme toggle icon -->
+    </button>
+    <button id="copy-section-btn" class="flex items-center gap-2 px-4 py-2 bg-neutral-100 dark:bg-neutral-800 hover:bg-neutral-200 dark:hover:bg-neutral-700 text-neutral-700 dark:text-neutral-300 rounded-lg text-sm font-medium transition-colors duration-normal">
+      <!-- Copy icon -->
+      Copy
+    </button>
+  </div>
+</div>
+```
+
+#### Pill-Style Tabs Format:
+```html
+<nav class="inline-flex bg-neutral-100 dark:bg-neutral-800 rounded-lg p-1 transition-colors duration-normal">
+  <button class="tab-button active px-4 py-2 rounded-md bg-white dark:bg-neutral-700 text-neutral-900 dark:text-neutral-100 font-medium text-sm shadow-sm transition-all duration-normal" data-tab="preview">
+    Preview
+  </button>
+  <button class="tab-button px-4 py-2 rounded-md text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-100 font-medium text-sm transition-all duration-normal" data-tab="html">
+    HTML
+  </button>
+</nav>
+```
+
+#### HTML Code Container Format:
+```html
+<div id="section-html" class="tab-content hidden w-[768px]">
+  <div class="bg-neutral-900 dark:bg-neutral-950 rounded-lg overflow-hidden">
+    <div class="w-full">
+      <pre class="p-6 text-sm overflow-x-auto"><code class="language-html whitespace-pre break-words" style="word-break: break-all; max-width: 100%;">
+        <!-- HTML code here -->
+      </code></pre>
+    </div>
+  </div>
+</div>
+```
+
+#### Bottom Guidelines Format:
+```html
+<!-- Usage Guidelines -->
+<div class="bg-white dark:bg-neutral-950 border border-neutral-900 dark:border-neutral-100 rounded-lg p-4 mb-8 transition-colors duration-normal">
+  <h3 class="text-sm font-medium text-neutral-900 dark:text-neutral-100 mb-2 transition-colors duration-normal">Usage Guidelines</h3>
+  <ul class="text-sm text-neutral-900 dark:text-neutral-100 space-y-1 transition-colors duration-normal">
+    <!-- Guidelines list -->
+  </ul>
+</div>
+
+<!-- Accessibility Features -->
+<div class="bg-white dark:bg-neutral-950 border border-neutral-900 dark:border-neutral-100 rounded-lg p-4 transition-colors duration-normal">
+  <h3 class="text-sm font-medium text-neutral-900 dark:text-neutral-100 mb-2 transition-colors duration-normal">Accessibility Features</h3>
+  <ul class="text-sm text-neutral-900 dark:text-neutral-100 space-y-1 transition-colors duration-normal">
+    <!-- Accessibility list -->
+  </ul>
+</div>
+```
+
+### Quality Checklist for Modular Layout
+Before marking any element page "done":
+- [ ] **Uses 4-part layout** - Header, sidebar, content, footer containers
+- [ ] **Includes shared imports** - Components, theme, and toast modules
+- [ ] **Proper initialization** - All shared components injected and initialized
+- [ ] **Responsive design** - Works on mobile, tablet, desktop
+- [ ] **Theme toggle works** - Light/dark mode switcher functional
+- [ ] **Sidebar navigation** - Active states and search functionality
+- [ ] **Toast notifications** - Copy buttons show success/error messages
+- [ ] **Accessibility** - Keyboard navigation and screen reader support
+- [ ] **Performance** - Fast loading and smooth interactions
+
+### Implementation Rules
+1. **Never duplicate layout code** - Always use shared component injection
+2. **Follow initialization pattern** - Use exact JavaScript structure above
+3. **Test all functionality** - Verify theme toggle, sidebar, and toast work
+4. **Maintain consistency** - All pages look and behave identically
+5. **Update shared modules** - Make global changes in `src/shared/` only
+6. **No custom navigation** - Always use generated header and sidebar
+7. **Responsive testing** - Verify mobile, tablet, and desktop layouts

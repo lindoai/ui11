@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Switch - UI11 Design System</title>
+  <link href="/src/style.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-markup.min.js"></script>
+</head>
+<body class="min-h-screen bg-white dark:bg-neutral-950">
+  <!-- Page Layout Container -->
+  <div class="flex min-h-screen">
+    <!-- Sidebar will be injected here -->
+    <div id="sidebar-container"></div>
+    
+    <!-- Main Content Area -->
+    <div class="flex-1 flex flex-col ml-64 mt-16">
+      <!-- Header will be injected here -->
+      <div id="header-container"></div>
+      
+      <!-- Page Content -->
+      <main class="flex-1 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 overflow-hidden">
+        <!-- Breadcrumb -->
+        <nav class="flex mb-8" aria-label="Breadcrumb">
+          <ol class="flex items-center space-x-4">
+            <li>
+              <a href="/documentation/" class="text-neutral-600 dark:text-neutral-400 hover:text-primary-500 dark:hover:text-primary-400 transition-colors duration-normal">Documentation</a>
+            </li>
+            <li class="flex items-center">
+              <svg class="w-4 h-4 text-neutral-400 dark:text-neutral-500 mx-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+              </svg>
+              <span class="text-neutral-500 dark:text-neutral-400">Atomic Elements</span>
+            </li>
+            <li class="flex items-center">
+              <svg class="w-4 h-4 text-neutral-400 dark:text-neutral-500 mx-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+              </svg>
+              <span class="text-primary-600 dark:text-primary-400 font-medium">Switch</span>
+            </li>
+          </ol>
+        </nav>
+
+        <!-- Page Header -->
+        <div class="mb-12">
+          <h1 class="text-4xl font-semibold text-neutral-900 dark:text-neutral-100 mb-4">Switch</h1>
+          <p class="text-lg text-neutral-600 dark:text-neutral-400 mb-6 max-w-3xl leading-relaxed">
+            Toggle controls for binary settings and preferences. Perfect for enabling/disabling features, notification preferences, and on/off states with smooth animations.
+          </p>
+        </div>
+
+        <!-- Basic Switch States Section -->
+        <section id="switch-states" class="mb-16">
+          <!-- Clean Section Header -->
+          <div class="mb-8">
+            <div class="flex items-center justify-between mb-6">
+              <div>
+                <h2 class="text-2xl font-semibold text-neutral-900 dark:text-neutral-100 mb-2">Basic Switch States</h2>
+                <p class="text-neutral-600 dark:text-neutral-400">Interactive toggle switches with smooth animations and clear visual feedback for on/off states.</p>
+              </div>
+              <div class="flex items-center gap-3">
+                <button data-theme-toggle class="p-2 rounded-lg bg-neutral-100 dark:bg-neutral-800 hover:bg-neutral-200 dark:hover:bg-neutral-700 text-neutral-600 dark:text-neutral-400 transition-colors duration-normal" aria-label="Toggle theme">
+                  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path>
+                  </svg>
+                </button>
+                <button 
+                  id="copy-states-btn"
+                  class="flex items-center gap-2 px-4 py-2 bg-neutral-100 dark:bg-neutral-800 hover:bg-neutral-200 dark:hover:bg-neutral-700 text-neutral-700 dark:text-neutral-300 rounded-lg text-sm font-medium transition-colors duration-normal"
+                >
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
+                  </svg>
+                  Copy
+                </button>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Tabs -->
+          <div class="mb-6">
+            <nav class="inline-flex bg-neutral-100 dark:bg-neutral-800 rounded-lg p-1">
+              <button class="tab-button active px-4 py-2 rounded-md bg-white dark:bg-neutral-700 text-neutral-900 dark:text-neutral-100 font-medium text-sm shadow-sm transition-all duration-normal" data-tab="states-preview">
+                Preview
+              </button>
+              <button class="tab-button px-4 py-2 rounded-md text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-100 font-medium text-sm transition-all duration-normal" data-tab="states-html">
+                HTML
+              </button>
+            </nav>
+          </div>
+
+          <!-- Preview Tab -->
+          <div id="states-preview" class="tab-content">
+            <div class="bg-white dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700 rounded-lg p-8">
+              <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-4xl">
+                <!-- Switch On -->
+                <div class="space-y-4">
+                  <label class="block text-sm font-medium text-neutral-700 dark:text-neutral-300 mb-4">Switch On</label>
+                  <div class="flex items-center space-x-3">
+                    <button type="button" class="relative inline-flex h-6 w-11 flex-shrink-0 cursor-pointer rounded-full border-2 border-transparent bg-primary-500 dark:bg-primary-600 transition-colors duration-normal ease-in-out focus:outline-none focus:ring-2 focus:ring-primary-500 dark:focus:ring-primary-400 focus:ring-offset-2 dark:focus:ring-offset-neutral-900" role="switch" aria-checked="true" aria-labelledby="switch-on-label">
+                      <span aria-hidden="true" class="pointer-events-none inline-block h-5 w-5 rounded-full bg-white shadow transform ring-0 transition duration-normal ease-in-out translate-x-5"></span>
+                    </button>
+                    <span id="switch-on-label" class="text-sm font-medium text-neutral-700 dark:text-neutral-300">Enable notifications</span>
+                  </div>
+                </div>
+
+                <!-- Switch Off -->
+                <div class="space-y-4">
+                  <label class="block text-sm font-medium text-neutral-700 dark:text-neutral-300 mb-4">Switch Off</label>
+                  <div class="flex items-center space-x-3">
+                    <button type="button" class="relative inline-flex h-6 w-11 flex-shrink-0 cursor-pointer rounded-full border-2 border-transparent bg-neutral-200 dark:bg-neutral-700 transition-colors duration-normal ease-in-out focus:outline-none focus:ring-2 focus:ring-primary-500 dark:focus:ring-primary-400 focus:ring-offset-2 dark:focus:ring-offset-neutral-900" role="switch" aria-checked="false" aria-labelledby="switch-off-label">
+                      <span aria-hidden="true" class="pointer-events-none inline-block h-5 w-5 rounded-full bg-white shadow transform ring-0 transition duration-normal ease-in-out translate-x-0"></span>
+                    </button>
+                    <span id="switch-off-label" class="text-sm font-medium text-neutral-700 dark:text-neutral-300">Auto-save drafts</span>
+                  </div>
+                </div>
+
+                <!-- Switch Disabled -->
+                <div class="space-y-4">
+                  <label class="block text-sm font-medium text-neutral-700 dark:text-neutral-300 mb-4">Switch Disabled</label>
+                  <div class="flex items-center space-x-3">
+                    <button type="button" disabled class="relative inline-flex h-6 w-11 flex-shrink-0 cursor-not-allowed rounded-full border-2 border-transparent bg-neutral-200 dark:bg-neutral-700 opacity-50" role="switch" aria-checked="false" aria-labelledby="switch-disabled-label">
+                      <span aria-hidden="true" class="pointer-events-none inline-block h-5 w-5 rounded-full bg-white shadow transform ring-0 transition duration-normal ease-in-out translate-x-0"></span>
+                    </button>
+                    <span id="switch-disabled-label" class="text-sm font-medium text-neutral-400 dark:text-neutral-600 cursor-not-allowed">Premium feature</span>
+                  </div>
+                </div>
+
+                <!-- Switch Loading -->
+                <div class="space-y-4">
+                  <label class="block text-sm font-medium text-neutral-700 dark:text-neutral-300 mb-4">Switch Loading</label>
+                  <div class="flex items-center space-x-3">
+                    <button type="button" class="relative inline-flex h-6 w-11 flex-shrink-0 cursor-pointer rounded-full border-2 border-transparent bg-primary-500 dark:bg-primary-600 transition-colors duration-normal ease-in-out focus:outline-none focus:ring-2 focus:ring-primary-500 dark:focus:ring-primary-400 focus:ring-offset-2 dark:focus:ring-offset-neutral-900" role="switch" aria-checked="true" aria-labelledby="switch-loading-label">
+                      <span aria-hidden="true" class="pointer-events-none inline-block h-5 w-5 rounded-full bg-white shadow transform ring-0 transition duration-normal ease-in-out translate-x-5 flex items-center justify-center">
+                        <svg class="w-3 h-3 animate-spin text-primary-500" fill="none" viewBox="0 0 24 24">
+                          <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                          <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                        </svg>
+                      </span>
+                    </button>
+                    <span id="switch-loading-label" class="text-sm font-medium text-neutral-700 dark:text-neutral-300">Sync settings...</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- HTML Tab -->
+          <div id="states-html" class="tab-content hidden w-[768px]">
+            <div class="bg-neutral-900 dark:bg-neutral-950 rounded-lg overflow-hidden">
+              <div class="w-full">
+                <pre class="p-6 text-sm overflow-x-auto"><code class="language-html whitespace-pre break-words" style="word-break: break-all; max-width: 100%;">&lt;!-- Switch On --&gt;
+&lt;div class="flex items-center space-x-3"&gt;
+  &lt;button type="button" class="relative inline-flex h-6 w-11 flex-shrink-0 cursor-pointer rounded-full border-2 border-transparent bg-primary-500 dark:bg-primary-600 transition-colors duration-normal ease-in-out focus:outline-none focus:ring-2 focus:ring-primary-500 dark:focus:ring-primary-400 focus:ring-offset-2 dark:focus:ring-offset-neutral-900" role="switch" aria-checked="true" aria-labelledby="switch-on-label"&gt;
+    &lt;span aria-hidden="true" class="pointer-events-none inline-block h-5 w-5 rounded-full bg-white shadow transform ring-0 transition duration-normal ease-in-out translate-x-5"&gt;&lt;/span&gt;
+  &lt;/button&gt;
+  &lt;span id="switch-on-label" class="text-sm font-medium text-neutral-700 dark:text-neutral-300"&gt;Enable notifications&lt;/span&gt;
+&lt;/div&gt;
+
+&lt;!-- Switch Off --&gt;
+&lt;div class="flex items-center space-x-3"&gt;
+  &lt;button type="button" class="relative inline-flex h-6 w-11 flex-shrink-0 cursor-pointer rounded-full border-2 border-transparent bg-neutral-200 dark:bg-neutral-700 transition-colors duration-normal ease-in-out focus:outline-none focus:ring-2 focus:ring-primary-500 dark:focus:ring-primary-400 focus:ring-offset-2 dark:focus:ring-offset-neutral-900" role="switch" aria-checked="false" aria-labelledby="switch-off-label"&gt;
+    &lt;span aria-hidden="true" class="pointer-events-none inline-block h-5 w-5 rounded-full bg-white shadow transform ring-0 transition duration-normal ease-in-out translate-x-0"&gt;&lt;/span&gt;
+  &lt;/button&gt;
+  &lt;span id="switch-off-label" class="text-sm font-medium text-neutral-700 dark:text-neutral-300"&gt;Auto-save drafts&lt;/span&gt;
+&lt;/div&gt;
+
+&lt;!-- Switch Disabled --&gt;
+&lt;div class="flex items-center space-x-3"&gt;
+  &lt;button type="button" disabled class="relative inline-flex h-6 w-11 flex-shrink-0 cursor-not-allowed rounded-full border-2 border-transparent bg-neutral-200 dark:bg-neutral-700 opacity-50" role="switch" aria-checked="false" aria-labelledby="switch-disabled-label"&gt;
+    &lt;span aria-hidden="true" class="pointer-events-none inline-block h-5 w-5 rounded-full bg-white shadow transform ring-0 transition duration-normal ease-in-out translate-x-0"&gt;&lt;/span&gt;
+  &lt;/button&gt;
+  &lt;span id="switch-disabled-label" class="text-sm font-medium text-neutral-400 dark:text-neutral-600 cursor-not-allowed"&gt;Premium feature&lt;/span&gt;
+&lt;/div&gt;
+
+&lt;!-- Switch Loading --&gt;
+&lt;div class="flex items-center space-x-3"&gt;
+  &lt;button type="button" class="relative inline-flex h-6 w-11 flex-shrink-0 cursor-pointer rounded-full border-2 border-transparent bg-primary-500 dark:bg-primary-600 transition-colors duration-normal ease-in-out focus:outline-none focus:ring-2 focus:ring-primary-500 dark:focus:ring-primary-400 focus:ring-offset-2 dark:focus:ring-offset-neutral-900" role="switch" aria-checked="true" aria-labelledby="switch-loading-label"&gt;
+    &lt;span aria-hidden="true" class="pointer-events-none inline-block h-5 w-5 rounded-full bg-white shadow transform ring-0 transition duration-normal ease-in-out translate-x-5 flex items-center justify-center"&gt;
+      &lt;svg class="w-3 h-3 animate-spin text-primary-500" fill="none" viewBox="0 0 24 24"&gt;
+        &lt;circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"&gt;&lt;/circle&gt;
+        &lt;path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"&gt;&lt;/path&gt;
+      &lt;/svg&gt;
+    &lt;/span&gt;
+  &lt;/button&gt;
+  &lt;span id="switch-loading-label" class="text-sm font-medium text-neutral-700 dark:text-neutral-300"&gt;Sync settings...&lt;/span&gt;
+&lt;/div&gt;</code></pre>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Interactive Switch Examples Section -->
+        <section id="interactive-switches" class="mb-16">
+          <!-- Clean Section Header -->
+          <div class="mb-8">
+            <div class="flex items-center justify-between mb-6">
+              <div>
+                <h2 class="text-2xl font-semibold text-neutral-900 dark:text-neutral-100 mb-2">Interactive Examples</h2>
+                <p class="text-neutral-600 dark:text-neutral-400">Working switch components that demonstrate real-world usage patterns and interactions.</p>
+              </div>
+              <div class="flex items-center gap-3">
+                <button data-theme-toggle class="p-2 rounded-lg bg-neutral-100 dark:bg-neutral-800 hover:bg-neutral-200 dark:hover:bg-neutral-700 text-neutral-600 dark:text-neutral-400 transition-colors duration-normal" aria-label="Toggle theme">
+                  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path>
+                  </svg>
+                </button>
+                <button 
+                  id="copy-interactive-btn"
+                  class="flex items-center gap-2 px-4 py-2 bg-neutral-100 dark:bg-neutral-800 hover:bg-neutral-200 dark:hover:bg-neutral-700 text-neutral-700 dark:text-neutral-300 rounded-lg text-sm font-medium transition-colors duration-normal"
+                >
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
+                  </svg>
+                  Copy
+                </button>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Tabs -->
+          <div class="mb-6">
+            <nav class="inline-flex bg-neutral-100 dark:bg-neutral-800 rounded-lg p-1">
+              <button class="tab-button active px-4 py-2 rounded-md bg-white dark:bg-neutral-700 text-neutral-900 dark:text-neutral-100 font-medium text-sm shadow-sm transition-all duration-normal" data-tab="interactive-preview">
+                Preview
+              </button>
+              <button class="tab-button px-4 py-2 rounded-md text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-100 font-medium text-sm transition-all duration-normal" data-tab="interactive-html">
+                HTML
+              </button>
+            </nav>
+          </div>
+
+          <!-- Preview Tab -->
+          <div id="interactive-preview" class="tab-content">
+            <div class="bg-white dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700 rounded-lg p-8">
+              <div class="space-y-6 max-w-lg">
+                <!-- Settings List -->
+                <div class="space-y-4">
+                  <h3 class="text-lg font-medium text-neutral-900 dark:text-neutral-100">Preferences</h3>
+                  
+                  <div class="flex items-center justify-between">
+                    <span class="text-sm font-medium text-neutral-700 dark:text-neutral-300">Email notifications</span>
+                    <button type="button" class="demo-switch relative inline-flex h-6 w-11 flex-shrink-0 cursor-pointer rounded-full border-2 border-transparent bg-primary-500 dark:bg-primary-600 transition-colors duration-normal ease-in-out focus:outline-none focus:ring-2 focus:ring-primary-500 dark:focus:ring-primary-400 focus:ring-offset-2 dark:focus:ring-offset-neutral-900" role="switch" aria-checked="true" data-checked="true">
+                      <span aria-hidden="true" class="switch-handle pointer-events-none inline-block h-5 w-5 rounded-full bg-white shadow transform ring-0 transition duration-normal ease-in-out translate-x-5"></span>
+                    </button>
+                  </div>
+                  
+                  <div class="flex items-center justify-between">
+                    <span class="text-sm font-medium text-neutral-700 dark:text-neutral-300">Push notifications</span>
+                    <button type="button" class="demo-switch relative inline-flex h-6 w-11 flex-shrink-0 cursor-pointer rounded-full border-2 border-transparent bg-neutral-200 dark:bg-neutral-700 transition-colors duration-normal ease-in-out focus:outline-none focus:ring-2 focus:ring-primary-500 dark:focus:ring-primary-400 focus:ring-offset-2 dark:focus:ring-offset-neutral-900" role="switch" aria-checked="false" data-checked="false">
+                      <span aria-hidden="true" class="switch-handle pointer-events-none inline-block h-5 w-5 rounded-full bg-white shadow transform ring-0 transition duration-normal ease-in-out translate-x-0"></span>
+                    </button>
+                  </div>
+                  
+                  <div class="flex items-center justify-between">
+                    <span class="text-sm font-medium text-neutral-700 dark:text-neutral-300">Auto-save</span>
+                    <button type="button" class="demo-switch relative inline-flex h-6 w-11 flex-shrink-0 cursor-pointer rounded-full border-2 border-transparent bg-neutral-200 dark:bg-neutral-700 transition-colors duration-normal ease-in-out focus:outline-none focus:ring-2 focus:ring-primary-500 dark:focus:ring-primary-400 focus:ring-offset-2 dark:focus:ring-offset-neutral-900" role="switch" aria-checked="false" data-checked="false">
+                      <span aria-hidden="true" class="switch-handle pointer-events-none inline-block h-5 w-5 rounded-full bg-white shadow transform ring-0 transition duration-normal ease-in-out translate-x-0"></span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- HTML Tab -->
+          <div id="interactive-html" class="tab-content hidden w-[768px]">
+            <div class="bg-neutral-900 dark:bg-neutral-950 rounded-lg overflow-hidden">
+              <div class="w-full">
+                <pre class="p-6 text-sm overflow-x-auto"><code class="language-html whitespace-pre break-words" style="word-break: break-all; max-width: 100%;">&lt;!-- Settings List with Interactive Switches --&gt;
+&lt;div class="space-y-4"&gt;
+  &lt;h3 class="text-lg font-medium text-neutral-900 dark:text-neutral-100"&gt;Preferences&lt;/h3&gt;
+  
+  &lt;div class="flex items-center justify-between"&gt;
+    &lt;span class="text-sm font-medium text-neutral-700 dark:text-neutral-300"&gt;Email notifications&lt;/span&gt;
+    &lt;button type="button" class="demo-switch relative inline-flex h-6 w-11 flex-shrink-0 cursor-pointer rounded-full border-2 border-transparent bg-primary-500 dark:bg-primary-600 transition-colors duration-normal ease-in-out focus:outline-none focus:ring-2 focus:ring-primary-500 dark:focus:ring-primary-400 focus:ring-offset-2 dark:focus:ring-offset-neutral-900" role="switch" aria-checked="true"&gt;
+      &lt;span aria-hidden="true" class="switch-handle pointer-events-none inline-block h-5 w-5 rounded-full bg-white shadow transform ring-0 transition duration-normal ease-in-out translate-x-5"&gt;&lt;/span&gt;
+    &lt;/button&gt;
+  &lt;/div&gt;
+  
+  &lt;div class="flex items-center justify-between"&gt;
+    &lt;span class="text-sm font-medium text-neutral-700 dark:text-neutral-300"&gt;Push notifications&lt;/span&gt;
+    &lt;button type="button" class="demo-switch relative inline-flex h-6 w-11 flex-shrink-0 cursor-pointer rounded-full border-2 border-transparent bg-neutral-200 dark:bg-neutral-700 transition-colors duration-normal ease-in-out focus:outline-none focus:ring-2 focus:ring-primary-500 dark:focus:ring-primary-400 focus:ring-offset-2 dark:focus:ring-offset-neutral-900" role="switch" aria-checked="false"&gt;
+      &lt;span aria-hidden="true" class="switch-handle pointer-events-none inline-block h-5 w-5 rounded-full bg-white shadow transform ring-0 transition duration-normal ease-in-out translate-x-0"&gt;&lt;/span&gt;
+    &lt;/button&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Usage Guidelines -->
+        <div class="bg-white dark:bg-neutral-950 border border-neutral-900 dark:border-neutral-100 rounded-lg p-4 mb-8">
+          <h3 class="text-sm font-medium text-neutral-900 dark:text-neutral-100 mb-2">Usage Guidelines</h3>
+          <ul class="text-sm text-neutral-900 dark:text-neutral-100 space-y-1">
+            <li>• Use switches for binary on/off settings that take effect immediately</li>
+            <li>• Include clear labels that describe what the switch controls</li>
+            <li>• Position switches consistently (usually on the right side of the label)</li>
+            <li>• Use loading state when switch changes trigger network requests</li>
+            <li>• Consider disabled state for features not available to current user</li>
+          </ul>
+        </div>
+
+        <!-- Accessibility Features -->
+        <div class="bg-white dark:bg-neutral-950 border border-neutral-900 dark:border-neutral-100 rounded-lg p-4">
+          <h3 class="text-sm font-medium text-neutral-900 dark:text-neutral-100 mb-2">Accessibility Features</h3>
+          <ul class="text-sm text-neutral-900 dark:text-neutral-100 space-y-1">
+            <li>• Proper role="switch" and aria-checked attributes for screen readers</li>
+            <li>• Keyboard navigation support with Space and Enter keys</li>
+            <li>• High contrast focus indicators that meet WCAG AA standards</li>
+            <li>• Clear visual distinction between on/off states</li>
+            <li>• Smooth animations that respect user motion preferences</li>
+          </ul>
+        </div>
+      </main>
+
+      <!-- Footer will be injected here -->
+      <div id="footer-container"></div>
+    </div>
+  </div>
+
+  <!-- Initialize shared components and functionality -->
+  <script type="module">
+    import { generateHeader, generateSidebar, generateFooter, initializeSharedComponents } from '/src/shared/components.js';
+    import { themeManager } from '/src/shared/theme.js';
+    import { toast } from '/src/shared/toast.js';
+
+    // Initialize page
+    document.addEventListener('DOMContentLoaded', function() {
+      // Inject shared components
+      document.getElementById('header-container').innerHTML = generateHeader('documentation');
+      document.getElementById('sidebar-container').innerHTML = generateSidebar('switch');
+      document.getElementById('footer-container').innerHTML = generateFooter();
+
+      // Initialize shared functionality
+      initializeSharedComponents();
+      themeManager.initializeToggleButtons();
+
+      // Tab functionality
+      const tabButtons = document.querySelectorAll('.tab-button');
+      
+      tabButtons.forEach(button => {
+        button.addEventListener('click', () => {
+          const targetTab = button.getAttribute('data-tab');
+          const section = button.closest('section');
+          
+          // Remove active class from all tab buttons in this section
+          section.querySelectorAll('.tab-button').forEach(btn => {
+            btn.classList.remove('active', 'bg-white', 'dark:bg-neutral-700', 'text-neutral-900', 'dark:text-neutral-100', 'shadow-sm');
+            btn.classList.add('text-neutral-600', 'dark:text-neutral-400');
+          });
+          
+          // Add active class to clicked button
+          button.classList.add('active', 'bg-white', 'dark:bg-neutral-700', 'text-neutral-900', 'dark:text-neutral-100', 'shadow-sm');
+          button.classList.remove('text-neutral-600', 'dark:text-neutral-400');
+          
+          // Hide all tab contents in this section
+          section.querySelectorAll('.tab-content').forEach(content => {
+            content.classList.add('hidden');
+          });
+          
+          // Show target tab content
+          const targetContent = section.querySelector(`#${targetTab}`);
+          if (targetContent) {
+            targetContent.classList.remove('hidden');
+          }
+        });
+      });
+
+      // Copy functionality
+      const copyButtons = document.querySelectorAll('[id^="copy-"]');
+      copyButtons.forEach(button => {
+        button.addEventListener('click', () => {
+          const section = button.closest('section');
+          const htmlTab = section.querySelector('[id$="-html"]');
+          
+          if (htmlTab) {
+            const codeElement = htmlTab.querySelector('code');
+            if (codeElement) {
+              navigator.clipboard.writeText(codeElement.textContent).then(() => {
+                toast.success('Code copied to clipboard!');
+              }).catch(() => {
+                toast.error('Failed to copy code');
+              });
+            }
+          }
+        });
+      });
+
+      // Interactive switch functionality
+      const demoSwitches = document.querySelectorAll('.demo-switch');
+      demoSwitches.forEach(switchElement => {
+        switchElement.addEventListener('click', () => {
+          const isChecked = switchElement.getAttribute('data-checked') === 'true';
+          const newChecked = !isChecked;
+          
+          // Update attributes
+          switchElement.setAttribute('data-checked', newChecked.toString());
+          switchElement.setAttribute('aria-checked', newChecked.toString());
+          
+          // Update visual state
+          const handle = switchElement.querySelector('.switch-handle');
+          if (newChecked) {
+            switchElement.classList.remove('bg-neutral-200', 'dark:bg-neutral-700');
+            switchElement.classList.add('bg-primary-500', 'dark:bg-primary-600');
+            handle.classList.remove('translate-x-0');
+            handle.classList.add('translate-x-5');
+          } else {
+            switchElement.classList.remove('bg-primary-500', 'dark:bg-primary-600');
+            switchElement.classList.add('bg-neutral-200', 'dark:bg-neutral-700');
+            handle.classList.remove('translate-x-5');
+            handle.classList.add('translate-x-0');
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html> 

@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documentation - UI11 Design System</title>
+    <link rel="stylesheet" href="../src/style.css" />
+</head>
+<body class="h-full bg-neutral-50 dark:bg-neutral-900 transition-colors duration-normal">
+    <!-- Header -->
+    <header class="bg-white dark:bg-neutral-800 border-b border-neutral-200 dark:border-neutral-700 sticky top-0 z-50 transition-colors duration-normal">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <div class="w-8 h-8 bg-primary-500 dark:bg-primary-900 rounded-lg mr-3 transition-colors duration-normal"></div>
+                    <h1 class="text-xl font-semibold text-primary-500 dark:text-primary-900 transition-colors duration-normal">UI11</h1>
+                    <span class="ml-2 text-xs bg-neutral-100 dark:bg-neutral-800 text-neutral-600 dark:text-neutral-400 px-2 py-1 rounded-full transition-colors duration-normal">v0.0.1</span>
+                </div>
+                <nav class="flex items-center space-x-8">
+                    <a href="../index.html" class="text-neutral-600 dark:text-neutral-400 hover:text-primary-500 dark:hover:text-primary-900 transition-colors duration-normal">Home</a>
+                    <a href="#" class="text-primary-500 dark:text-primary-900 font-medium">Documentation</a>
+                    <a href="../blocks/index.html" class="text-neutral-600 dark:text-neutral-400 hover:text-primary-500 dark:hover:text-primary-900 transition-colors duration-normal">Blocks</a>
+                    <a href="https://github.com" target="_blank" rel="noopener" class="text-neutral-600 dark:text-neutral-400 hover:text-primary-500 dark:hover:text-primary-900 transition-colors duration-normal">GitHub</a>
+                    
+                    <!-- Theme Toggle -->
+                    <button data-theme-toggle aria-label="Toggle dark mode" class="p-2 rounded-lg bg-neutral-100 dark:bg-neutral-700 hover:bg-neutral-200 dark:hover:bg-neutral-600 transition-colors duration-normal">
+                        <svg class="w-5 h-5 text-neutral-600 dark:text-neutral-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path>
+                        </svg>
+                    </button>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <!-- Page Header -->
+        <div class="text-center mb-16">
+            <h1 class="text-5xl font-semibold text-primary-500 dark:text-primary-900 mb-6 transition-colors duration-normal">Documentation</h1>
+            <p class="text-lg text-neutral-600 dark:text-neutral-400 max-w-2xl mx-auto transition-colors duration-normal">
+                Complete guide to using UI11 design system with 90 elements and 331 variations
+            </p>
+        </div>
+
+        <!-- Quick Navigation -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+            <!-- Getting Started -->
+            <div class="bg-white dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700 rounded-lg shadow-apple-sm hover:shadow-apple-md p-6 transition-all duration-normal">
+                <div class="w-12 h-12 bg-neutral-100 dark:bg-neutral-700 rounded-lg flex items-center justify-center mb-4 transition-colors duration-normal">
+                    <svg class="w-6 h-6 text-primary-500 dark:text-primary-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                    </svg>
+                </div>
+                <h3 class="text-xl font-semibold text-primary-500 dark:text-primary-900 mb-3 transition-colors duration-normal">Getting Started</h3>
+                <p class="text-neutral-600 dark:text-neutral-400 mb-4 transition-colors duration-normal">Installation guide, setup instructions, and basic usage examples</p>
+                <a href="#getting-started" class="text-primary-500 dark:text-primary-900 hover:text-neutral-600 dark:hover:text-neutral-400 font-medium transition-colors duration-normal">Learn more →</a>
+            </div>
+
+            <!-- Design Tokens -->
+            <div class="bg-white dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700 rounded-lg shadow-apple-sm hover:shadow-apple-md p-6 transition-all duration-normal">
+                <div class="w-12 h-12 bg-neutral-100 dark:bg-neutral-700 rounded-lg flex items-center justify-center mb-4 transition-colors duration-normal">
+                    <svg class="w-6 h-6 text-primary-500 dark:text-primary-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zM21 5a2 2 0 00-2-2h-4a2 2 0 00-2 2v12a4 4 0 004 4h4a2 2 0 002-2V5z"></path>
+                    </svg>
+                </div>
+                <h3 class="text-xl font-semibold text-primary-500 dark:text-primary-900 mb-3 transition-colors duration-normal">Design Tokens</h3>
+                <p class="text-neutral-600 dark:text-neutral-400 mb-4 transition-colors duration-normal">Colors, typography, spacing, and other design foundations</p>
+                <a href="#design-tokens" class="text-primary-500 dark:text-primary-900 hover:text-neutral-600 dark:hover:text-neutral-400 font-medium transition-colors duration-normal">Explore tokens →</a>
+            </div>
+
+            <!-- Components -->
+            <div class="bg-white dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700 rounded-lg shadow-apple-sm hover:shadow-apple-md p-6 transition-all duration-normal">
+                <div class="w-12 h-12 bg-neutral-100 dark:bg-neutral-700 rounded-lg flex items-center justify-center mb-4 transition-colors duration-normal">
+                    <svg class="w-6 h-6 text-primary-500 dark:text-primary-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path>
+                    </svg>
+                </div>
+                <h3 class="text-xl font-semibold text-primary-500 dark:text-primary-900 mb-3 transition-colors duration-normal">All Components</h3>
+                <p class="text-neutral-600 dark:text-neutral-400 mb-4 transition-colors duration-normal">Browse all 90 elements with live examples and code</p>
+                <a href="#components" class="text-primary-500 dark:text-primary-900 hover:text-neutral-600 dark:hover:text-neutral-400 font-medium transition-colors duration-normal">View library →</a>
+            </div>
+        </div>
+
+        <!-- Component Categories -->
+        <div class="space-y-12">
+            <!-- Atomic Elements -->
+            <section id="atomic-elements">
+                <h2 class="text-3xl font-semibold text-primary-500 dark:text-primary-900 mb-8 transition-colors duration-normal">Atomic Elements (35 items)</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- Form Elements -->
+                    <div class="bg-white dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700 rounded-lg p-6 transition-colors duration-normal">
+                        <h3 class="text-lg font-semibold text-primary-500 dark:text-primary-900 mb-4 transition-colors duration-normal">Form Elements</h3>
+                        <ul class="space-y-2 text-sm">
+                            <li><a href="../src/atomic/button/index.html" class="text-neutral-600 dark:text-neutral-400 hover:text-primary-500 dark:hover:text-primary-900 transition-colors duration-normal">Button (9 variations)</a></li>
+                            <li><a href="../src/atomic/input/index.html" class="text-neutral-600 dark:text-neutral-400 hover:text-primary-500 dark:hover:text-primary-900 transition-colors duration-normal">Input (8 variations)</a></li>
+                            <li><a href="../src/atomic/textarea/index.html" class="text-neutral-600 dark:text-neutral-400 hover:text-primary-500 dark:hover:text-primary-900 transition-colors duration-normal">Textarea (4 variations)</a></li>
+                            <li><a href="../src/atomic/select/index.html" class="text-neutral-600 dark:text-neutral-400 hover:text-primary-500 dark:hover:text-primary-900 transition-colors duration-normal">Select (5 variations)</a></li>
+                            <li><a href="../src/atomic/checkbox/index.html" class="text-neutral-600 dark:text-neutral-400 hover:text-primary-500 dark:hover:text-primary-900 transition-colors duration-normal">Checkbox (4 variations)</a></li>
+                            <li class="text-neutral-400 dark:text-neutral-500 transition-colors duration-normal">+ 10 more elements</li>
+                        </ul>
+                    </div>
+
+                    <!-- Display Elements -->
+                    <div class="bg-white dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700 rounded-lg p-6 transition-colors duration-normal">
+                        <h3 class="text-lg font-semibold text-primary-500 dark:text-primary-900 mb-4 transition-colors duration-normal">Display Elements</h3>
+                        <ul class="space-y-2 text-sm">
+                            <li><a href="../src/atomic/avatar/index.html" class="text-neutral-600 dark:text-neutral-400 hover:text-primary-500 dark:hover:text-primary-900 transition-colors duration-normal">Avatar (5 variations)</a></li>
+                            <li><a href="../src/atomic/badge/index.html" class="text-neutral-600 dark:text-neutral-400 hover:text-primary-500 dark:hover:text-primary-900 transition-colors duration-normal">Badge (4 variations)</a></li>
+                            <li><a href="../src/atomic/tag/index.html" class="text-neutral-600 dark:text-neutral-400 hover:text-primary-500 dark:hover:text-primary-900 transition-colors duration-normal">Tag (3 variations)</a></li>
+                            <li><a href="../src/atomic/icon/index.html" class="text-neutral-600 dark:text-neutral-400 hover:text-primary-500 dark:hover:text-primary-900 transition-colors duration-normal">Icon (4 variations)</a></li>
+                            <li><a href="../src/atomic/progress/index.html" class="text-neutral-600 dark:text-neutral-400 hover:text-primary-500 dark:hover:text-primary-900 transition-colors duration-normal">Progress (4 variations)</a></li>
+                            <li class="text-neutral-400 dark:text-neutral-500 transition-colors duration-normal">+ 7 more elements</li>
+                        </ul>
+                    </div>
+
+                    <!-- Navigation & Layout -->
+                    <div class="bg-white dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700 rounded-lg p-6 transition-colors duration-normal">
+                        <h3 class="text-lg font-semibold text-primary-500 dark:text-primary-900 mb-4 transition-colors duration-normal">Navigation & Layout</h3>
+                        <ul class="space-y-2 text-sm">
+                            <li><a href="../src/atomic/link/index.html" class="text-neutral-600 dark:text-neutral-400 hover:text-primary-500 dark:hover:text-primary-900 transition-colors duration-normal">Link (4 variations)</a></li>
+                            <li><a href="../src/atomic/breadcrumb/index.html" class="text-neutral-600 dark:text-neutral-400 hover:text-primary-500 dark:hover:text-primary-900 transition-colors duration-normal">Breadcrumb (3 variations)</a></li>
+                            <li><a href="../src/atomic/container/index.html" class="text-neutral-600 dark:text-neutral-400 hover:text-primary-500 dark:hover:text-primary-900 transition-colors duration-normal">Container (3 variations)</a></li>
+                            <li><a href="../src/atomic/grid/index.html" class="text-neutral-600 dark:text-neutral-400 hover:text-primary-500 dark:hover:text-primary-900 transition-colors duration-normal">Grid (3 variations)</a></li>
+                            <li><a href="../src/atomic/flex/index.html" class="text-neutral-600 dark:text-neutral-400 hover:text-primary-500 dark:hover:text-primary-900 transition-colors duration-normal">Flex (4 variations)</a></li>
+                            <li class="text-neutral-400 dark:text-neutral-500 transition-colors duration-normal">+ 3 more elements</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Components -->
+            <section id="components">
+                <h2 class="text-3xl font-semibold text-primary-500 dark:text-primary-900 mb-8 transition-colors duration-normal">Components (20 items)</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- Interactive Components -->
+                    <div class="bg-white dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700 rounded-lg p-6 transition-colors duration-normal">
+                        <h3 class="text-lg font-semibold text-primary-500 dark:text-primary-900 mb-4 transition-colors duration-normal">Interactive</h3>
+                        <ul class="space-y-2 text-sm">
+                            <li><a href="../src/components/card/index.html" class="text-neutral-600 dark:text-neutral-400 hover:text-primary-500 dark:hover:text-primary-900 transition-colors duration-normal">Card (4 variations)</a></li>
+                            <li><a href="../src/components/modal/index.html" class="text-neutral-600 dark:text-neutral-400 hover:text-primary-500 dark:hover:text-primary-900 transition-colors duration-normal">Modal (4 variations)</a></li>
+                            <li><a href="../src/components/tabs/index.html" class="text-neutral-600 dark:text-neutral-400 hover:text-primary-500 dark:hover:text-primary-900 transition-colors duration-normal">Tabs (4 variations)</a></li>
+                            <li><a href="../src/components/dropdown/index.html" class="text-neutral-600 dark:text-neutral-400 hover:text-primary-500 dark:hover:text-primary-900 transition-colors duration-normal">Dropdown (3 variations)</a></li>
+                            <li><a href="../src/components/accordion/index.html" class="text-neutral-600 dark:text-neutral-400 hover:text-primary-500 dark:hover:text-primary-900 transition-colors duration-normal">Accordion (3 variations)</a></li>
+                            <li class="text-neutral-400 dark:text-neutral-500 transition-colors duration-normal">+ 3 more components</li>
+                        </ul>
+                    </div>
+
+                    <!-- Data Components -->
+                    <div class="bg-white dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700 rounded-lg p-6 transition-colors duration-normal">
+                        <h3 class="text-lg font-semibold text-primary-500 dark:text-primary-900 mb-4 transition-colors duration-normal">Data Display</h3>
+                        <ul class="space-y-2 text-sm">
+                            <li><a href="../src/components/table/index.html" class="text-neutral-600 dark:text-neutral-400 hover:text-primary-500 dark:hover:text-primary-900 transition-colors duration-normal">Table (4 variations)</a></li>
+                            <li><a href="../src/components/list/index.html" class="text-neutral-600 dark:text-neutral-400 hover:text-primary-500 dark:hover:text-primary-900 transition-colors duration-normal">List (4 variations)</a></li>
+                            <li><a href="../src/components/timeline/index.html" class="text-neutral-600 dark:text-neutral-400 hover:text-primary-500 dark:hover:text-primary-900 transition-colors duration-normal">Timeline (3 variations)</a></li>
+                            <li><a href="../src/components/stats/index.html" class="text-neutral-600 dark:text-neutral-400 hover:text-primary-500 dark:hover:text-primary-900 transition-colors duration-normal">Stats (4 variations)</a></li>
+                            <li><a href="../src/components/gallery/index.html" class="text-neutral-600 dark:text-neutral-400 hover:text-primary-500 dark:hover:text-primary-900 transition-colors duration-normal">Gallery (3 variations)</a></li>
+                            <li class="text-neutral-400 dark:text-neutral-500 transition-colors duration-normal">+ 2 more components</li>
+                        </ul>
+                    </div>
+
+                    <!-- Form Components -->
+                    <div class="bg-white dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700 rounded-lg p-6 transition-colors duration-normal">
+                        <h3 class="text-lg font-semibold text-primary-500 dark:text-primary-900 mb-4 transition-colors duration-normal">Form Components</h3>
+                        <ul class="space-y-2 text-sm">
+                            <li><a href="../src/components/form/index.html" class="text-neutral-600 dark:text-neutral-400 hover:text-primary-500 dark:hover:text-primary-900 transition-colors duration-normal">Form (4 variations)</a></li>
+                            <li><a href="../src/components/contact/index.html" class="text-neutral-600 dark:text-neutral-400 hover:text-primary-500 dark:hover:text-primary-900 transition-colors duration-normal">Contact (4 variations)</a></li>
+                            <li><a href="../src/components/login/index.html" class="text-neutral-600 dark:text-neutral-400 hover:text-primary-500 dark:hover:text-primary-900 transition-colors duration-normal">Login (4 variations)</a></li>
+                            <li><a href="../src/components/search/index.html" class="text-neutral-600 dark:text-neutral-400 hover:text-primary-500 dark:hover:text-primary-900 transition-colors duration-normal">SearchBox (4 variations)</a></li>
+                            <li><a href="../src/components/cart/index.html" class="text-neutral-600 dark:text-neutral-400 hover:text-primary-500 dark:hover:text-primary-900 transition-colors duration-normal">Shopping Cart (4 variations)</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Blocks -->
+            <section id="blocks">
+                <h2 class="text-3xl font-semibold text-primary-500 dark:text-primary-900 mb-8 transition-colors duration-normal">Blocks (35 items)</h2>
+                <div class="bg-white dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700 rounded-lg p-8 text-center transition-colors duration-normal">
+                    <h3 class="text-xl font-semibold text-primary-500 dark:text-primary-900 mb-4 transition-colors duration-normal">Ready-to-use Page Sections</h3>
+                    <p class="text-neutral-600 dark:text-neutral-400 mb-6 transition-colors duration-normal">
+                        35 blocks with 108 variations for hero sections, content areas, navigation, e-commerce, and more.
+                    </p>
+                    <a href="../blocks/index.html" class="bg-primary-500 dark:bg-primary-900 text-white dark:text-black hover:bg-primary-600 dark:hover:bg-neutral-100 px-6 py-3 rounded-lg font-medium shadow-apple-md hover:shadow-apple-lg transition-all duration-normal ease-apple-out">
+                        Browse All Blocks
+                    </a>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <!-- Theme Toggle Script -->
+    <script>
+        // Theme toggle functionality
+        const themeToggle = document.querySelector('[data-theme-toggle]');
+        const html = document.documentElement;
+
+        // Check for saved theme preference or default to system preference
+        const savedTheme = localStorage.getItem('theme');
+        const systemTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        const currentTheme = savedTheme || systemTheme;
+
+        // Apply theme on load
+        if (currentTheme === 'dark') {
+            html.classList.add('dark');
+        }
+
+        // Theme toggle event
+        themeToggle.addEventListener('click', () => {
+            html.classList.toggle('dark');
+            const isDark = html.classList.contains('dark');
+            localStorage.setItem('theme', isDark ? 'dark' : 'light');
+        });
+
+        // Listen for system theme changes
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
+            if (!localStorage.getItem('theme')) {
+                if (e.matches) {
+                    html.classList.add('dark');
+                } else {
+                    html.classList.remove('dark');
+                }
+            }
+        });
+    </script>
+</body>
+</html> 

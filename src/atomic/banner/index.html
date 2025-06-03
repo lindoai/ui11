@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Banner - UI11 Design System</title>
+  <link href="/src/style.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-markup.min.js"></script>
+</head>
+<body class="min-h-screen bg-white dark:bg-neutral-950">
+  <div class="flex min-h-screen">
+    <div id="sidebar-container"></div>
+    <div class="flex-1 flex flex-col ml-64 mt-16">
+      <div id="header-container"></div>
+      <main class="flex-1 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 overflow-hidden">
+        <nav class="flex mb-8" aria-label="Breadcrumb">
+          <ol class="flex items-center space-x-4">
+            <li><a href="/documentation/" class="text-neutral-600 dark:text-neutral-400 hover:text-primary-500 dark:hover:text-primary-400 transition-colors duration-normal">Documentation</a></li>
+            <li class="flex items-center">
+              <svg class="w-4 h-4 text-neutral-400 dark:text-neutral-500 mx-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+              </svg>
+              <span class="text-neutral-500 dark:text-neutral-400">Atomic Elements</span>
+            </li>
+            <li class="flex items-center">
+              <svg class="w-4 h-4 text-neutral-400 dark:text-neutral-500 mx-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+              </svg>
+              <span class="text-primary-600 dark:text-primary-400 font-medium">Banner</span>
+            </li>
+          </ol>
+        </nav>
+
+        <div class="mb-12">
+          <h1 class="text-4xl font-semibold text-neutral-900 dark:text-neutral-100 mb-4">Banner</h1>
+          <p class="text-lg text-neutral-600 dark:text-neutral-400 mb-6 max-w-3xl leading-relaxed">
+            Prominent notification banners for announcements, warnings, and promotional content with dismissible options.
+          </p>
+        </div>
+
+        <!-- Announcement Banner Section -->
+        <section id="announcement-banner" class="mb-16">
+          <div class="mb-8">
+            <div class="flex items-center justify-between mb-6">
+              <div>
+                <h2 class="text-2xl font-semibold text-neutral-900 dark:text-neutral-100 mb-2">Announcement Banner</h2>
+                <p class="text-neutral-600 dark:text-neutral-400">General announcements and informational messages.</p>
+              </div>
+              <div class="flex items-center gap-3">
+                <button data-theme-toggle class="p-2 rounded-lg bg-neutral-100 dark:bg-neutral-800 hover:bg-neutral-200 dark:hover:bg-neutral-700 text-neutral-600 dark:text-neutral-400 transition-colors duration-normal" aria-label="Toggle theme">
+                  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 718.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path>
+                  </svg>
+                </button>
+                <button id="copy-announcement-btn" class="flex items-center gap-2 px-4 py-2 bg-neutral-100 dark:bg-neutral-800 hover:bg-neutral-200 dark:hover:bg-neutral-700 text-neutral-700 dark:text-neutral-300 rounded-lg text-sm font-medium transition-colors duration-normal">
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
+                  </svg>
+                  Copy
+                </button>
+              </div>
+            </div>
+          </div>
+          
+          <div class="mb-6">
+            <nav class="inline-flex bg-neutral-100 dark:bg-neutral-800 rounded-lg p-1">
+              <button class="tab-button active px-4 py-2 rounded-md bg-white dark:bg-neutral-700 text-neutral-900 dark:text-neutral-100 font-medium text-sm shadow-sm transition-all duration-normal" data-tab="announcement-preview">Preview</button>
+              <button class="tab-button px-4 py-2 rounded-md text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-100 font-medium text-sm transition-all duration-normal" data-tab="announcement-html">HTML</button>
+            </nav>
+          </div>
+
+          <div id="announcement-preview" class="tab-content">
+            <div class="bg-white dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700 rounded-lg p-8">
+              <div class="space-y-4">
+                <!-- Simple Announcement -->
+                <div class="bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 rounded-lg p-4">
+                  <div class="flex items-center justify-between">
+                    <div class="flex items-center space-x-3">
+                      <svg class="w-5 h-5 text-blue-600 dark:text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                      </svg>
+                      <p class="text-sm text-blue-800 dark:text-blue-200">New features are now available! Check out our latest updates.</p>
+                    </div>
+                    <button class="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200 transition-colors duration-normal">
+                      <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+                
+                <!-- Announcement with Action -->
+                <div class="bg-neutral-50 dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700 rounded-lg p-4">
+                  <div class="flex items-center justify-between">
+                    <div class="flex items-center space-x-3">
+                      <svg class="w-5 h-5 text-neutral-600 dark:text-neutral-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5.882V19.24a1.76 1.76 0 01-3.417.592l-2.147-6.15M18 13a3 3 0 100-6M5.436 13.683A4.001 4.001 0 017 6h1.832c4.1 0 7.625-1.234 9.168-3v14c-1.543-1.766-5.067-3-9.168-3H7a3.988 3.988 0 01-1.564-.317z"></path>
+                      </svg>
+                      <div class="flex-1">
+                        <p class="text-sm text-neutral-800 dark:text-neutral-200">System maintenance scheduled for tonight at 2:00 AM UTC.</p>
+                      </div>
+                    </div>
+                    <div class="flex items-center space-x-3">
+                      <button class="text-sm text-primary-600 dark:text-primary-400 hover:text-primary-800 dark:hover:text-primary-200 font-medium transition-colors duration-normal">
+                        Learn More
+                      </button>
+                      <button class="text-neutral-500 dark:text-neutral-400 hover:text-neutral-700 dark:hover:text-neutral-200 transition-colors duration-normal">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                        </svg>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div id="announcement-html" class="tab-content hidden w-[768px]">
+            <div class="bg-neutral-900 dark:bg-neutral-950 rounded-lg overflow-hidden">
+              <div class="w-full">
+                <pre class="p-6 text-sm overflow-x-auto"><code class="language-html whitespace-pre break-words" style="word-break: break-all; max-width: 100%;">&lt;!-- Simple Announcement --&gt;
+&lt;div class="bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 rounded-lg p-4"&gt;
+  &lt;div class="flex items-center justify-between"&gt;
+    &lt;div class="flex items-center space-x-3"&gt;
+      &lt;svg class="w-5 h-5 text-blue-600 dark:text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"&gt;
+        &lt;path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"&gt;&lt;/path&gt;
+      &lt;/svg&gt;
+      &lt;p class="text-sm text-blue-800 dark:text-blue-200"&gt;New features are now available!&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;button class="text-blue-600 dark:text-blue-400"&gt;
+      &lt;svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"&gt;
+        &lt;path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"&gt;&lt;/path&gt;
+      &lt;/svg&gt;
+    &lt;/button&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Warning Banner Section -->
+        <section id="warning-banner" class="mb-16">
+          <div class="mb-8">
+            <div class="flex items-center justify-between mb-6">
+              <div>
+                <h2 class="text-2xl font-semibold text-neutral-900 dark:text-neutral-100 mb-2">Warning Banner</h2>
+                <p class="text-neutral-600 dark:text-neutral-400">Important warnings and critical notifications.</p>
+              </div>
+              <div class="flex items-center gap-3">
+                <button data-theme-toggle class="p-2 rounded-lg bg-neutral-100 dark:bg-neutral-800 hover:bg-neutral-200 dark:hover:bg-neutral-700 text-neutral-600 dark:text-neutral-400 transition-colors duration-normal" aria-label="Toggle theme">
+                  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 718.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path>
+                  </svg>
+                </button>
+                <button id="copy-warning-btn" class="flex items-center gap-2 px-4 py-2 bg-neutral-100 dark:bg-neutral-800 hover:bg-neutral-200 dark:hover:bg-neutral-700 text-neutral-700 dark:text-neutral-300 rounded-lg text-sm font-medium transition-colors duration-normal">
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
+                  </svg>
+                  Copy
+                </button>
+              </div>
+            </div>
+          </div>
+          
+          <div class="mb-6">
+            <nav class="inline-flex bg-neutral-100 dark:bg-neutral-800 rounded-lg p-1">
+              <button class="tab-button active px-4 py-2 rounded-md bg-white dark:bg-neutral-700 text-neutral-900 dark:text-neutral-100 font-medium text-sm shadow-sm transition-all duration-normal" data-tab="warning-preview">Preview</button>
+              <button class="tab-button px-4 py-2 rounded-md text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-100 font-medium text-sm transition-all duration-normal" data-tab="warning-html">HTML</button>
+            </nav>
+          </div>
+
+          <div id="warning-preview" class="tab-content">
+            <div class="bg-white dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700 rounded-lg p-8">
+              <div class="space-y-4">
+                <!-- Warning Banner -->
+                <div class="bg-warning-50 dark:bg-warning-900/20 border border-warning-200 dark:border-warning-800 rounded-lg p-4">
+                  <div class="flex items-center justify-between">
+                    <div class="flex items-center space-x-3">
+                      <svg class="w-5 h-5 text-warning-600 dark:text-warning-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.732-.833-2.464 0L4.35 16.5c-.77.833.192 2.5 1.732 2.5z"></path>
+                      </svg>
+                      <p class="text-sm text-warning-800 dark:text-warning-200">Your subscription expires in 3 days. Renew now to avoid service interruption.</p>
+                    </div>
+                    <button class="text-warning-600 dark:text-warning-400 hover:text-warning-800 dark:hover:text-warning-200 transition-colors duration-normal">
+                      <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+                
+                <!-- Error Banner -->
+                <div class="bg-error-50 dark:bg-error-900/20 border border-error-200 dark:border-error-800 rounded-lg p-4">
+                  <div class="flex items-center justify-between">
+                    <div class="flex items-center space-x-3">
+                      <svg class="w-5 h-5 text-error-600 dark:text-error-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                      </svg>
+                      <div class="flex-1">
+                        <p class="text-sm text-error-800 dark:text-error-200 font-medium">Service Outage</p>
+                        <p class="text-sm text-error-700 dark:text-error-300">We're experiencing technical difficulties. Our team is working on a fix.</p>
+                      </div>
+                    </div>
+                    <div class="flex items-center space-x-3">
+                      <button class="text-sm text-error-600 dark:text-error-400 hover:text-error-800 dark:hover:text-error-200 font-medium transition-colors duration-normal">
+                        Status Page
+                      </button>
+                      <button class="text-error-500 dark:text-error-400 hover:text-error-700 dark:hover:text-error-200 transition-colors duration-normal">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                        </svg>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div id="warning-html" class="tab-content hidden w-[768px]">
+            <div class="bg-neutral-900 dark:bg-neutral-950 rounded-lg overflow-hidden">
+              <div class="w-full">
+                <pre class="p-6 text-sm overflow-x-auto"><code class="language-html whitespace-pre break-words" style="word-break: break-all; max-width: 100%;">&lt;!-- Warning Banner --&gt;
+&lt;div class="bg-warning-50 dark:bg-warning-900/20 border border-warning-200 dark:border-warning-800 rounded-lg p-4"&gt;
+  &lt;div class="flex items-center justify-between"&gt;
+    &lt;div class="flex items-center space-x-3"&gt;
+      &lt;svg class="w-5 h-5 text-warning-600 dark:text-warning-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"&gt;
+        &lt;path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.732-.833-2.464 0L4.35 16.5c-.77.833.192 2.5 1.732 2.5z"&gt;&lt;/path&gt;
+      &lt;/svg&gt;
+      &lt;p class="text-sm text-warning-800 dark:text-warning-200"&gt;Your subscription expires in 3 days.&lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Promotion Banner Section -->
+        <section id="promotion-banner" class="mb-16">
+          <div class="mb-8">
+            <div class="flex items-center justify-between mb-6">
+              <div>
+                <h2 class="text-2xl font-semibold text-neutral-900 dark:text-neutral-100 mb-2">Promotion Banner</h2>
+                <p class="text-neutral-600 dark:text-neutral-400">Marketing messages and promotional content.</p>
+              </div>
+              <div class="flex items-center gap-3">
+                <button data-theme-toggle class="p-2 rounded-lg bg-neutral-100 dark:bg-neutral-800 hover:bg-neutral-200 dark:hover:bg-neutral-700 text-neutral-600 dark:text-neutral-400 transition-colors duration-normal" aria-label="Toggle theme">
+                  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 718.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path>
+                  </svg>
+                </button>
+                <button id="copy-promotion-btn" class="flex items-center gap-2 px-4 py-2 bg-neutral-100 dark:bg-neutral-800 hover:bg-neutral-200 dark:hover:bg-neutral-700 text-neutral-700 dark:text-neutral-300 rounded-lg text-sm font-medium transition-colors duration-normal">
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
+                  </svg>
+                  Copy
+                </button>
+              </div>
+            </div>
+          </div>
+          
+          <div class="mb-6">
+            <nav class="inline-flex bg-neutral-100 dark:bg-neutral-800 rounded-lg p-1">
+              <button class="tab-button active px-4 py-2 rounded-md bg-white dark:bg-neutral-700 text-neutral-900 dark:text-neutral-100 font-medium text-sm shadow-sm transition-all duration-normal" data-tab="promotion-preview">Preview</button>
+              <button class="tab-button px-4 py-2 rounded-md text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-100 font-medium text-sm transition-all duration-normal" data-tab="promotion-html">HTML</button>
+            </nav>
+          </div>
+
+          <div id="promotion-preview" class="tab-content">
+            <div class="bg-white dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700 rounded-lg p-8">
+              <div class="space-y-4">
+                <!-- Promotion Banner -->
+                <div class="bg-gradient-to-r from-purple-500 to-pink-500 rounded-lg p-4">
+                  <div class="flex items-center justify-between">
+                    <div class="flex items-center space-x-3">
+                      <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                      </svg>
+                      <div class="flex-1">
+                        <p class="text-sm text-white font-medium">Limited Time Offer!</p>
+                        <p class="text-sm text-purple-100">Get 50% off your first month. Use code SAVE50 at checkout.</p>
+                      </div>
+                    </div>
+                    <div class="flex items-center space-x-3">
+                      <button class="bg-white text-purple-600 hover:bg-purple-50 px-4 py-2 rounded-lg text-sm font-medium transition-colors duration-normal">
+                        Claim Offer
+                      </button>
+                      <button class="text-white hover:text-purple-100 transition-colors duration-normal">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                        </svg>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+                
+                <!-- Success Promotion -->
+                <div class="bg-success-50 dark:bg-success-900/20 border border-success-200 dark:border-success-800 rounded-lg p-4">
+                  <div class="flex items-center justify-between">
+                    <div class="flex items-center space-x-3">
+                      <svg class="w-5 h-5 text-success-600 dark:text-success-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                      </svg>
+                      <div class="flex-1">
+                        <p class="text-sm text-success-800 dark:text-success-200 font-medium">Free Trial Available</p>
+                        <p class="text-sm text-success-700 dark:text-success-300">Try all premium features free for 14 days. No credit card required.</p>
+                      </div>
+                    </div>
+                    <div class="flex items-center space-x-3">
+                      <button class="text-sm text-success-600 dark:text-success-400 hover:text-success-800 dark:hover:text-success-200 font-medium transition-colors duration-normal">
+                        Start Trial
+                      </button>
+                      <button class="text-success-500 dark:text-success-400 hover:text-success-700 dark:hover:text-success-200 transition-colors duration-normal">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                        </svg>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div id="promotion-html" class="tab-content hidden w-[768px]">
+            <div class="bg-neutral-900 dark:bg-neutral-950 rounded-lg overflow-hidden">
+              <div class="w-full">
+                <pre class="p-6 text-sm overflow-x-auto"><code class="language-html whitespace-pre break-words" style="word-break: break-all; max-width: 100%;">&lt;!-- Gradient Promotion Banner --&gt;
+&lt;div class="bg-gradient-to-r from-purple-500 to-pink-500 rounded-lg p-4"&gt;
+  &lt;div class="flex items-center justify-between"&gt;
+    &lt;div class="flex items-center space-x-3"&gt;
+      &lt;svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"&gt;
+        &lt;path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"&gt;&lt;/path&gt;
+      &lt;/svg&gt;
+      &lt;div&gt;
+        &lt;p class="text-sm text-white font-medium"&gt;Limited Time Offer!&lt;/p&gt;
+        &lt;p class="text-sm text-purple-100"&gt;Get 50% off your first month.&lt;/p&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;button class="bg-white text-purple-600 px-4 py-2 rounded-lg text-sm font-medium"&gt;Claim Offer&lt;/button&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Usage Guidelines -->
+        <div class="bg-white dark:bg-neutral-950 border border-neutral-900 dark:border-neutral-100 rounded-lg p-4 mb-8">
+          <h3 class="text-sm font-medium text-neutral-900 dark:text-neutral-100 mb-2">Usage Guidelines</h3>
+          <ul class="text-sm text-neutral-900 dark:text-neutral-100 space-y-1">
+            <li>• Use announcement banners for general information and updates</li>
+            <li>• Use warning banners for important alerts and critical notifications</li>
+            <li>• Use promotion banners for marketing messages and special offers</li>
+            <li>• Always provide a way to dismiss non-critical banners</li>
+            <li>• Keep banner text concise and actionable</li>
+          </ul>
+        </div>
+
+        <!-- Accessibility Features -->
+        <div class="bg-white dark:bg-neutral-950 border border-neutral-900 dark:border-neutral-100 rounded-lg p-4">
+          <h3 class="text-sm font-medium text-neutral-900 dark:text-neutral-100 mb-2">Accessibility Features</h3>
+          <ul class="text-sm text-neutral-900 dark:text-neutral-100 space-y-1">
+            <li>• High contrast colors meet WCAG accessibility standards</li>
+            <li>• Semantic color coding for different banner types</li>
+            <li>• Keyboard accessible dismiss buttons</li>
+            <li>• Screen reader compatible with proper ARIA labels</li>
+            <li>• Clear visual hierarchy with icons and typography</li>
+          </ul>
+        </div>
+      </main>
+      <div id="footer-container"></div>
+    </div>
+  </div>
+
+  <script type="module">
+    import { generateHeader, generateSidebar, generateFooter, initializeSharedComponents } from '/src/shared/components.js';
+    import { themeManager } from '/src/shared/theme.js';
+    import { toast } from '/src/shared/toast.js';
+
+    document.addEventListener('DOMContentLoaded', function() {
+      document.getElementById('header-container').innerHTML = generateHeader('documentation');
+      document.getElementById('sidebar-container').innerHTML = generateSidebar('banner');
+      document.getElementById('footer-container').innerHTML = generateFooter();
+
+      initializeSharedComponents();
+      themeManager.initializeToggleButtons();
+
+      // Tab functionality
+      const tabButtons = document.querySelectorAll('.tab-button');
+      tabButtons.forEach(button => {
+        button.addEventListener('click', () => {
+          const targetTab = button.getAttribute('data-tab');
+          const section = button.closest('section');
+          
+          section.querySelectorAll('.tab-button').forEach(btn => {
+            btn.classList.remove('active', 'bg-white', 'dark:bg-neutral-700', 'text-neutral-900', 'dark:text-neutral-100', 'shadow-sm');
+            btn.classList.add('text-neutral-600', 'dark:text-neutral-400');
+          });
+          
+          button.classList.add('active', 'bg-white', 'dark:bg-neutral-700', 'text-neutral-900', 'dark:text-neutral-100', 'shadow-sm');
+          button.classList.remove('text-neutral-600', 'dark:text-neutral-400');
+          
+          section.querySelectorAll('.tab-content').forEach(content => {
+            content.classList.add('hidden');
+          });
+          
+          const targetContent = section.querySelector(`#${targetTab}`);
+          if (targetContent) {
+            targetContent.classList.remove('hidden');
+          }
+        });
+      });
+
+      // Copy functionality
+      const copyButtons = document.querySelectorAll('[id^="copy-"]');
+      copyButtons.forEach(button => {
+        button.addEventListener('click', () => {
+          const section = button.closest('section');
+          const htmlTab = section.querySelector('[id$="-html"]');
+          
+          if (htmlTab) {
+            const codeElement = htmlTab.querySelector('code');
+            if (codeElement) {
+              navigator.clipboard.writeText(codeElement.textContent).then(() => {
+                toast.success('Code copied to clipboard!');
+              }).catch(() => {
+                toast.error('Failed to copy code');
+              });
+            }
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html> 

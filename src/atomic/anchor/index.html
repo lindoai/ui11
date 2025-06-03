@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Anchor - UI11 Design System</title>
+  <link href="/src/style.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-markup.min.js"></script>
+</head>
+<body class="min-h-screen bg-white dark:bg-neutral-950">
+  <div class="flex min-h-screen">
+    <div id="sidebar-container"></div>
+    <div class="flex-1 flex flex-col ml-64 mt-16">
+      <div id="header-container"></div>
+      <main class="flex-1 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 overflow-hidden">
+        <!-- Breadcrumb Navigation -->
+        <nav class="flex mb-8" aria-label="Breadcrumb">
+          <ol class="flex items-center space-x-4">
+            <li><a href="/documentation/" class="text-neutral-600 dark:text-neutral-400 hover:text-primary-500 dark:hover:text-primary-400 transition-colors duration-normal">Documentation</a></li>
+            <li class="flex items-center">
+              <svg class="w-4 h-4 text-neutral-400 dark:text-neutral-500 mx-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+              </svg>
+              <span class="text-neutral-500 dark:text-neutral-400">Atomic Elements</span>
+            </li>
+            <li class="flex items-center">
+              <svg class="w-4 h-4 text-neutral-400 dark:text-neutral-500 mx-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+              </svg>
+              <span class="text-primary-600 dark:text-primary-400 font-medium">Anchor</span>
+            </li>
+          </ol>
+        </nav>
+
+        <div class="mb-12">
+          <h1 class="text-4xl font-semibold text-neutral-900 dark:text-neutral-100 mb-4">Anchor</h1>
+          <p class="text-lg text-neutral-600 dark:text-neutral-400 mb-6 max-w-3xl leading-relaxed">
+            Smooth scroll anchors with offset support and active state tracking for page navigation.
+          </p>
+        </div>
+
+        <!-- Smooth Scroll Section -->
+        <section id="smooth-scroll" class="mb-16">
+          <div class="mb-8">
+            <div class="flex items-center justify-between mb-6">
+              <div>
+                <h2 class="text-2xl font-semibold text-neutral-900 dark:text-neutral-100 mb-2">Smooth Scroll</h2>
+                <p class="text-neutral-600 dark:text-neutral-400">Anchor links with smooth scrolling behavior.</p>
+              </div>
+              <div class="flex items-center gap-3">
+                <button data-theme-toggle class="p-2 rounded-lg bg-neutral-100 dark:bg-neutral-800 hover:bg-neutral-200 dark:hover:bg-neutral-700 text-neutral-600 dark:text-neutral-400 transition-colors duration-normal" aria-label="Toggle theme">
+                  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 718.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path>
+                  </svg>
+                </button>
+                <button id="copy-scroll-btn" class="flex items-center gap-2 px-4 py-2 bg-neutral-100 dark:bg-neutral-800 hover:bg-neutral-200 dark:hover:bg-neutral-700 text-neutral-700 dark:text-neutral-300 rounded-lg text-sm font-medium transition-colors duration-normal">
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
+                  </svg>
+                  Copy
+                </button>
+              </div>
+            </div>
+          </div>
+          
+          <div class="mb-6">
+            <nav class="inline-flex bg-neutral-100 dark:bg-neutral-800 rounded-lg p-1">
+              <button class="tab-button active px-4 py-2 rounded-md bg-white dark:bg-neutral-700 text-neutral-900 dark:text-neutral-100 font-medium text-sm shadow-sm transition-all duration-normal" data-tab="scroll-preview">Preview</button>
+              <button class="tab-button px-4 py-2 rounded-md text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-100 font-medium text-sm transition-all duration-normal" data-tab="scroll-html">HTML</button>
+            </nav>
+          </div>
+
+          <div id="scroll-preview" class="tab-content">
+            <div class="bg-white dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700 rounded-lg p-8">
+              <div class="space-y-8">
+                <!-- Navigation with Smooth Scroll -->
+                <div>
+                  <h3 class="text-sm font-medium text-neutral-900 dark:text-neutral-100 mb-3">Table of Contents</h3>
+                  <nav class="space-y-2">
+                    <a href="#section-1" class="block text-neutral-600 dark:text-neutral-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-normal">1. Introduction</a>
+                    <a href="#section-2" class="block text-neutral-600 dark:text-neutral-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-normal">2. Getting Started</a>
+                    <a href="#section-3" class="block text-neutral-600 dark:text-neutral-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-normal">3. Advanced Usage</a>
+                  </nav>
+                </div>
+
+                <!-- Demo Sections -->
+                <div class="space-y-16 mt-8">
+                  <section id="section-1" class="border-l-4 border-primary-500 pl-4">
+                    <h3 class="text-lg font-semibold text-neutral-900 dark:text-neutral-100 mb-2">1. Introduction</h3>
+                    <p class="text-neutral-600 dark:text-neutral-400">This is the introduction section. Click the links above to smoothly scroll to different sections.</p>
+                  </section>
+
+                  <section id="section-2" class="border-l-4 border-primary-500 pl-4">
+                    <h3 class="text-lg font-semibold text-neutral-900 dark:text-neutral-100 mb-2">2. Getting Started</h3>
+                    <p class="text-neutral-600 dark:text-neutral-400">This is the getting started section with information about how to begin.</p>
+                  </section>
+
+                  <section id="section-3" class="border-l-4 border-primary-500 pl-4">
+                    <h3 class="text-lg font-semibold text-neutral-900 dark:text-neutral-100 mb-2">3. Advanced Usage</h3>
+                    <p class="text-neutral-600 dark:text-neutral-400">This is the advanced usage section with detailed information.</p>
+                  </section>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div id="scroll-html" class="tab-content hidden w-[768px]">
+            <div class="bg-neutral-900 dark:bg-neutral-950 rounded-lg overflow-hidden">
+              <div class="w-full">
+                <pre class="p-6 text-sm overflow-x-auto"><code class="language-html"><!-- HTML with scroll-smooth class -->
+<html class="scroll-smooth">
+
+<!-- Anchor Links -->
+<nav class="space-y-2">
+  <a href="#section-1" class="block text-neutral-600 dark:text-neutral-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-normal">1. Introduction</a>
+  <a href="#section-2" class="block text-neutral-600 dark:text-neutral-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-normal">2. Getting Started</a>
+</nav>
+
+<!-- Target Sections -->
+<section id="section-1">
+  <h3>1. Introduction</h3>
+  <p>Content here...</p>
+</section>
+
+<section id="section-2">
+  <h3>2. Getting Started</h3>
+  <p>Content here...</p>
+</section></code></pre>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Offset Anchor Section -->
+        <section id="offset-anchor" class="mb-16">
+          <div class="mb-8">
+            <div class="flex items-center justify-between mb-6">
+              <div>
+                <h2 class="text-2xl font-semibold text-neutral-900 dark:text-neutral-100 mb-2">Offset Anchor</h2>
+                <p class="text-neutral-600 dark:text-neutral-400">Anchors with offset for fixed headers and navigation bars.</p>
+              </div>
+              <div class="flex items-center gap-3">
+                <button data-theme-toggle class="p-2 rounded-lg bg-neutral-100 dark:bg-neutral-800 hover:bg-neutral-200 dark:hover:bg-neutral-700 text-neutral-600 dark:text-neutral-400 transition-colors duration-normal" aria-label="Toggle theme">
+                  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 718.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path>
+                  </svg>
+                </button>
+                <button id="copy-offset-btn" class="flex items-center gap-2 px-4 py-2 bg-neutral-100 dark:bg-neutral-800 hover:bg-neutral-200 dark:hover:bg-neutral-700 text-neutral-700 dark:text-neutral-300 rounded-lg text-sm font-medium transition-colors duration-normal">
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
+                  </svg>
+                  Copy
+                </button>
+              </div>
+            </div>
+          </div>
+          
+          <div class="mb-6">
+            <nav class="inline-flex bg-neutral-100 dark:bg-neutral-800 rounded-lg p-1">
+              <button class="tab-button active px-4 py-2 rounded-md bg-white dark:bg-neutral-700 text-neutral-900 dark:text-neutral-100 font-medium text-sm shadow-sm transition-all duration-normal" data-tab="offset-preview">Preview</button>
+              <button class="tab-button px-4 py-2 rounded-md text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-100 font-medium text-sm transition-all duration-normal" data-tab="offset-html">HTML</button>
+            </nav>
+          </div>
+
+          <div id="offset-preview" class="tab-content">
+            <div class="bg-white dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700 rounded-lg p-8">
+              <div class="space-y-6">
+                <p class="text-sm text-neutral-600 dark:text-neutral-400">
+                  This demo shows how to offset anchor targets when you have fixed headers. The scroll-margin-top utility prevents content from being hidden behind fixed navigation.
+                </p>
+                
+                <div class="bg-neutral-50 dark:bg-neutral-700 rounded-lg p-4 border border-neutral-200 dark:border-neutral-600">
+                  <h3 class="text-sm font-medium text-neutral-900 dark:text-neutral-100 mb-2">Fixed Header Example</h3>
+                  <div class="text-xs text-neutral-600 dark:text-neutral-400 space-y-1">
+                    <p>• Add scroll-margin-top to anchor targets</p>
+                    <p>• Use pt-16 or pt-20 for fixed header height</p>
+                    <p>• Ensures content isn't hidden behind fixed elements</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div id="offset-html" class="tab-content hidden w-[768px]">
+            <div class="bg-neutral-900 dark:bg-neutral-950 rounded-lg overflow-hidden">
+              <div class="w-full">
+                <pre class="p-6 text-sm overflow-x-auto"><code class="language-html"><!-- CSS: Use scroll-margin-top for offset -->
+<style>
+  .anchor-offset {
+    scroll-margin-top: 80px; /* Adjust for fixed header height */
+  }
+</style>
+
+<!-- Or use Tailwind utility -->
+<section id="target-section" class="scroll-mt-20">
+  <h2>Section with Offset</h2>
+  <p>Content that won't be hidden behind fixed header</p>
+</section>
+
+<!-- Anchor link -->
+<a href="#target-section" class="text-primary-600 dark:text-primary-400 hover:text-primary-800 dark:hover:text-primary-200 transition-colors duration-normal">
+  Go to Section
+</a></code></pre>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Active State Section -->
+        <section id="active-state" class="mb-16">
+          <div class="mb-8">
+            <div class="flex items-center justify-between mb-6">
+              <div>
+                <h2 class="text-2xl font-semibold text-neutral-900 dark:text-neutral-100 mb-2">Active State</h2>
+                <p class="text-neutral-600 dark:text-neutral-400">Highlighting current section in navigation.</p>
+              </div>
+              <div class="flex items-center gap-3">
+                <button data-theme-toggle class="p-2 rounded-lg bg-neutral-100 dark:bg-neutral-800 hover:bg-neutral-200 dark:hover:bg-neutral-700 text-neutral-600 dark:text-neutral-400 transition-colors duration-normal" aria-label="Toggle theme">
+                  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 718.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path>
+                  </svg>
+                </button>
+                <button id="copy-active-btn" class="flex items-center gap-2 px-4 py-2 bg-neutral-100 dark:bg-neutral-800 hover:bg-neutral-200 dark:hover:bg-neutral-700 text-neutral-700 dark:text-neutral-300 rounded-lg text-sm font-medium transition-colors duration-normal">
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
+                  </svg>
+                  Copy
+                </button>
+              </div>
+            </div>
+          </div>
+          
+          <div class="mb-6">
+            <nav class="inline-flex bg-neutral-100 dark:bg-neutral-800 rounded-lg p-1">
+              <button class="tab-button active px-4 py-2 rounded-md bg-white dark:bg-neutral-700 text-neutral-900 dark:text-neutral-100 font-medium text-sm shadow-sm transition-all duration-normal" data-tab="active-preview">Preview</button>
+              <button class="tab-button px-4 py-2 rounded-md text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-100 font-medium text-sm transition-all duration-normal" data-tab="active-html">HTML</button>
+            </nav>
+          </div>
+
+          <div id="active-preview" class="tab-content">
+            <div class="bg-white dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700 rounded-lg p-8">
+              <div class="space-y-6">
+                <!-- Active Navigation -->
+                <div>
+                  <h3 class="text-sm font-medium text-neutral-900 dark:text-neutral-100 mb-3">Navigation with Active States</h3>
+                  <nav class="space-y-2">
+                    <a href="#intro" class="flex items-center text-primary-600 dark:text-primary-400 font-medium">
+                      <div class="w-1 h-4 bg-primary-600 dark:bg-primary-400 rounded-full mr-3"></div>
+                      Introduction (Active)
+                    </a>
+                    <a href="#features" class="flex items-center text-neutral-600 dark:text-neutral-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-normal">
+                      <div class="w-1 h-4 bg-transparent mr-3"></div>
+                      Features
+                    </a>
+                    <a href="#examples" class="flex items-center text-neutral-600 dark:text-neutral-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-normal">
+                      <div class="w-1 h-4 bg-transparent mr-3"></div>
+                      Examples
+                    </a>
+                  </nav>
+                </div>
+
+                <!-- Alternative Active Style -->
+                <div>
+                  <h3 class="text-sm font-medium text-neutral-900 dark:text-neutral-100 mb-3">Alternative Active Style</h3>
+                  <nav class="space-y-1">
+                    <a href="#intro" class="block px-3 py-2 bg-primary-50 dark:bg-primary-900/20 text-primary-700 dark:text-primary-300 rounded-lg font-medium">
+                      Introduction (Active)
+                    </a>
+                    <a href="#features" class="block px-3 py-2 text-neutral-600 dark:text-neutral-400 hover:bg-neutral-50 dark:hover:bg-neutral-700 rounded-lg transition-colors duration-normal">
+                      Features
+                    </a>
+                    <a href="#examples" class="block px-3 py-2 text-neutral-600 dark:text-neutral-400 hover:bg-neutral-50 dark:hover:bg-neutral-700 rounded-lg transition-colors duration-normal">
+                      Examples
+                    </a>
+                  </nav>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div id="active-html" class="tab-content hidden w-[768px]">
+            <div class="bg-neutral-900 dark:bg-neutral-950 rounded-lg overflow-hidden">
+              <div class="w-full">
+                <pre class="p-6 text-sm overflow-x-auto"><code class="language-html"><!-- Active State with Indicator -->
+<nav class="space-y-2">
+  <a href="#intro" class="flex items-center text-primary-600 dark:text-primary-400 font-medium">
+    <div class="w-1 h-4 bg-primary-600 dark:bg-primary-400 rounded-full mr-3"></div>
+    Introduction (Active)
+  </a>
+  <a href="#features" class="flex items-center text-neutral-600 dark:text-neutral-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-normal">
+    <div class="w-1 h-4 bg-transparent mr-3"></div>
+    Features
+  </a>
+</nav>
+
+<!-- Alternative Active Style -->
+<nav class="space-y-1">
+  <a href="#intro" class="block px-3 py-2 bg-primary-50 dark:bg-primary-900/20 text-primary-700 dark:text-primary-300 rounded-lg font-medium">
+    Introduction (Active)
+  </a>
+  <a href="#features" class="block px-3 py-2 text-neutral-600 dark:text-neutral-400 hover:bg-neutral-50 dark:hover:bg-neutral-700 rounded-lg transition-colors duration-normal">
+    Features
+  </a>
+</nav></code></pre>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Usage Guidelines -->
+        <div class="bg-white dark:bg-neutral-950 border border-neutral-900 dark:border-neutral-100 rounded-lg p-4 mb-8">
+          <h3 class="text-sm font-medium text-neutral-900 dark:text-neutral-100 mb-2">Usage Guidelines</h3>
+          <ul class="text-sm text-neutral-900 dark:text-neutral-100 space-y-1">
+            <li>• Add scroll-smooth class to html element for smooth scrolling</li>
+            <li>• Use scroll-margin-top for offset when you have fixed headers</li>
+            <li>• Implement active state tracking for long-form content navigation</li>
+            <li>• Ensure anchor targets have sufficient contrast and visibility</li>
+          </ul>
+        </div>
+
+        <!-- Accessibility Features -->
+        <div class="bg-white dark:bg-neutral-950 border border-neutral-900 dark:border-neutral-100 rounded-lg p-4">
+          <h3 class="text-sm font-medium text-neutral-900 dark:text-neutral-100 mb-2">Accessibility Features</h3>
+          <ul class="text-sm text-neutral-900 dark:text-neutral-100 space-y-1">
+            <li>• Keyboard navigation with Tab and Enter keys</li>
+            <li>• Focus indicators that meet WCAG contrast requirements</li>
+            <li>• Skip links for main content navigation</li>
+            <li>• Proper heading hierarchy for screen readers</li>
+          </ul>
+        </div>
+      </main>
+      <div id="footer-container"></div>
+    </div>
+  </div>
+
+  <script type="module">
+    import { generateHeader, generateSidebar, generateFooter, initializeSharedComponents } from '/src/shared/components.js';
+    import { themeManager } from '/src/shared/theme.js';
+    import { toast } from '/src/shared/toast.js';
+
+    document.addEventListener('DOMContentLoaded', function() {
+      document.getElementById('header-container').innerHTML = generateHeader('documentation');
+      document.getElementById('sidebar-container').innerHTML = generateSidebar('anchor');
+      document.getElementById('footer-container').innerHTML = generateFooter();
+
+      initializeSharedComponents();
+      themeManager.initializeToggleButtons();
+
+      // Tab functionality
+      const tabButtons = document.querySelectorAll('.tab-button');
+      tabButtons.forEach(button => {
+        button.addEventListener('click', () => {
+          const targetTab = button.getAttribute('data-tab');
+          const section = button.closest('section');
+          
+          section.querySelectorAll('.tab-button').forEach(btn => {
+            btn.classList.remove('active', 'bg-white', 'dark:bg-neutral-700', 'text-neutral-900', 'dark:text-neutral-100', 'shadow-sm');
+            btn.classList.add('text-neutral-600', 'dark:text-neutral-400');
+          });
+          
+          button.classList.add('active', 'bg-white', 'dark:bg-neutral-700', 'text-neutral-900', 'dark:text-neutral-100', 'shadow-sm');
+          button.classList.remove('text-neutral-600', 'dark:text-neutral-400');
+          
+          section.querySelectorAll('.tab-content').forEach(content => {
+            content.classList.add('hidden');
+          });
+          
+          const targetContent = section.querySelector(`#${targetTab}`);
+          if (targetContent) {
+            targetContent.classList.remove('hidden');
+          }
+        });
+      });
+
+      // Copy functionality
+      const copyButtons = document.querySelectorAll('[id^="copy-"]');
+      copyButtons.forEach(button => {
+        button.addEventListener('click', () => {
+          const section = button.closest('section');
+          const htmlTab = section.querySelector('[id$="-html"]');
+          
+          if (htmlTab) {
+            const codeElement = htmlTab.querySelector('code');
+            if (codeElement) {
+              navigator.clipboard.writeText(codeElement.textContent).then(() => {
+                toast.success('Code copied to clipboard!');
+              }).catch(() => {
+                toast.error('Failed to copy code');
+              });
+            }
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html> 

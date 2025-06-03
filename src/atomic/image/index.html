@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Image - UI11 Design System</title>
+  <link href="/src/style.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-markup.min.js"></script>
+</head>
+<body class="min-h-screen bg-white dark:bg-neutral-950">
+  <div class="flex min-h-screen">
+    <div id="sidebar-container"></div>
+    <div class="flex-1 flex flex-col ml-64 mt-16">
+      <div id="header-container"></div>
+      <main class="flex-1 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 overflow-hidden">
+        <nav class="flex mb-8" aria-label="Breadcrumb">
+          <ol class="flex items-center space-x-4">
+            <li><a href="/documentation/" class="text-neutral-600 dark:text-neutral-400 hover:text-primary-500 dark:hover:text-primary-400 transition-colors duration-normal">Documentation</a></li>
+            <li class="flex items-center">
+              <svg class="w-4 h-4 text-neutral-400 dark:text-neutral-500 mx-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+              </svg>
+              <span class="text-neutral-500 dark:text-neutral-400">Atomic Elements</span>
+            </li>
+            <li class="flex items-center">
+              <svg class="w-4 h-4 text-neutral-400 dark:text-neutral-500 mx-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+              </svg>
+              <span class="text-primary-600 dark:text-primary-400 font-medium">Image</span>
+            </li>
+          </ol>
+        </nav>
+
+        <div class="mb-12">
+          <h1 class="text-4xl font-semibold text-neutral-900 dark:text-neutral-100 mb-4">Image</h1>
+          <p class="text-lg text-neutral-600 dark:text-neutral-400 mb-6 max-w-3xl leading-relaxed">
+            Responsive image components with lazy loading, placeholder states, error handling, and zoom functionality.
+          </p>
+        </div>
+
+        <!-- Basic Images Section -->
+        <section id="basic-images" class="mb-16">
+          <div class="mb-8">
+            <div class="flex items-center justify-between mb-6">
+              <div>
+                <h2 class="text-2xl font-semibold text-neutral-900 dark:text-neutral-100 mb-2">Basic Images</h2>
+                <p class="text-neutral-600 dark:text-neutral-400">Standard responsive images with proper aspect ratios and loading states.</p>
+              </div>
+              <div class="flex items-center gap-3">
+                <button data-theme-toggle class="p-2 rounded-lg bg-neutral-100 dark:bg-neutral-800 hover:bg-neutral-200 dark:hover:bg-neutral-700 text-neutral-600 dark:text-neutral-400 transition-colors duration-normal" aria-label="Toggle theme">
+                  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 718.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path>
+                  </svg>
+                </button>
+                <button id="copy-basic-btn" class="flex items-center gap-2 px-4 py-2 bg-neutral-100 dark:bg-neutral-800 hover:bg-neutral-200 dark:hover:bg-neutral-700 text-neutral-700 dark:text-neutral-300 rounded-lg text-sm font-medium transition-colors duration-normal">
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
+                  </svg>
+                  Copy
+                </button>
+              </div>
+            </div>
+          </div>
+          
+          <div class="mb-6">
+            <nav class="inline-flex bg-neutral-100 dark:bg-neutral-800 rounded-lg p-1">
+              <button class="tab-button active px-4 py-2 rounded-md bg-white dark:bg-neutral-700 text-neutral-900 dark:text-neutral-100 font-medium text-sm shadow-sm transition-all duration-normal" data-tab="basic-preview">Preview</button>
+              <button class="tab-button px-4 py-2 rounded-md text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-100 font-medium text-sm transition-all duration-normal" data-tab="basic-html">HTML</button>
+            </nav>
+          </div>
+
+          <div id="basic-preview" class="tab-content">
+            <div class="bg-white dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700 rounded-lg p-8">
+              <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Square Image -->
+                <div class="space-y-3">
+                  <div class="aspect-square bg-neutral-200 dark:bg-neutral-700 rounded-lg overflow-hidden">
+                    <div class="w-full h-full bg-gradient-to-br from-blue-400 to-purple-500 flex items-center justify-center">
+                      <svg class="w-12 h-12 text-white opacity-75" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                      </svg>
+                    </div>
+                  </div>
+                  <p class="text-sm text-neutral-600 dark:text-neutral-400">Square (1:1)</p>
+                </div>
+                
+                <!-- Landscape Image -->
+                <div class="space-y-3">
+                  <div class="aspect-video bg-neutral-200 dark:bg-neutral-700 rounded-lg overflow-hidden">
+                    <div class="w-full h-full bg-gradient-to-br from-green-400 to-blue-500 flex items-center justify-center">
+                      <svg class="w-12 h-12 text-white opacity-75" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                      </svg>
+                    </div>
+                  </div>
+                  <p class="text-sm text-neutral-600 dark:text-neutral-400">Landscape (16:9)</p>
+                </div>
+                
+                <!-- Portrait Image -->
+                <div class="space-y-3">
+                  <div class="aspect-[3/4] bg-neutral-200 dark:bg-neutral-700 rounded-lg overflow-hidden">
+                    <div class="w-full h-full bg-gradient-to-br from-pink-400 to-red-500 flex items-center justify-center">
+                      <svg class="w-12 h-12 text-white opacity-75" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                      </svg>
+                    </div>
+                  </div>
+                  <p class="text-sm text-neutral-600 dark:text-neutral-400">Portrait (3:4)</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div id="basic-html" class="tab-content hidden w-[768px]">
+            <div class="bg-neutral-900 dark:bg-neutral-950 rounded-lg overflow-hidden">
+              <div class="w-full">
+                <pre class="p-6 text-sm overflow-x-auto"><code class="language-html whitespace-pre break-words" style="word-break: break-all; max-width: 100%;">&lt;!-- Square Image --&gt;
+&lt;div class="aspect-square bg-neutral-200 dark:bg-neutral-700 rounded-lg overflow-hidden"&gt;
+  &lt;img src="image.jpg" alt="Description" class="w-full h-full object-cover"&gt;
+&lt;/div&gt;
+
+&lt;!-- Landscape Image --&gt;
+&lt;div class="aspect-video bg-neutral-200 dark:bg-neutral-700 rounded-lg overflow-hidden"&gt;
+  &lt;img src="image.jpg" alt="Description" class="w-full h-full object-cover"&gt;
+&lt;/div&gt;
+
+&lt;!-- Portrait Image --&gt;
+&lt;div class="aspect-[3/4] bg-neutral-200 dark:bg-neutral-700 rounded-lg overflow-hidden"&gt;
+  &lt;img src="image.jpg" alt="Description" class="w-full h-full object-cover"&gt;
+&lt;/div&gt;</code></pre>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Image States Section -->
+        <section id="image-states" class="mb-16">
+          <div class="mb-8">
+            <div class="flex items-center justify-between mb-6">
+              <div>
+                <h2 class="text-2xl font-semibold text-neutral-900 dark:text-neutral-100 mb-2">Image States</h2>
+                <p class="text-neutral-600 dark:text-neutral-400">Loading, error, and placeholder states for better user experience.</p>
+              </div>
+              <div class="flex items-center gap-3">
+                <button data-theme-toggle class="p-2 rounded-lg bg-neutral-100 dark:bg-neutral-800 hover:bg-neutral-200 dark:hover:bg-neutral-700 text-neutral-600 dark:text-neutral-400 transition-colors duration-normal" aria-label="Toggle theme">
+                  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 718.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path>
+                  </svg>
+                </button>
+                <button id="copy-states-btn" class="flex items-center gap-2 px-4 py-2 bg-neutral-100 dark:bg-neutral-800 hover:bg-neutral-200 dark:hover:bg-neutral-700 text-neutral-700 dark:text-neutral-300 rounded-lg text-sm font-medium transition-colors duration-normal">
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
+                  </svg>
+                  Copy
+                </button>
+              </div>
+            </div>
+          </div>
+          
+          <div class="mb-6">
+            <nav class="inline-flex bg-neutral-100 dark:bg-neutral-800 rounded-lg p-1">
+              <button class="tab-button active px-4 py-2 rounded-md bg-white dark:bg-neutral-700 text-neutral-900 dark:text-neutral-100 font-medium text-sm shadow-sm transition-all duration-normal" data-tab="states-preview">Preview</button>
+              <button class="tab-button px-4 py-2 rounded-md text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-100 font-medium text-sm transition-all duration-normal" data-tab="states-html">HTML</button>
+            </nav>
+          </div>
+
+          <div id="states-preview" class="tab-content">
+            <div class="bg-white dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700 rounded-lg p-8">
+              <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Loading State -->
+                <div class="space-y-3">
+                  <div class="aspect-video bg-neutral-200 dark:bg-neutral-700 rounded-lg overflow-hidden flex items-center justify-center">
+                    <div class="flex flex-col items-center space-y-3">
+                      <div class="w-8 h-8 border-2 border-neutral-300 dark:border-neutral-600 border-t-primary-500 dark:border-t-primary-400 rounded-full animate-spin"></div>
+                      <span class="text-sm text-neutral-500 dark:text-neutral-400">Loading...</span>
+                    </div>
+                  </div>
+                  <p class="text-sm text-neutral-600 dark:text-neutral-400">Loading State</p>
+                </div>
+                
+                <!-- Error State -->
+                <div class="space-y-3">
+                  <div class="aspect-video bg-neutral-100 dark:bg-neutral-800 border-2 border-dashed border-neutral-300 dark:border-neutral-600 rounded-lg overflow-hidden flex items-center justify-center">
+                    <div class="flex flex-col items-center space-y-3 text-neutral-400 dark:text-neutral-500">
+                      <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.732-.833-2.464 0L4.35 16.5c-.77.833.192 2.5 1.732 2.5z"></path>
+                      </svg>
+                      <span class="text-sm">Failed to load</span>
+                    </div>
+                  </div>
+                  <p class="text-sm text-neutral-600 dark:text-neutral-400">Error State</p>
+                </div>
+                
+                <!-- Placeholder State -->
+                <div class="space-y-3">
+                  <div class="aspect-video bg-neutral-100 dark:bg-neutral-800 rounded-lg overflow-hidden flex items-center justify-center">
+                    <div class="flex flex-col items-center space-y-3 text-neutral-400 dark:text-neutral-500">
+                      <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                      </svg>
+                      <span class="text-sm">No image</span>
+                    </div>
+                  </div>
+                  <p class="text-sm text-neutral-600 dark:text-neutral-400">Placeholder</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div id="states-html" class="tab-content hidden w-[768px]">
+            <div class="bg-neutral-900 dark:bg-neutral-950 rounded-lg overflow-hidden">
+              <div class="w-full">
+                <pre class="p-6 text-sm overflow-x-auto"><code class="language-html whitespace-pre break-words" style="word-break: break-all; max-width: 100%;">&lt;!-- Loading State --&gt;
+&lt;div class="aspect-video bg-neutral-200 dark:bg-neutral-700 rounded-lg flex items-center justify-center"&gt;
+  &lt;div class="flex flex-col items-center space-y-3"&gt;
+    &lt;div class="w-8 h-8 border-2 border-neutral-300 dark:border-neutral-600 border-t-primary-500 dark:border-t-primary-400 rounded-full animate-spin"&gt;&lt;/div&gt;
+    &lt;span class="text-sm text-neutral-500 dark:text-neutral-400"&gt;Loading...&lt;/span&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- Error State --&gt;
+&lt;div class="aspect-video bg-neutral-100 dark:bg-neutral-800 border-2 border-dashed border-neutral-300 dark:border-neutral-600 rounded-lg flex items-center justify-center"&gt;
+  &lt;div class="flex flex-col items-center space-y-3 text-neutral-400 dark:text-neutral-500"&gt;
+    &lt;svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"&gt;
+      &lt;path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.732-.833-2.464 0L4.35 16.5c-.77.833.192 2.5 1.732 2.5z"&gt;&lt;/path&gt;
+    &lt;/svg&gt;
+    &lt;span class="text-sm"&gt;Failed to load&lt;/span&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Usage Guidelines -->
+        <div class="bg-white dark:bg-neutral-950 border border-neutral-900 dark:border-neutral-100 rounded-lg p-4 mb-8">
+          <h3 class="text-sm font-medium text-neutral-900 dark:text-neutral-100 mb-2">Usage Guidelines</h3>
+          <ul class="text-sm text-neutral-900 dark:text-neutral-100 space-y-1">
+            <li>• Always provide meaningful alt text for accessibility</li>
+            <li>• Use appropriate aspect ratios for your content type</li>
+            <li>• Implement lazy loading for performance optimization</li>
+            <li>• Provide fallback states for loading and error scenarios</li>
+            <li>• Consider responsive image sizes for different screen densities</li>
+          </ul>
+        </div>
+
+        <!-- Accessibility Features -->
+        <div class="bg-white dark:bg-neutral-950 border border-neutral-900 dark:border-neutral-100 rounded-lg p-4">
+          <h3 class="text-sm font-medium text-neutral-900 dark:text-neutral-100 mb-2">Accessibility Features</h3>
+          <ul class="text-sm text-neutral-900 dark:text-neutral-100 space-y-1">
+            <li>• Descriptive alt attributes for screen reader compatibility</li>
+            <li>• Proper aspect ratio containers prevent layout shift</li>
+            <li>• High contrast placeholder and error states</li>
+            <li>• Loading indicators provide feedback for slow connections</li>
+            <li>• Semantic HTML structure with proper image elements</li>
+          </ul>
+        </div>
+      </main>
+      <div id="footer-container"></div>
+    </div>
+  </div>
+
+  <script type="module">
+    import { generateHeader, generateSidebar, generateFooter, initializeSharedComponents } from '/src/shared/components.js';
+    import { themeManager } from '/src/shared/theme.js';
+    import { toast } from '/src/shared/toast.js';
+
+    document.addEventListener('DOMContentLoaded', function() {
+      document.getElementById('header-container').innerHTML = generateHeader('documentation');
+      document.getElementById('sidebar-container').innerHTML = generateSidebar('image');
+      document.getElementById('footer-container').innerHTML = generateFooter();
+
+      initializeSharedComponents();
+      themeManager.initializeToggleButtons();
+
+      // Tab functionality
+      const tabButtons = document.querySelectorAll('.tab-button');
+      tabButtons.forEach(button => {
+        button.addEventListener('click', () => {
+          const targetTab = button.getAttribute('data-tab');
+          const section = button.closest('section');
+          
+          section.querySelectorAll('.tab-button').forEach(btn => {
+            btn.classList.remove('active', 'bg-white', 'dark:bg-neutral-700', 'text-neutral-900', 'dark:text-neutral-100', 'shadow-sm');
+            btn.classList.add('text-neutral-600', 'dark:text-neutral-400');
+          });
+          
+          button.classList.add('active', 'bg-white', 'dark:bg-neutral-700', 'text-neutral-900', 'dark:text-neutral-100', 'shadow-sm');
+          button.classList.remove('text-neutral-600', 'dark:text-neutral-400');
+          
+          section.querySelectorAll('.tab-content').forEach(content => {
+            content.classList.add('hidden');
+          });
+          
+          const targetContent = section.querySelector(`#${targetTab}`);
+          if (targetContent) {
+            targetContent.classList.remove('hidden');
+          }
+        });
+      });
+
+      // Copy functionality
+      const copyButtons = document.querySelectorAll('[id^="copy-"]');
+      copyButtons.forEach(button => {
+        button.addEventListener('click', () => {
+          const section = button.closest('section');
+          const htmlTab = section.querySelector('[id$="-html"]');
+          
+          if (htmlTab) {
+            const codeElement = htmlTab.querySelector('code');
+            if (codeElement) {
+              navigator.clipboard.writeText(codeElement.textContent).then(() => {
+                toast.success('Code copied to clipboard!');
+              }).catch(() => {
+                toast.error('Failed to copy code');
+              });
+            }
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html> 

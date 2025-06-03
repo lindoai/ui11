@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Button - UI11 Design System</title>
+  <link href="/src/style.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-markup.min.js"></script>
+</head>
+<body class="min-h-screen bg-white dark:bg-neutral-950 transition-colors duration-normal">
+  <!-- Page Layout Container -->
+  <div class="flex min-h-screen">
+    <!-- Sidebar will be injected here -->
+    <div id="sidebar-container"></div>
+    
+    <!-- Main Content Area -->
+    <div class="flex-1 flex flex-col ml-64 mt-16">
+      <!-- Header will be injected here -->
+      <div id="header-container"></div>
+      
+      <!-- Page Content -->
+      <main class="flex-1 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 overflow-hidden">
+        <!-- Breadcrumb -->
+        <nav class="flex mb-8" aria-label="Breadcrumb">
+          <ol class="flex items-center space-x-4">
+            <li>
+              <a href="/documentation/" class="text-neutral-600 dark:text-neutral-400 hover:text-primary-500 dark:hover:text-primary-400 transition-colors duration-normal">Documentation</a>
+            </li>
+            <li class="flex items-center">
+              <svg class="w-4 h-4 text-neutral-400 dark:text-neutral-500 mx-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+              </svg>
+              <span class="text-neutral-500 dark:text-neutral-400">Atomic Elements</span>
+            </li>
+            <li class="flex items-center">
+              <svg class="w-4 h-4 text-neutral-400 dark:text-neutral-500 mx-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+              </svg>
+              <span class="text-primary-600 dark:text-primary-400 font-medium">Button</span>
+            </li>
+          </ol>
+        </nav>
+
+        <!-- Page Header -->
+        <div class="mb-12">
+          <h1 class="text-4xl font-semibold text-neutral-900 dark:text-neutral-100 mb-4 transition-colors duration-normal">Button</h1>
+          <p class="text-lg text-neutral-600 dark:text-neutral-400 mb-6 max-w-3xl leading-relaxed transition-colors duration-normal">
+            Interactive buttons with multiple styles, sizes, and states. Essential building blocks for user interfaces with accessibility and responsive design built-in.
+          </p>
+        </div>
+
+        <!-- Button Types Section -->
+        <section id="button-types" class="mb-16">
+          <!-- Clean Section Header -->
+          <div class="mb-8">
+            <div class="flex items-center justify-between mb-6">
+              <div>
+                <h2 class="text-2xl font-semibold text-neutral-900 dark:text-neutral-100 mb-2">Button Types</h2>
+                <p class="text-neutral-600 dark:text-neutral-400">Nine button variations for different use cases and semantic meanings.</p>
+              </div>
+              <div class="flex items-center gap-3">
+                <button data-theme-toggle class="p-2 rounded-lg bg-neutral-100 dark:bg-neutral-800 hover:bg-neutral-200 dark:hover:bg-neutral-700 text-neutral-600 dark:text-neutral-400 transition-colors duration-normal" aria-label="Toggle theme">
+                  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path>
+                  </svg>
+                </button>
+                <button 
+                  id="copy-types-btn"
+                  class="flex items-center gap-2 px-4 py-2 bg-neutral-100 dark:bg-neutral-800 hover:bg-neutral-200 dark:hover:bg-neutral-700 text-neutral-700 dark:text-neutral-300 rounded-lg text-sm font-medium transition-colors duration-normal"
+                >
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
+                  </svg>
+                  Copy
+                </button>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Tabs -->
+          <div class="mb-6">
+            <nav class="inline-flex bg-neutral-100 dark:bg-neutral-800 rounded-lg p-1 transition-colors duration-normal">
+              <button class="tab-button active px-4 py-2 rounded-md bg-white dark:bg-neutral-700 text-neutral-900 dark:text-neutral-100 font-medium text-sm shadow-sm transition-all duration-normal" data-tab="types-preview">
+                Preview
+              </button>
+              <button class="tab-button px-4 py-2 rounded-md text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-100 font-medium text-sm transition-all duration-normal" data-tab="types-html">
+                HTML
+              </button>
+            </nav>
+          </div>
+
+          <!-- Preview Tab -->
+          <div id="types-preview" class="tab-content">
+            <div class="bg-white dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700 rounded-lg p-8 transition-colors duration-normal">
+              <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Primary -->
+                <div class="space-y-3">
+                  <h4 class="text-sm font-medium text-neutral-700 dark:text-neutral-300 transition-colors duration-normal">Primary</h4>
+                  <button class="bg-primary-500 dark:bg-primary-600 hover:bg-primary-600 dark:hover:bg-primary-700 text-white shadow-md rounded-lg px-6 py-3 font-medium transition-all duration-normal active:scale-98">
+                    Primary Button
+                  </button>
+                </div>
+
+                <!-- Secondary -->
+                <div class="space-y-3">
+                  <h4 class="text-sm font-medium text-neutral-700 dark:text-neutral-300 transition-colors duration-normal">Secondary</h4>
+                  <button class="bg-neutral-100 dark:bg-neutral-800 hover:bg-neutral-200 dark:hover:bg-neutral-700 text-neutral-700 dark:text-neutral-200 border border-neutral-200 dark:border-neutral-700 rounded-lg px-6 py-3 font-medium transition-all duration-normal active:scale-98">
+                    Secondary Button
+                  </button>
+                </div>
+
+                <!-- Outline -->
+                <div class="space-y-3">
+                  <h4 class="text-sm font-medium text-neutral-700 dark:text-neutral-300 transition-colors duration-normal">Outline</h4>
+                  <button class="bg-transparent hover:bg-primary-50 dark:hover:bg-primary-900/20 text-primary-600 dark:text-primary-400 border border-primary-300 dark:border-primary-600 rounded-lg px-6 py-3 font-medium transition-all duration-normal active:scale-98">
+                    Outline Button
+                  </button>
+                </div>
+
+                <!-- Ghost -->
+                <div class="space-y-3">
+                  <h4 class="text-sm font-medium text-neutral-700 dark:text-neutral-300 transition-colors duration-normal">Ghost</h4>
+                  <button class="bg-transparent hover:bg-primary-50 dark:hover:bg-primary-900/20 text-primary-500 dark:text-primary-400 rounded-lg px-6 py-3 font-medium transition-all duration-normal active:scale-98">
+                    Ghost Button
+                  </button>
+                </div>
+
+                <!-- Danger -->
+                <div class="space-y-3">
+                  <h4 class="text-sm font-medium text-neutral-700 dark:text-neutral-300 transition-colors duration-normal">Danger</h4>
+                  <button class="bg-error-500 dark:bg-error-600 hover:bg-error-600 dark:hover:bg-error-700 text-white shadow-md rounded-lg px-6 py-3 font-medium transition-all duration-normal active:scale-98">
+                    Danger Button
+                  </button>
+                </div>
+
+                <!-- Success -->
+                <div class="space-y-3">
+                  <h4 class="text-sm font-medium text-neutral-700 dark:text-neutral-300 transition-colors duration-normal">Success</h4>
+                  <button class="bg-success-500 dark:bg-success-600 hover:bg-success-600 dark:hover:bg-success-700 text-white shadow-md rounded-lg px-6 py-3 font-medium transition-all duration-normal active:scale-98">
+                    Success Button
+                  </button>
+                </div>
+
+                <!-- Icon -->
+                <div class="space-y-3">
+                  <h4 class="text-sm font-medium text-neutral-700 dark:text-neutral-300 transition-colors duration-normal">Icon</h4>
+                  <button class="bg-primary-500 dark:bg-primary-600 hover:bg-primary-600 dark:hover:bg-primary-700 text-white shadow-md rounded-lg px-6 py-3 font-medium transition-all duration-normal active:scale-98 flex items-center gap-2">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
+                    </svg>
+                    Add Item
+                  </button>
+                </div>
+
+                <!-- Loading -->
+                <div class="space-y-3">
+                  <h4 class="text-sm font-medium text-neutral-700 dark:text-neutral-300 transition-colors duration-normal">Loading</h4>
+                  <button class="bg-primary-500 dark:bg-primary-600 text-white shadow-md rounded-lg px-6 py-3 font-medium transition-all duration-normal cursor-not-allowed opacity-75 flex items-center gap-2" disabled>
+                    <svg class="w-4 h-4 animate-spin" fill="none" viewBox="0 0 24 24">
+                      <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                      <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                    </svg>
+                    Loading...
+                  </button>
+                </div>
+
+                <!-- Disabled -->
+                <div class="space-y-3">
+                  <h4 class="text-sm font-medium text-neutral-700 dark:text-neutral-300 transition-colors duration-normal">Disabled</h4>
+                  <button class="bg-neutral-300 dark:bg-neutral-700 text-neutral-500 dark:text-neutral-400 rounded-lg px-6 py-3 font-medium cursor-not-allowed transition-colors duration-normal" disabled>
+                    Disabled Button
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- HTML Tab -->
+          <div id="types-html" class="tab-content hidden w-[768px]">
+            <div class="bg-neutral-900 dark:bg-neutral-950 rounded-lg overflow-hidden">
+              <div class="w-full">
+                <pre class="p-6 text-sm overflow-x-auto"><code class="language-html whitespace-pre break-words" style="word-break: break-all; max-width: 100%;">&lt;!-- Primary Button --&gt;
+&lt;button class="bg-primary-500 dark:bg-primary-600 hover:bg-primary-600 dark:hover:bg-primary-700 text-white shadow-md rounded-lg px-6 py-3 font-medium transition-all duration-normal active:scale-98"&gt;
+  Primary Button
+&lt;/button&gt;
+
+&lt;!-- Secondary Button --&gt;
+&lt;button class="bg-neutral-100 dark:bg-neutral-800 hover:bg-neutral-200 dark:hover:bg-neutral-700 text-neutral-700 dark:text-neutral-200 border border-neutral-200 dark:border-neutral-700 rounded-lg px-6 py-3 font-medium transition-all duration-normal active:scale-98"&gt;
+  Secondary Button
+&lt;/button&gt;
+
+&lt;!-- Outline Button --&gt;
+&lt;button class="bg-transparent hover:bg-primary-50 dark:hover:bg-primary-900/20 text-primary-600 dark:text-primary-400 border border-primary-300 dark:border-primary-600 rounded-lg px-6 py-3 font-medium transition-all duration-normal active:scale-98"&gt;
+  Outline Button
+&lt;/button&gt;
+
+&lt;!-- Ghost Button --&gt;
+&lt;button class="bg-transparent hover:bg-primary-50 dark:hover:bg-primary-900/20 text-primary-500 dark:text-primary-400 rounded-lg px-6 py-3 font-medium transition-all duration-normal active:scale-98"&gt;
+  Ghost Button
+&lt;/button&gt;
+
+&lt;!-- Danger Button --&gt;
+&lt;button class="bg-error-500 dark:bg-error-600 hover:bg-error-600 dark:hover:bg-error-700 text-white shadow-md rounded-lg px-6 py-3 font-medium transition-all duration-normal active:scale-98"&gt;
+  Danger Button
+&lt;/button&gt;
+
+&lt;!-- Success Button --&gt;
+&lt;button class="bg-success-500 dark:bg-success-600 hover:bg-success-600 dark:hover:bg-success-700 text-white shadow-md rounded-lg px-6 py-3 font-medium transition-all duration-normal active:scale-98"&gt;
+  Success Button
+&lt;/button&gt;
+
+&lt;!-- Icon Button --&gt;
+&lt;button class="bg-primary-500 dark:bg-primary-600 hover:bg-primary-600 dark:hover:bg-primary-700 text-white shadow-md rounded-lg px-6 py-3 font-medium transition-all duration-normal active:scale-98 flex items-center gap-2"&gt;
+  &lt;svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"&gt;
+    &lt;path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"&gt;&lt;/path&gt;
+  &lt;/svg&gt;
+  Add Item
+&lt;/button&gt;
+
+&lt;!-- Loading Button --&gt;
+&lt;button class="bg-primary-500 dark:bg-primary-600 text-white shadow-md rounded-lg px-6 py-3 font-medium transition-all duration-normal cursor-not-allowed opacity-75 flex items-center gap-2" disabled&gt;
+  &lt;svg class="w-4 h-4 animate-spin" fill="none" viewBox="0 0 24 24"&gt;
+    &lt;circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"&gt;&lt;/circle&gt;
+    &lt;path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"&gt;&lt;/path&gt;
+  &lt;/svg&gt;
+  Loading...
+&lt;/button&gt;
+
+&lt;!-- Disabled Button --&gt;
+&lt;button class="bg-neutral-300 dark:bg-neutral-700 text-neutral-500 dark:text-neutral-400 rounded-lg px-6 py-3 font-medium cursor-not-allowed transition-colors duration-normal" disabled&gt;
+  Disabled Button
+&lt;/button&gt;</code></pre>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Button Sizes Section -->
+        <section id="button-sizes" class="mb-16">
+          <!-- Clean Section Header -->
+          <div class="mb-8">
+            <div class="flex items-center justify-between mb-6">
+              <div>
+                <h2 class="text-2xl font-semibold text-neutral-900 dark:text-neutral-100 mb-2">Button Sizes</h2>
+                <p class="text-neutral-600 dark:text-neutral-400">Three button sizes for different hierarchical levels and contexts.</p>
+              </div>
+              <div class="flex items-center gap-3">
+                <button data-theme-toggle class="p-2 rounded-lg bg-neutral-100 dark:bg-neutral-800 hover:bg-neutral-200 dark:hover:bg-neutral-700 text-neutral-600 dark:text-neutral-400 transition-colors duration-normal" aria-label="Toggle theme">
+                  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path>
+                  </svg>
+                </button>
+                <button 
+                  id="copy-sizes-btn"
+                  class="flex items-center gap-2 px-4 py-2 bg-neutral-100 dark:bg-neutral-800 hover:bg-neutral-200 dark:hover:bg-neutral-700 text-neutral-700 dark:text-neutral-300 rounded-lg text-sm font-medium transition-colors duration-normal"
+                >
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
+                  </svg>
+                  Copy
+                </button>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Tabs -->
+          <div class="mb-6">
+            <nav class="inline-flex bg-neutral-100 dark:bg-neutral-800 rounded-lg p-1 transition-colors duration-normal">
+              <button class="tab-button active px-4 py-2 rounded-md bg-white dark:bg-neutral-700 text-neutral-900 dark:text-neutral-100 font-medium text-sm shadow-sm transition-all duration-normal" data-tab="sizes-preview">
+                Preview
+              </button>
+              <button class="tab-button px-4 py-2 rounded-md text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-100 font-medium text-sm transition-all duration-normal" data-tab="sizes-html">
+                HTML
+              </button>
+            </nav>
+          </div>
+
+          <!-- Preview Tab -->
+          <div id="sizes-preview" class="tab-content">
+            <div class="bg-white dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700 rounded-lg p-8 transition-colors duration-normal">
+              <div class="flex flex-wrap items-center gap-4">
+                <!-- Small -->
+                <button class="bg-primary-500 dark:bg-primary-600 hover:bg-primary-600 dark:hover:bg-primary-700 text-white shadow-md rounded-lg px-4 py-2 font-medium text-sm transition-all duration-normal active:scale-98">
+                  Small
+                </button>
+                
+                <!-- Medium (Default) -->
+                <button class="bg-primary-500 dark:bg-primary-600 hover:bg-primary-600 dark:hover:bg-primary-700 text-white shadow-md rounded-lg px-6 py-3 font-medium transition-all duration-normal active:scale-98">
+                  Medium
+                </button>
+                
+                <!-- Large -->
+                <button class="bg-primary-500 dark:bg-primary-600 hover:bg-primary-600 dark:hover:bg-primary-700 text-white shadow-md rounded-lg px-8 py-4 font-medium text-lg transition-all duration-normal active:scale-98">
+                  Large
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- HTML Tab -->
+          <div id="sizes-html" class="tab-content hidden w-[768px]">
+            <div class="bg-neutral-900 dark:bg-neutral-950 rounded-lg overflow-hidden">
+              <div class="w-full">
+                <pre class="p-6 text-sm overflow-x-auto"><code class="language-html whitespace-pre break-words" style="word-break: break-all; max-width: 100%;">&lt;!-- Small Button --&gt;
+&lt;button class="bg-primary-500 dark:bg-primary-600 hover:bg-primary-600 dark:hover:bg-primary-700 text-white shadow-md rounded-lg px-4 py-2 font-medium text-sm transition-all duration-normal active:scale-98"&gt;
+  Small
+&lt;/button&gt;
+
+&lt;!-- Medium Button (Default) --&gt;
+&lt;button class="bg-primary-500 dark:bg-primary-600 hover:bg-primary-600 dark:hover:bg-primary-700 text-white shadow-md rounded-lg px-6 py-3 font-medium transition-all duration-normal active:scale-98"&gt;
+  Medium
+&lt;/button&gt;
+
+&lt;!-- Large Button --&gt;
+&lt;button class="bg-primary-500 dark:bg-primary-600 hover:bg-primary-600 dark:hover:bg-primary-700 text-white shadow-md rounded-lg px-8 py-4 font-medium text-lg transition-all duration-normal active:scale-98"&gt;
+  Large
+&lt;/button&gt;</code></pre>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Icon and Loading States Section -->
+        <section id="button-states" class="mb-16">
+          <!-- Clean Section Header -->
+          <div class="mb-8">
+            <div class="flex items-center justify-between mb-6">
+              <div>
+                <h2 class="text-2xl font-semibold text-neutral-900 dark:text-neutral-100 mb-2">Icon & Loading States</h2>
+                <p class="text-neutral-600 dark:text-neutral-400">Button variations with icons, loading spinners, and disabled states.</p>
+              </div>
+              <div class="flex items-center gap-3">
+                <button data-theme-toggle class="p-2 rounded-lg bg-neutral-100 dark:bg-neutral-800 hover:bg-neutral-200 dark:hover:bg-neutral-700 text-neutral-600 dark:text-neutral-400 transition-colors duration-normal" aria-label="Toggle theme">
+                  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path>
+                  </svg>
+                </button>
+                <button 
+                  id="copy-states-btn"
+                  class="flex items-center gap-2 px-4 py-2 bg-neutral-100 dark:bg-neutral-800 hover:bg-neutral-200 dark:hover:bg-neutral-700 text-neutral-700 dark:text-neutral-300 rounded-lg text-sm font-medium transition-colors duration-normal"
+                >
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
+                  </svg>
+                  Copy
+                </button>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Tabs -->
+          <div class="mb-6">
+            <nav class="inline-flex bg-neutral-100 dark:bg-neutral-800 rounded-lg p-1 transition-colors duration-normal">
+              <button class="tab-button active px-4 py-2 rounded-md bg-white dark:bg-neutral-700 text-neutral-900 dark:text-neutral-100 font-medium text-sm shadow-sm transition-all duration-normal" data-tab="states-preview">
+                Preview
+              </button>
+              <button class="tab-button px-4 py-2 rounded-md text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-100 font-medium text-sm transition-all duration-normal" data-tab="states-html">
+                HTML
+              </button>
+            </nav>
+          </div>
+
+          <!-- Preview Tab -->
+          <div id="states-preview" class="tab-content">
+            <div class="bg-white dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700 rounded-lg p-8 transition-colors duration-normal">
+              <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Icon Only -->
+                <div class="space-y-3">
+                  <h4 class="text-sm font-medium text-neutral-700 dark:text-neutral-300 transition-colors duration-normal">Icon Only</h4>
+                  <button class="bg-primary-500 dark:bg-primary-600 hover:bg-primary-600 dark:hover:bg-primary-700 text-white shadow-md rounded-lg p-3 transition-all duration-normal active:scale-98" aria-label="Settings">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path>
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                    </svg>
+                  </button>
+                </div>
+
+                <!-- With Icon -->
+                <div class="space-y-3">
+                  <h4 class="text-sm font-medium text-neutral-700 dark:text-neutral-300 transition-colors duration-normal">With Icon</h4>
+                  <button class="bg-primary-500 dark:bg-primary-600 hover:bg-primary-600 dark:hover:bg-primary-700 text-white shadow-md rounded-lg px-6 py-3 font-medium transition-all duration-normal active:scale-98 flex items-center gap-2">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
+                    </svg>
+                    Add Item
+                  </button>
+                </div>
+
+                <!-- Loading -->
+                <div class="space-y-3">
+                  <h4 class="text-sm font-medium text-neutral-700 dark:text-neutral-300 transition-colors duration-normal">Loading</h4>
+                  <button class="bg-primary-500 dark:bg-primary-600 text-white shadow-md rounded-lg px-6 py-3 font-medium transition-all duration-normal cursor-not-allowed opacity-75 flex items-center gap-2" disabled>
+                    <svg class="w-4 h-4 animate-spin" fill="none" viewBox="0 0 24 24">
+                      <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                      <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                    </svg>
+                    Loading...
+                  </button>
+                </div>
+
+                <!-- Disabled -->
+                <div class="space-y-3">
+                  <h4 class="text-sm font-medium text-neutral-700 dark:text-neutral-300 transition-colors duration-normal">Disabled</h4>
+                  <button class="bg-neutral-300 dark:bg-neutral-700 text-neutral-500 dark:text-neutral-400 rounded-lg px-6 py-3 font-medium cursor-not-allowed transition-colors duration-normal" disabled>
+                    Disabled
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- HTML Tab -->
+          <div id="states-html" class="tab-content hidden w-[768px]">
+            <div class="bg-neutral-900 dark:bg-neutral-950 rounded-lg overflow-hidden">
+              <div class="w-full">
+                <pre class="p-6 text-sm overflow-x-auto"><code class="language-html whitespace-pre break-words" style="word-break: break-all; max-width: 100%;">&lt;!-- Icon Only Button --&gt;
+&lt;button class="bg-primary-500 dark:bg-primary-600 hover:bg-primary-600 dark:hover:bg-primary-700 text-white shadow-md rounded-lg p-3 transition-all duration-normal active:scale-98" aria-label="Settings"&gt;
+  &lt;svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"&gt;
+    &lt;path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"&gt;&lt;/path&gt;
+    &lt;path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"&gt;&lt;/path&gt;
+  &lt;/svg&gt;
+&lt;/button&gt;
+
+&lt;!-- Button with Icon --&gt;
+&lt;button class="bg-primary-500 dark:bg-primary-600 hover:bg-primary-600 dark:hover:bg-primary-700 text-white shadow-md rounded-lg px-6 py-3 font-medium transition-all duration-normal active:scale-98 flex items-center gap-2"&gt;
+  &lt;svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"&gt;
+    &lt;path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"&gt;&lt;/path&gt;
+  &lt;/svg&gt;
+  Add Item
+&lt;/button&gt;
+
+&lt;!-- Loading Button --&gt;
+&lt;button class="bg-primary-500 dark:bg-primary-600 text-white shadow-md rounded-lg px-6 py-3 font-medium transition-all duration-normal cursor-not-allowed opacity-75 flex items-center gap-2" disabled&gt;
+  &lt;svg class="w-4 h-4 animate-spin" fill="none" viewBox="0 0 24 24"&gt;
+    &lt;circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"&gt;&lt;/circle&gt;
+    &lt;path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"&gt;&lt;/path&gt;
+  &lt;/svg&gt;
+  Loading...
+&lt;/button&gt;
+
+&lt;!-- Disabled Button --&gt;
+&lt;button class="bg-neutral-300 dark:bg-neutral-700 text-neutral-500 dark:text-neutral-400 rounded-lg px-6 py-3 font-medium cursor-not-allowed transition-colors duration-normal" disabled&gt;
+  Disabled
+&lt;/button&gt;</code></pre>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Usage Guidelines -->
+        <div class="bg-white dark:bg-neutral-950 border border-neutral-900 dark:border-neutral-100 rounded-lg p-4 mb-8 transition-colors duration-normal">
+          <h3 class="text-sm font-medium text-neutral-900 dark:text-neutral-100 mb-2 transition-colors duration-normal">Usage Guidelines</h3>
+          <ul class="text-sm text-neutral-900 dark:text-neutral-100 space-y-1 transition-colors duration-normal">
+            <li>• Use Primary buttons for main actions (save, submit, continue)</li>
+            <li>• Use Secondary buttons for supporting actions (cancel, back)</li>
+            <li>• Use Ghost buttons for subtle actions (learn more, view details)</li>
+            <li>• Maintain consistent button sizes within the same context</li>
+          </ul>
+        </div>
+
+        <!-- Accessibility Notes -->
+        <div class="bg-white dark:bg-neutral-950 border border-neutral-900 dark:border-neutral-100 rounded-lg p-4 transition-colors duration-normal">
+          <h3 class="text-sm font-medium text-neutral-900 dark:text-neutral-100 mb-2 transition-colors duration-normal">Accessibility Features</h3>
+          <ul class="text-sm text-neutral-900 dark:text-neutral-100 space-y-1 transition-colors duration-normal">
+            <li>• ARIA labels and roles for screen readers</li>
+            <li>• Keyboard navigation support (Tab, Enter, Space)</li>
+            <li>• Focus indicators with proper contrast ratios</li>
+            <li>• Disabled state clearly indicated</li>
+          </ul>
+        </div>
+      </main>
+
+      <!-- Footer will be injected here -->
+      <div id="footer-container"></div>
+    </div>
+  </div>
+
+  <!-- Initialize shared components and functionality -->
+  <script type="module">
+    import { generateHeader, generateSidebar, generateFooter, initializeSharedComponents } from '/src/shared/components.js';
+    import { themeManager } from '/src/shared/theme.js';
+    import { toast } from '/src/shared/toast.js';
+
+    // Initialize page
+    document.addEventListener('DOMContentLoaded', function() {
+      // Inject shared components
+      document.getElementById('header-container').innerHTML = generateHeader('documentation');
+      document.getElementById('sidebar-container').innerHTML = generateSidebar('button');
+      document.getElementById('footer-container').innerHTML = generateFooter();
+
+      // Initialize shared functionality
+      initializeSharedComponents();
+      themeManager.initializeToggleButtons();
+
+      // Tab functionality
+      const tabButtons = document.querySelectorAll('.tab-button');
+      
+      tabButtons.forEach(button => {
+        button.addEventListener('click', () => {
+          const targetTab = button.getAttribute('data-tab');
+          const section = button.closest('section');
+          
+          // Remove active class from all tab buttons in this section
+          section.querySelectorAll('.tab-button').forEach(btn => {
+            btn.classList.remove('active', 'bg-white', 'dark:bg-neutral-700', 'text-neutral-900', 'dark:text-neutral-100', 'shadow-sm');
+            btn.classList.add('text-neutral-600', 'dark:text-neutral-400');
+          });
+          
+          // Add active class to clicked button
+          button.classList.add('active', 'bg-white', 'dark:bg-neutral-700', 'text-neutral-900', 'dark:text-neutral-100', 'shadow-sm');
+          button.classList.remove('text-neutral-600', 'dark:text-neutral-400');
+          
+          // Hide all tab contents in this section
+          section.querySelectorAll('.tab-content').forEach(content => {
+            content.classList.add('hidden');
+          });
+          
+          // Show target tab content
+          const targetContent = section.querySelector(`#${targetTab}`);
+          if (targetContent) {
+            targetContent.classList.remove('hidden');
+          }
+        });
+      });
+
+      // Copy functionality
+      const copyButtons = document.querySelectorAll('[id^="copy-"]');
+      copyButtons.forEach(button => {
+        button.addEventListener('click', () => {
+          const section = button.closest('section');
+          const htmlTab = section.querySelector('[id$="-html"]');
+          
+          if (htmlTab) {
+            const codeElement = htmlTab.querySelector('code');
+            if (codeElement) {
+              navigator.clipboard.writeText(codeElement.textContent).then(() => {
+                toast.success('Code copied to clipboard!');
+              }).catch(() => {
+                toast.error('Failed to copy code');
+              });
+            }
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html> 
