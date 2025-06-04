@@ -148,20 +148,53 @@ export function generateSidebar(currentElement = '') {
     },
     'Blocks': {
       'Hero Sections': [
-        { name: 'Hero', path: '/src/blocks/hero/', status: 'pending' },
-        { name: 'Feature', path: '/src/blocks/feature/', status: 'pending' },
-        { name: 'Call to Action', path: '/src/blocks/cta/', status: 'pending' },
-        { name: 'Weather', path: '/src/blocks/weather/', status: 'pending' }
+        { name: 'Hero', path: '/src/blocks/hero-sections/hero/', status: 'complete' },
+        { name: 'Feature', path: '/src/blocks/hero-sections/feature/', status: 'pending' },
+        { name: 'Call to Action', path: '/src/blocks/hero-sections/cta/', status: 'pending' },
+        { name: 'Weather', path: '/src/blocks/hero-sections/weather/', status: 'pending' }
       ],
-      'Content': [
-        { name: 'Article', path: '/src/blocks/article/', status: 'pending' },
-        { name: 'Blog', path: '/src/blocks/blog/', status: 'pending' },
-        { name: 'News', path: '/src/blocks/news/', status: 'pending' },
-        { name: 'FAQ', path: '/src/blocks/faq/', status: 'pending' },
-        { name: 'Testimonial', path: '/src/blocks/testimonial/', status: 'pending' },
-        { name: 'Team', path: '/src/blocks/team/', status: 'pending' },
-        { name: 'Gallery', path: '/src/blocks/gallery/', status: 'pending' },
-        { name: 'Pricing', path: '/src/blocks/pricing/', status: 'pending' }
+      'Content Sections': [
+        { name: 'Article', path: '/src/blocks/content-sections/article/', status: 'pending' },
+        { name: 'Blog', path: '/src/blocks/content-sections/blog/', status: 'pending' },
+        { name: 'News', path: '/src/blocks/content-sections/news/', status: 'pending' },
+        { name: 'FAQ', path: '/src/blocks/content-sections/faq/', status: 'pending' },
+        { name: 'Testimonial', path: '/src/blocks/content-sections/testimonial/', status: 'pending' },
+        { name: 'Team', path: '/src/blocks/content-sections/team/', status: 'pending' },
+        { name: 'Gallery', path: '/src/blocks/content-sections/gallery/', status: 'pending' },
+        { name: 'Pricing', path: '/src/blocks/content-sections/pricing/', status: 'pending' }
+      ],
+      'Navigation Blocks': [
+        { name: 'Header', path: '/src/blocks/navigation-blocks/header/', status: 'pending' },
+        { name: 'Footer', path: '/src/blocks/navigation-blocks/footer/', status: 'pending' },
+        { name: 'Breadcrumb', path: '/src/blocks/navigation-blocks/breadcrumb/', status: 'pending' },
+        { name: 'Sidebar', path: '/src/blocks/navigation-blocks/sidebar/', status: 'pending' }
+      ],
+      'E-commerce': [
+        { name: 'Shopping Cart', path: '/src/blocks/e-commerce/shopping-cart/', status: 'pending' },
+        { name: 'Profile', path: '/src/blocks/e-commerce/profile/', status: 'pending' },
+        { name: 'Review', path: '/src/blocks/e-commerce/review/', status: 'pending' },
+        { name: 'Product', path: '/src/blocks/e-commerce/product/', status: 'pending' },
+        { name: 'Checkout', path: '/src/blocks/e-commerce/checkout/', status: 'pending' }
+      ],
+      'Media & Communication': [
+        { name: 'Carousel', path: '/src/blocks/media-communication/carousel/', status: 'pending' },
+        { name: 'Timeline', path: '/src/blocks/media-communication/timeline/', status: 'pending' },
+        { name: 'Stats', path: '/src/blocks/media-communication/stats/', status: 'pending' },
+        { name: 'Contact', path: '/src/blocks/media-communication/contact/', status: 'pending' },
+        { name: 'Social', path: '/src/blocks/media-communication/social/', status: 'pending' },
+        { name: 'Newsletter', path: '/src/blocks/media-communication/newsletter/', status: 'pending' }
+      ],
+      'Feedback & Status': [
+        { name: 'Error', path: '/src/blocks/feedback-status/error/', status: 'pending' },
+        { name: 'Loading', path: '/src/blocks/feedback-status/loading/', status: 'pending' },
+        { name: 'Modal', path: '/src/blocks/feedback-status/modal/', status: 'pending' },
+        { name: 'Banner', path: '/src/blocks/feedback-status/banner/', status: 'pending' }
+      ],
+      'Specialized': [
+        { name: 'Login', path: '/src/blocks/specialized/login/', status: 'pending' },
+        { name: 'Steps', path: '/src/blocks/specialized/steps/', status: 'pending' },
+        { name: 'Table', path: '/src/blocks/specialized/table/', status: 'pending' },
+        { name: 'Tabs', path: '/src/blocks/specialized/tabs/', status: 'pending' }
       ]
     }
   };
@@ -200,18 +233,28 @@ export function generateSidebar(currentElement = '') {
 
       items.forEach(item => {
         const isActive = currentElement.toLowerCase() === item.name.toLowerCase();
-        const statusIcon = isActive ? 
-          '<div class="w-2 h-2 bg-neutral-900 dark:bg-neutral-100 rounded-full"></div>' : 
-          '';
+        const isComplete = item.status === 'complete';
+        
+        // Status icons: checkmark for completed items only, dot for active items
+        let statusIcon = '';
+        if (isComplete && !isActive) {
+          // Green checkmark for completed items (but not currently active)
+          statusIcon = `<svg class="w-4 h-4 text-success-500 dark:text-success-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>`;
+        } else if (isActive) {
+          // Primary dot for currently active item
+          statusIcon = `<div class="w-2 h-2 bg-primary-500 dark:bg-primary-400 rounded-full"></div>`;
+        }
         
         sidebarHtml += `
           <li class="sidebar-item" data-element="${item.name.toLowerCase()}">
             <a href="${item.path}" class="flex items-center justify-between text-sm py-1 px-2 rounded-md transition-colors duration-normal ${
               isActive 
                 ? 'bg-primary-100 dark:bg-primary-900/30 text-primary-600 dark:text-primary-400' 
-                : 'text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-100 hover:bg-neutral-100 dark:hover:bg-neutral-700'
+                : isComplete 
+                  ? 'text-neutral-700 dark:text-neutral-300 hover:text-neutral-900 dark:hover:text-neutral-100 hover:bg-neutral-100 dark:hover:bg-neutral-700'
+                  : 'text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-100 hover:bg-neutral-100 dark:hover:bg-neutral-700'
             }">
-              <span>${item.name}</span>
+              <span class="${isComplete ? 'font-medium' : ''}">${item.name}</span>
               ${statusIcon}
             </a>
           </li>

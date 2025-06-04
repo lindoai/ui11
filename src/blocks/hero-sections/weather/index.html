@@ -1,0 +1,837 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weather - UI11 Design System</title>
+  <link href="/src/style.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-markup.min.js"></script>
+</head>
+<body class="min-h-screen bg-white dark:bg-neutral-950">
+  <div class="flex min-h-screen">
+    <div id="sidebar-container"></div>
+    <div class="flex-1 flex flex-col ml-64 mt-16">
+      <div id="header-container"></div>
+      <main class="flex-1 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <!-- Page Header -->
+        <div class="mb-12">
+          <h1 class="text-4xl font-semibold text-neutral-900 dark:text-neutral-100 mb-4">Weather</h1>
+          <p class="text-lg text-neutral-600 dark:text-neutral-400 mb-6 max-w-3xl leading-relaxed">
+            Weather-focused hero sections combining atmospheric data with engaging design to create immersive experiences for weather apps, travel sites, and location-based services.
+          </p>
+        </div>
+
+        <!-- Current Weather Widget -->
+        <section id="weather-current" class="mb-16">
+          <div class="mb-8">
+            <div class="flex items-center justify-between mb-6">
+              <div>
+                <h2 class="text-2xl font-semibold text-neutral-900 dark:text-neutral-100 mb-2">Current Weather Widget</h2>
+                <p class="text-neutral-600 dark:text-neutral-400">Clean weather display with current conditions and temperature.</p>
+              </div>
+              <button id="copy-current-btn" class="flex items-center gap-2 px-4 py-2 bg-neutral-100 dark:bg-neutral-800 hover:bg-neutral-200 dark:hover:bg-neutral-700 text-neutral-700 dark:text-neutral-300 rounded-lg text-sm font-medium transition-colors">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
+                </svg>
+                Copy
+              </button>
+            </div>
+          </div>
+
+          <div class="mb-6">
+            <nav class="inline-flex bg-neutral-100 dark:bg-neutral-800 rounded-lg p-1">
+              <button class="tab-button active px-4 py-2 rounded-md bg-white dark:bg-neutral-700 text-neutral-900 dark:text-neutral-100 font-medium text-sm shadow-sm transition-all" data-tab="current-preview">
+                Preview
+              </button>
+              <button class="tab-button px-4 py-2 rounded-md text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-100 font-medium text-sm transition-all" data-tab="current-html">
+                HTML
+              </button>
+            </nav>
+          </div>
+
+          <div id="current-preview" class="tab-content">
+            <div class="bg-neutral-50 dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-700 rounded-lg overflow-hidden">
+              <section class="bg-gradient-to-br from-blue-400 via-blue-500 to-blue-600 dark:from-blue-600 dark:via-blue-700 dark:to-blue-800 py-20 lg:py-32 relative overflow-hidden">
+                <!-- Background Elements -->
+                <div class="absolute inset-0 bg-white/10 dark:bg-white/5"></div>
+                <div class="absolute top-10 left-10 w-32 h-32 bg-white/10 rounded-full blur-xl"></div>
+                <div class="absolute bottom-10 right-10 w-24 h-24 bg-white/10 rounded-full blur-lg"></div>
+                
+                <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative">
+                  <div class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-white/20 text-white mb-6">
+                    📍 San Francisco, CA
+                  </div>
+                  
+                  <div class="mb-8">
+                    <div class="text-8xl lg:text-9xl font-light text-white mb-4">
+                      72°
+                    </div>
+                    <div class="flex items-center justify-center gap-3 text-white/90 mb-4">
+                      <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12 2C8.14 2 5 5.14 5 9c0 2.38 1.19 4.47 3 5.74V17c0 .55.45 1 1 1h6c.55 0 1-.45 1-1v-2.26c1.81-1.27 3-3.36 3-5.74 0-3.86-3.14-7-7-7zm0 2c2.76 0 5 2.24 5 5 0 1.64-.8 3.09-2.03 4l-.47.35V16h-5v-2.65l-.47-.35C7.8 12.09 7 10.64 7 9c0-2.76 2.24-5 5-5z"/>
+                      </svg>
+                      <span class="text-2xl font-medium">Partly Cloudy</span>
+                    </div>
+                    <p class="text-white/80 text-lg">Feels like 75° • Humidity 65% • Wind 8 mph</p>
+                  </div>
+                  
+                  <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-white/90 text-center">
+                    <div class="bg-white/10 backdrop-blur rounded-lg p-4">
+                      <div class="text-sm opacity-80">High</div>
+                      <div class="text-xl font-semibold">78°</div>
+                    </div>
+                    <div class="bg-white/10 backdrop-blur rounded-lg p-4">
+                      <div class="text-sm opacity-80">Low</div>
+                      <div class="text-xl font-semibold">64°</div>
+                    </div>
+                    <div class="bg-white/10 backdrop-blur rounded-lg p-4">
+                      <div class="text-sm opacity-80">UV Index</div>
+                      <div class="text-xl font-semibold">6</div>
+                    </div>
+                    <div class="bg-white/10 backdrop-blur rounded-lg p-4">
+                      <div class="text-sm opacity-80">Pressure</div>
+                      <div class="text-xl font-semibold">30.2</div>
+                    </div>
+                  </div>
+                </div>
+              </section>
+            </div>
+          </div>
+
+          <div id="current-html" class="tab-content hidden w-[768px]">
+            <div class="bg-neutral-900 dark:bg-neutral-950 rounded-lg overflow-hidden">
+              <pre class="p-6 text-sm overflow-x-auto"><code class="language-html">&lt;section class="bg-gradient-to-br from-blue-400 via-blue-500 to-blue-600 dark:from-blue-600 dark:via-blue-700 dark:to-blue-800 py-20 lg:py-32 relative overflow-hidden"&gt;
+  &lt;!-- Background Elements --&gt;
+  &lt;div class="absolute inset-0 bg-white/10 dark:bg-white/5"&gt;&lt;/div&gt;
+  &lt;div class="absolute top-10 left-10 w-32 h-32 bg-white/10 rounded-full blur-xl"&gt;&lt;/div&gt;
+  &lt;div class="absolute bottom-10 right-10 w-24 h-24 bg-white/10 rounded-full blur-lg"&gt;&lt;/div&gt;
+  
+  &lt;div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative"&gt;
+    &lt;div class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-white/20 text-white mb-6"&gt;
+      📍 San Francisco, CA
+    &lt;/div&gt;
+    
+    &lt;div class="mb-8"&gt;
+      &lt;div class="text-8xl lg:text-9xl font-light text-white mb-4"&gt;
+        72°
+      &lt;/div&gt;
+      &lt;div class="flex items-center justify-center gap-3 text-white/90 mb-4"&gt;
+        &lt;svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"&gt;
+          &lt;path d="M12 2C8.14 2 5 5.14 5 9c0 2.38 1.19 4.47 3 5.74V17c0 .55.45 1 1 1h6c.55 0 1-.45 1-1v-2.26c1.81-1.27 3-3.36 3-5.74 0-3.86-3.14-7-7-7z"/&gt;
+        &lt;/svg&gt;
+        &lt;span class="text-2xl font-medium"&gt;Partly Cloudy&lt;/span&gt;
+      &lt;/div&gt;
+      &lt;p class="text-white/80 text-lg"&gt;Feels like 75° • Humidity 65% • Wind 8 mph&lt;/p&gt;
+    &lt;/div&gt;
+    
+    &lt;div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-white/90 text-center"&gt;
+      &lt;div class="bg-white/10 backdrop-blur rounded-lg p-4"&gt;
+        &lt;div class="text-sm opacity-80"&gt;High&lt;/div&gt;
+        &lt;div class="text-xl font-semibold"&gt;78°&lt;/div&gt;
+      &lt;/div&gt;
+      &lt;!-- More weather stats... --&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/section&gt;</code></pre>
+            </div>
+          </div>
+        </section>
+
+        <!-- Location-based Weather -->
+        <section id="weather-location" class="mb-16">
+          <div class="mb-8">
+            <div class="flex items-center justify-between mb-6">
+              <div>
+                <h2 class="text-2xl font-semibold text-neutral-900 dark:text-neutral-100 mb-2">Location-based Weather</h2>
+                <p class="text-neutral-600 dark:text-neutral-400">Weather display with location selection and multiple city comparison.</p>
+              </div>
+              <button id="copy-location-btn" class="flex items-center gap-2 px-4 py-2 bg-neutral-100 dark:bg-neutral-800 hover:bg-neutral-200 dark:hover:bg-neutral-700 text-neutral-700 dark:text-neutral-300 rounded-lg text-sm font-medium transition-colors">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
+                </svg>
+                Copy
+              </button>
+            </div>
+          </div>
+
+          <div class="mb-6">
+            <nav class="inline-flex bg-neutral-100 dark:bg-neutral-800 rounded-lg p-1">
+              <button class="tab-button active px-4 py-2 rounded-md bg-white dark:bg-neutral-700 text-neutral-900 dark:text-neutral-100 font-medium text-sm shadow-sm transition-all" data-tab="location-preview">
+                Preview
+              </button>
+              <button class="tab-button px-4 py-2 rounded-md text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-100 font-medium text-sm transition-all" data-tab="location-html">
+                HTML
+              </button>
+            </nav>
+          </div>
+
+          <div id="location-preview" class="tab-content">
+            <div class="bg-neutral-50 dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-700 rounded-lg overflow-hidden">
+              <section class="bg-gradient-to-r from-orange-400 via-red-400 to-pink-500 dark:from-orange-600 dark:via-red-600 dark:to-pink-700 py-20 lg:py-32">
+                <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                  <div class="text-center mb-12">
+                    <h2 class="text-4xl lg:text-5xl font-semibold text-white mb-4">Weather Around the World</h2>
+                    <p class="text-white/80 text-xl max-w-2xl mx-auto">Compare weather conditions across your favorite destinations in real-time.</p>
+                  </div>
+                  
+                  <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <!-- New York -->
+                    <div class="bg-white/10 backdrop-blur rounded-2xl p-6 text-white">
+                      <div class="flex items-center justify-between mb-4">
+                        <div>
+                          <h3 class="text-xl font-semibold">New York</h3>
+                          <p class="text-white/70 text-sm">United States</p>
+                        </div>
+                        <div class="text-right">
+                          <div class="text-3xl font-light">68°F</div>
+                          <div class="text-white/70 text-xs">Rainy</div>
+                        </div>
+                      </div>
+                      <div class="flex items-center gap-4 text-sm text-white/80">
+                        <div>🌧️ Rain</div>
+                        <div>💧 78%</div>
+                        <div>💨 12 mph</div>
+                      </div>
+                    </div>
+                    
+                    <!-- London -->
+                    <div class="bg-white/10 backdrop-blur rounded-2xl p-6 text-white">
+                      <div class="flex items-center justify-between mb-4">
+                        <div>
+                          <h3 class="text-xl font-semibold">London</h3>
+                          <p class="text-white/70 text-sm">United Kingdom</p>
+                        </div>
+                        <div class="text-right">
+                          <div class="text-3xl font-light">59°F</div>
+                          <div class="text-white/70 text-xs">Cloudy</div>
+                        </div>
+                      </div>
+                      <div class="flex items-center gap-4 text-sm text-white/80">
+                        <div>☁️ Clouds</div>
+                        <div>💧 65%</div>
+                        <div>💨 8 mph</div>
+                      </div>
+                    </div>
+                    
+                    <!-- Tokyo -->
+                    <div class="bg-white/10 backdrop-blur rounded-2xl p-6 text-white">
+                      <div class="flex items-center justify-between mb-4">
+                        <div>
+                          <h3 class="text-xl font-semibold">Tokyo</h3>
+                          <p class="text-white/70 text-sm">Japan</p>
+                        </div>
+                        <div class="text-right">
+                          <div class="text-3xl font-light">77°F</div>
+                          <div class="text-white/70 text-xs">Sunny</div>
+                        </div>
+                      </div>
+                      <div class="flex items-center gap-4 text-sm text-white/80">
+                        <div>☀️ Clear</div>
+                        <div>💧 45%</div>
+                        <div>💨 5 mph</div>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div class="text-center mt-8">
+                    <button class="bg-white/20 hover:bg-white/30 text-white px-6 py-3 rounded-lg font-medium transition-colors">
+                      Add More Cities
+                    </button>
+                  </div>
+                </div>
+              </section>
+            </div>
+          </div>
+
+          <div id="location-html" class="tab-content hidden w-[768px]">
+            <div class="bg-neutral-900 dark:bg-neutral-950 rounded-lg overflow-hidden">
+              <pre class="p-6 text-sm overflow-x-auto"><code class="language-html">&lt;section class="bg-gradient-to-r from-orange-400 via-red-400 to-pink-500 dark:from-orange-600 dark:via-red-600 dark:to-pink-700 py-20 lg:py-32"&gt;
+  &lt;div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8"&gt;
+    &lt;div class="text-center mb-12"&gt;
+      &lt;h2 class="text-4xl lg:text-5xl font-semibold text-white mb-4"&gt;Weather Around the World&lt;/h2&gt;
+      &lt;p class="text-white/80 text-xl max-w-2xl mx-auto"&gt;Compare weather conditions across your favorite destinations in real-time.&lt;/p&gt;
+    &lt;/div&gt;
+    
+    &lt;div class="grid grid-cols-1 md:grid-cols-3 gap-6"&gt;
+      &lt;div class="bg-white/10 backdrop-blur rounded-2xl p-6 text-white"&gt;
+        &lt;div class="flex items-center justify-between mb-4"&gt;
+          &lt;div&gt;
+            &lt;h3 class="text-xl font-semibold"&gt;New York&lt;/h3&gt;
+            &lt;p class="text-white/70 text-sm"&gt;United States&lt;/p&gt;
+          &lt;/div&gt;
+          &lt;div class="text-right"&gt;
+            &lt;div class="text-3xl font-light"&gt;68°F&lt;/div&gt;
+            &lt;div class="text-white/70 text-xs"&gt;Rainy&lt;/div&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class="flex items-center gap-4 text-sm text-white/80"&gt;
+          &lt;div&gt;🌧️ Rain&lt;/div&gt;
+          &lt;div&gt;💧 78%&lt;/div&gt;
+          &lt;div&gt;💨 12 mph&lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;!-- More cities... --&gt;
+    &lt;/div&gt;
+    
+    &lt;div class="text-center mt-8"&gt;
+      &lt;button class="bg-white/20 hover:bg-white/30 text-white px-6 py-3 rounded-lg font-medium transition-colors"&gt;
+        Add More Cities
+      &lt;/button&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/section&gt;</code></pre>
+            </div>
+          </div>
+        </section>
+
+        <!-- Weather Forecast -->
+        <section id="weather-forecast" class="mb-16">
+          <div class="mb-8">
+            <div class="flex items-center justify-between mb-6">
+              <div>
+                <h2 class="text-2xl font-semibold text-neutral-900 dark:text-neutral-100 mb-2">Weather Forecast</h2>
+                <p class="text-neutral-600 dark:text-neutral-400">Extended weather forecast with 7-day outlook and hourly details.</p>
+              </div>
+              <button id="copy-forecast-btn" class="flex items-center gap-2 px-4 py-2 bg-neutral-100 dark:bg-neutral-800 hover:bg-neutral-200 dark:hover:bg-neutral-700 text-neutral-700 dark:text-neutral-300 rounded-lg text-sm font-medium transition-colors">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
+                </svg>
+                Copy
+              </button>
+            </div>
+          </div>
+
+          <div class="mb-6">
+            <nav class="inline-flex bg-neutral-100 dark:bg-neutral-800 rounded-lg p-1">
+              <button class="tab-button active px-4 py-2 rounded-md bg-white dark:bg-neutral-700 text-neutral-900 dark:text-neutral-100 font-medium text-sm shadow-sm transition-all" data-tab="forecast-preview">
+                Preview
+              </button>
+              <button class="tab-button px-4 py-2 rounded-md text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-100 font-medium text-sm transition-all" data-tab="forecast-html">
+                HTML
+              </button>
+            </nav>
+          </div>
+
+          <div id="forecast-preview" class="tab-content">
+            <div class="bg-neutral-50 dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-700 rounded-lg overflow-hidden">
+              <section class="bg-gradient-to-br from-green-400 via-teal-400 to-blue-500 dark:from-green-600 dark:via-teal-600 dark:to-blue-700 py-20 lg:py-32">
+                <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                  <div class="text-center mb-12">
+                    <h2 class="text-4xl lg:text-5xl font-semibold text-white mb-4">7-Day Weather Forecast</h2>
+                    <p class="text-white/80 text-xl">Plan ahead with our detailed weather predictions for Los Angeles, CA</p>
+                  </div>
+                  
+                  <div class="bg-white/10 backdrop-blur rounded-2xl p-6 mb-8">
+                    <div class="grid grid-cols-7 gap-4 text-center text-white">
+                      <div class="p-4 bg-white/10 rounded-lg">
+                        <div class="text-sm font-medium mb-2">Today</div>
+                        <div class="text-3xl mb-2">☀️</div>
+                        <div class="text-lg font-semibold">75°</div>
+                        <div class="text-sm text-white/70">62°</div>
+                      </div>
+                      <div class="p-4 rounded-lg">
+                        <div class="text-sm font-medium mb-2">Tue</div>
+                        <div class="text-3xl mb-2">⛅</div>
+                        <div class="text-lg font-semibold">73°</div>
+                        <div class="text-sm text-white/70">60°</div>
+                      </div>
+                      <div class="p-4 rounded-lg">
+                        <div class="text-sm font-medium mb-2">Wed</div>
+                        <div class="text-3xl mb-2">🌧️</div>
+                        <div class="text-lg font-semibold">68°</div>
+                        <div class="text-sm text-white/70">55°</div>
+                      </div>
+                      <div class="p-4 rounded-lg">
+                        <div class="text-sm font-medium mb-2">Thu</div>
+                        <div class="text-3xl mb-2">🌧️</div>
+                        <div class="text-lg font-semibold">65°</div>
+                        <div class="text-sm text-white/70">52°</div>
+                      </div>
+                      <div class="p-4 rounded-lg">
+                        <div class="text-sm font-medium mb-2">Fri</div>
+                        <div class="text-3xl mb-2">⛅</div>
+                        <div class="text-lg font-semibold">70°</div>
+                        <div class="text-sm text-white/70">58°</div>
+                      </div>
+                      <div class="p-4 rounded-lg">
+                        <div class="text-sm font-medium mb-2">Sat</div>
+                        <div class="text-3xl mb-2">☀️</div>
+                        <div class="text-lg font-semibold">76°</div>
+                        <div class="text-sm text-white/70">63°</div>
+                      </div>
+                      <div class="p-4 rounded-lg">
+                        <div class="text-sm font-medium mb-2">Sun</div>
+                        <div class="text-3xl mb-2">☀️</div>
+                        <div class="text-lg font-semibold">78°</div>
+                        <div class="text-sm text-white/70">65°</div>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div class="text-center">
+                    <button class="bg-white/20 hover:bg-white/30 text-white px-6 py-3 rounded-lg font-medium transition-colors mr-4">
+                      Hourly Forecast
+                    </button>
+                    <button class="bg-white hover:bg-white/90 text-green-600 px-6 py-3 rounded-lg font-medium transition-colors">
+                      View Details
+                    </button>
+                  </div>
+                </div>
+              </section>
+            </div>
+          </div>
+
+          <div id="forecast-html" class="tab-content hidden w-[768px]">
+            <div class="bg-neutral-900 dark:bg-neutral-950 rounded-lg overflow-hidden">
+              <pre class="p-6 text-sm overflow-x-auto"><code class="language-html">&lt;section class="bg-gradient-to-br from-green-400 via-teal-400 to-blue-500 dark:from-green-600 dark:via-teal-600 dark:to-blue-700 py-20 lg:py-32"&gt;
+  &lt;div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8"&gt;
+    &lt;div class="text-center mb-12"&gt;
+      &lt;h2 class="text-4xl lg:text-5xl font-semibold text-white mb-4"&gt;7-Day Weather Forecast&lt;/h2&gt;
+      &lt;p class="text-white/80 text-xl"&gt;Plan ahead with our detailed weather predictions for Los Angeles, CA&lt;/p&gt;
+    &lt;/div&gt;
+    
+    &lt;div class="bg-white/10 backdrop-blur rounded-2xl p-6 mb-8"&gt;
+      &lt;div class="grid grid-cols-7 gap-4 text-center text-white"&gt;
+        &lt;div class="p-4 bg-white/10 rounded-lg"&gt;
+          &lt;div class="text-sm font-medium mb-2"&gt;Today&lt;/div&gt;
+          &lt;div class="text-3xl mb-2"&gt;☀️&lt;/div&gt;
+          &lt;div class="text-lg font-semibold"&gt;75°&lt;/div&gt;
+          &lt;div class="text-sm text-white/70"&gt;62°&lt;/div&gt;
+        &lt;/div&gt;
+        &lt;!-- More forecast days... --&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    
+    &lt;div class="text-center"&gt;
+      &lt;button class="bg-white/20 hover:bg-white/30 text-white px-6 py-3 rounded-lg font-medium transition-colors mr-4"&gt;
+        Hourly Forecast
+      &lt;/button&gt;
+      &lt;button class="bg-white hover:bg-white/90 text-green-600 px-6 py-3 rounded-lg font-medium transition-colors"&gt;
+        View Details
+      &lt;/button&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/section&gt;</code></pre>
+            </div>
+          </div>
+        </section>
+
+        <!-- Weather Dashboard -->
+        <section id="weather-dashboard" class="mb-16">
+          <div class="mb-8">
+            <div class="flex items-center justify-between mb-6">
+              <div>
+                <h2 class="text-2xl font-semibold text-neutral-900 dark:text-neutral-100 mb-2">Weather Dashboard</h2>
+                <p class="text-neutral-600 dark:text-neutral-400">Comprehensive weather dashboard with detailed metrics and air quality.</p>
+              </div>
+              <button id="copy-dashboard-btn" class="flex items-center gap-2 px-4 py-2 bg-neutral-100 dark:bg-neutral-800 hover:bg-neutral-200 dark:hover:bg-neutral-700 text-neutral-700 dark:text-neutral-300 rounded-lg text-sm font-medium transition-colors">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
+                </svg>
+                Copy
+              </button>
+            </div>
+          </div>
+
+          <div class="mb-6">
+            <nav class="inline-flex bg-neutral-100 dark:bg-neutral-800 rounded-lg p-1">
+              <button class="tab-button active px-4 py-2 rounded-md bg-white dark:bg-neutral-700 text-neutral-900 dark:text-neutral-100 font-medium text-sm shadow-sm transition-all" data-tab="dashboard-preview">
+                Preview
+              </button>
+              <button class="tab-button px-4 py-2 rounded-md text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-100 font-medium text-sm transition-all" data-tab="dashboard-html">
+                HTML
+              </button>
+            </nav>
+          </div>
+
+          <div id="dashboard-preview" class="tab-content">
+            <div class="bg-neutral-50 dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-700 rounded-lg overflow-hidden">
+              <section class="bg-gradient-to-br from-slate-600 via-slate-700 to-slate-800 dark:from-slate-800 dark:via-slate-900 dark:to-neutral-950 py-20 lg:py-32">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                  <div class="text-center mb-12">
+                    <h2 class="text-4xl lg:text-5xl font-semibold text-white mb-4">Complete Weather Dashboard</h2>
+                    <p class="text-white/80 text-xl">Everything you need to know about current weather conditions</p>
+                  </div>
+                  
+                  <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                    <!-- Main Weather -->
+                    <div class="lg:col-span-2 bg-white/10 backdrop-blur rounded-2xl p-8">
+                      <div class="flex items-center justify-between mb-6">
+                        <div>
+                          <h3 class="text-2xl font-semibold text-white">Chicago, IL</h3>
+                          <p class="text-white/70">Monday, Dec 18 • 2:30 PM</p>
+                        </div>
+                        <div class="text-6xl">🌨️</div>
+                      </div>
+                      <div class="flex items-baseline gap-2 mb-6">
+                        <span class="text-6xl font-light text-white">28°F</span>
+                        <span class="text-white/70 text-xl">Feels like 20°F</span>
+                      </div>
+                      <div class="grid grid-cols-4 gap-4 text-white/80">
+                        <div class="text-center">
+                          <div class="text-2xl mb-1">💨</div>
+                          <div class="text-sm">Wind</div>
+                          <div class="font-semibold">15 mph</div>
+                        </div>
+                        <div class="text-center">
+                          <div class="text-2xl mb-1">💧</div>
+                          <div class="text-sm">Humidity</div>
+                          <div class="font-semibold">85%</div>
+                        </div>
+                        <div class="text-center">
+                          <div class="text-2xl mb-1">👁️</div>
+                          <div class="text-sm">Visibility</div>
+                          <div class="font-semibold">2 mi</div>
+                        </div>
+                        <div class="text-center">
+                          <div class="text-2xl mb-1">📊</div>
+                          <div class="text-sm">Pressure</div>
+                          <div class="font-semibold">29.8</div>
+                        </div>
+                      </div>
+                    </div>
+                    
+                    <!-- Air Quality -->
+                    <div class="bg-white/10 backdrop-blur rounded-2xl p-6">
+                      <h4 class="text-xl font-semibold text-white mb-4">Air Quality</h4>
+                      <div class="text-center mb-4">
+                        <div class="text-4xl font-bold text-warning-400">85</div>
+                        <div class="text-warning-300 text-sm">Moderate</div>
+                      </div>
+                      <div class="space-y-3 text-white/80 text-sm">
+                        <div class="flex justify-between">
+                          <span>PM2.5</span>
+                          <span>25 μg/m³</span>
+                        </div>
+                        <div class="flex justify-between">
+                          <span>PM10</span>
+                          <span>45 μg/m³</span>
+                        </div>
+                        <div class="flex justify-between">
+                          <span>O3</span>
+                          <span>120 μg/m³</span>
+                        </div>
+                        <div class="flex justify-between">
+                          <span>NO2</span>
+                          <span>35 μg/m³</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </section>
+            </div>
+          </div>
+
+          <div id="dashboard-html" class="tab-content hidden w-[768px]">
+            <div class="bg-neutral-900 dark:bg-neutral-950 rounded-lg overflow-hidden">
+              <pre class="p-6 text-sm overflow-x-auto"><code class="language-html">&lt;section class="bg-gradient-to-br from-slate-600 via-slate-700 to-slate-800 dark:from-slate-800 dark:via-slate-900 dark:to-neutral-950 py-20 lg:py-32"&gt;
+  &lt;div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"&gt;
+    &lt;div class="text-center mb-12"&gt;
+      &lt;h2 class="text-4xl lg:text-5xl font-semibold text-white mb-4"&gt;Complete Weather Dashboard&lt;/h2&gt;
+      &lt;p class="text-white/80 text-xl"&gt;Everything you need to know about current weather conditions&lt;/p&gt;
+    &lt;/div&gt;
+    
+    &lt;div class="grid grid-cols-1 lg:grid-cols-3 gap-8"&gt;
+      &lt;div class="lg:col-span-2 bg-white/10 backdrop-blur rounded-2xl p-8"&gt;
+        &lt;div class="flex items-center justify-between mb-6"&gt;
+          &lt;div&gt;
+            &lt;h3 class="text-2xl font-semibold text-white"&gt;Chicago, IL&lt;/h3&gt;
+            &lt;p class="text-white/70"&gt;Monday, Dec 18 • 2:30 PM&lt;/p&gt;
+          &lt;/div&gt;
+          &lt;div class="text-6xl"&gt;🌨️&lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class="flex items-baseline gap-2 mb-6"&gt;
+          &lt;span class="text-6xl font-light text-white"&gt;28°F&lt;/span&gt;
+          &lt;span class="text-white/70 text-xl"&gt;Feels like 20°F&lt;/span&gt;
+        &lt;/div&gt;
+        &lt;div class="grid grid-cols-4 gap-4 text-white/80"&gt;
+          &lt;div class="text-center"&gt;
+            &lt;div class="text-2xl mb-1"&gt;💨&lt;/div&gt;
+            &lt;div class="text-sm"&gt;Wind&lt;/div&gt;
+            &lt;div class="font-semibold"&gt;15 mph&lt;/div&gt;
+          &lt;/div&gt;
+          &lt;!-- More metrics... --&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+      
+      &lt;div class="bg-white/10 backdrop-blur rounded-2xl p-6"&gt;
+        &lt;h4 class="text-xl font-semibold text-white mb-4"&gt;Air Quality&lt;/h4&gt;
+        &lt;div class="text-center mb-4"&gt;
+          &lt;div class="text-4xl font-bold text-warning-400"&gt;85&lt;/div&gt;
+          &lt;div class="text-warning-300 text-sm"&gt;Moderate&lt;/div&gt;
+        &lt;/div&gt;
+        &lt;!-- Air quality details... --&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/section&gt;</code></pre>
+            </div>
+          </div>
+        </section>
+
+        <!-- Weather Alerts -->
+        <section id="weather-alerts" class="mb-16">
+          <div class="mb-8">
+            <div class="flex items-center justify-between mb-6">
+              <div>
+                <h2 class="text-2xl font-semibold text-neutral-900 dark:text-neutral-100 mb-2">Weather Alerts</h2>
+                <p class="text-neutral-600 dark:text-neutral-400">Emergency weather alerts and severe weather warnings system.</p>
+              </div>
+              <button id="copy-alerts-btn" class="flex items-center gap-2 px-4 py-2 bg-neutral-100 dark:bg-neutral-800 hover:bg-neutral-200 dark:hover:bg-neutral-700 text-neutral-700 dark:text-neutral-300 rounded-lg text-sm font-medium transition-colors">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
+                </svg>
+                Copy
+              </button>
+            </div>
+          </div>
+
+          <div class="mb-6">
+            <nav class="inline-flex bg-neutral-100 dark:bg-neutral-800 rounded-lg p-1">
+              <button class="tab-button active px-4 py-2 rounded-md bg-white dark:bg-neutral-700 text-neutral-900 dark:text-neutral-100 font-medium text-sm shadow-sm transition-all" data-tab="alerts-preview">
+                Preview
+              </button>
+              <button class="tab-button px-4 py-2 rounded-md text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-100 font-medium text-sm transition-all" data-tab="alerts-html">
+                HTML
+              </button>
+            </nav>
+          </div>
+
+          <div id="alerts-preview" class="tab-content">
+            <div class="bg-neutral-50 dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-700 rounded-lg overflow-hidden">
+              <section class="bg-gradient-to-br from-red-500 via-orange-500 to-yellow-500 dark:from-red-700 dark:via-orange-700 dark:to-yellow-700 py-20 lg:py-32 relative">
+                <!-- Alert Animation -->
+                <div class="absolute inset-0 bg-red-500/20 animate-pulse"></div>
+                
+                <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative">
+                  <div class="inline-flex items-center px-4 py-2 rounded-full text-sm font-bold bg-red-600 text-white mb-6 animate-bounce">
+                    🚨 SEVERE WEATHER ALERT
+                  </div>
+                  
+                  <h2 class="text-4xl lg:text-5xl font-bold text-white mb-6">
+                    Hurricane Warning
+                  </h2>
+                  
+                  <div class="bg-white/10 backdrop-blur rounded-2xl p-8 mb-8 text-white">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-left">
+                      <div>
+                        <h3 class="text-xl font-semibold mb-4">⚠️ Current Conditions</h3>
+                        <ul class="space-y-2 text-white/90">
+                          <li>• Category 3 Hurricane approaching</li>
+                          <li>• Winds up to 120 mph expected</li>
+                          <li>• Heavy rainfall 8-12 inches</li>
+                          <li>• Storm surge 10-15 feet</li>
+                          <li>• Landfall expected: 6:00 PM today</li>
+                        </ul>
+                      </div>
+                      <div>
+                        <h3 class="text-xl font-semibold mb-4">📍 Affected Areas</h3>
+                        <ul class="space-y-2 text-white/90">
+                          <li>• Miami-Dade County</li>
+                          <li>• Broward County</li>
+                          <li>• Palm Beach County</li>
+                          <li>• Monroe County (Keys)</li>
+                          <li>• Coastal Collier County</li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <button class="bg-white hover:bg-red-50 text-red-600 px-8 py-4 rounded-lg text-lg font-bold transition-colors shadow-lg">
+                      View Evacuation Routes
+                    </button>
+                    <button class="bg-red-600 hover:bg-red-700 text-white px-8 py-4 rounded-lg text-lg font-bold transition-colors border-2 border-white">
+                      Emergency Contacts
+                    </button>
+                  </div>
+                  
+                  <p class="text-white/80 text-sm mt-6">
+                    Last updated: Dec 18, 2024 at 2:45 PM EST • Next update at 5:00 PM EST
+                  </p>
+                </div>
+              </section>
+            </div>
+          </div>
+
+          <div id="alerts-html" class="tab-content hidden w-[768px]">
+            <div class="bg-neutral-900 dark:bg-neutral-950 rounded-lg overflow-hidden">
+              <pre class="p-6 text-sm overflow-x-auto"><code class="language-html">&lt;section class="bg-gradient-to-br from-red-500 via-orange-500 to-yellow-500 dark:from-red-700 dark:via-orange-700 dark:to-yellow-700 py-20 lg:py-32 relative"&gt;
+  &lt;div class="absolute inset-0 bg-red-500/20 animate-pulse"&gt;&lt;/div&gt;
+  
+  &lt;div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative"&gt;
+    &lt;div class="inline-flex items-center px-4 py-2 rounded-full text-sm font-bold bg-red-600 text-white mb-6 animate-bounce"&gt;
+      🚨 SEVERE WEATHER ALERT
+    &lt;/div&gt;
+    
+    &lt;h2 class="text-4xl lg:text-5xl font-bold text-white mb-6"&gt;
+      Hurricane Warning
+    &lt;/h2&gt;
+    
+    &lt;div class="bg-white/10 backdrop-blur rounded-2xl p-8 mb-8 text-white"&gt;
+      &lt;div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-left"&gt;
+        &lt;div&gt;
+          &lt;h3 class="text-xl font-semibold mb-4"&gt;⚠️ Current Conditions&lt;/h3&gt;
+          &lt;ul class="space-y-2 text-white/90"&gt;
+            &lt;li&gt;• Category 3 Hurricane approaching&lt;/li&gt;
+            &lt;li&gt;• Winds up to 120 mph expected&lt;/li&gt;
+            &lt;li&gt;• Heavy rainfall 8-12 inches&lt;/li&gt;
+            &lt;li&gt;• Storm surge 10-15 feet&lt;/li&gt;
+            &lt;li&gt;• Landfall expected: 6:00 PM today&lt;/li&gt;
+          &lt;/ul&gt;
+        &lt;/div&gt;
+        &lt;div&gt;
+          &lt;h3 class="text-xl font-semibold mb-4"&gt;📍 Affected Areas&lt;/h3&gt;
+          &lt;ul class="space-y-2 text-white/90"&gt;
+            &lt;li&gt;• Miami-Dade County&lt;/li&gt;
+            &lt;li&gt;• Broward County&lt;/li&gt;
+            &lt;li&gt;• Palm Beach County&lt;/li&gt;
+            &lt;li&gt;• Monroe County (Keys)&lt;/li&gt;
+            &lt;li&gt;• Coastal Collier County&lt;/li&gt;
+          &lt;/ul&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    
+    &lt;div class="flex flex-col sm:flex-row gap-4 justify-center"&gt;
+      &lt;button class="bg-white hover:bg-red-50 text-red-600 px-8 py-4 rounded-lg text-lg font-bold transition-colors shadow-lg"&gt;
+        View Evacuation Routes
+      &lt;/button&gt;
+      &lt;button class="bg-red-600 hover:bg-red-700 text-white px-8 py-4 rounded-lg text-lg font-bold transition-colors border-2 border-white"&gt;
+        Emergency Contacts
+      &lt;/button&gt;
+    &lt;/div&gt;
+    
+    &lt;p class="text-white/80 text-sm mt-6"&gt;
+      Last updated: Dec 18, 2024 at 2:45 PM EST • Next update at 5:00 PM EST
+    &lt;/p&gt;
+  &lt;/div&gt;
+&lt;/section&gt;</code></pre>
+            </div>
+          </div>
+        </section>
+
+        <!-- Usage Guidelines -->
+        <div class="bg-white dark:bg-neutral-950 border border-neutral-900 dark:border-neutral-100 rounded-lg p-4 mb-8">
+          <h3 class="text-sm font-medium text-neutral-900 dark:text-neutral-100 mb-2">Usage Guidelines</h3>
+          <ul class="text-sm text-neutral-900 dark:text-neutral-100 space-y-1">
+            <li>• Use appropriate color schemes that reflect weather conditions</li>
+            <li>• Include location information for context and personalization</li>
+            <li>• Display temperature prominently with clear, readable typography</li>
+            <li>• Provide additional weather details like humidity, wind, and pressure</li>
+            <li>• Use weather icons and visual elements to enhance understanding</li>
+            <li>• Consider time-based themes (day/night) for better user experience</li>
+          </ul>
+        </div>
+
+        <!-- Accessibility Features -->
+        <div class="bg-white dark:bg-neutral-950 border border-neutral-900 dark:border-neutral-100 rounded-lg p-4">
+          <h3 class="text-sm font-medium text-neutral-900 dark:text-neutral-100 mb-2">Accessibility Features</h3>
+          <ul class="text-sm text-neutral-900 dark:text-neutral-100 space-y-1">
+            <li>• High contrast text against weather-themed backgrounds</li>
+            <li>• Semantic HTML structure for screen reader compatibility</li>
+            <li>• Alt text for weather icons and visual elements</li>
+            <li>• Clear temperature readings in multiple units when needed</li>
+            <li>• Keyboard navigation support for interactive elements</li>
+            <li>• Color-independent communication of weather conditions</li>
+          </ul>
+        </div>
+      </main>
+      <div id="footer-container"></div>
+    </div>
+  </div>
+
+  <script type="module">
+    import { generateHeader, generateSidebar, generateFooter, initializeSharedComponents } from '/src/shared/components.js';
+    import { themeManager } from '/src/shared/theme.js';
+    import { toast } from '/src/shared/toast.js';
+
+    document.addEventListener('DOMContentLoaded', function() {
+      // Inject shared components
+      document.getElementById('header-container').innerHTML = generateHeader('blocks');
+      document.getElementById('sidebar-container').innerHTML = generateSidebar('weather');
+      document.getElementById('footer-container').innerHTML = generateFooter();
+      
+      // Initialize shared functionality
+      initializeSharedComponents();
+      themeManager.initializeToggleButtons();
+      
+      // Initialize tab switching
+      initializeTabs();
+      
+      // Initialize copy buttons
+      initializeCopyButtons();
+    });
+
+    function initializeCopyButtons() {
+      document.getElementById('copy-current-btn')?.addEventListener('click', () => {
+        const code = document.querySelector('#current-html code').textContent;
+        navigator.clipboard.writeText(code).then(() => {
+          toast.show('Current weather code copied!', 'success');
+        });
+      });
+
+      document.getElementById('copy-location-btn')?.addEventListener('click', () => {
+        const code = document.querySelector('#location-html code').textContent;
+        navigator.clipboard.writeText(code).then(() => {
+          toast.show('Location weather code copied!', 'success');
+        });
+      });
+
+      document.getElementById('copy-forecast-btn')?.addEventListener('click', () => {
+        const code = document.querySelector('#forecast-html code').textContent;
+        navigator.clipboard.writeText(code).then(() => {
+          toast.show('Weather forecast code copied!', 'success');
+        });
+      });
+
+      document.getElementById('copy-dashboard-btn')?.addEventListener('click', () => {
+        const code = document.querySelector('#dashboard-html code').textContent;
+        navigator.clipboard.writeText(code).then(() => {
+          toast.show('Weather dashboard code copied!', 'success');
+        });
+      });
+
+      document.getElementById('copy-alerts-btn')?.addEventListener('click', () => {
+        const code = document.querySelector('#alerts-html code').textContent;
+        navigator.clipboard.writeText(code).then(() => {
+          toast.show('Weather alerts code copied!', 'success');
+        });
+      });
+    }
+
+    function initializeTabs() {
+      const tabButtons = document.querySelectorAll('.tab-button');
+
+      tabButtons.forEach(button => {
+        button.addEventListener('click', () => {
+          const targetTab = button.getAttribute('data-tab');
+          const section = button.closest('section');
+          
+          // Update active states within the section
+          section.querySelectorAll('.tab-button').forEach(btn => {
+            btn.classList.remove('active', 'bg-white', 'dark:bg-neutral-700', 'text-neutral-900', 'dark:text-neutral-100', 'shadow-sm');
+            btn.classList.add('text-neutral-600', 'dark:text-neutral-400');
+          });
+          
+          button.classList.add('active', 'bg-white', 'dark:bg-neutral-700', 'text-neutral-900', 'dark:text-neutral-100', 'shadow-sm');
+          button.classList.remove('text-neutral-600', 'dark:text-neutral-400');
+          
+          // Show/hide content within the section
+          section.querySelectorAll('.tab-content').forEach(content => {
+            content.classList.add('hidden');
+          });
+          
+          const targetContent = section.querySelector(`#${targetTab}`);
+          if (targetContent) {
+            targetContent.classList.remove('hidden');
+          }
+        });
+      });
+    }
+  </script>
+</body>
+</html> 

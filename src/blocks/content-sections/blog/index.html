@@ -1,0 +1,1390 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog - UI11 Design System</title>
+  <link href="/src/style.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-markup.min.js"></script>
+</head>
+<body class="min-h-screen bg-white dark:bg-neutral-950">
+  <div class="flex min-h-screen">
+    <div id="sidebar-container"></div>
+    <div class="flex-1 flex flex-col ml-64 mt-16">
+      <div id="header-container"></div>
+      <main class="flex-1 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <!-- Page Header -->
+        <div class="mb-12">
+          <h1 class="text-4xl font-semibold text-neutral-900 dark:text-neutral-100 mb-4">Blog</h1>
+          <p class="text-lg text-neutral-600 dark:text-neutral-400 mb-6 max-w-3xl leading-relaxed">
+            Blog layouts for content discovery, featured posts, categories, and timeline presentations with engaging designs and optimal content organization.
+          </p>
+        </div>
+
+        <!-- Blog Grid -->
+        <section id="blog-grid" class="mb-16">
+          <div class="mb-8">
+            <div class="flex items-center justify-between mb-6">
+              <div>
+                <h2 class="text-2xl font-semibold text-neutral-900 dark:text-neutral-100 mb-2">Blog Grid</h2>
+                <p class="text-neutral-600 dark:text-neutral-400">Modern grid layout for blog posts with featured content and pagination.</p>
+              </div>
+              <button id="copy-grid-btn" class="flex items-center gap-2 px-4 py-2 bg-neutral-100 dark:bg-neutral-800 hover:bg-neutral-200 dark:hover:bg-neutral-700 text-neutral-700 dark:text-neutral-300 rounded-lg text-sm font-medium transition-colors">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
+                </svg>
+                Copy
+              </button>
+            </div>
+          </div>
+
+          <div class="mb-6">
+            <nav class="inline-flex bg-neutral-100 dark:bg-neutral-800 rounded-lg p-1">
+              <button class="tab-button active px-4 py-2 rounded-md bg-white dark:bg-neutral-700 text-neutral-900 dark:text-neutral-100 font-medium text-sm shadow-sm transition-all" data-tab="grid-preview">
+                Preview
+              </button>
+              <button class="tab-button px-4 py-2 rounded-md text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-100 font-medium text-sm transition-all" data-tab="grid-html">
+                HTML
+              </button>
+            </nav>
+          </div>
+
+          <div id="grid-preview" class="tab-content">
+            <div class="bg-neutral-50 dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-700 rounded-lg overflow-hidden">
+              <div class="bg-white dark:bg-neutral-950 py-16">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                  <!-- Header -->
+                  <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold text-neutral-900 dark:text-neutral-100 mb-4">Latest from Our Blog</h2>
+                    <p class="text-lg text-neutral-600 dark:text-neutral-400 max-w-2xl mx-auto">
+                      Discover insights, tutorials, and industry updates from our expert team.
+                    </p>
+                  </div>
+                  
+                  <!-- Featured Post -->
+                  <div class="mb-12">
+                    <article class="bg-white dark:bg-neutral-950 rounded-2xl border border-neutral-200 dark:border-neutral-700 overflow-hidden shadow-sm hover:shadow-lg transition-shadow duration-300">
+                      <div class="grid md:grid-cols-2 gap-0">
+                        <div class="relative">
+                          <img src="https://images.unsplash.com/photo-1517077304055-6e89abbf09b0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Featured post" class="w-full h-64 md:h-full object-cover">
+                          <div class="absolute top-4 left-4">
+                            <span class="bg-primary-600 text-white px-3 py-1 rounded-full text-sm font-medium">Featured</span>
+                          </div>
+                        </div>
+                        <div class="p-8 flex flex-col justify-center">
+                          <div class="flex items-center gap-2 text-sm text-primary-600 dark:text-primary-400 mb-3">
+                            <span class="bg-primary-50 dark:bg-primary-900/20 px-3 py-1 rounded-full">Development</span>
+                            <span class="text-neutral-400 dark:text-neutral-600">•</span>
+                            <time datetime="2024-01-20">January 20, 2024</time>
+                          </div>
+                          <h3 class="text-2xl font-bold text-neutral-900 dark:text-neutral-100 mb-4">
+                            Building Modern Web Applications with AI Integration
+                          </h3>
+                          <p class="text-neutral-600 dark:text-neutral-400 mb-6 leading-relaxed">
+                            Explore how artificial intelligence is transforming web development and learn practical implementation strategies for your next project.
+                          </p>
+                          <div class="flex items-center justify-between">
+                            <div class="flex items-center gap-3">
+                              <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=facearea&facepad=2&w=40&h=40" alt="Author" class="w-10 h-10 rounded-full">
+                              <div>
+                                <div class="font-medium text-neutral-900 dark:text-neutral-100">Alex Chen</div>
+                                <div class="text-sm text-neutral-600 dark:text-neutral-400">Senior Developer</div>
+                              </div>
+                            </div>
+                            <span class="text-sm text-neutral-500 dark:text-neutral-500">8 min read</span>
+                          </div>
+                        </div>
+                      </div>
+                    </article>
+                  </div>
+                  
+                  <!-- Blog Grid -->
+                  <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3 mb-12">
+                    <!-- Post 1 -->
+                    <article class="bg-white dark:bg-neutral-950 rounded-xl border border-neutral-200 dark:border-neutral-700 overflow-hidden hover:shadow-lg transition-shadow duration-300">
+                      <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1558655146-d09347e92766?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Design systems" class="w-full h-48 object-cover">
+                        <div class="absolute top-3 left-3">
+                          <span class="bg-purple-600 text-white px-3 py-1 rounded-full text-xs font-medium">Design</span>
+                        </div>
+                      </div>
+                      <div class="p-6">
+                        <time class="text-sm text-neutral-500 dark:text-neutral-500">January 18, 2024</time>
+                        <h3 class="text-lg font-semibold text-neutral-900 dark:text-neutral-100 mt-2 mb-3">
+                          Creating Scalable Design Systems
+                        </h3>
+                        <p class="text-neutral-600 dark:text-neutral-400 mb-4 text-sm leading-relaxed">
+                          Learn the fundamentals of building design systems that scale across products and teams.
+                        </p>
+                        <div class="flex items-center justify-between">
+                          <div class="flex items-center gap-2">
+                            <img src="https://images.unsplash.com/photo-1494790108755-2616b612e1c1?ixlib=rb-4.0.3&auto=format&fit=facearea&facepad=2&w=24&h=24&q=80" alt="Author" class="w-6 h-6 rounded-full">
+                            <span class="text-sm text-neutral-600 dark:text-neutral-400">Sarah Wilson</span>
+                          </div>
+                          <span class="text-xs text-neutral-500 dark:text-neutral-500">5 min read</span>
+                        </div>
+                      </div>
+                    </article>
+
+                    <!-- Post 2 -->
+                    <article class="bg-white dark:bg-neutral-950 rounded-xl border border-neutral-200 dark:border-neutral-700 overflow-hidden hover:shadow-lg transition-shadow duration-300">
+                      <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Performance" class="w-full h-48 object-cover">
+                        <div class="absolute top-3 left-3">
+                          <span class="bg-green-600 text-white px-3 py-1 rounded-full text-xs font-medium">Performance</span>
+                        </div>
+                      </div>
+                      <div class="p-6">
+                        <time class="text-sm text-neutral-500 dark:text-neutral-500">January 15, 2024</time>
+                        <h3 class="text-lg font-semibold text-neutral-900 dark:text-neutral-100 mt-2 mb-3">
+                          Optimizing React Performance
+                        </h3>
+                        <p class="text-neutral-600 dark:text-neutral-400 mb-4 text-sm leading-relaxed">
+                          Advanced techniques for improving React application performance and user experience.
+                        </p>
+                        <div class="flex items-center justify-between">
+                          <div class="flex items-center gap-2">
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=facearea&facepad=2&w=24&h=24&q=80" alt="Author" class="w-6 h-6 rounded-full">
+                            <span class="text-sm text-neutral-600 dark:text-neutral-400">Mike Rodriguez</span>
+                          </div>
+                          <span class="text-xs text-neutral-500 dark:text-neutral-500">12 min read</span>
+                        </div>
+                      </div>
+                    </article>
+
+                    <!-- Post 3 -->
+                    <article class="bg-white dark:bg-neutral-950 rounded-xl border border-neutral-200 dark:border-neutral-700 overflow-hidden hover:shadow-lg transition-shadow duration-300">
+                      <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1504639725590-34d0984388bd?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Security" class="w-full h-48 object-cover">
+                        <div class="absolute top-3 left-3">
+                          <span class="bg-red-600 text-white px-3 py-1 rounded-full text-xs font-medium">Security</span>
+                        </div>
+                      </div>
+                      <div class="p-6">
+                        <time class="text-sm text-neutral-500 dark:text-neutral-500">January 12, 2024</time>
+                        <h3 class="text-lg font-semibold text-neutral-900 dark:text-neutral-100 mt-2 mb-3">
+                          Web Security Best Practices
+                        </h3>
+                        <p class="text-neutral-600 dark:text-neutral-400 mb-4 text-sm leading-relaxed">
+                          Essential security measures every developer should implement in modern web applications.
+                        </p>
+                        <div class="flex items-center justify-between">
+                          <div class="flex items-center gap-2">
+                            <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&auto=format&fit=facearea&facepad=2&w=24&h=24&q=80" alt="Author" class="w-6 h-6 rounded-full">
+                            <span class="text-sm text-neutral-600 dark:text-neutral-400">Emma Davis</span>
+                          </div>
+                          <span class="text-xs text-neutral-500 dark:text-neutral-500">10 min read</span>
+                        </div>
+                      </div>
+                    </article>
+                  </div>
+                  
+                  <!-- Pagination -->
+                  <div class="flex items-center justify-center gap-2">
+                    <button class="p-2 rounded-lg bg-neutral-100 dark:bg-neutral-800 text-neutral-600 dark:text-neutral-400 hover:bg-neutral-200 dark:hover:bg-neutral-700 transition-colors disabled:opacity-50" disabled aria-label="Previous page">
+                      <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                      </svg>
+                    </button>
+                    <button class="px-3 py-2 rounded-lg bg-primary-600 text-white text-sm font-medium">1</button>
+                    <button class="px-3 py-2 rounded-lg bg-neutral-100 dark:bg-neutral-800 text-neutral-600 dark:text-neutral-400 hover:bg-neutral-200 dark:hover:bg-neutral-700 text-sm font-medium transition-colors">2</button>
+                    <button class="px-3 py-2 rounded-lg bg-neutral-100 dark:bg-neutral-800 text-neutral-600 dark:text-neutral-400 hover:bg-neutral-200 dark:hover:bg-neutral-700 text-sm font-medium transition-colors">3</button>
+                    <button class="p-2 rounded-lg bg-neutral-100 dark:bg-neutral-800 text-neutral-600 dark:text-neutral-400 hover:bg-neutral-200 dark:hover:bg-neutral-700 transition-colors" aria-label="Next page">
+                      <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div id="grid-html" class="tab-content hidden w-[768px]">
+            <div class="bg-neutral-900 dark:bg-neutral-950 rounded-lg overflow-hidden">
+              <pre class="p-6 text-sm overflow-x-auto"><code class="language-html">&lt;div class="bg-white dark:bg-neutral-950 py-16"&gt;
+  &lt;div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"&gt;
+    &lt;div class="text-center mb-12"&gt;
+      &lt;h2 class="text-3xl font-bold text-neutral-900 dark:text-neutral-100 mb-4"&gt;Latest from Our Blog&lt;/h2&gt;
+      &lt;p class="text-lg text-neutral-600 dark:text-neutral-400 max-w-2xl mx-auto"&gt;
+        Discover insights, tutorials, and industry updates from our expert team.
+      &lt;/p&gt;
+    &lt;/div&gt;
+    
+    &lt;!-- Featured Post --&gt;
+    &lt;div class="mb-12"&gt;
+      &lt;article class="bg-white dark:bg-neutral-950 rounded-2xl border border-neutral-200 dark:border-neutral-700 overflow-hidden shadow-sm hover:shadow-lg transition-shadow duration-300"&gt;
+        &lt;div class="grid md:grid-cols-2 gap-0"&gt;
+          &lt;div class="relative"&gt;
+            &lt;img src="..." alt="Featured post" class="w-full h-64 md:h-full object-cover"&gt;
+            &lt;div class="absolute top-4 left-4"&gt;
+              &lt;span class="bg-primary-600 text-white px-3 py-1 rounded-full text-sm font-medium"&gt;Featured&lt;/span&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+          &lt;div class="p-8 flex flex-col justify-center"&gt;
+            &lt;div class="flex items-center gap-2 text-sm text-primary-600 dark:text-primary-400 mb-3"&gt;
+              &lt;span class="bg-primary-50 dark:bg-primary-900/20 px-3 py-1 rounded-full"&gt;Development&lt;/span&gt;
+              &lt;span class="text-neutral-400 dark:text-neutral-600"&gt;•&lt;/span&gt;
+              &lt;time datetime="2024-01-20"&gt;January 20, 2024&lt;/time&gt;
+            &lt;/div&gt;
+            &lt;h3 class="text-2xl font-bold text-neutral-900 dark:text-neutral-100 mb-4"&gt;
+              Building Modern Web Applications with AI Integration
+            &lt;/h3&gt;
+            &lt;p class="text-neutral-600 dark:text-neutral-400 mb-6 leading-relaxed"&gt;
+              Explore how artificial intelligence is transforming web development and learn practical implementation strategies.
+            &lt;/p&gt;
+            &lt;div class="flex items-center justify-between"&gt;
+              &lt;div class="flex items-center gap-3"&gt;
+                &lt;img src="..." alt="Author" class="w-10 h-10 rounded-full"&gt;
+                &lt;div&gt;
+                  &lt;div class="font-medium text-neutral-900 dark:text-neutral-100"&gt;Alex Chen&lt;/div&gt;
+                  &lt;div class="text-sm text-neutral-600 dark:text-neutral-400"&gt;Senior Developer&lt;/div&gt;
+                &lt;/div&gt;
+              &lt;/div&gt;
+              &lt;span class="text-sm text-neutral-500 dark:text-neutral-500"&gt;8 min read&lt;/span&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/article&gt;
+    &lt;/div&gt;
+    
+    &lt;!-- Blog Grid --&gt;
+    &lt;div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3 mb-12"&gt;
+      &lt;article class="bg-white dark:bg-neutral-950 rounded-xl border border-neutral-200 dark:border-neutral-700 overflow-hidden hover:shadow-lg transition-shadow duration-300"&gt;
+        &lt;div class="relative"&gt;
+          &lt;img src="..." alt="Design systems" class="w-full h-48 object-cover"&gt;
+          &lt;div class="absolute top-3 left-3"&gt;
+            &lt;span class="bg-purple-600 text-white px-3 py-1 rounded-full text-xs font-medium"&gt;Design&lt;/span&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class="p-6"&gt;
+          &lt;time class="text-sm text-neutral-500 dark:text-neutral-500"&gt;January 18, 2024&lt;/time&gt;
+          &lt;h3 class="text-lg font-semibold text-neutral-900 dark:text-neutral-100 mt-2 mb-3"&gt;
+            Creating Scalable Design Systems
+          &lt;/h3&gt;
+          &lt;p class="text-neutral-600 dark:text-neutral-400 mb-4 text-sm leading-relaxed"&gt;
+            Learn the fundamentals of building design systems that scale across products and teams.
+          &lt;/p&gt;
+          &lt;div class="flex items-center justify-between"&gt;
+            &lt;div class="flex items-center gap-2"&gt;
+              &lt;img src="..." alt="Author" class="w-6 h-6 rounded-full"&gt;
+              &lt;span class="text-sm text-neutral-600 dark:text-neutral-400"&gt;Sarah Wilson&lt;/span&gt;
+            &lt;/div&gt;
+            &lt;span class="text-xs text-neutral-500 dark:text-neutral-500"&gt;5 min read&lt;/span&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/article&gt;
+      &lt;!-- More posts... --&gt;
+    &lt;/div&gt;
+    
+    &lt;!-- Pagination --&gt;
+    &lt;div class="flex items-center justify-center gap-2"&gt;
+      &lt;button class="p-2 rounded-lg bg-neutral-100 dark:bg-neutral-800 text-neutral-600 dark:text-neutral-400 hover:bg-neutral-200 dark:hover:bg-neutral-700 transition-colors disabled:opacity-50" disabled aria-label="Previous page"&gt;
+        &lt;svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"&gt;&lt;path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"&gt;&lt;/path&gt;&lt;/svg&gt;
+      &lt;/button&gt;
+      &lt;button class="px-3 py-2 rounded-lg bg-primary-600 text-white text-sm font-medium"&gt;1&lt;/button&gt;
+      &lt;button class="px-3 py-2 rounded-lg bg-neutral-100 dark:bg-neutral-800 text-neutral-600 dark:text-neutral-400 hover:bg-neutral-200 dark:hover:bg-neutral-700 text-sm font-medium transition-colors"&gt;2&lt;/button&gt;
+      &lt;button class="px-3 py-2 rounded-lg bg-neutral-100 dark:bg-neutral-800 text-neutral-600 dark:text-neutral-400 hover:bg-neutral-200 dark:hover:bg-neutral-700 text-sm font-medium transition-colors"&gt;3&lt;/button&gt;
+      &lt;button class="p-2 rounded-lg bg-neutral-100 dark:bg-neutral-800 text-neutral-600 dark:text-neutral-400 hover:bg-neutral-200 dark:hover:bg-neutral-700 transition-colors" aria-label="Next page"&gt;
+        &lt;svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"&gt;&lt;path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"&gt;&lt;/path&gt;&lt;/svg&gt;
+      &lt;/button&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+            </div>
+          </div>
+        </section>
+
+        <!-- Featured Posts -->
+        <section id="featured-posts" class="mb-16">
+          <div class="mb-8">
+            <div class="flex items-center justify-between mb-6">
+              <div>
+                <h2 class="text-2xl font-semibold text-neutral-900 dark:text-neutral-100 mb-2">Featured Posts</h2>
+                <p class="text-neutral-600 dark:text-neutral-400">Showcase highlighting most important or popular blog content with enhanced visual treatment.</p>
+              </div>
+              <button id="copy-featured-btn" class="flex items-center gap-2 px-4 py-2 bg-neutral-100 dark:bg-neutral-800 hover:bg-neutral-200 dark:hover:bg-neutral-700 text-neutral-700 dark:text-neutral-300 rounded-lg text-sm font-medium transition-colors">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
+                </svg>
+                Copy
+              </button>
+            </div>
+          </div>
+
+          <div class="mb-6">
+            <nav class="inline-flex bg-neutral-100 dark:bg-neutral-800 rounded-lg p-1">
+              <button class="tab-button active px-4 py-2 rounded-md bg-white dark:bg-neutral-700 text-neutral-900 dark:text-neutral-100 font-medium text-sm shadow-sm transition-all" data-tab="featured-preview">
+                Preview
+              </button>
+              <button class="tab-button px-4 py-2 rounded-md text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-100 font-medium text-sm transition-all" data-tab="featured-html">
+                HTML
+              </button>
+            </nav>
+          </div>
+
+          <div id="featured-preview" class="tab-content">
+            <div class="bg-neutral-50 dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-700 rounded-lg overflow-hidden">
+              <div class="bg-white dark:bg-neutral-950 py-16">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                  <!-- Header -->
+                  <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold text-neutral-900 dark:text-neutral-100 mb-4">Featured Articles</h2>
+                    <p class="text-lg text-neutral-600 dark:text-neutral-400 max-w-2xl mx-auto">
+                      Our most popular and impactful content, carefully curated for you.
+                    </p>
+                  </div>
+                  
+                  <!-- Featured Posts Grid -->
+                  <div class="space-y-8">
+                    <!-- Hero Featured Post -->
+                    <article class="bg-gradient-to-r from-primary-600 to-primary-800 rounded-2xl overflow-hidden shadow-xl">
+                      <div class="grid lg:grid-cols-2 gap-0">
+                        <div class="relative">
+                          <img src="https://images.unsplash.com/photo-1517077304055-6e89abbf09b0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Hero post" class="w-full h-80 lg:h-full object-cover">
+                          <div class="absolute top-6 left-6">
+                            <span class="bg-yellow-400 text-yellow-900 px-4 py-2 rounded-full text-sm font-bold">🌟 Editor's Choice</span>
+                          </div>
+                        </div>
+                        <div class="p-8 lg:p-12 text-white flex flex-col justify-center">
+                          <div class="flex items-center gap-2 text-sm mb-4">
+                            <span class="bg-white/20 px-3 py-1 rounded-full">Development</span>
+                            <span class="opacity-60">•</span>
+                            <time datetime="2024-01-20">January 20, 2024</time>
+                          </div>
+                          <h3 class="text-3xl font-bold mb-4">
+                            The Future of Web Development: AI-Powered Applications
+                          </h3>
+                          <p class="text-primary-100 mb-6 leading-relaxed text-lg">
+                            Discover how artificial intelligence is revolutionizing web development and what it means for developers.
+                          </p>
+                          <div class="flex items-center justify-between">
+                            <div class="flex items-center gap-3">
+                              <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=facearea&facepad=2&w=48&h=48&q=80" alt="Author" class="w-12 h-12 rounded-full border-2 border-white/20">
+                              <div>
+                                <div class="font-semibold">Alex Chen</div>
+                                <div class="text-primary-200 text-sm">Lead Developer</div>
+                              </div>
+                            </div>
+                            <span class="text-primary-200 text-sm">12 min read</span>
+                          </div>
+                        </div>
+                      </div>
+                    </article>
+
+                    <!-- Secondary Featured Posts -->
+                    <div class="grid md:grid-cols-2 gap-8">
+                      <article class="bg-white dark:bg-neutral-950 rounded-xl border border-neutral-200 dark:border-neutral-700 overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300">
+                        <div class="relative">
+                          <img src="https://images.unsplash.com/photo-1558655146-d09347e92766?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Design systems" class="w-full h-56 object-cover">
+                          <div class="absolute top-4 left-4">
+                            <span class="bg-purple-600 text-white px-3 py-1 rounded-full text-sm font-bold">🔥 Trending</span>
+                          </div>
+                        </div>
+                        <div class="p-8">
+                          <div class="flex items-center gap-2 text-sm text-purple-600 dark:text-purple-400 mb-3">
+                            <span class="bg-purple-50 dark:bg-purple-900/20 px-3 py-1 rounded-full">Design</span>
+                            <span class="text-neutral-400 dark:text-neutral-600">•</span>
+                            <time datetime="2024-01-18">January 18, 2024</time>
+                          </div>
+                          <h3 class="text-xl font-bold text-neutral-900 dark:text-neutral-100 mb-3">
+                            Building Design Systems That Scale
+                          </h3>
+                          <p class="text-neutral-600 dark:text-neutral-400 mb-6 leading-relaxed">
+                            Learn how to create design systems that grow with your product and team.
+                          </p>
+                          <div class="flex items-center justify-between">
+                            <div class="flex items-center gap-3">
+                              <img src="https://images.unsplash.com/photo-1494790108755-2616b612e1c1?ixlib=rb-4.0.3&auto=format&fit=facearea&facepad=2&w=40&h=40&q=80" alt="Author" class="w-10 h-10 rounded-full">
+                              <div>
+                                <div class="font-medium text-neutral-900 dark:text-neutral-100">Sarah Wilson</div>
+                                <div class="text-sm text-neutral-600 dark:text-neutral-400">Design Lead</div>
+                              </div>
+                            </div>
+                            <span class="text-sm text-neutral-500 dark:text-neutral-500">8 min read</span>
+                          </div>
+                        </div>
+                      </article>
+
+                      <article class="bg-white dark:bg-neutral-950 rounded-xl border border-neutral-200 dark:border-neutral-700 overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300">
+                        <div class="relative">
+                          <img src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Performance" class="w-full h-56 object-cover">
+                          <div class="absolute top-4 left-4">
+                            <span class="bg-green-600 text-white px-3 py-1 rounded-full text-sm font-bold">⚡ Popular</span>
+                          </div>
+                        </div>
+                        <div class="p-8">
+                          <div class="flex items-center gap-2 text-sm text-green-600 dark:text-green-400 mb-3">
+                            <span class="bg-green-50 dark:bg-green-900/20 px-3 py-1 rounded-full">Performance</span>
+                            <span class="text-neutral-400 dark:text-neutral-600">•</span>
+                            <time datetime="2024-01-15">January 15, 2024</time>
+                          </div>
+                          <h3 class="text-xl font-bold text-neutral-900 dark:text-neutral-100 mb-3">
+                            Advanced React Performance Optimization
+                          </h3>
+                          <p class="text-neutral-600 dark:text-neutral-400 mb-6 leading-relaxed">
+                            Deep dive into React performance patterns and optimization techniques.
+                          </p>
+                          <div class="flex items-center justify-between">
+                            <div class="flex items-center gap-3">
+                              <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=facearea&facepad=2&w=40&h=40&q=80" alt="Author" class="w-10 h-10 rounded-full">
+                              <div>
+                                <div class="font-medium text-neutral-900 dark:text-neutral-100">Mike Rodriguez</div>
+                                <div class="text-sm text-neutral-600 dark:text-neutral-400">Senior Engineer</div>
+                              </div>
+                            </div>
+                            <span class="text-sm text-neutral-500 dark:text-neutral-500">15 min read</span>
+                          </div>
+                        </div>
+                      </article>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div id="featured-html" class="tab-content hidden w-[768px]">
+            <div class="bg-neutral-900 dark:bg-neutral-950 rounded-lg overflow-hidden">
+              <pre class="p-6 text-sm overflow-x-auto"><code class="language-html">&lt;div class="bg-white dark:bg-neutral-950 py-16"&gt;
+  &lt;div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"&gt;
+    &lt;div class="text-center mb-12"&gt;
+      &lt;h2 class="text-3xl font-bold text-neutral-900 dark:text-neutral-100 mb-4"&gt;Featured Articles&lt;/h2&gt;
+      &lt;p class="text-lg text-neutral-600 dark:text-neutral-400 max-w-2xl mx-auto"&gt;
+        Our most popular and impactful content, carefully curated for you.
+      &lt;/p&gt;
+    &lt;/div&gt;
+    
+    &lt;div class="space-y-8"&gt;
+      &lt;!-- Hero Featured Post --&gt;
+      &lt;article class="bg-gradient-to-r from-primary-600 to-primary-800 rounded-2xl overflow-hidden shadow-xl"&gt;
+        &lt;div class="grid lg:grid-cols-2 gap-0"&gt;
+          &lt;div class="relative"&gt;
+            &lt;img src="..." alt="Hero post" class="w-full h-80 lg:h-full object-cover"&gt;
+            &lt;div class="absolute top-6 left-6"&gt;
+              &lt;span class="bg-yellow-400 text-yellow-900 px-4 py-2 rounded-full text-sm font-bold"&gt;🌟 Editor's Choice&lt;/span&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+          &lt;div class="p-8 lg:p-12 text-white flex flex-col justify-center"&gt;
+            &lt;h3 class="text-3xl font-bold mb-4"&gt;
+              The Future of Web Development: AI-Powered Applications
+            &lt;/h3&gt;
+            &lt;p class="text-primary-100 mb-6 leading-relaxed text-lg"&gt;
+              Discover how AI is revolutionizing web development and what it means for developers.
+            &lt;/p&gt;
+            &lt;div class="flex items-center justify-between"&gt;
+              &lt;div class="flex items-center gap-3"&gt;
+                &lt;img src="..." alt="Author" class="w-12 h-12 rounded-full border-2 border-white/20"&gt;
+                &lt;div&gt;
+                  &lt;div class="font-semibold"&gt;Alex Chen&lt;/div&gt;
+                  &lt;div class="text-primary-200 text-sm"&gt;Lead Developer&lt;/div&gt;
+                &lt;/div&gt;
+              &lt;/div&gt;
+              &lt;span class="text-primary-200 text-sm"&gt;12 min read&lt;/span&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/article&gt;
+
+      &lt;!-- Secondary Featured Posts --&gt;
+      &lt;div class="grid md:grid-cols-2 gap-8"&gt;
+        &lt;article class="bg-white dark:bg-neutral-950 rounded-xl border border-neutral-200 dark:border-neutral-700 overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300"&gt;
+          &lt;div class="relative"&gt;
+            &lt;img src="..." alt="Featured post" class="w-full h-56 object-cover"&gt;
+            &lt;div class="absolute top-4 left-4"&gt;
+              &lt;span class="bg-purple-600 text-white px-3 py-1 rounded-full text-sm font-bold"&gt;🔥 Trending&lt;/span&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+          &lt;div class="p-8"&gt;
+            &lt;h3 class="text-xl font-bold text-neutral-900 dark:text-neutral-100 mb-3"&gt;
+              Building Design Systems That Scale
+            &lt;/h3&gt;
+            &lt;p class="text-neutral-600 dark:text-neutral-400 mb-6 leading-relaxed"&gt;
+              Learn how to create design systems that grow with your product and team.
+            &lt;/p&gt;
+            &lt;!-- Author info --&gt;
+          &lt;/div&gt;
+        &lt;/article&gt;
+        &lt;!-- More featured posts... --&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+            </div>
+          </div>
+        </section>
+
+        <!-- Category Layout -->
+        <section id="category-layout" class="mb-16">
+          <div class="mb-8">
+            <div class="flex items-center justify-between mb-6">
+              <div>
+                <h2 class="text-2xl font-semibold text-neutral-900 dark:text-neutral-100 mb-2">Category Layout</h2>
+                <p class="text-neutral-600 dark:text-neutral-400">Blog content organized by topic categories with filtering capabilities and easy navigation.</p>
+              </div>
+              <button id="copy-category-btn" class="flex items-center gap-2 px-4 py-2 bg-neutral-100 dark:bg-neutral-800 hover:bg-neutral-200 dark:hover:bg-neutral-700 text-neutral-700 dark:text-neutral-300 rounded-lg text-sm font-medium transition-colors">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
+                </svg>
+                Copy
+              </button>
+            </div>
+          </div>
+
+          <div class="mb-6">
+            <nav class="inline-flex bg-neutral-100 dark:bg-neutral-800 rounded-lg p-1">
+              <button class="tab-button active px-4 py-2 rounded-md bg-white dark:bg-neutral-700 text-neutral-900 dark:text-neutral-100 font-medium text-sm shadow-sm transition-all" data-tab="category-preview">
+                Preview
+              </button>
+              <button class="tab-button px-4 py-2 rounded-md text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-100 font-medium text-sm transition-all" data-tab="category-html">
+                HTML
+              </button>
+            </nav>
+          </div>
+
+          <div id="category-preview" class="tab-content">
+            <div class="bg-neutral-50 dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-700 rounded-lg overflow-hidden">
+              <div class="bg-white dark:bg-neutral-950 py-16">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                  <!-- Header -->
+                  <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold text-neutral-900 dark:text-neutral-100 mb-4">Browse by Category</h2>
+                    <p class="text-lg text-neutral-600 dark:text-neutral-400 max-w-2xl mx-auto">
+                      Discover content organized by topic to find exactly what you're looking for.
+                    </p>
+                  </div>
+
+                  <!-- Category Navigation -->
+                  <div class="flex flex-wrap justify-center gap-2 mb-12">
+                    <button class="bg-primary-600 text-white px-6 py-3 rounded-lg font-medium transition-colors">
+                      All Posts (24)
+                    </button>
+                    <button class="bg-neutral-100 dark:bg-neutral-800 hover:bg-neutral-200 dark:hover:bg-neutral-700 text-neutral-700 dark:text-neutral-300 px-6 py-3 rounded-lg font-medium transition-colors">
+                      Development (8)
+                    </button>
+                    <button class="bg-neutral-100 dark:bg-neutral-800 hover:bg-neutral-200 dark:hover:bg-neutral-700 text-neutral-700 dark:text-neutral-300 px-6 py-3 rounded-lg font-medium transition-colors">
+                      Design (6)
+                    </button>
+                    <button class="bg-neutral-100 dark:bg-neutral-800 hover:bg-neutral-200 dark:hover:bg-neutral-700 text-neutral-700 dark:text-neutral-300 px-6 py-3 rounded-lg font-medium transition-colors">
+                      Business (4)
+                    </button>
+                    <button class="bg-neutral-100 dark:bg-neutral-800 hover:bg-neutral-200 dark:hover:bg-neutral-700 text-neutral-700 dark:text-neutral-300 px-6 py-3 rounded-lg font-medium transition-colors">
+                      Tutorial (6)
+                    </button>
+                  </div>
+
+                  <!-- Featured Category Section -->
+                  <div class="mb-12">
+                    <div class="bg-gradient-to-r from-blue-600 to-blue-800 rounded-2xl p-8 text-white">
+                      <div class="flex items-center justify-between">
+                        <div>
+                          <h3 class="text-2xl font-bold mb-2">Development Focus</h3>
+                          <p class="text-blue-100 mb-4">Latest coding tutorials and best practices</p>
+                          <div class="flex items-center gap-4 text-sm">
+                            <span>8 articles</span>
+                            <span>•</span>
+                            <span>Updated weekly</span>
+                          </div>
+                        </div>
+                        <div class="hidden md:block">
+                          <svg class="w-16 h-16 text-blue-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>
+                          </svg>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Posts Grid -->
+                  <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+                    <!-- Development Post -->
+                    <article class="bg-white dark:bg-neutral-950 rounded-xl border border-neutral-200 dark:border-neutral-700 overflow-hidden hover:shadow-lg transition-shadow duration-300">
+                      <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1517077304055-6e89abbf09b0?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Development" class="w-full h-48 object-cover">
+                        <div class="absolute top-3 left-3">
+                          <span class="bg-blue-600 text-white px-3 py-1 rounded-full text-xs font-medium">Development</span>
+                        </div>
+                      </div>
+                      <div class="p-6">
+                        <time class="text-sm text-neutral-500 dark:text-neutral-500">January 20, 2024</time>
+                        <h3 class="text-lg font-semibold text-neutral-900 dark:text-neutral-100 mt-2 mb-3">
+                          Modern JavaScript Patterns for 2024
+                        </h3>
+                        <p class="text-neutral-600 dark:text-neutral-400 mb-4 text-sm leading-relaxed">
+                          Explore the latest JavaScript patterns and techniques that will improve your code quality.
+                        </p>
+                        <div class="flex items-center justify-between">
+                          <div class="flex items-center gap-2">
+                            <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=facearea&facepad=2&w=24&h=24&q=80" alt="Author" class="w-6 h-6 rounded-full">
+                            <span class="text-sm text-neutral-600 dark:text-neutral-400">Alex Chen</span>
+                          </div>
+                          <span class="text-xs text-neutral-500 dark:text-neutral-500">7 min read</span>
+                        </div>
+                      </div>
+                    </article>
+
+                    <!-- Design Post -->
+                    <article class="bg-white dark:bg-neutral-950 rounded-xl border border-neutral-200 dark:border-neutral-700 overflow-hidden hover:shadow-lg transition-shadow duration-300">
+                      <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1558655146-d09347e92766?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Design" class="w-full h-48 object-cover">
+                        <div class="absolute top-3 left-3">
+                          <span class="bg-purple-600 text-white px-3 py-1 rounded-full text-xs font-medium">Design</span>
+                        </div>
+                      </div>
+                      <div class="p-6">
+                        <time class="text-sm text-neutral-500 dark:text-neutral-500">January 18, 2024</time>
+                        <h3 class="text-lg font-semibold text-neutral-900 dark:text-neutral-100 mt-2 mb-3">
+                          Color Theory in Digital Design
+                        </h3>
+                        <p class="text-neutral-600 dark:text-neutral-400 mb-4 text-sm leading-relaxed">
+                          Understanding color psychology and its impact on user experience and conversion.
+                        </p>
+                        <div class="flex items-center justify-between">
+                          <div class="flex items-center gap-2">
+                            <img src="https://images.unsplash.com/photo-1494790108755-2616b612e1c1?ixlib=rb-4.0.3&auto=format&fit=facearea&facepad=2&w=24&h=24&q=80" alt="Author" class="w-6 h-6 rounded-full">
+                            <span class="text-sm text-neutral-600 dark:text-neutral-400">Sarah Wilson</span>
+                          </div>
+                          <span class="text-xs text-neutral-500 dark:text-neutral-500">5 min read</span>
+                        </div>
+                      </div>
+                    </article>
+
+                    <!-- Business Post -->
+                    <article class="bg-white dark:bg-neutral-950 rounded-xl border border-neutral-200 dark:border-neutral-700 overflow-hidden hover:shadow-lg transition-shadow duration-300">
+                      <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1559526324-4b87b5e36e44?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Business" class="w-full h-48 object-cover">
+                        <div class="absolute top-3 left-3">
+                          <span class="bg-green-600 text-white px-3 py-1 rounded-full text-xs font-medium">Business</span>
+                        </div>
+                      </div>
+                      <div class="p-6">
+                        <time class="text-sm text-neutral-500 dark:text-neutral-500">January 16, 2024</time>
+                        <h3 class="text-lg font-semibold text-neutral-900 dark:text-neutral-100 mt-2 mb-3">
+                          Building Remote Team Culture
+                        </h3>
+                        <p class="text-neutral-600 dark:text-neutral-400 mb-4 text-sm leading-relaxed">
+                          Strategies for maintaining team cohesion and productivity in distributed teams.
+                        </p>
+                        <div class="flex items-center justify-between">
+                          <div class="flex items-center gap-2">
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=facearea&facepad=2&w=24&h=24&q=80" alt="Author" class="w-6 h-6 rounded-full">
+                            <span class="text-sm text-neutral-600 dark:text-neutral-400">Mike Rodriguez</span>
+                          </div>
+                          <span class="text-xs text-neutral-500 dark:text-neutral-500">6 min read</span>
+                        </div>
+                      </div>
+                    </article>
+
+                    <!-- Tutorial Post -->
+                    <article class="bg-white dark:bg-neutral-950 rounded-xl border border-neutral-200 dark:border-neutral-700 overflow-hidden hover:shadow-lg transition-shadow duration-300">
+                      <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Tutorial" class="w-full h-48 object-cover">
+                        <div class="absolute top-3 left-3">
+                          <span class="bg-orange-600 text-white px-3 py-1 rounded-full text-xs font-medium">Tutorial</span>
+                        </div>
+                      </div>
+                      <div class="p-6">
+                        <time class="text-sm text-neutral-500 dark:text-neutral-500">January 14, 2024</time>
+                        <h3 class="text-lg font-semibold text-neutral-900 dark:text-neutral-100 mt-2 mb-3">
+                          CSS Grid Layout Mastery
+                        </h3>
+                        <p class="text-neutral-600 dark:text-neutral-400 mb-4 text-sm leading-relaxed">
+                          Complete guide to mastering CSS Grid with practical examples and use cases.
+                        </p>
+                        <div class="flex items-center justify-between">
+                          <div class="flex items-center gap-2">
+                            <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&auto=format&fit=facearea&facepad=2&w=24&h=24&q=80" alt="Author" class="w-6 h-6 rounded-full">
+                            <span class="text-sm text-neutral-600 dark:text-neutral-400">Emma Davis</span>
+                          </div>
+                          <span class="text-xs text-neutral-500 dark:text-neutral-500">8 min read</span>
+                        </div>
+                      </div>
+                    </article>
+                  </div>
+
+                  <!-- Load More -->
+                  <div class="mt-12 text-center">
+                    <button class="bg-neutral-100 dark:bg-neutral-800 hover:bg-neutral-200 dark:hover:bg-neutral-700 text-neutral-700 dark:text-neutral-300 px-8 py-3 rounded-lg font-medium transition-colors">
+                      Load More Posts
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div id="category-html" class="tab-content hidden w-[768px]">
+            <div class="bg-neutral-900 dark:bg-neutral-950 rounded-lg overflow-hidden">
+              <pre class="p-6 text-sm overflow-x-auto"><code class="language-html">&lt;div class="bg-white dark:bg-neutral-950 py-16"&gt;
+  &lt;div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"&gt;
+    &lt;div class="text-center mb-12"&gt;
+      &lt;h2 class="text-3xl font-bold text-neutral-900 dark:text-neutral-100 mb-4"&gt;Browse by Category&lt;/h2&gt;
+      &lt;p class="text-lg text-neutral-600 dark:text-neutral-400 max-w-2xl mx-auto"&gt;
+        Discover content organized by topic to find exactly what you're looking for.
+      &lt;/p&gt;
+    &lt;/div&gt;
+
+    &lt;!-- Category Navigation --&gt;
+    &lt;div class="flex flex-wrap justify-center gap-2 mb-12"&gt;
+      &lt;button class="bg-primary-600 text-white px-6 py-3 rounded-lg font-medium transition-colors"&gt;
+        All Posts (24)
+      &lt;/button&gt;
+      &lt;button class="bg-neutral-100 dark:bg-neutral-800 hover:bg-neutral-200 dark:hover:bg-neutral-700 text-neutral-700 dark:text-neutral-300 px-6 py-3 rounded-lg font-medium transition-colors"&gt;
+        Development (8)
+      &lt;/button&gt;
+      &lt;button class="bg-neutral-100 dark:bg-neutral-800 hover:bg-neutral-200 dark:hover:bg-neutral-700 text-neutral-700 dark:text-neutral-300 px-6 py-3 rounded-lg font-medium transition-colors"&gt;
+        Design (6)
+      &lt;/button&gt;
+    &lt;/div&gt;
+
+    &lt;!-- Featured Category Section --&gt;
+    &lt;div class="mb-12"&gt;
+      &lt;div class="bg-gradient-to-r from-blue-600 to-blue-800 rounded-2xl p-8 text-white"&gt;
+        &lt;div class="flex items-center justify-between"&gt;
+          &lt;div&gt;
+            &lt;h3 class="text-2xl font-bold mb-2"&gt;Development Focus&lt;/h3&gt;
+            &lt;p class="text-blue-100 mb-4"&gt;Latest coding tutorials and best practices&lt;/p&gt;
+            &lt;div class="flex items-center gap-4 text-sm"&gt;
+              &lt;span&gt;8 articles&lt;/span&gt;
+              &lt;span&gt;•&lt;/span&gt;
+              &lt;span&gt;Updated weekly&lt;/span&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;!-- Posts Grid --&gt;
+    &lt;div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3"&gt;
+      &lt;article class="bg-white dark:bg-neutral-950 rounded-xl border border-neutral-200 dark:border-neutral-700 overflow-hidden hover:shadow-lg transition-shadow duration-300"&gt;
+        &lt;div class="relative"&gt;
+          &lt;img src="..." alt="Post" class="w-full h-48 object-cover"&gt;
+          &lt;div class="absolute top-3 left-3"&gt;
+            &lt;span class="bg-blue-600 text-white px-3 py-1 rounded-full text-xs font-medium"&gt;Development&lt;/span&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class="p-6"&gt;
+          &lt;time class="text-sm text-neutral-500 dark:text-neutral-500"&gt;January 20, 2024&lt;/time&gt;
+          &lt;h3 class="text-lg font-semibold text-neutral-900 dark:text-neutral-100 mt-2 mb-3"&gt;
+            Modern JavaScript Patterns for 2024
+          &lt;/h3&gt;
+          &lt;p class="text-neutral-600 dark:text-neutral-400 mb-4 text-sm leading-relaxed"&gt;
+            Explore the latest JavaScript patterns and techniques...
+          &lt;/p&gt;
+          &lt;div class="flex items-center justify-between"&gt;
+            &lt;div class="flex items-center gap-2"&gt;
+              &lt;img src="..." alt="Author" class="w-6 h-6 rounded-full"&gt;
+              &lt;span class="text-sm text-neutral-600 dark:text-neutral-400"&gt;Alex Chen&lt;/span&gt;
+            &lt;/div&gt;
+            &lt;span class="text-xs text-neutral-500 dark:text-neutral-500"&gt;7 min read&lt;/span&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/article&gt;
+      &lt;!-- More posts... --&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+            </div>
+          </div>
+        </section>
+
+        <!-- Blog List -->
+        <section id="blog-list" class="mb-16">
+          <div class="mb-8">
+            <div class="flex items-center justify-between mb-6">
+              <div>
+                <h2 class="text-2xl font-semibold text-neutral-900 dark:text-neutral-100 mb-2">Blog List</h2>
+                <p class="text-neutral-600 dark:text-neutral-400">Compact list view with minimal visual elements for efficient content browsing.</p>
+              </div>
+              <button id="copy-list-btn" class="flex items-center gap-2 px-4 py-2 bg-neutral-100 dark:bg-neutral-800 hover:bg-neutral-200 dark:hover:bg-neutral-700 text-neutral-700 dark:text-neutral-300 rounded-lg text-sm font-medium transition-colors">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
+                </svg>
+                Copy
+              </button>
+            </div>
+          </div>
+
+          <div class="mb-6">
+            <nav class="inline-flex bg-neutral-100 dark:bg-neutral-800 rounded-lg p-1">
+              <button class="tab-button active px-4 py-2 rounded-md bg-white dark:bg-neutral-700 text-neutral-900 dark:text-neutral-100 font-medium text-sm shadow-sm transition-all" data-tab="list-preview">
+                Preview
+              </button>
+              <button class="tab-button px-4 py-2 rounded-md text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-100 font-medium text-sm transition-all" data-tab="list-html">
+                HTML
+              </button>
+            </nav>
+          </div>
+
+          <div id="list-preview" class="tab-content">
+            <div class="bg-neutral-50 dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-700 rounded-lg overflow-hidden">
+              <div class="bg-white dark:bg-neutral-950 py-16">
+                <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                  <!-- Header -->
+                  <div class="mb-8">
+                    <h2 class="text-2xl font-bold text-neutral-900 dark:text-neutral-100 mb-2">All Blog Posts</h2>
+                    <p class="text-neutral-600 dark:text-neutral-400">Browse our complete archive of articles and tutorials</p>
+                  </div>
+
+                  <!-- Filter and Sort -->
+                  <div class="flex flex-col sm:flex-row gap-4 justify-between items-start sm:items-center mb-8">
+                    <div class="flex items-center gap-4">
+                      <span class="text-sm text-neutral-600 dark:text-neutral-400">Filter by:</span>
+                      <select class="bg-white dark:bg-neutral-900 border border-neutral-300 dark:border-neutral-600 rounded-lg px-3 py-2 text-sm text-neutral-900 dark:text-neutral-100" aria-label="Filter by category">
+                        <option>All Categories</option>
+                        <option>Development</option>
+                        <option>Design</option>
+                        <option>Business</option>
+                        <option>Tutorial</option>
+                      </select>
+                    </div>
+                    <div class="flex items-center gap-4">
+                      <span class="text-sm text-neutral-600 dark:text-neutral-400">Sort by:</span>
+                      <select class="bg-white dark:bg-neutral-900 border border-neutral-300 dark:border-neutral-600 rounded-lg px-3 py-2 text-sm text-neutral-900 dark:text-neutral-100" aria-label="Sort posts">
+                        <option>Latest</option>
+                        <option>Oldest</option>
+                        <option>Most Popular</option>
+                        <option>Alphabetical</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  <!-- Posts List -->
+                  <div class="space-y-6">
+                    <!-- Post Item -->
+                    <article class="flex gap-6 p-6 bg-white dark:bg-neutral-950 border border-neutral-200 dark:border-neutral-700 rounded-lg hover:shadow-md transition-shadow">
+                      <img src="https://images.unsplash.com/photo-1517077304055-6e89abbf09b0?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="Post" class="w-24 h-24 rounded-lg object-cover flex-shrink-0">
+                      <div class="flex-1">
+                        <div class="flex items-start justify-between mb-2">
+                          <div class="flex items-center gap-2">
+                            <span class="bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-400 px-2 py-1 rounded-full text-xs font-medium">Development</span>
+                            <time class="text-sm text-neutral-500 dark:text-neutral-500">January 20, 2024</time>
+                          </div>
+                          <span class="text-sm text-neutral-500 dark:text-neutral-500">7 min read</span>
+                        </div>
+                        <h3 class="text-lg font-semibold text-neutral-900 dark:text-neutral-100 mb-2 hover:text-primary-600 dark:hover:text-primary-400 cursor-pointer">
+                          Building Scalable React Applications with Modern Patterns
+                        </h3>
+                        <p class="text-neutral-600 dark:text-neutral-400 text-sm mb-3 line-clamp-2">
+                          Learn how to structure large React applications using proven architectural patterns and best practices that scale with your team.
+                        </p>
+                        <div class="flex items-center gap-3">
+                          <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=facearea&facepad=2&w=24&h=24&q=80" alt="Author" class="w-6 h-6 rounded-full">
+                          <span class="text-sm text-neutral-600 dark:text-neutral-400">Alex Chen</span>
+                        </div>
+                      </div>
+                    </article>
+
+                    <article class="flex gap-6 p-6 bg-white dark:bg-neutral-950 border border-neutral-200 dark:border-neutral-700 rounded-lg hover:shadow-md transition-shadow">
+                      <img src="https://images.unsplash.com/photo-1558655146-d09347e92766?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="Post" class="w-24 h-24 rounded-lg object-cover flex-shrink-0">
+                      <div class="flex-1">
+                        <div class="flex items-start justify-between mb-2">
+                          <div class="flex items-center gap-2">
+                            <span class="bg-purple-100 dark:bg-purple-900/30 text-purple-700 dark:text-purple-400 px-2 py-1 rounded-full text-xs font-medium">Design</span>
+                            <time class="text-sm text-neutral-500 dark:text-neutral-500">January 18, 2024</time>
+                          </div>
+                          <span class="text-sm text-neutral-500 dark:text-neutral-500">5 min read</span>
+                        </div>
+                        <h3 class="text-lg font-semibold text-neutral-900 dark:text-neutral-100 mb-2 hover:text-primary-600 dark:hover:text-primary-400 cursor-pointer">
+                          Design Systems: From Concept to Implementation
+                        </h3>
+                        <p class="text-neutral-600 dark:text-neutral-400 text-sm mb-3 line-clamp-2">
+                          A comprehensive guide to building design systems that scale across teams and products, with practical examples and tools.
+                        </p>
+                        <div class="flex items-center gap-3">
+                          <img src="https://images.unsplash.com/photo-1494790108755-2616b612e1c1?ixlib=rb-4.0.3&auto=format&fit=facearea&facepad=2&w=24&h=24&q=80" alt="Author" class="w-6 h-6 rounded-full">
+                          <span class="text-sm text-neutral-600 dark:text-neutral-400">Sarah Wilson</span>
+                        </div>
+                      </div>
+                    </article>
+
+                    <article class="flex gap-6 p-6 bg-white dark:bg-neutral-950 border border-neutral-200 dark:border-neutral-700 rounded-lg hover:shadow-md transition-shadow">
+                      <img src="https://images.unsplash.com/photo-1559526324-4b87b5e36e44?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="Post" class="w-24 h-24 rounded-lg object-cover flex-shrink-0">
+                      <div class="flex-1">
+                        <div class="flex items-start justify-between mb-2">
+                          <div class="flex items-center gap-2">
+                            <span class="bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400 px-2 py-1 rounded-full text-xs font-medium">Business</span>
+                            <time class="text-sm text-neutral-500 dark:text-neutral-500">January 16, 2024</time>
+                          </div>
+                          <span class="text-sm text-neutral-500 dark:text-neutral-500">6 min read</span>
+                        </div>
+                        <h3 class="text-lg font-semibold text-neutral-900 dark:text-neutral-100 mb-2 hover:text-primary-600 dark:hover:text-primary-400 cursor-pointer">
+                          Remote Team Collaboration Strategies
+                        </h3>
+                        <p class="text-neutral-600 dark:text-neutral-400 text-sm mb-3 line-clamp-2">
+                          Effective strategies for building and maintaining high-performing remote teams with the right tools and processes.
+                        </p>
+                        <div class="flex items-center gap-3">
+                          <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=facearea&facepad=2&w=24&h=24&q=80" alt="Author" class="w-6 h-6 rounded-full">
+                          <span class="text-sm text-neutral-600 dark:text-neutral-400">Mike Rodriguez</span>
+                        </div>
+                      </div>
+                    </article>
+
+                    <article class="flex gap-6 p-6 bg-white dark:bg-neutral-950 border border-neutral-200 dark:border-neutral-700 rounded-lg hover:shadow-md transition-shadow">
+                      <img src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="Post" class="w-24 h-24 rounded-lg object-cover flex-shrink-0">
+                      <div class="flex-1">
+                        <div class="flex items-start justify-between mb-2">
+                          <div class="flex items-center gap-2">
+                            <span class="bg-orange-100 dark:bg-orange-900/30 text-orange-700 dark:text-orange-400 px-2 py-1 rounded-full text-xs font-medium">Tutorial</span>
+                            <time class="text-sm text-neutral-500 dark:text-neutral-500">January 14, 2024</time>
+                          </div>
+                          <span class="text-sm text-neutral-500 dark:text-neutral-500">8 min read</span>
+                        </div>
+                        <h3 class="text-lg font-semibold text-neutral-900 dark:text-neutral-100 mb-2 hover:text-primary-600 dark:hover:text-primary-400 cursor-pointer">
+                          Mastering CSS Grid: Complete Guide
+                        </h3>
+                        <p class="text-neutral-600 dark:text-neutral-400 text-sm mb-3 line-clamp-2">
+                          Complete tutorial on CSS Grid layout with practical examples and real-world applications for modern web development.
+                        </p>
+                        <div class="flex items-center gap-3">
+                          <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&auto=format&fit=facearea&facepad=2&w=24&h=24&q=80" alt="Author" class="w-6 h-6 rounded-full">
+                          <span class="text-sm text-neutral-600 dark:text-neutral-400">Emma Davis</span>
+                        </div>
+                      </div>
+                    </article>
+                  </div>
+
+                  <!-- Pagination -->
+                  <div class="mt-12 flex items-center justify-between">
+                    <p class="text-sm text-neutral-600 dark:text-neutral-400">
+                      Showing 1-10 of 24 results
+                    </p>
+                    <div class="flex items-center gap-2">
+                      <button class="p-2 rounded-lg bg-neutral-100 dark:bg-neutral-800 text-neutral-600 dark:text-neutral-400 hover:bg-neutral-200 dark:hover:bg-neutral-700 transition-colors disabled:opacity-50" disabled aria-label="Previous page">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                        </svg>
+                      </button>
+                      <button class="px-3 py-2 rounded-lg bg-primary-600 text-white text-sm font-medium">1</button>
+                      <button class="px-3 py-2 rounded-lg bg-neutral-100 dark:bg-neutral-800 text-neutral-600 dark:text-neutral-400 hover:bg-neutral-200 dark:hover:bg-neutral-700 text-sm font-medium transition-colors">2</button>
+                      <button class="px-3 py-2 rounded-lg bg-neutral-100 dark:bg-neutral-800 text-neutral-600 dark:text-neutral-400 hover:bg-neutral-200 dark:hover:bg-neutral-700 text-sm font-medium transition-colors">3</button>
+                      <button class="p-2 rounded-lg bg-neutral-100 dark:bg-neutral-800 text-neutral-600 dark:text-neutral-400 hover:bg-neutral-200 dark:hover:bg-neutral-700 transition-colors" aria-label="Next page">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                        </svg>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div id="list-html" class="tab-content hidden w-[768px]">
+            <div class="bg-neutral-900 dark:bg-neutral-950 rounded-lg overflow-hidden">
+              <pre class="p-6 text-sm overflow-x-auto"><code class="language-html">&lt;div class="bg-white dark:bg-neutral-950 py-16"&gt;
+  &lt;div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8"&gt;
+    &lt;div class="mb-8"&gt;
+      &lt;h2 class="text-2xl font-bold text-neutral-900 dark:text-neutral-100 mb-2"&gt;All Blog Posts&lt;/h2&gt;
+      &lt;p class="text-neutral-600 dark:text-neutral-400"&gt;Browse our complete archive of articles and tutorials&lt;/p&gt;
+    &lt;/div&gt;
+
+    &lt;!-- Filter and Sort --&gt;
+    &lt;div class="flex flex-col sm:flex-row gap-4 justify-between items-start sm:items-center mb-8"&gt;
+      &lt;div class="flex items-center gap-4"&gt;
+        &lt;span class="text-sm text-neutral-600 dark:text-neutral-400"&gt;Filter by:&lt;/span&gt;
+        &lt;select class="bg-white dark:bg-neutral-900 border border-neutral-300 dark:border-neutral-600 rounded-lg px-3 py-2 text-sm"&gt;
+          &lt;option&gt;All Categories&lt;/option&gt;
+          &lt;option&gt;Development&lt;/option&gt;
+          &lt;option&gt;Design&lt;/option&gt;
+        &lt;/select&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;!-- Posts List --&gt;
+    &lt;div class="space-y-6"&gt;
+      &lt;article class="flex gap-6 p-6 bg-white dark:bg-neutral-950 border border-neutral-200 dark:border-neutral-700 rounded-lg hover:shadow-md transition-shadow"&gt;
+        &lt;img src="..." alt="Post" class="w-24 h-24 rounded-lg object-cover flex-shrink-0"&gt;
+        &lt;div class="flex-1"&gt;
+          &lt;div class="flex items-start justify-between mb-2"&gt;
+            &lt;div class="flex items-center gap-2"&gt;
+              &lt;span class="bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-400 px-2 py-1 rounded-full text-xs font-medium"&gt;Development&lt;/span&gt;
+              &lt;time class="text-sm text-neutral-500 dark:text-neutral-500"&gt;January 20, 2024&lt;/time&gt;
+            &lt;/div&gt;
+            &lt;span class="text-sm text-neutral-500 dark:text-neutral-500"&gt;7 min read&lt;/span&gt;
+          &lt;/div&gt;
+          &lt;h3 class="text-lg font-semibold text-neutral-900 dark:text-neutral-100 mb-2"&gt;
+            Building Scalable React Applications with Modern Patterns
+          &lt;/h3&gt;
+          &lt;p class="text-neutral-600 dark:text-neutral-400 text-sm mb-3"&gt;
+            Learn how to structure large React applications using proven architectural patterns...
+          &lt;/p&gt;
+          &lt;div class="flex items-center gap-3"&gt;
+            &lt;img src="..." alt="Author" class="w-6 h-6 rounded-full"&gt;
+            &lt;span class="text-sm text-neutral-600 dark:text-neutral-400"&gt;Alex Chen&lt;/span&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/article&gt;
+      &lt;!-- More posts... --&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+            </div>
+          </div>
+        </section>
+
+        <!-- Blog Timeline -->
+        <section id="blog-timeline" class="mb-16">
+          <div class="mb-8">
+            <div class="flex items-center justify-between mb-6">
+              <div>
+                <h2 class="text-2xl font-semibold text-neutral-900 dark:text-neutral-100 mb-2">Blog Timeline</h2>
+                <p class="text-neutral-600 dark:text-neutral-400">Chronological display of blog posts with timeline visualization for tracking content progression.</p>
+              </div>
+              <button id="copy-timeline-btn" class="flex items-center gap-2 px-4 py-2 bg-neutral-100 dark:bg-neutral-800 hover:bg-neutral-200 dark:hover:bg-neutral-700 text-neutral-700 dark:text-neutral-300 rounded-lg text-sm font-medium transition-colors">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
+                </svg>
+                Copy
+              </button>
+            </div>
+          </div>
+
+          <div class="mb-6">
+            <nav class="inline-flex bg-neutral-100 dark:bg-neutral-800 rounded-lg p-1">
+              <button class="tab-button active px-4 py-2 rounded-md bg-white dark:bg-neutral-700 text-neutral-900 dark:text-neutral-100 font-medium text-sm shadow-sm transition-all" data-tab="timeline-preview">
+                Preview
+              </button>
+              <button class="tab-button px-4 py-2 rounded-md text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-100 font-medium text-sm transition-all" data-tab="timeline-html">
+                HTML
+              </button>
+            </nav>
+          </div>
+
+          <div id="timeline-preview" class="tab-content">
+            <div class="bg-neutral-50 dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-700 rounded-lg overflow-hidden">
+              <div class="bg-white dark:bg-neutral-950 py-16">
+                <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                  <!-- Header -->
+                  <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold text-neutral-900 dark:text-neutral-100 mb-4">Blog Timeline</h2>
+                    <p class="text-lg text-neutral-600 dark:text-neutral-400 max-w-2xl mx-auto">
+                      Follow our journey through time with chronologically organized content and milestones.
+                    </p>
+                  </div>
+
+                  <!-- Year Navigation -->
+                  <div class="flex justify-center gap-4 mb-12">
+                    <button class="bg-primary-600 text-white px-6 py-2 rounded-lg font-medium transition-colors">2024</button>
+                    <button class="bg-neutral-100 dark:bg-neutral-800 hover:bg-neutral-200 dark:hover:bg-neutral-700 text-neutral-700 dark:text-neutral-300 px-6 py-2 rounded-lg font-medium transition-colors">2023</button>
+                    <button class="bg-neutral-100 dark:bg-neutral-800 hover:bg-neutral-200 dark:hover:bg-neutral-700 text-neutral-700 dark:text-neutral-300 px-6 py-2 rounded-lg font-medium transition-colors">2022</button>
+                  </div>
+
+                  <!-- Timeline -->
+                  <div class="relative">
+                    <!-- Timeline Line -->
+                    <div class="absolute left-8 top-0 bottom-0 w-0.5 bg-neutral-200 dark:bg-neutral-700"></div>
+
+                    <!-- Timeline Items -->
+                    <div class="space-y-12">
+                      <!-- January 2024 -->
+                      <div class="relative">
+                        <div class="absolute left-6 w-4 h-4 bg-primary-600 rounded-full border-4 border-white dark:border-neutral-950 shadow-md"></div>
+                        <div class="ml-20">
+                          <div class="mb-6">
+                            <h3 class="text-xl font-bold text-neutral-900 dark:text-neutral-100 mb-2">January 2024</h3>
+                            <p class="text-neutral-600 dark:text-neutral-400">New year, fresh content and innovative tutorials</p>
+                          </div>
+                          
+                          <div class="space-y-6">
+                            <!-- Post 1 -->
+                            <article class="bg-white dark:bg-neutral-950 border border-neutral-200 dark:border-neutral-700 rounded-lg p-6 hover:shadow-md transition-shadow">
+                              <div class="flex items-start gap-4">
+                                <img src="https://images.unsplash.com/photo-1517077304055-6e89abbf09b0?ixlib=rb-4.0.3&auto=format&fit=crop&w=80&q=80" alt="Post" class="w-16 h-16 rounded-lg object-cover">
+                                <div class="flex-1">
+                                  <div class="flex items-center gap-2 mb-2">
+                                    <span class="bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-400 px-2 py-1 rounded-full text-xs font-medium">Development</span>
+                                    <time class="text-sm text-neutral-500 dark:text-neutral-500">January 20, 2024</time>
+                                  </div>
+                                  <h4 class="text-lg font-semibold text-neutral-900 dark:text-neutral-100 mb-2">
+                                    Building Scalable React Applications
+                                  </h4>
+                                  <p class="text-neutral-600 dark:text-neutral-400 text-sm">
+                                    Learn architectural patterns for large-scale React applications with modern tooling.
+                                  </p>
+                                </div>
+                              </div>
+                            </article>
+
+                            <!-- Post 2 -->
+                            <article class="bg-white dark:bg-neutral-950 border border-neutral-200 dark:border-neutral-700 rounded-lg p-6 hover:shadow-md transition-shadow">
+                              <div class="flex items-start gap-4">
+                                <img src="https://images.unsplash.com/photo-1558655146-d09347e92766?ixlib=rb-4.0.3&auto=format&fit=crop&w=80&q=80" alt="Post" class="w-16 h-16 rounded-lg object-cover">
+                                <div class="flex-1">
+                                  <div class="flex items-center gap-2 mb-2">
+                                    <span class="bg-purple-100 dark:bg-purple-900/30 text-purple-700 dark:text-purple-400 px-2 py-1 rounded-full text-xs font-medium">Design</span>
+                                    <time class="text-sm text-neutral-500 dark:text-neutral-500">January 18, 2024</time>
+                                  </div>
+                                  <h4 class="text-lg font-semibold text-neutral-900 dark:text-neutral-100 mb-2">
+                                    Design Systems Implementation Guide
+                                  </h4>
+                                  <p class="text-neutral-600 dark:text-neutral-400 text-sm">
+                                    Complete guide to implementing design systems across teams and products.
+                                  </p>
+                                </div>
+                              </div>
+                            </article>
+                          </div>
+                        </div>
+                      </div>
+
+                      <!-- December 2023 -->
+                      <div class="relative">
+                        <div class="absolute left-6 w-4 h-4 bg-neutral-400 dark:bg-neutral-600 rounded-full border-4 border-white dark:border-neutral-950 shadow-md"></div>
+                        <div class="ml-20">
+                          <div class="mb-6">
+                            <h3 class="text-xl font-bold text-neutral-900 dark:text-neutral-100 mb-2">December 2023</h3>
+                            <p class="text-neutral-600 dark:text-neutral-400">Year-end reflections and planning for the future</p>
+                          </div>
+                          
+                          <div class="space-y-6">
+                            <!-- Post 3 -->
+                            <article class="bg-white dark:bg-neutral-950 border border-neutral-200 dark:border-neutral-700 rounded-lg p-6 hover:shadow-md transition-shadow">
+                              <div class="flex items-start gap-4">
+                                <img src="https://images.unsplash.com/photo-1559526324-4b87b5e36e44?ixlib=rb-4.0.3&auto=format&fit=crop&w=80&q=80" alt="Post" class="w-16 h-16 rounded-lg object-cover">
+                                <div class="flex-1">
+                                  <div class="flex items-center gap-2 mb-2">
+                                    <span class="bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400 px-2 py-1 rounded-full text-xs font-medium">Business</span>
+                                    <time class="text-sm text-neutral-500 dark:text-neutral-500">December 15, 2023</time>
+                                  </div>
+                                  <h4 class="text-lg font-semibold text-neutral-900 dark:text-neutral-100 mb-2">
+                                    2023 Year in Review: Achievements & Lessons
+                                  </h4>
+                                  <p class="text-neutral-600 dark:text-neutral-400 text-sm">
+                                    Reflecting on our biggest achievements and key learnings from an incredible year.
+                                  </p>
+                                </div>
+                              </div>
+                            </article>
+                          </div>
+                        </div>
+                      </div>
+
+                      <!-- November 2023 -->
+                      <div class="relative">
+                        <div class="absolute left-6 w-4 h-4 bg-neutral-400 dark:bg-neutral-600 rounded-full border-4 border-white dark:border-neutral-950 shadow-md"></div>
+                        <div class="ml-20">
+                          <div class="mb-6">
+                            <h3 class="text-xl font-bold text-neutral-900 dark:text-neutral-100 mb-2">November 2023</h3>
+                            <p class="text-neutral-600 dark:text-neutral-400">Focus on performance and optimization</p>
+                          </div>
+                          
+                          <div class="space-y-6">
+                            <!-- Post 4 -->
+                            <article class="bg-white dark:bg-neutral-950 border border-neutral-200 dark:border-neutral-700 rounded-lg p-6 hover:shadow-md transition-shadow">
+                              <div class="flex items-start gap-4">
+                                <img src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?ixlib=rb-4.0.3&auto=format&fit=crop&w=80&q=80" alt="Post" class="w-16 h-16 rounded-lg object-cover">
+                                <div class="flex-1">
+                                  <div class="flex items-center gap-2 mb-2">
+                                    <span class="bg-orange-100 dark:bg-orange-900/30 text-orange-700 dark:text-orange-400 px-2 py-1 rounded-full text-xs font-medium">Tutorial</span>
+                                    <time class="text-sm text-neutral-500 dark:text-neutral-500">November 28, 2023</time>
+                                  </div>
+                                  <h4 class="text-lg font-semibold text-neutral-900 dark:text-neutral-100 mb-2">
+                                    Advanced CSS Performance Optimization
+                                  </h4>
+                                  <p class="text-neutral-600 dark:text-neutral-400 text-sm">
+                                    Techniques for optimizing CSS delivery and improving Core Web Vitals scores.
+                                  </p>
+                                </div>
+                              </div>
+                            </article>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Load More Timeline -->
+                  <div class="mt-12 text-center">
+                    <button class="bg-neutral-100 dark:bg-neutral-800 hover:bg-neutral-200 dark:hover:bg-neutral-700 text-neutral-700 dark:text-neutral-300 px-8 py-3 rounded-lg font-medium transition-colors">
+                      Load Earlier Posts
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div id="timeline-html" class="tab-content hidden w-[768px]">
+            <div class="bg-neutral-900 dark:bg-neutral-950 rounded-lg overflow-hidden">
+              <pre class="p-6 text-sm overflow-x-auto"><code class="language-html">&lt;div class="bg-white dark:bg-neutral-950 py-16"&gt;
+  &lt;div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8"&gt;
+    &lt;div class="text-center mb-12"&gt;
+      &lt;h2 class="text-3xl font-bold text-neutral-900 dark:text-neutral-100 mb-4"&gt;Blog Timeline&lt;/h2&gt;
+      &lt;p class="text-lg text-neutral-600 dark:text-neutral-400 max-w-2xl mx-auto"&gt;
+        Follow our journey through time with chronologically organized content and milestones.
+      &lt;/p&gt;
+    &lt;/div&gt;
+
+    &lt;!-- Year Navigation --&gt;
+    &lt;div class="flex justify-center gap-4 mb-12"&gt;
+      &lt;button class="bg-primary-600 text-white px-6 py-2 rounded-lg font-medium transition-colors"&gt;2024&lt;/button&gt;
+      &lt;button class="bg-neutral-100 dark:bg-neutral-800 hover:bg-neutral-200 dark:hover:bg-neutral-700 text-neutral-700 dark:text-neutral-300 px-6 py-2 rounded-lg font-medium transition-colors"&gt;2023&lt;/button&gt;
+    &lt;/div&gt;
+
+    &lt;!-- Timeline --&gt;
+    &lt;div class="relative"&gt;
+      &lt;!-- Timeline Line --&gt;
+      &lt;div class="absolute left-8 top-0 bottom-0 w-0.5 bg-neutral-200 dark:bg-neutral-700"&gt;&lt;/div&gt;
+
+      &lt;!-- Timeline Items --&gt;
+      &lt;div class="space-y-12"&gt;
+        &lt;div class="relative"&gt;
+          &lt;div class="absolute left-6 w-4 h-4 bg-primary-600 rounded-full border-4 border-white dark:border-neutral-950 shadow-md"&gt;&lt;/div&gt;
+          &lt;div class="ml-20"&gt;
+            &lt;div class="mb-6"&gt;
+              &lt;h3 class="text-xl font-bold text-neutral-900 dark:text-neutral-100 mb-2"&gt;January 2024&lt;/h3&gt;
+              &lt;p class="text-neutral-600 dark:text-neutral-400"&gt;New year, fresh content and innovative tutorials&lt;/p&gt;
+            &lt;/div&gt;
+            
+            &lt;div class="space-y-6"&gt;
+              &lt;article class="bg-white dark:bg-neutral-950 border border-neutral-200 dark:border-neutral-700 rounded-lg p-6 hover:shadow-md transition-shadow"&gt;
+                &lt;div class="flex items-start gap-4"&gt;
+                  &lt;img src="..." alt="Post" class="w-16 h-16 rounded-lg object-cover"&gt;
+                  &lt;div class="flex-1"&gt;
+                    &lt;h4 class="text-lg font-semibold text-neutral-900 dark:text-neutral-100 mb-2"&gt;
+                      Building Scalable React Applications
+                    &lt;/h4&gt;
+                    &lt;p class="text-neutral-600 dark:text-neutral-400 text-sm"&gt;
+                      Learn architectural patterns for large-scale React applications...
+                    &lt;/p&gt;
+                  &lt;/div&gt;
+                &lt;/div&gt;
+              &lt;/article&gt;
+              &lt;!-- More timeline posts... --&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;!-- More timeline periods... --&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+            </div>
+          </div>
+        </section>
+
+        <!-- Usage Guidelines -->
+        <div class="bg-white dark:bg-neutral-950 border border-neutral-900 dark:border-neutral-100 rounded-lg p-4 mb-8">
+          <h3 class="text-sm font-medium text-neutral-900 dark:text-neutral-100 mb-2">Usage Guidelines</h3>
+          <ul class="text-sm text-neutral-900 dark:text-neutral-100 space-y-1">
+            <li>• Use featured posts to highlight important or popular content</li>
+            <li>• Implement category badges for easy content classification</li>
+            <li>• Include author information and reading time estimates</li>
+            <li>• Provide pagination or load more functionality for large content sets</li>
+            <li>• Use consistent card layouts for visual hierarchy</li>
+            <li>• Optimize images for web delivery and proper aspect ratios</li>
+          </ul>
+        </div>
+
+        <!-- Accessibility Features -->
+        <div class="bg-white dark:bg-neutral-950 border border-neutral-900 dark:border-neutral-100 rounded-lg p-4">
+          <h3 class="text-sm font-medium text-neutral-900 dark:text-neutral-100 mb-2">Accessibility Features</h3>
+          <ul class="text-sm text-neutral-900 dark:text-neutral-100 space-y-1">
+            <li>• Semantic HTML structure for screen reader navigation</li>
+            <li>• Keyboard navigation support for all interactive elements</li>
+            <li>• Alt text for images and meaningful link descriptions</li>
+            <li>• Proper heading hierarchy for content organization</li>
+            <li>• ARIA labels for pagination and navigation controls</li>
+            <li>• High contrast colors for optimal readability</li>
+          </ul>
+        </div>
+      </main>
+      <div id="footer-container"></div>
+    </div>
+  </div>
+
+  <script type="module">
+    import { generateHeader, generateSidebar, generateFooter, initializeSharedComponents } from '/src/shared/components.js';
+    import { themeManager } from '/src/shared/theme.js';
+    import { toast } from '/src/shared/toast.js';
+
+    document.addEventListener('DOMContentLoaded', function() {
+      // Inject shared components
+      document.getElementById('header-container').innerHTML = generateHeader('blocks');
+      document.getElementById('sidebar-container').innerHTML = generateSidebar('blog');
+      document.getElementById('footer-container').innerHTML = generateFooter();
+      
+      // Initialize shared functionality
+      initializeSharedComponents();
+      themeManager.initializeToggleButtons();
+      
+      // Initialize tab switching
+      initializeTabs();
+      
+      // Initialize copy buttons
+      initializeCopyButtons();
+    });
+
+    function initializeCopyButtons() {
+      document.getElementById('copy-grid-btn')?.addEventListener('click', () => {
+        const code = document.querySelector('#grid-html code').textContent;
+        navigator.clipboard.writeText(code).then(() => {
+          toast.show('Blog grid code copied!', 'success');
+        });
+      });
+
+      document.getElementById('copy-featured-btn')?.addEventListener('click', () => {
+        const code = document.querySelector('#featured-html code').textContent;
+        navigator.clipboard.writeText(code).then(() => {
+          toast.show('Featured posts code copied!', 'success');
+        });
+      });
+
+      document.getElementById('copy-category-btn')?.addEventListener('click', () => {
+        const code = document.querySelector('#category-html code').textContent;
+        navigator.clipboard.writeText(code).then(() => {
+          toast.show('Category layout code copied!', 'success');
+        });
+      });
+
+      document.getElementById('copy-list-btn')?.addEventListener('click', () => {
+        const code = document.querySelector('#list-html code').textContent;
+        navigator.clipboard.writeText(code).then(() => {
+          toast.show('Blog list code copied!', 'success');
+        });
+      });
+
+      document.getElementById('copy-timeline-btn')?.addEventListener('click', () => {
+        const code = document.querySelector('#timeline-html code').textContent;
+        navigator.clipboard.writeText(code).then(() => {
+          toast.show('Blog timeline code copied!', 'success');
+        });
+      });
+    }
+
+    function initializeTabs() {
+      const tabButtons = document.querySelectorAll('.tab-button');
+
+      tabButtons.forEach(button => {
+        button.addEventListener('click', () => {
+          const targetTab = button.getAttribute('data-tab');
+          const section = button.closest('section');
+          
+          // Update active states within the section
+          section.querySelectorAll('.tab-button').forEach(btn => {
+            btn.classList.remove('active', 'bg-white', 'dark:bg-neutral-700', 'text-neutral-900', 'dark:text-neutral-100', 'shadow-sm');
+            btn.classList.add('text-neutral-600', 'dark:text-neutral-400');
+          });
+          
+          button.classList.add('active', 'bg-white', 'dark:bg-neutral-700', 'text-neutral-900', 'dark:text-neutral-100', 'shadow-sm');
+          button.classList.remove('text-neutral-600', 'dark:text-neutral-400');
+          
+          // Show/hide content within the section
+          section.querySelectorAll('.tab-content').forEach(content => {
+            content.classList.add('hidden');
+          });
+          
+          const targetContent = section.querySelector(`#${targetTab}`);
+          if (targetContent) {
+            targetContent.classList.remove('hidden');
+          }
+        });
+      });
+    }
+  </script>
+</body>
+</html> 

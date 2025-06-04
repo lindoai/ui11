@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>News - UI11 Design System</title>
+  <link href="/src/style.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-markup.min.js"></script>
+</head>
+<body class="min-h-screen bg-white dark:bg-neutral-950">
+  <div class="flex min-h-screen">
+    <div id="sidebar-container"></div>
+    <div class="flex-1 flex flex-col ml-64 mt-16">
+      <div id="header-container"></div>
+      <main class="flex-1 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <!-- Page Header -->
+        <div class="mb-12">
+          <h1 class="text-4xl font-semibold text-neutral-900 dark:text-neutral-100 mb-4">News</h1>
+          <p class="text-lg text-neutral-600 dark:text-neutral-400 mb-6 max-w-3xl leading-relaxed">
+            News layouts for current updates, breaking news, category organization, and timeline presentations with emphasis on timeliness and credibility.
+          </p>
+        </div>
+
+        <!-- News Feed -->
+        <section id="news-feed" class="mb-16">
+          <div class="mb-8">
+            <div class="flex items-center justify-between mb-6">
+              <div>
+                <h2 class="text-2xl font-semibold text-neutral-900 dark:text-neutral-100 mb-2">News Feed</h2>
+                <p class="text-neutral-600 dark:text-neutral-400">Real-time news feed with latest updates and breaking news prioritization.</p>
+              </div>
+              <button id="copy-feed-btn" class="flex items-center gap-2 px-4 py-2 bg-neutral-100 dark:bg-neutral-800 hover:bg-neutral-200 dark:hover:bg-neutral-700 text-neutral-700 dark:text-neutral-300 rounded-lg text-sm font-medium transition-colors">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
+                </svg>
+                Copy
+              </button>
+            </div>
+          </div>
+
+          <div class="mb-6">
+            <nav class="inline-flex bg-neutral-100 dark:bg-neutral-800 rounded-lg p-1">
+              <button class="tab-button active px-4 py-2 rounded-md bg-white dark:bg-neutral-700 text-neutral-900 dark:text-neutral-100 font-medium text-sm shadow-sm transition-all" data-tab="feed-preview">
+                Preview
+              </button>
+              <button class="tab-button px-4 py-2 rounded-md text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-100 font-medium text-sm transition-all" data-tab="feed-html">
+                HTML
+              </button>
+            </nav>
+          </div>
+
+          <div id="feed-preview" class="tab-content">
+            <div class="bg-neutral-50 dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-700 rounded-lg overflow-hidden">
+              <div class="bg-white dark:bg-neutral-950 py-16">
+                <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                  <!-- Header -->
+                  <div class="mb-8">
+                    <div class="flex items-center justify-between mb-4">
+                      <h2 class="text-2xl font-bold text-neutral-900 dark:text-neutral-100">Latest News</h2>
+                      <span class="bg-red-100 dark:bg-red-900/20 text-red-600 dark:text-red-400 px-3 py-1 rounded-full text-sm font-medium animate-pulse">
+                        🔴 Live
+                      </span>
+                    </div>
+                    <div class="text-sm text-neutral-500 dark:text-neutral-500">
+                      Last updated: <time datetime="2024-01-20T14:30:00">Today at 2:30 PM</time>
+                    </div>
+                  </div>
+                  
+                  <!-- Breaking News Banner -->
+                  <div class="bg-gradient-to-r from-red-600 to-red-700 text-white rounded-lg p-4 mb-8">
+                    <div class="flex items-center gap-3">
+                      <span class="bg-yellow-400 text-red-900 px-2 py-1 rounded text-xs font-bold">BREAKING</span>
+                      <h3 class="font-bold">Major Technology Breakthrough Announced</h3>
+                    </div>
+                    <p class="mt-2 text-red-100">Revolutionary AI advancement promises to transform multiple industries...</p>
+                    <div class="mt-3">
+                      <span class="text-xs text-red-200">2 minutes ago • Technology</span>
+                    </div>
+                  </div>
+                  
+                  <!-- News Items -->
+                  <div class="space-y-6">
+                    <!-- Featured News Item -->
+                    <article class="border-l-4 border-primary-600 pl-6 py-4 bg-primary-50/50 dark:bg-primary-900/10 rounded-r-lg">
+                      <div class="flex items-start justify-between gap-4">
+                        <div class="flex-1">
+                          <div class="flex items-center gap-2 text-sm text-primary-600 dark:text-primary-400 mb-2">
+                            <span class="bg-primary-100 dark:bg-primary-900/30 px-2 py-1 rounded-full">Business</span>
+                            <span class="text-neutral-400 dark:text-neutral-600">•</span>
+                            <time datetime="2024-01-20T13:45:00">45 minutes ago</time>
+                          </div>
+                          <h3 class="text-lg font-semibold text-neutral-900 dark:text-neutral-100 mb-2">
+                            Tech Giants Report Record Quarterly Earnings
+                          </h3>
+                          <p class="text-neutral-600 dark:text-neutral-400 text-sm leading-relaxed mb-3">
+                            Major technology companies exceed analyst expectations with strong performance across cloud services and AI initiatives.
+                          </p>
+                          <div class="flex items-center gap-4 text-xs text-neutral-500 dark:text-neutral-500">
+                            <span>By Sarah Johnson</span>
+                            <span>•</span>
+                            <span>3 min read</span>
+                            <span>•</span>
+                            <span>142 comments</span>
+                          </div>
+                        </div>
+                        <img src="https://images.unsplash.com/photo-1559526324-4b87b5e36e44?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="Business news" class="w-24 h-24 rounded-lg object-cover">
+                      </div>
+                    </article>
+
+                    <!-- Regular News Items -->
+                    <article class="py-4 border-b border-neutral-200 dark:border-neutral-700">
+                      <div class="flex items-start justify-between gap-4">
+                        <div class="flex-1">
+                          <div class="flex items-center gap-2 text-sm text-neutral-500 dark:text-neutral-500 mb-2">
+                            <span class="bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400 px-2 py-1 rounded-full">Science</span>
+                            <span>•</span>
+                            <time datetime="2024-01-20T12:30:00">2 hours ago</time>
+                          </div>
+                          <h3 class="text-lg font-semibold text-neutral-900 dark:text-neutral-100 mb-2">
+                            New Climate Research Reveals Promising Solutions
+                          </h3>
+                          <p class="text-neutral-600 dark:text-neutral-400 text-sm leading-relaxed mb-3">
+                            Scientists discover innovative carbon capture methods that could significantly impact global warming mitigation efforts.
+                          </p>
+                          <div class="flex items-center gap-4 text-xs text-neutral-500 dark:text-neutral-500">
+                            <span>By Dr. Michael Chen</span>
+                            <span>•</span>
+                            <span>5 min read</span>
+                            <span>•</span>
+                            <span>89 comments</span>
+                          </div>
+                        </div>
+                        <img src="https://images.unsplash.com/photo-1569163139394-de4e4f43e4e5?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="Science news" class="w-24 h-24 rounded-lg object-cover">
+                      </div>
+                    </article>
+
+                    <article class="py-4 border-b border-neutral-200 dark:border-neutral-700">
+                      <div class="flex items-start justify-between gap-4">
+                        <div class="flex-1">
+                          <div class="flex items-center gap-2 text-sm text-neutral-500 dark:text-neutral-500 mb-2">
+                            <span class="bg-purple-100 dark:bg-purple-900/30 text-purple-700 dark:text-purple-400 px-2 py-1 rounded-full">Politics</span>
+                            <span>•</span>
+                            <time datetime="2024-01-20T11:15:00">3 hours ago</time>
+                          </div>
+                          <h3 class="text-lg font-semibold text-neutral-900 dark:text-neutral-100 mb-2">
+                            International Summit Addresses Global Trade Relations
+                          </h3>
+                          <p class="text-neutral-600 dark:text-neutral-400 text-sm leading-relaxed mb-3">
+                            World leaders convene to discuss new trade agreements and economic partnerships for the coming decade.
+                          </p>
+                          <div class="flex items-center gap-4 text-xs text-neutral-500 dark:text-neutral-500">
+                            <span>By Emma Rodriguez</span>
+                            <span>•</span>
+                            <span>4 min read</span>
+                            <span>•</span>
+                            <span>256 comments</span>
+                          </div>
+                        </div>
+                        <img src="https://images.unsplash.com/photo-1529107386315-e1a2ed48a620?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="Politics news" class="w-24 h-24 rounded-lg object-cover">
+                      </div>
+                    </article>
+                  </div>
+
+                  <!-- Load More -->
+                  <div class="mt-8 text-center">
+                    <button class="bg-primary-600 hover:bg-primary-700 text-white px-6 py-3 rounded-lg font-medium transition-colors">
+                      Load More Stories
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div id="feed-html" class="tab-content hidden w-[768px]">
+            <div class="bg-neutral-900 dark:bg-neutral-950 rounded-lg overflow-hidden">
+              <pre class="p-6 text-sm overflow-x-auto"><code class="language-html">&lt;div class="bg-white dark:bg-neutral-950 py-16"&gt;
+  &lt;div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8"&gt;
+    &lt;div class="mb-8"&gt;
+      &lt;div class="flex items-center justify-between mb-4"&gt;
+        &lt;h2 class="text-2xl font-bold text-neutral-900 dark:text-neutral-100"&gt;Latest News&lt;/h2&gt;
+        &lt;span class="bg-red-100 dark:bg-red-900/20 text-red-600 dark:text-red-400 px-3 py-1 rounded-full text-sm font-medium animate-pulse"&gt;
+          🔴 Live
+        &lt;/span&gt;
+      &lt;/div&gt;
+      &lt;div class="text-sm text-neutral-500 dark:text-neutral-500"&gt;
+        Last updated: &lt;time datetime="2024-01-20T14:30:00"&gt;Today at 2:30 PM&lt;/time&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    
+    &lt;!-- Breaking News --&gt;
+    &lt;div class="bg-gradient-to-r from-red-600 to-red-700 text-white rounded-lg p-4 mb-8"&gt;
+      &lt;div class="flex items-center gap-3"&gt;
+        &lt;span class="bg-yellow-400 text-red-900 px-2 py-1 rounded text-xs font-bold"&gt;BREAKING&lt;/span&gt;
+        &lt;h3 class="font-bold"&gt;Major Technology Breakthrough Announced&lt;/h3&gt;
+      &lt;/div&gt;
+      &lt;p class="mt-2 text-red-100"&gt;Revolutionary AI advancement promises to transform multiple industries...&lt;/p&gt;
+    &lt;/div&gt;
+    
+    &lt;!-- News Items --&gt;
+    &lt;div class="space-y-6"&gt;
+      &lt;article class="border-l-4 border-primary-600 pl-6 py-4 bg-primary-50/50 dark:bg-primary-900/10 rounded-r-lg"&gt;
+        &lt;div class="flex items-start justify-between gap-4"&gt;
+          &lt;div class="flex-1"&gt;
+            &lt;h3 class="text-lg font-semibold text-neutral-900 dark:text-neutral-100 mb-2"&gt;
+              Tech Giants Report Record Quarterly Earnings
+            &lt;/h3&gt;
+            &lt;p class="text-neutral-600 dark:text-neutral-400 text-sm leading-relaxed mb-3"&gt;
+              Major technology companies exceed analyst expectations...
+            &lt;/p&gt;
+            &lt;div class="flex items-center gap-4 text-xs text-neutral-500 dark:text-neutral-500"&gt;
+              &lt;span&gt;By Sarah Johnson&lt;/span&gt;
+              &lt;span&gt;3 min read&lt;/span&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+          &lt;img src="..." alt="News" class="w-24 h-24 rounded-lg object-cover"&gt;
+        &lt;/div&gt;
+      &lt;/article&gt;
+      &lt;!-- More news items... --&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+            </div>
+          </div>
+        </section>
+
+        <!-- Breaking News -->
+        <section id="breaking-news" class="mb-16">
+          <div class="mb-8">
+            <div class="flex items-center justify-between mb-6">
+              <div>
+                <h2 class="text-2xl font-semibold text-neutral-900 dark:text-neutral-100 mb-2">Breaking News</h2>
+                <p class="text-neutral-600 dark:text-neutral-400">Urgent news alerts and breaking story updates with immediate priority display.</p>
+              </div>
+              <button id="copy-breaking-btn" class="flex items-center gap-2 px-4 py-2 bg-neutral-100 dark:bg-neutral-800 hover:bg-neutral-200 dark:hover:bg-neutral-700 text-neutral-700 dark:text-neutral-300 rounded-lg text-sm font-medium transition-colors">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
+                </svg>
+                Copy
+              </button>
+            </div>
+          </div>
+
+          <div class="mb-6">
+            <nav class="inline-flex bg-neutral-100 dark:bg-neutral-800 rounded-lg p-1">
+              <button class="tab-button active px-4 py-2 rounded-md bg-white dark:bg-neutral-700 text-neutral-900 dark:text-neutral-100 font-medium text-sm shadow-sm transition-all" data-tab="breaking-preview">
+                Preview
+              </button>
+              <button class="tab-button px-4 py-2 rounded-md text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-100 font-medium text-sm transition-all" data-tab="breaking-html">
+                HTML
+              </button>
+            </nav>
+          </div>
+
+          <div id="breaking-preview" class="tab-content">
+            <div class="bg-neutral-50 dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-700 rounded-lg overflow-hidden">
+              <div class="bg-white dark:bg-neutral-950 py-16">
+                <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                  <!-- Emergency Alert -->
+                  <div class="bg-red-600 text-white rounded-lg mb-8 overflow-hidden">
+                    <div class="bg-red-700 px-6 py-2">
+                      <div class="flex items-center gap-2">
+                        <svg class="w-5 h-5 animate-pulse" fill="currentColor" viewBox="0 0 24 24">
+                          <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                        </svg>
+                        <span class="font-bold text-sm">BREAKING NEWS ALERT</span>
+                        <span class="bg-yellow-400 text-red-900 px-2 py-1 rounded-full text-xs font-bold ml-auto">LIVE</span>
+                      </div>
+                    </div>
+                    <div class="p-6">
+                      <h2 class="text-2xl font-bold mb-4">Major Earthquake Strikes Pacific Region</h2>
+                      <p class="text-red-100 mb-4 leading-relaxed">
+                        A magnitude 7.2 earthquake has been recorded off the Pacific coast. Tsunami warnings have been issued for coastal areas. Authorities are monitoring the situation closely and emergency services are responding.
+                      </p>
+                      <div class="flex items-center justify-between">
+                        <div class="text-sm text-red-200">
+                          <span>Reported: 5 minutes ago</span> • <span>Source: National Weather Service</span>
+                        </div>
+                        <button class="bg-white text-red-600 px-4 py-2 rounded-lg font-semibold hover:bg-red-50 transition-colors">
+                          View Full Coverage
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Breaking Stories Grid -->
+                  <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- Critical Update -->
+                    <article class="bg-red-50 dark:bg-red-900/10 border-2 border-red-200 dark:border-red-800 rounded-lg overflow-hidden">
+                      <div class="bg-red-600 text-white px-4 py-2">
+                        <div class="flex items-center gap-2">
+                          <span class="animate-pulse">🔴</span>
+                          <span class="font-bold text-sm">CRITICAL</span>
+                        </div>
+                      </div>
+                      <div class="p-6">
+                        <time class="text-xs text-red-600 dark:text-red-400 font-medium">3 minutes ago</time>
+                        <h3 class="text-lg font-bold text-neutral-900 dark:text-neutral-100 mt-2 mb-3">
+                          Emergency Response Teams Deployed
+                        </h3>
+                        <p class="text-neutral-600 dark:text-neutral-400 text-sm leading-relaxed">
+                          Multiple emergency response teams are being deployed to affected areas following the seismic activity.
+                        </p>
+                      </div>
+                    </article>
+
+                    <!-- Urgent Update -->
+                    <article class="bg-orange-50 dark:bg-orange-900/10 border-2 border-orange-200 dark:border-orange-800 rounded-lg overflow-hidden">
+                      <div class="bg-orange-600 text-white px-4 py-2">
+                        <div class="flex items-center gap-2">
+                          <span class="animate-pulse">🟠</span>
+                          <span class="font-bold text-sm">URGENT</span>
+                        </div>
+                      </div>
+                      <div class="p-6">
+                        <time class="text-xs text-orange-600 dark:text-orange-400 font-medium">8 minutes ago</time>
+                        <h3 class="text-lg font-bold text-neutral-900 dark:text-neutral-100 mt-2 mb-3">
+                          Evacuation Orders Issued
+                        </h3>
+                        <p class="text-neutral-600 dark:text-neutral-400 text-sm leading-relaxed">
+                          Coastal areas within 10 miles of the shore have been issued mandatory evacuation orders.
+                        </p>
+                      </div>
+                    </article>
+
+                    <!-- Important Update -->
+                    <article class="bg-blue-50 dark:bg-blue-900/10 border-2 border-blue-200 dark:border-blue-800 rounded-lg overflow-hidden">
+                      <div class="bg-blue-600 text-white px-4 py-2">
+                        <div class="flex items-center gap-2">
+                          <span>🔵</span>
+                          <span class="font-bold text-sm">UPDATE</span>
+                        </div>
+                      </div>
+                      <div class="p-6">
+                        <time class="text-xs text-blue-600 dark:text-blue-400 font-medium">12 minutes ago</time>
+                        <h3 class="text-lg font-bold text-neutral-900 dark:text-neutral-100 mt-2 mb-3">
+                          Initial Assessment Complete
+                        </h3>
+                        <p class="text-neutral-600 dark:text-neutral-400 text-sm leading-relaxed">
+                          Preliminary damage assessments are underway with reports of infrastructure impacts.
+                        </p>
+                      </div>
+                    </article>
+                  </div>
+
+                  <!-- Live Updates Feed -->
+                  <div class="mt-8 bg-neutral-50 dark:bg-neutral-900 rounded-lg p-6">
+                    <h3 class="text-lg font-bold text-neutral-900 dark:text-neutral-100 mb-4 flex items-center gap-2">
+                      <span class="w-3 h-3 bg-red-500 rounded-full animate-pulse"></span>
+                      Live Updates
+                    </h3>
+                    <div class="space-y-4">
+                      <div class="flex gap-3">
+                        <div class="text-xs text-neutral-500 dark:text-neutral-500 min-w-[60px]">14:35</div>
+                        <div class="text-sm text-neutral-900 dark:text-neutral-100">Emergency services confirm no casualties in initial sweep of affected areas.</div>
+                      </div>
+                      <div class="flex gap-3">
+                        <div class="text-xs text-neutral-500 dark:text-neutral-500 min-w-[60px]">14:32</div>
+                        <div class="text-sm text-neutral-900 dark:text-neutral-100">Transportation authorities have suspended all ferry services until further notice.</div>
+                      </div>
+                      <div class="flex gap-3">
+                        <div class="text-xs text-neutral-500 dark:text-neutral-500 min-w-[60px]">14:28</div>
+                        <div class="text-sm text-neutral-900 dark:text-neutral-100">Tsunami warning has been lifted for northern coastal regions.</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div id="breaking-html" class="tab-content hidden w-[768px]">
+            <div class="bg-neutral-900 dark:bg-neutral-950 rounded-lg overflow-hidden">
+              <pre class="p-6 text-sm overflow-x-auto"><code class="language-html">&lt;div class="bg-white dark:bg-neutral-950 py-16"&gt;
+  &lt;div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8"&gt;
+    &lt;!-- Emergency Alert --&gt;
+    &lt;div class="bg-red-600 text-white rounded-lg mb-8 overflow-hidden"&gt;
+      &lt;div class="bg-red-700 px-6 py-2"&gt;
+        &lt;div class="flex items-center gap-2"&gt;
+          &lt;svg class="w-5 h-5 animate-pulse" fill="currentColor" viewBox="0 0 24 24"&gt;&lt;/svg&gt;
+          &lt;span class="font-bold text-sm"&gt;BREAKING NEWS ALERT&lt;/span&gt;
+          &lt;span class="bg-yellow-400 text-red-900 px-2 py-1 rounded-full text-xs font-bold ml-auto"&gt;LIVE&lt;/span&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;div class="p-6"&gt;
+        &lt;h2 class="text-2xl font-bold mb-4"&gt;Major Earthquake Strikes Pacific Region&lt;/h2&gt;
+        &lt;p class="text-red-100 mb-4 leading-relaxed"&gt;
+          A magnitude 7.2 earthquake has been recorded off the Pacific coast. Tsunami warnings issued.
+        &lt;/p&gt;
+        &lt;div class="flex items-center justify-between"&gt;
+          &lt;div class="text-sm text-red-200"&gt;
+            &lt;span&gt;Reported: 5 minutes ago&lt;/span&gt; • &lt;span&gt;Source: National Weather Service&lt;/span&gt;
+          &lt;/div&gt;
+          &lt;button class="bg-white text-red-600 px-4 py-2 rounded-lg font-semibold"&gt;
+            View Full Coverage
+          &lt;/button&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;!-- Breaking Stories Grid --&gt;
+    &lt;div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6"&gt;
+      &lt;article class="bg-red-50 dark:bg-red-900/10 border-2 border-red-200 dark:border-red-800 rounded-lg overflow-hidden"&gt;
+        &lt;div class="bg-red-600 text-white px-4 py-2"&gt;
+          &lt;div class="flex items-center gap-2"&gt;
+            &lt;span class="animate-pulse"&gt;🔴&lt;/span&gt;
+            &lt;span class="font-bold text-sm"&gt;CRITICAL&lt;/span&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class="p-6"&gt;
+          &lt;time class="text-xs text-red-600 dark:text-red-400 font-medium"&gt;3 minutes ago&lt;/time&gt;
+          &lt;h3 class="text-lg font-bold text-neutral-900 dark:text-neutral-100 mt-2 mb-3"&gt;
+            Emergency Response Teams Deployed
+          &lt;/h3&gt;
+          &lt;p class="text-neutral-600 dark:text-neutral-400 text-sm leading-relaxed"&gt;
+            Multiple emergency response teams are being deployed to affected areas.
+          &lt;/p&gt;
+        &lt;/div&gt;
+      &lt;/article&gt;
+      &lt;!-- More breaking stories... --&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+            </div>
+          </div>
+        </section>
+
+        <!-- Usage Guidelines -->
+        <div class="bg-white dark:bg-neutral-950 border border-neutral-900 dark:border-neutral-100 rounded-lg p-4 mb-8">
+          <h3 class="text-sm font-medium text-neutral-900 dark:text-neutral-100 mb-2">Usage Guidelines</h3>
+          <ul class="text-sm text-neutral-900 dark:text-neutral-100 space-y-1">
+            <li>• Use breaking news alerts sparingly for truly urgent information</li>
+            <li>• Include timestamps for all news items to establish credibility</li>
+            <li>• Implement clear visual hierarchy for news importance levels</li>
+            <li>• Provide source attribution and journalist bylines</li>
+            <li>• Use category tags for easy content classification and filtering</li>
+            <li>• Include live update feeds for developing stories</li>
+          </ul>
+        </div>
+
+        <!-- Accessibility Features -->
+        <div class="bg-white dark:bg-neutral-950 border border-neutral-900 dark:border-neutral-100 rounded-lg p-4">
+          <h3 class="text-sm font-medium text-neutral-900 dark:text-neutral-100 mb-2">Accessibility Features</h3>
+          <ul class="text-sm text-neutral-900 dark:text-neutral-100 space-y-1">
+            <li>• Semantic HTML structure for screen reader navigation</li>
+            <li>• ARIA labels for breaking news alerts and urgency levels</li>
+            <li>• High contrast colors for critical information visibility</li>
+            <li>• Keyboard navigation support for all interactive elements</li>
+            <li>• Alternative text for news images and proper heading hierarchy</li>
+            <li>• Time elements with machine-readable datetime attributes</li>
+          </ul>
+        </div>
+      </main>
+      <div id="footer-container"></div>
+    </div>
+  </div>
+
+  <script type="module">
+    import { generateHeader, generateSidebar, generateFooter, initializeSharedComponents } from '/src/shared/components.js';
+    import { themeManager } from '/src/shared/theme.js';
+    import { toast } from '/src/shared/toast.js';
+
+    document.addEventListener('DOMContentLoaded', function() {
+      // Inject shared components
+      document.getElementById('header-container').innerHTML = generateHeader('blocks');
+      document.getElementById('sidebar-container').innerHTML = generateSidebar('news');
+      document.getElementById('footer-container').innerHTML = generateFooter();
+      
+      // Initialize shared functionality
+      initializeSharedComponents();
+      themeManager.initializeToggleButtons();
+      
+      // Initialize tab switching
+      initializeTabs();
+      
+      // Initialize copy buttons
+      initializeCopyButtons();
+    });
+
+    function initializeCopyButtons() {
+      document.getElementById('copy-feed-btn')?.addEventListener('click', () => {
+        const code = document.querySelector('#feed-html code').textContent;
+        navigator.clipboard.writeText(code).then(() => {
+          toast.show('News feed code copied!', 'success');
+        });
+      });
+
+      document.getElementById('copy-breaking-btn')?.addEventListener('click', () => {
+        const code = document.querySelector('#breaking-html code').textContent;
+        navigator.clipboard.writeText(code).then(() => {
+          toast.show('Breaking news code copied!', 'success');
+        });
+      });
+    }
+
+    function initializeTabs() {
+      const tabButtons = document.querySelectorAll('.tab-button');
+
+      tabButtons.forEach(button => {
+        button.addEventListener('click', () => {
+          const targetTab = button.getAttribute('data-tab');
+          const section = button.closest('section');
+          
+          // Update active states within the section
+          section.querySelectorAll('.tab-button').forEach(btn => {
+            btn.classList.remove('active', 'bg-white', 'dark:bg-neutral-700', 'text-neutral-900', 'dark:text-neutral-100', 'shadow-sm');
+            btn.classList.add('text-neutral-600', 'dark:text-neutral-400');
+          });
+          
+          button.classList.add('active', 'bg-white', 'dark:bg-neutral-700', 'text-neutral-900', 'dark:text-neutral-100', 'shadow-sm');
+          button.classList.remove('text-neutral-600', 'dark:text-neutral-400');
+          
+          // Show/hide content within the section
+          section.querySelectorAll('.tab-content').forEach(content => {
+            content.classList.add('hidden');
+          });
+          
+          const targetContent = section.querySelector(`#${targetTab}`);
+          if (targetContent) {
+            targetContent.classList.remove('hidden');
+          }
+        });
+      });
+    }
+  </script>
+</body>
+</html> 

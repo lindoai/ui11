@@ -1,0 +1,812 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Feature - UI11 Design System</title>
+  <link href="/src/style.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-markup.min.js"></script>
+</head>
+<body class="min-h-screen bg-white dark:bg-neutral-950">
+  <div class="flex min-h-screen">
+    <div id="sidebar-container"></div>
+    <div class="flex-1 flex flex-col ml-64 mt-16">
+      <div id="header-container"></div>
+      <main class="flex-1 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <!-- Page Header -->
+        <div class="mb-12">
+          <h1 class="text-4xl font-semibold text-neutral-900 dark:text-neutral-100 mb-4">Feature</h1>
+          <p class="text-lg text-neutral-600 dark:text-neutral-400 mb-6 max-w-3xl leading-relaxed">
+            Showcase product features and capabilities with elegant layouts, compelling visuals, and clear messaging designed to highlight your product's key benefits.
+          </p>
+        </div>
+
+        <!-- Feature Grid -->
+        <section id="feature-grid" class="mb-16">
+          <div class="mb-8">
+            <div class="flex items-center justify-between mb-6">
+              <div>
+                <h2 class="text-2xl font-semibold text-neutral-900 dark:text-neutral-100 mb-2">Feature Grid</h2>
+                <p class="text-neutral-600 dark:text-neutral-400">Icon-based feature showcase in a clean grid layout.</p>
+              </div>
+              <button id="copy-grid-btn" class="flex items-center gap-2 px-4 py-2 bg-neutral-100 dark:bg-neutral-800 hover:bg-neutral-200 dark:hover:bg-neutral-700 text-neutral-700 dark:text-neutral-300 rounded-lg text-sm font-medium transition-colors">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
+                </svg>
+                Copy
+              </button>
+            </div>
+          </div>
+
+          <div class="mb-6">
+            <nav class="inline-flex bg-neutral-100 dark:bg-neutral-800 rounded-lg p-1">
+              <button class="tab-button active px-4 py-2 rounded-md bg-white dark:bg-neutral-700 text-neutral-900 dark:text-neutral-100 font-medium text-sm shadow-sm transition-all" data-tab="grid-preview">
+                Preview
+              </button>
+              <button class="tab-button px-4 py-2 rounded-md text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-100 font-medium text-sm transition-all" data-tab="grid-html">
+                HTML
+              </button>
+            </nav>
+          </div>
+
+          <div id="grid-preview" class="tab-content">
+            <div class="bg-neutral-50 dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-700 rounded-lg overflow-hidden">
+              <section class="bg-white dark:bg-neutral-950 py-20 lg:py-32">
+                <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                  <div class="text-center mb-16">
+                    <h2 class="text-4xl lg:text-5xl font-semibold text-neutral-900 dark:text-neutral-100 mb-6">
+                      Everything You Need to
+                      <span class="text-primary-500 dark:text-primary-400">Succeed</span>
+                    </h2>
+                    <p class="text-xl text-neutral-600 dark:text-neutral-400 max-w-3xl mx-auto leading-relaxed">
+                      Discover the powerful features that make our platform the perfect choice for modern teams and businesses.
+                    </p>
+                  </div>
+                  
+                  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="text-center group">
+                      <div class="w-16 h-16 bg-primary-100 dark:bg-primary-900/20 rounded-xl flex items-center justify-center mx-auto mb-6 group-hover:scale-105 transition-transform">
+                        <svg class="w-8 h-8 text-primary-500 dark:text-primary-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                        </svg>
+                      </div>
+                      <h3 class="text-xl font-semibold text-neutral-900 dark:text-neutral-100 mb-3">Lightning Fast</h3>
+                      <p class="text-neutral-600 dark:text-neutral-400 leading-relaxed">Optimized performance that delivers results in milliseconds, not seconds.</p>
+                    </div>
+                    
+                    <div class="text-center group">
+                      <div class="w-16 h-16 bg-success-100 dark:bg-success-900/20 rounded-xl flex items-center justify-center mx-auto mb-6 group-hover:scale-105 transition-transform">
+                        <svg class="w-8 h-8 text-success-500 dark:text-success-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                      </div>
+                      <h3 class="text-xl font-semibold text-neutral-900 dark:text-neutral-100 mb-3">Rock Solid</h3>
+                      <p class="text-neutral-600 dark:text-neutral-400 leading-relaxed">Enterprise-grade reliability with 99.9% uptime guarantee.</p>
+                    </div>
+                    
+                    <div class="text-center group">
+                      <div class="w-16 h-16 bg-warning-100 dark:bg-warning-900/20 rounded-xl flex items-center justify-center mx-auto mb-6 group-hover:scale-105 transition-transform">
+                        <svg class="w-8 h-8 text-warning-500 dark:text-warning-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path>
+                        </svg>
+                      </div>
+                      <h3 class="text-xl font-semibold text-neutral-900 dark:text-neutral-100 mb-3">Secure by Default</h3>
+                      <p class="text-neutral-600 dark:text-neutral-400 leading-relaxed">Bank-level security with end-to-end encryption and compliance.</p>
+                    </div>
+                    
+                    <div class="text-center group">
+                      <div class="w-16 h-16 bg-primary-100 dark:bg-primary-900/20 rounded-xl flex items-center justify-center mx-auto mb-6 group-hover:scale-105 transition-transform">
+                        <svg class="w-8 h-8 text-primary-500 dark:text-primary-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
+                        </svg>
+                      </div>
+                      <h3 class="text-xl font-semibold text-neutral-900 dark:text-neutral-100 mb-3">User Friendly</h3>
+                      <p class="text-neutral-600 dark:text-neutral-400 leading-relaxed">Intuitive interface designed for teams of all technical levels.</p>
+                    </div>
+                    
+                    <div class="text-center group">
+                      <div class="w-16 h-16 bg-success-100 dark:bg-success-900/20 rounded-xl flex items-center justify-center mx-auto mb-6 group-hover:scale-105 transition-transform">
+                        <svg class="w-8 h-8 text-success-500 dark:text-success-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path>
+                        </svg>
+                      </div>
+                      <h3 class="text-xl font-semibold text-neutral-900 dark:text-neutral-100 mb-3">Scalable</h3>
+                      <p class="text-neutral-600 dark:text-neutral-400 leading-relaxed">Grows with your business from startup to enterprise scale.</p>
+                    </div>
+                    
+                    <div class="text-center group">
+                      <div class="w-16 h-16 bg-warning-100 dark:bg-warning-900/20 rounded-xl flex items-center justify-center mx-auto mb-6 group-hover:scale-105 transition-transform">
+                        <svg class="w-8 h-8 text-warning-500 dark:text-warning-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a1.994 1.994 0 01-1.414-.586m0 0L11 14h4a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2v4l.586-.586z"></path>
+                        </svg>
+                      </div>
+                      <h3 class="text-xl font-semibold text-neutral-900 dark:text-neutral-100 mb-3">24/7 Support</h3>
+                      <p class="text-neutral-600 dark:text-neutral-400 leading-relaxed">Expert support team ready to help whenever you need assistance.</p>
+                    </div>
+                  </div>
+                </div>
+              </section>
+            </div>
+          </div>
+
+          <div id="grid-html" class="tab-content hidden w-[768px]">
+            <div class="bg-neutral-900 dark:bg-neutral-950 rounded-lg overflow-hidden">
+              <pre class="p-6 text-sm overflow-x-auto"><code class="language-html">&lt;section class="bg-white dark:bg-neutral-950 py-20 lg:py-32"&gt;
+  &lt;div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8"&gt;
+    &lt;div class="text-center mb-16"&gt;
+      &lt;h2 class="text-4xl lg:text-5xl font-semibold text-neutral-900 dark:text-neutral-100 mb-6"&gt;
+        Everything You Need to
+        &lt;span class="text-primary-500 dark:text-primary-400"&gt;Succeed&lt;/span&gt;
+      &lt;/h2&gt;
+      &lt;p class="text-xl text-neutral-600 dark:text-neutral-400 max-w-3xl mx-auto leading-relaxed"&gt;
+        Discover the powerful features that make our platform the perfect choice for modern teams and businesses.
+      &lt;/p&gt;
+    &lt;/div&gt;
+    
+    &lt;div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"&gt;
+      &lt;div class="text-center group"&gt;
+        &lt;div class="w-16 h-16 bg-primary-100 dark:bg-primary-900/20 rounded-xl flex items-center justify-center mx-auto mb-6 group-hover:scale-105 transition-transform"&gt;
+          &lt;svg class="w-8 h-8 text-primary-500 dark:text-primary-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"&gt;
+            &lt;path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"&gt;&lt;/path&gt;
+          &lt;/svg&gt;
+        &lt;/div&gt;
+        &lt;h3 class="text-xl font-semibold text-neutral-900 dark:text-neutral-100 mb-3"&gt;Lightning Fast&lt;/h3&gt;
+        &lt;p class="text-neutral-600 dark:text-neutral-400 leading-relaxed"&gt;Optimized performance that delivers results in milliseconds, not seconds.&lt;/p&gt;
+      &lt;/div&gt;
+      &lt;!-- More feature items... --&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/section&gt;</code></pre>
+            </div>
+          </div>
+        </section>
+
+        <!-- Feature Cards -->
+        <section id="feature-cards" class="mb-16">
+          <div class="mb-8">
+            <div class="flex items-center justify-between mb-6">
+              <div>
+                <h2 class="text-2xl font-semibold text-neutral-900 dark:text-neutral-100 mb-2">Feature Cards</h2>
+                <p class="text-neutral-600 dark:text-neutral-400">Image-enhanced features with card-based presentation.</p>
+              </div>
+              <button id="copy-cards-btn" class="flex items-center gap-2 px-4 py-2 bg-neutral-100 dark:bg-neutral-800 hover:bg-neutral-200 dark:hover:bg-neutral-700 text-neutral-700 dark:text-neutral-300 rounded-lg text-sm font-medium transition-colors">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
+                </svg>
+                Copy
+              </button>
+            </div>
+          </div>
+
+          <div class="mb-6">
+            <nav class="inline-flex bg-neutral-100 dark:bg-neutral-800 rounded-lg p-1">
+              <button class="tab-button active px-4 py-2 rounded-md bg-white dark:bg-neutral-700 text-neutral-900 dark:text-neutral-100 font-medium text-sm shadow-sm transition-all" data-tab="cards-preview">
+                Preview
+              </button>
+              <button class="tab-button px-4 py-2 rounded-md text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-100 font-medium text-sm transition-all" data-tab="cards-html">
+                HTML
+              </button>
+            </nav>
+          </div>
+
+          <div id="cards-preview" class="tab-content">
+            <div class="bg-neutral-50 dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-700 rounded-lg overflow-hidden">
+              <section class="bg-white dark:bg-neutral-950 py-20 lg:py-32">
+                <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                  <div class="text-center mb-16">
+                    <h2 class="text-4xl lg:text-5xl font-semibold text-neutral-900 dark:text-neutral-100 mb-6">
+                      Powerful Features for
+                      <span class="text-primary-500 dark:text-primary-400">Every Team</span>
+                    </h2>
+                    <p class="text-xl text-neutral-600 dark:text-neutral-400 max-w-3xl mx-auto leading-relaxed">
+                      Explore comprehensive capabilities designed to streamline your workflow and boost productivity.
+                    </p>
+                  </div>
+                  
+                  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="bg-neutral-50 dark:bg-neutral-800 rounded-xl p-6 group hover:shadow-lg transition-shadow">
+                      <div class="aspect-video bg-gradient-to-br from-primary-100 to-primary-200 dark:from-primary-900 dark:to-primary-800 rounded-lg mb-6"></div>
+                      <h3 class="text-xl font-semibold text-neutral-900 dark:text-neutral-100 mb-3">Advanced Analytics</h3>
+                      <p class="text-neutral-600 dark:text-neutral-400 leading-relaxed mb-4">Deep insights into your data with real-time reporting and customizable dashboards.</p>
+                      <button class="text-primary-500 dark:text-primary-400 hover:text-primary-600 dark:hover:text-primary-300 font-medium text-sm transition-colors">Learn More →</button>
+                    </div>
+                    
+                    <div class="bg-neutral-50 dark:bg-neutral-800 rounded-xl p-6 group hover:shadow-lg transition-shadow">
+                      <div class="aspect-video bg-gradient-to-br from-success-100 to-success-200 dark:from-success-900 dark:to-success-800 rounded-lg mb-6"></div>
+                      <h3 class="text-xl font-semibold text-neutral-900 dark:text-neutral-100 mb-3">Team Collaboration</h3>
+                      <p class="text-neutral-600 dark:text-neutral-400 leading-relaxed mb-4">Seamless teamwork with shared workspaces, real-time editing, and communication tools.</p>
+                      <button class="text-primary-500 dark:text-primary-400 hover:text-primary-600 dark:hover:text-primary-300 font-medium text-sm transition-colors">Learn More →</button>
+                    </div>
+                    
+                    <div class="bg-neutral-50 dark:bg-neutral-800 rounded-xl p-6 group hover:shadow-lg transition-shadow">
+                      <div class="aspect-video bg-gradient-to-br from-warning-100 to-warning-200 dark:from-warning-900 dark:to-warning-800 rounded-lg mb-6"></div>
+                      <h3 class="text-xl font-semibold text-neutral-900 dark:text-neutral-100 mb-3">Automation Hub</h3>
+                      <p class="text-neutral-600 dark:text-neutral-400 leading-relaxed mb-4">Streamline repetitive tasks with intelligent automation and workflow optimization.</p>
+                      <button class="text-primary-500 dark:text-primary-400 hover:text-primary-600 dark:hover:text-primary-300 font-medium text-sm transition-colors">Learn More →</button>
+                    </div>
+                  </div>
+                </div>
+              </section>
+            </div>
+          </div>
+
+          <div id="cards-html" class="tab-content hidden w-[768px]">
+            <div class="bg-neutral-900 dark:bg-neutral-950 rounded-lg overflow-hidden">
+              <pre class="p-6 text-sm overflow-x-auto"><code class="language-html">&lt;section class="bg-white dark:bg-neutral-950 py-20 lg:py-32"&gt;
+  &lt;div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8"&gt;
+    &lt;div class="text-center mb-16"&gt;
+      &lt;h2 class="text-4xl lg:text-5xl font-semibold text-neutral-900 dark:text-neutral-100 mb-6"&gt;
+        Powerful Features for
+        &lt;span class="text-primary-500 dark:text-primary-400"&gt;Every Team&lt;/span&gt;
+      &lt;/h2&gt;
+      &lt;p class="text-xl text-neutral-600 dark:text-neutral-400 max-w-3xl mx-auto leading-relaxed"&gt;
+        Explore comprehensive capabilities designed to streamline your workflow and boost productivity.
+      &lt;/p&gt;
+    &lt;/div&gt;
+    
+    &lt;div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"&gt;
+      &lt;div class="bg-neutral-50 dark:bg-neutral-800 rounded-xl p-6 group hover:shadow-lg transition-shadow"&gt;
+        &lt;div class="aspect-video bg-gradient-to-br from-primary-100 to-primary-200 dark:from-primary-900 dark:to-primary-800 rounded-lg mb-6"&gt;&lt;/div&gt;
+        &lt;h3 class="text-xl font-semibold text-neutral-900 dark:text-neutral-100 mb-3"&gt;Advanced Analytics&lt;/h3&gt;
+        &lt;p class="text-neutral-600 dark:text-neutral-400 leading-relaxed mb-4"&gt;Deep insights into your data with real-time reporting and customizable dashboards.&lt;/p&gt;
+        &lt;button class="text-primary-500 dark:text-primary-400 hover:text-primary-600 dark:hover:text-primary-300 font-medium text-sm transition-colors"&gt;Learn More →&lt;/button&gt;
+      &lt;/div&gt;
+      &lt;!-- More feature cards... --&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/section&gt;</code></pre>
+            </div>
+          </div>
+        </section>
+
+        <!-- Feature Timeline -->
+        <section id="feature-timeline" class="mb-16">
+          <div class="mb-8">
+            <div class="flex items-center justify-between mb-6">
+              <div>
+                <h2 class="text-2xl font-semibold text-neutral-900 dark:text-neutral-100 mb-2">Feature Timeline</h2>
+                <p class="text-neutral-600 dark:text-neutral-400">Chronological feature presentation showing evolution.</p>
+              </div>
+              <button id="copy-timeline-btn" class="flex items-center gap-2 px-4 py-2 bg-neutral-100 dark:bg-neutral-800 hover:bg-neutral-200 dark:hover:bg-neutral-700 text-neutral-700 dark:text-neutral-300 rounded-lg text-sm font-medium transition-colors">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
+                </svg>
+                Copy
+              </button>
+            </div>
+          </div>
+
+          <div class="mb-6">
+            <nav class="inline-flex bg-neutral-100 dark:bg-neutral-800 rounded-lg p-1">
+              <button class="tab-button active px-4 py-2 rounded-md bg-white dark:bg-neutral-700 text-neutral-900 dark:text-neutral-100 font-medium text-sm shadow-sm transition-all" data-tab="timeline-preview">
+                Preview
+              </button>
+              <button class="tab-button px-4 py-2 rounded-md text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-100 font-medium text-sm transition-all" data-tab="timeline-html">
+                HTML
+              </button>
+            </nav>
+          </div>
+
+          <div id="timeline-preview" class="tab-content">
+            <div class="bg-neutral-50 dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-700 rounded-lg overflow-hidden">
+              <section class="bg-white dark:bg-neutral-950 py-20 lg:py-32">
+                <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                  <div class="text-center mb-16">
+                    <h2 class="text-4xl lg:text-5xl font-semibold text-neutral-900 dark:text-neutral-100 mb-6">
+                      Our Journey of
+                      <span class="text-primary-500 dark:text-primary-400">Innovation</span>
+                    </h2>
+                    <p class="text-xl text-neutral-600 dark:text-neutral-400 max-w-3xl mx-auto leading-relaxed">
+                      Discover how we've evolved our platform to meet the changing needs of modern teams.
+                    </p>
+                  </div>
+                  
+                  <div class="relative">
+                    <div class="absolute left-8 top-0 bottom-0 w-0.5 bg-neutral-200 dark:bg-neutral-700"></div>
+                    
+                    <div class="space-y-12">
+                      <div class="relative flex items-center">
+                        <div class="w-16 h-16 bg-primary-500 dark:bg-primary-400 rounded-full flex items-center justify-center text-white font-semibold text-lg shadow-lg">
+                          1.0
+                        </div>
+                        <div class="ml-8">
+                          <h3 class="text-xl font-semibold text-neutral-900 dark:text-neutral-100 mb-2">Foundation Release</h3>
+                          <p class="text-neutral-600 dark:text-neutral-400 mb-2">Core platform with essential features for team collaboration and project management.</p>
+                          <span class="text-sm text-neutral-500 dark:text-neutral-500">January 2023</span>
+                        </div>
+                      </div>
+                      
+                      <div class="relative flex items-center">
+                        <div class="w-16 h-16 bg-success-500 dark:bg-success-400 rounded-full flex items-center justify-center text-white font-semibold text-lg shadow-lg">
+                          2.0
+                        </div>
+                        <div class="ml-8">
+                          <h3 class="text-xl font-semibold text-neutral-900 dark:text-neutral-100 mb-2">Analytics & Insights</h3>
+                          <p class="text-neutral-600 dark:text-neutral-400 mb-2">Advanced reporting tools and real-time analytics dashboard for data-driven decisions.</p>
+                          <span class="text-sm text-neutral-500 dark:text-neutral-500">June 2023</span>
+                        </div>
+                      </div>
+                      
+                      <div class="relative flex items-center">
+                        <div class="w-16 h-16 bg-warning-500 dark:bg-warning-400 rounded-full flex items-center justify-center text-white font-semibold text-lg shadow-lg">
+                          3.0
+                        </div>
+                        <div class="ml-8">
+                          <h3 class="text-xl font-semibold text-neutral-900 dark:text-neutral-100 mb-2">Automation Engine</h3>
+                          <p class="text-neutral-600 dark:text-neutral-400 mb-2">Intelligent workflow automation and custom integrations for seamless operations.</p>
+                          <span class="text-sm text-neutral-500 dark:text-neutral-500">December 2023</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </section>
+            </div>
+          </div>
+
+          <div id="timeline-html" class="tab-content hidden w-[768px]">
+            <div class="bg-neutral-900 dark:bg-neutral-950 rounded-lg overflow-hidden">
+              <pre class="p-6 text-sm overflow-x-auto"><code class="language-html">&lt;section class="bg-white dark:bg-neutral-950 py-20 lg:py-32"&gt;
+  &lt;div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8"&gt;
+    &lt;div class="text-center mb-16"&gt;
+      &lt;h2 class="text-4xl lg:text-5xl font-semibold text-neutral-900 dark:text-neutral-100 mb-6"&gt;
+        Our Journey of
+        &lt;span class="text-primary-500 dark:text-primary-400"&gt;Innovation&lt;/span&gt;
+      &lt;/h2&gt;
+      &lt;p class="text-xl text-neutral-600 dark:text-neutral-400 max-w-3xl mx-auto leading-relaxed"&gt;
+        Discover how we've evolved our platform to meet the changing needs of modern teams.
+      &lt;/p&gt;
+    &lt;/div&gt;
+    
+    &lt;div class="relative"&gt;
+      &lt;div class="absolute left-8 top-0 bottom-0 w-0.5 bg-neutral-200 dark:bg-neutral-700"&gt;&lt;/div&gt;
+      
+      &lt;div class="space-y-12"&gt;
+        &lt;div class="relative flex items-center"&gt;
+          &lt;div class="w-16 h-16 bg-primary-500 dark:bg-primary-400 rounded-full flex items-center justify-center text-white font-semibold text-lg shadow-lg"&gt;
+            1.0
+          &lt;/div&gt;
+          &lt;div class="ml-8"&gt;
+            &lt;h3 class="text-xl font-semibold text-neutral-900 dark:text-neutral-100 mb-2"&gt;Foundation Release&lt;/h3&gt;
+            &lt;p class="text-neutral-600 dark:text-neutral-400 mb-2"&gt;Core platform with essential features for team collaboration and project management.&lt;/p&gt;
+            &lt;span class="text-sm text-neutral-500 dark:text-neutral-500"&gt;January 2023&lt;/span&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;!-- More timeline items... --&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/section&gt;</code></pre>
+            </div>
+          </div>
+        </section>
+
+        <!-- Feature Comparison -->
+        <section id="feature-comparison" class="mb-16">
+          <div class="mb-8">
+            <div class="flex items-center justify-between mb-6">
+              <div>
+                <h2 class="text-2xl font-semibold text-neutral-900 dark:text-neutral-100 mb-2">Feature Comparison</h2>
+                <p class="text-neutral-600 dark:text-neutral-400">Side-by-side comparison for competitive advantage.</p>
+              </div>
+              <button id="copy-comparison-btn" class="flex items-center gap-2 px-4 py-2 bg-neutral-100 dark:bg-neutral-800 hover:bg-neutral-200 dark:hover:bg-neutral-700 text-neutral-700 dark:text-neutral-300 rounded-lg text-sm font-medium transition-colors">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
+                </svg>
+                Copy
+              </button>
+            </div>
+          </div>
+
+          <div class="mb-6">
+            <nav class="inline-flex bg-neutral-100 dark:bg-neutral-800 rounded-lg p-1">
+              <button class="tab-button active px-4 py-2 rounded-md bg-white dark:bg-neutral-700 text-neutral-900 dark:text-neutral-100 font-medium text-sm shadow-sm transition-all" data-tab="comparison-preview">
+                Preview
+              </button>
+              <button class="tab-button px-4 py-2 rounded-md text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-100 font-medium text-sm transition-all" data-tab="comparison-html">
+                HTML
+              </button>
+            </nav>
+          </div>
+
+          <div id="comparison-preview" class="tab-content">
+            <div class="bg-neutral-50 dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-700 rounded-lg overflow-hidden">
+              <section class="bg-white dark:bg-neutral-950 py-20 lg:py-32">
+                <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                  <div class="text-center mb-16">
+                    <h2 class="text-4xl lg:text-5xl font-semibold text-neutral-900 dark:text-neutral-100 mb-6">
+                      Why Choose
+                      <span class="text-primary-500 dark:text-primary-400">Our Platform</span>
+                    </h2>
+                    <p class="text-xl text-neutral-600 dark:text-neutral-400 max-w-3xl mx-auto leading-relaxed">
+                      See how we stack up against the competition with superior features and value.
+                    </p>
+                  </div>
+                  
+                  <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                    <div class="bg-neutral-50 dark:bg-neutral-800 rounded-xl p-6 border border-neutral-200 dark:border-neutral-700">
+                      <h3 class="text-lg font-semibold text-neutral-700 dark:text-neutral-300 mb-6 text-center">Competitors</h3>
+                      <div class="space-y-4">
+                        <div class="flex items-center justify-between py-2">
+                          <span class="text-neutral-600 dark:text-neutral-400">Advanced Analytics</span>
+                          <svg class="w-5 h-5 text-neutral-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                          </svg>
+                        </div>
+                        <div class="flex items-center justify-between py-2">
+                          <span class="text-neutral-600 dark:text-neutral-400">24/7 Support</span>
+                          <svg class="w-5 h-5 text-warning-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 12H4"></path>
+                          </svg>
+                        </div>
+                        <div class="flex items-center justify-between py-2">
+                          <span class="text-neutral-600 dark:text-neutral-400">API Access</span>
+                          <svg class="w-5 h-5 text-success-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                          </svg>
+                        </div>
+                        <div class="flex items-center justify-between py-2">
+                          <span class="text-neutral-600 dark:text-neutral-400">Custom Integrations</span>
+                          <svg class="w-5 h-5 text-neutral-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                          </svg>
+                        </div>
+                      </div>
+                    </div>
+                    
+                    <div class="bg-gradient-to-br from-primary-50 to-primary-100 dark:from-primary-950 dark:to-primary-900 rounded-xl p-6 border-2 border-primary-200 dark:border-primary-800 relative">
+                      <div class="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-primary-500 dark:bg-primary-400 text-white px-4 py-1 rounded-full text-sm font-medium">
+                        Recommended
+                      </div>
+                      <h3 class="text-lg font-semibold text-primary-700 dark:text-primary-300 mb-6 text-center">Our Platform</h3>
+                      <div class="space-y-4">
+                        <div class="flex items-center justify-between py-2">
+                          <span class="text-primary-600 dark:text-primary-400 font-medium">Advanced Analytics</span>
+                          <svg class="w-5 h-5 text-success-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                          </svg>
+                        </div>
+                        <div class="flex items-center justify-between py-2">
+                          <span class="text-primary-600 dark:text-primary-400 font-medium">24/7 Support</span>
+                          <svg class="w-5 h-5 text-success-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                          </svg>
+                        </div>
+                        <div class="flex items-center justify-between py-2">
+                          <span class="text-primary-600 dark:text-primary-400 font-medium">API Access</span>
+                          <svg class="w-5 h-5 text-success-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                          </svg>
+                        </div>
+                        <div class="flex items-center justify-between py-2">
+                          <span class="text-primary-600 dark:text-primary-400 font-medium">Custom Integrations</span>
+                          <svg class="w-5 h-5 text-success-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                          </svg>
+                        </div>
+                      </div>
+                    </div>
+                    
+                    <div class="bg-neutral-50 dark:bg-neutral-800 rounded-xl p-6 border border-neutral-200 dark:border-neutral-700">
+                      <h3 class="text-lg font-semibold text-neutral-700 dark:text-neutral-300 mb-6 text-center">Others</h3>
+                      <div class="space-y-4">
+                        <div class="flex items-center justify-between py-2">
+                          <span class="text-neutral-600 dark:text-neutral-400">Advanced Analytics</span>
+                          <svg class="w-5 h-5 text-warning-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 12H4"></path>
+                          </svg>
+                        </div>
+                        <div class="flex items-center justify-between py-2">
+                          <span class="text-neutral-600 dark:text-neutral-400">24/7 Support</span>
+                          <svg class="w-5 h-5 text-neutral-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                          </svg>
+                        </div>
+                        <div class="flex items-center justify-between py-2">
+                          <span class="text-neutral-600 dark:text-neutral-400">API Access</span>
+                          <svg class="w-5 h-5 text-warning-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 12H4"></path>
+                          </svg>
+                        </div>
+                        <div class="flex items-center justify-between py-2">
+                          <span class="text-neutral-600 dark:text-neutral-400">Custom Integrations</span>
+                          <svg class="w-5 h-5 text-neutral-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                          </svg>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </section>
+            </div>
+          </div>
+
+          <div id="comparison-html" class="tab-content hidden w-[768px]">
+            <div class="bg-neutral-900 dark:bg-neutral-950 rounded-lg overflow-hidden">
+              <pre class="p-6 text-sm overflow-x-auto"><code class="language-html">&lt;section class="bg-white dark:bg-neutral-950 py-20 lg:py-32"&gt;
+  &lt;div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8"&gt;
+    &lt;div class="text-center mb-16"&gt;
+      &lt;h2 class="text-4xl lg:text-5xl font-semibold text-neutral-900 dark:text-neutral-100 mb-6"&gt;
+        Why Choose
+        &lt;span class="text-primary-500 dark:text-primary-400"&gt;Our Platform&lt;/span&gt;
+      &lt;/h2&gt;
+      &lt;p class="text-xl text-neutral-600 dark:text-neutral-400 max-w-3xl mx-auto leading-relaxed"&gt;
+        See how we stack up against the competition with superior features and value.
+      &lt;/p&gt;
+    &lt;/div&gt;
+    
+    &lt;div class="grid grid-cols-1 lg:grid-cols-3 gap-8"&gt;
+      &lt;div class="bg-gradient-to-br from-primary-50 to-primary-100 dark:from-primary-950 dark:to-primary-900 rounded-xl p-6 border-2 border-primary-200 dark:border-primary-800 relative"&gt;
+        &lt;div class="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-primary-500 dark:bg-primary-400 text-white px-4 py-1 rounded-full text-sm font-medium"&gt;
+          Recommended
+        &lt;/div&gt;
+        &lt;h3 class="text-lg font-semibold text-primary-700 dark:text-primary-300 mb-6 text-center"&gt;Our Platform&lt;/h3&gt;
+        &lt;!-- Feature comparison items... --&gt;
+      &lt;/div&gt;
+      &lt;!-- More comparison columns... --&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/section&gt;</code></pre>
+            </div>
+          </div>
+        </section>
+
+        <!-- Feature Spotlight -->
+        <section id="feature-spotlight" class="mb-16">
+          <div class="mb-8">
+            <div class="flex items-center justify-between mb-6">
+              <div>
+                <h2 class="text-2xl font-semibold text-neutral-900 dark:text-neutral-100 mb-2">Feature Spotlight</h2>
+                <p class="text-neutral-600 dark:text-neutral-400">Detailed single feature focus with immersive presentation.</p>
+              </div>
+              <button id="copy-spotlight-btn" class="flex items-center gap-2 px-4 py-2 bg-neutral-100 dark:bg-neutral-800 hover:bg-neutral-200 dark:hover:bg-neutral-700 text-neutral-700 dark:text-neutral-300 rounded-lg text-sm font-medium transition-colors">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
+                </svg>
+                Copy
+              </button>
+            </div>
+          </div>
+
+          <div class="mb-6">
+            <nav class="inline-flex bg-neutral-100 dark:bg-neutral-800 rounded-lg p-1">
+              <button class="tab-button active px-4 py-2 rounded-md bg-white dark:bg-neutral-700 text-neutral-900 dark:text-neutral-100 font-medium text-sm shadow-sm transition-all" data-tab="spotlight-preview">
+                Preview
+              </button>
+              <button class="tab-button px-4 py-2 rounded-md text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-100 font-medium text-sm transition-all" data-tab="spotlight-html">
+                HTML
+              </button>
+            </nav>
+          </div>
+
+          <div id="spotlight-preview" class="tab-content">
+            <div class="bg-neutral-50 dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-700 rounded-lg overflow-hidden">
+              <section class="bg-gradient-to-br from-neutral-50 to-primary-50 dark:from-neutral-950 dark:to-primary-950 py-20 lg:py-32">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                  <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                    <div>
+                      <div class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-primary-100 dark:bg-primary-900/20 text-primary-700 dark:text-primary-300 mb-6">
+                        ✨ Featured Capability
+                      </div>
+                      <h2 class="text-5xl lg:text-6xl font-semibold text-neutral-900 dark:text-neutral-100 mb-6 leading-tight">
+                        AI-Powered
+                        <span class="text-primary-500 dark:text-primary-400">Automation</span>
+                      </h2>
+                      <p class="text-xl text-neutral-600 dark:text-neutral-400 leading-relaxed mb-8">
+                        Revolutionary artificial intelligence that learns your workflow patterns and automatically optimizes repetitive tasks, saving hours of manual work every week.
+                      </p>
+                      <div class="space-y-4 mb-8">
+                        <div class="flex items-center">
+                          <div class="w-2 h-2 bg-primary-500 dark:bg-primary-400 rounded-full mr-4"></div>
+                          <span class="text-neutral-700 dark:text-neutral-300">Smart workflow detection and optimization</span>
+                        </div>
+                        <div class="flex items-center">
+                          <div class="w-2 h-2 bg-primary-500 dark:bg-primary-400 rounded-full mr-4"></div>
+                          <span class="text-neutral-700 dark:text-neutral-300">Machine learning-powered task prioritization</span>
+                        </div>
+                        <div class="flex items-center">
+                          <div class="w-2 h-2 bg-primary-500 dark:bg-primary-400 rounded-full mr-4"></div>
+                          <span class="text-neutral-700 dark:text-neutral-300">Predictive analytics for resource planning</span>
+                        </div>
+                      </div>
+                      <div class="flex flex-col sm:flex-row gap-4">
+                        <button class="bg-primary-500 dark:bg-primary-600 hover:bg-primary-600 dark:hover:bg-primary-700 text-white px-8 py-4 rounded-lg text-lg font-medium transition-colors">
+                          Try AI Automation
+                        </button>
+                        <button class="border border-neutral-200 dark:border-neutral-700 hover:bg-neutral-50 dark:hover:bg-neutral-800 text-neutral-700 dark:text-neutral-300 px-8 py-4 rounded-lg text-lg font-medium transition-colors">
+                          Watch Demo
+                        </button>
+                      </div>
+                    </div>
+                    
+                    <div class="relative">
+                      <div class="bg-white dark:bg-neutral-800 rounded-2xl shadow-2xl p-8">
+                        <div class="space-y-6">
+                          <div class="flex items-center justify-between">
+                            <h3 class="text-lg font-semibold text-neutral-900 dark:text-neutral-100">Automation Dashboard</h3>
+                            <div class="w-3 h-3 bg-success-500 rounded-full"></div>
+                          </div>
+                          <div class="space-y-4">
+                            <div class="bg-primary-50 dark:bg-primary-900/20 rounded-lg p-4">
+                              <div class="flex items-center justify-between mb-2">
+                                <span class="text-sm font-medium text-neutral-700 dark:text-neutral-300">Email Processing</span>
+                                <span class="text-xs text-primary-600 dark:text-primary-400">Running</span>
+                              </div>
+                              <div class="w-full bg-neutral-200 dark:bg-neutral-700 rounded-full h-2">
+                                <div class="bg-primary-500 dark:bg-primary-400 h-2 rounded-full w-3/4"></div>
+                              </div>
+                            </div>
+                            <div class="bg-neutral-50 dark:bg-neutral-700 rounded-lg p-4">
+                              <div class="flex items-center justify-between mb-2">
+                                <span class="text-sm font-medium text-neutral-700 dark:text-neutral-300">Report Generation</span>
+                                <span class="text-xs text-neutral-500 dark:text-neutral-400">Scheduled</span>
+                              </div>
+                              <div class="w-full bg-neutral-200 dark:bg-neutral-600 rounded-full h-2">
+                                <div class="bg-neutral-400 dark:bg-neutral-500 h-2 rounded-full w-1/4"></div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="absolute -top-4 -right-4 w-24 h-24 bg-primary-500 dark:bg-primary-400 rounded-full opacity-10"></div>
+                      <div class="absolute -bottom-6 -left-6 w-16 h-16 bg-success-500 dark:bg-success-400 rounded-full opacity-10"></div>
+                    </div>
+                  </div>
+                </div>
+              </section>
+            </div>
+          </div>
+
+          <div id="spotlight-html" class="tab-content hidden w-[768px]">
+            <div class="bg-neutral-900 dark:bg-neutral-950 rounded-lg overflow-hidden">
+              <pre class="p-6 text-sm overflow-x-auto"><code class="language-html">&lt;section class="bg-gradient-to-br from-neutral-50 to-primary-50 dark:from-neutral-950 dark:to-primary-950 py-20 lg:py-32"&gt;
+  &lt;div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"&gt;
+    &lt;div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center"&gt;
+      &lt;div&gt;
+        &lt;div class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-primary-100 dark:bg-primary-900/20 text-primary-700 dark:text-primary-300 mb-6"&gt;
+          ✨ Featured Capability
+        &lt;/div&gt;
+        &lt;h2 class="text-5xl lg:text-6xl font-semibold text-neutral-900 dark:text-neutral-100 mb-6 leading-tight"&gt;
+          AI-Powered
+          &lt;span class="text-primary-500 dark:text-primary-400"&gt;Automation&lt;/span&gt;
+        &lt;/h2&gt;
+        &lt;p class="text-xl text-neutral-600 dark:text-neutral-400 leading-relaxed mb-8"&gt;
+          Revolutionary artificial intelligence that learns your workflow patterns and automatically optimizes repetitive tasks.
+        &lt;/p&gt;
+        &lt;!-- Feature benefits and CTAs... --&gt;
+      &lt;/div&gt;
+      
+      &lt;div class="relative"&gt;
+        &lt;!-- Dashboard mockup... --&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/section&gt;</code></pre>
+            </div>
+          </div>
+        </section>
+
+        <!-- Usage Guidelines -->
+        <div class="bg-white dark:bg-neutral-950 border border-neutral-900 dark:border-neutral-100 rounded-lg p-4 mb-8">
+          <h3 class="text-sm font-medium text-neutral-900 dark:text-neutral-100 mb-2">Usage Guidelines</h3>
+          <ul class="text-sm text-neutral-900 dark:text-neutral-100 space-y-1">
+            <li>• Use feature sections to highlight key product benefits and capabilities</li>
+            <li>• Keep feature titles concise and benefit-focused rather than technical</li>
+            <li>• Use consistent visual treatment across all feature items</li>
+            <li>• Include relevant icons or visuals to reinforce the message</li>
+            <li>• Focus on user benefits rather than technical specifications</li>
+            <li>• Limit to 6-9 features to avoid overwhelming users</li>
+          </ul>
+        </div>
+
+        <!-- Accessibility Features -->
+        <div class="bg-white dark:bg-neutral-950 border border-neutral-900 dark:border-neutral-100 rounded-lg p-4">
+          <h3 class="text-sm font-medium text-neutral-900 dark:text-neutral-100 mb-2">Accessibility Features</h3>
+          <ul class="text-sm text-neutral-900 dark:text-neutral-100 space-y-1">
+            <li>• Proper heading hierarchy with semantic HTML structure</li>
+            <li>• High contrast icons and text for optimal readability</li>
+            <li>• Descriptive text that works without visual context</li>
+            <li>• Keyboard navigation support for interactive elements</li>
+            <li>• Screen reader friendly content structure and alt text</li>
+            <li>• Responsive design that scales properly on all devices</li>
+          </ul>
+        </div>
+      </main>
+      <div id="footer-container"></div>
+    </div>
+  </div>
+
+  <script type="module">
+    import { generateHeader, generateSidebar, generateFooter, initializeSharedComponents } from '/src/shared/components.js';
+    import { themeManager } from '/src/shared/theme.js';
+    import { toast } from '/src/shared/toast.js';
+
+    document.addEventListener('DOMContentLoaded', function() {
+      // Inject shared components
+      document.getElementById('header-container').innerHTML = generateHeader('blocks');
+      document.getElementById('sidebar-container').innerHTML = generateSidebar('feature');
+      document.getElementById('footer-container').innerHTML = generateFooter();
+      
+      // Initialize shared functionality
+      initializeSharedComponents();
+      themeManager.initializeToggleButtons();
+      
+      // Initialize tab switching
+      initializeTabs();
+      
+      // Initialize copy buttons
+      initializeCopyButtons();
+    });
+
+    function initializeCopyButtons() {
+      document.getElementById('copy-grid-btn')?.addEventListener('click', () => {
+        const code = document.querySelector('#grid-html code').textContent;
+        navigator.clipboard.writeText(code).then(() => {
+          toast.show('Feature grid code copied!', 'success');
+        });
+      });
+
+      document.getElementById('copy-cards-btn')?.addEventListener('click', () => {
+        const code = document.querySelector('#cards-html code').textContent;
+        navigator.clipboard.writeText(code).then(() => {
+          toast.show('Feature cards code copied!', 'success');
+        });
+      });
+
+      document.getElementById('copy-timeline-btn')?.addEventListener('click', () => {
+        const code = document.querySelector('#timeline-html code').textContent;
+        navigator.clipboard.writeText(code).then(() => {
+          toast.show('Feature timeline code copied!', 'success');
+        });
+      });
+
+      document.getElementById('copy-comparison-btn')?.addEventListener('click', () => {
+        const code = document.querySelector('#comparison-html code').textContent;
+        navigator.clipboard.writeText(code).then(() => {
+          toast.show('Feature comparison code copied!', 'success');
+        });
+      });
+
+      document.getElementById('copy-spotlight-btn')?.addEventListener('click', () => {
+        const code = document.querySelector('#spotlight-html code').textContent;
+        navigator.clipboard.writeText(code).then(() => {
+          toast.show('Feature spotlight code copied!', 'success');
+        });
+      });
+    }
+
+    function initializeTabs() {
+      const tabButtons = document.querySelectorAll('.tab-button');
+
+      tabButtons.forEach(button => {
+        button.addEventListener('click', () => {
+          const targetTab = button.getAttribute('data-tab');
+          const section = button.closest('section');
+          
+          // Update active states within the section
+          section.querySelectorAll('.tab-button').forEach(btn => {
+            btn.classList.remove('active', 'bg-white', 'dark:bg-neutral-700', 'text-neutral-900', 'dark:text-neutral-100', 'shadow-sm');
+            btn.classList.add('text-neutral-600', 'dark:text-neutral-400');
+          });
+          
+          button.classList.add('active', 'bg-white', 'dark:bg-neutral-700', 'text-neutral-900', 'dark:text-neutral-100', 'shadow-sm');
+          button.classList.remove('text-neutral-600', 'dark:text-neutral-400');
+          
+          // Show/hide content within the section
+          section.querySelectorAll('.tab-content').forEach(content => {
+            content.classList.add('hidden');
+          });
+          
+          const targetContent = section.querySelector(`#${targetTab}`);
+          if (targetContent) {
+            targetContent.classList.remove('hidden');
+          }
+        });
+      });
+    }
+  </script>
+</body>
+</html> 

@@ -36,7 +36,7 @@
         <div class="mb-12">
           <h1 class="text-4xl font-semibold text-neutral-900 dark:text-neutral-100 mb-4">Modal</h1>
           <p class="text-lg text-neutral-600 dark:text-neutral-400 mb-6 max-w-3xl leading-relaxed">
-            Overlay dialogs with different sizes, backdrop options, scrollable content, and nested modal support.
+            Versatile modal dialogs with multiple sizes, backdrop overlays, scrollable content, and nested modal support for complex user interactions.
           </p>
         </div>
 
@@ -46,7 +46,7 @@
             <div class="flex items-center justify-between mb-6">
               <div>
                 <h2 class="text-2xl font-semibold text-neutral-900 dark:text-neutral-100 mb-2">Modal Sizes</h2>
-                <p class="text-neutral-600 dark:text-neutral-400">Small, medium, and large modal sizes for different content types.</p>
+                <p class="text-neutral-600 dark:text-neutral-400">Small, medium, and large modal variations for different content types.</p>
               </div>
               <button id="copy-sizes-btn" class="flex items-center gap-2 px-4 py-2 bg-neutral-100 dark:bg-neutral-800 hover:bg-neutral-200 dark:hover:bg-neutral-700 text-neutral-700 dark:text-neutral-300 rounded-lg text-sm font-medium transition-colors">
                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -67,15 +67,144 @@
           <div id="sizes-preview" class="tab-content">
             <div class="bg-neutral-50 dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-700 rounded-lg p-8">
               <div class="flex flex-wrap gap-4">
-                <button onclick="openModal('modal-small')" class="px-4 py-2 bg-primary-600 hover:bg-primary-700 text-white rounded-lg font-medium transition-colors">
-                  Small Modal
+                <button onclick="openModal('smallModal')" class="bg-primary-500 dark:bg-primary-600 hover:bg-primary-600 dark:hover:bg-primary-700 text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors">
+                  Open Small Modal
                 </button>
-                <button onclick="openModal('modal-medium')" class="px-4 py-2 bg-primary-600 hover:bg-primary-700 text-white rounded-lg font-medium transition-colors">
-                  Medium Modal
+                <button onclick="openModal('mediumModal')" class="bg-primary-500 dark:bg-primary-600 hover:bg-primary-600 dark:hover:bg-primary-700 text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors">
+                  Open Medium Modal
                 </button>
-                <button onclick="openModal('modal-large')" class="px-4 py-2 bg-primary-600 hover:bg-primary-700 text-white rounded-lg font-medium transition-colors">
-                  Large Modal
+                <button onclick="openModal('largeModal')" class="bg-primary-500 dark:bg-primary-600 hover:bg-primary-600 dark:hover:bg-primary-700 text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors">
+                  Open Large Modal
                 </button>
+              </div>
+
+              <!-- Small Modal -->
+              <div id="smallModal" class="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4 hidden">
+                <div class="bg-white dark:bg-neutral-950 rounded-lg shadow-lg max-w-sm w-full">
+                  <div class="flex items-center justify-between p-6 border-b border-neutral-200 dark:border-neutral-700">
+                    <h3 class="text-lg font-semibold text-neutral-900 dark:text-neutral-100">Small Modal</h3>
+                    <button onclick="closeModal('smallModal')" class="text-neutral-400 hover:text-neutral-600 dark:hover:text-neutral-300" aria-label="Close modal">
+                      <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                      </svg>
+                    </button>
+                  </div>
+                  <div class="p-6">
+                    <p class="text-neutral-600 dark:text-neutral-400 mb-4">This is a small modal perfect for simple confirmations or quick actions.</p>
+                    <div class="flex justify-end space-x-3">
+                      <button onclick="closeModal('smallModal')" class="px-4 py-2 text-neutral-700 dark:text-neutral-300 bg-neutral-100 dark:bg-neutral-800 hover:bg-neutral-200 dark:hover:bg-neutral-700 rounded-lg text-sm font-medium transition-colors">
+                        Cancel
+                      </button>
+                      <button class="px-4 py-2 bg-primary-500 dark:bg-primary-600 hover:bg-primary-600 dark:hover:bg-primary-700 text-white rounded-lg text-sm font-medium transition-colors">
+                        Confirm
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Medium Modal -->
+              <div id="mediumModal" class="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4 hidden">
+                <div class="bg-white dark:bg-neutral-950 rounded-lg shadow-lg max-w-md w-full">
+                  <div class="flex items-center justify-between p-6 border-b border-neutral-200 dark:border-neutral-700">
+                    <h3 class="text-lg font-semibold text-neutral-900 dark:text-neutral-100">Medium Modal</h3>
+                    <button onclick="closeModal('mediumModal')" class="text-neutral-400 hover:text-neutral-600 dark:hover:text-neutral-300" aria-label="Close modal">
+                      <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                      </svg>
+                    </button>
+                  </div>
+                  <div class="p-6">
+                    <p class="text-neutral-600 dark:text-neutral-400 mb-4">This medium-sized modal provides more space for detailed content, forms, or information displays.</p>
+                    <div class="space-y-4">
+                      <div>
+                        <label class="block text-sm font-medium text-neutral-700 dark:text-neutral-300 mb-2">Email Address</label>
+                        <input type="email" class="w-full px-3 py-2 border border-neutral-200 dark:border-neutral-700 rounded-lg bg-white dark:bg-neutral-800 text-neutral-900 dark:text-neutral-100" placeholder="Enter your email">
+                      </div>
+                      <div>
+                        <label class="block text-sm font-medium text-neutral-700 dark:text-neutral-300 mb-2">Message</label>
+                        <textarea rows="3" class="w-full px-3 py-2 border border-neutral-200 dark:border-neutral-700 rounded-lg bg-white dark:bg-neutral-800 text-neutral-900 dark:text-neutral-100" placeholder="Your message"></textarea>
+                      </div>
+                    </div>
+                    <div class="flex justify-end space-x-3 mt-6">
+                      <button onclick="closeModal('mediumModal')" class="px-4 py-2 text-neutral-700 dark:text-neutral-300 bg-neutral-100 dark:bg-neutral-800 hover:bg-neutral-200 dark:hover:bg-neutral-700 rounded-lg text-sm font-medium transition-colors">
+                        Cancel
+                      </button>
+                      <button class="px-4 py-2 bg-primary-500 dark:bg-primary-600 hover:bg-primary-600 dark:hover:bg-primary-700 text-white rounded-lg text-sm font-medium transition-colors">
+                        Send Message
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Large Modal -->
+              <div id="largeModal" class="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4 hidden">
+                <div class="bg-white dark:bg-neutral-950 rounded-lg shadow-lg max-w-2xl w-full">
+                  <div class="flex items-center justify-between p-6 border-b border-neutral-200 dark:border-neutral-700">
+                    <h3 class="text-lg font-semibold text-neutral-900 dark:text-neutral-100">Large Modal</h3>
+                    <button onclick="closeModal('largeModal')" class="text-neutral-400 hover:text-neutral-600 dark:hover:text-neutral-300" aria-label="Close modal">
+                      <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                      </svg>
+                    </button>
+                  </div>
+                  <div class="p-6">
+                    <p class="text-neutral-600 dark:text-neutral-400 mb-6">Large modals are perfect for complex forms, detailed content, or multi-step processes that require more screen real estate.</p>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                      <div class="space-y-4">
+                        <h4 class="text-md font-semibold text-neutral-900 dark:text-neutral-100">Personal Information</h4>
+                        <div>
+                          <label class="block text-sm font-medium text-neutral-700 dark:text-neutral-300 mb-2">Full Name</label>
+                          <input type="text" class="w-full px-3 py-2 border border-neutral-200 dark:border-neutral-700 rounded-lg bg-white dark:bg-neutral-800 text-neutral-900 dark:text-neutral-100" placeholder="John Doe">
+                        </div>
+                        <div>
+                          <label class="block text-sm font-medium text-neutral-700 dark:text-neutral-300 mb-2">Email</label>
+                          <input type="email" class="w-full px-3 py-2 border border-neutral-200 dark:border-neutral-700 rounded-lg bg-white dark:bg-neutral-800 text-neutral-900 dark:text-neutral-100" placeholder="john@example.com">
+                        </div>
+                        <div>
+                          <label class="block text-sm font-medium text-neutral-700 dark:text-neutral-300 mb-2">Phone</label>
+                          <input type="tel" class="w-full px-3 py-2 border border-neutral-200 dark:border-neutral-700 rounded-lg bg-white dark:bg-neutral-800 text-neutral-900 dark:text-neutral-100" placeholder="(555) 123-4567">
+                        </div>
+                      </div>
+                      <div class="space-y-4">
+                        <h4 class="text-md font-semibold text-neutral-900 dark:text-neutral-100">Preferences</h4>
+                        <div>
+                          <label class="block text-sm font-medium text-neutral-700 dark:text-neutral-300 mb-2">Department</label>
+                          <select class="w-full px-3 py-2 border border-neutral-200 dark:border-neutral-700 rounded-lg bg-white dark:bg-neutral-800 text-neutral-900 dark:text-neutral-100">
+                            <option>Engineering</option>
+                            <option>Marketing</option>
+                            <option>Sales</option>
+                            <option>Support</option>
+                          </select>
+                        </div>
+                        <div>
+                          <label class="block text-sm font-medium text-neutral-700 dark:text-neutral-300 mb-2">Role</label>
+                          <select class="w-full px-3 py-2 border border-neutral-200 dark:border-neutral-700 rounded-lg bg-white dark:bg-neutral-800 text-neutral-900 dark:text-neutral-100">
+                            <option>Manager</option>
+                            <option>Developer</option>
+                            <option>Designer</option>
+                            <option>Analyst</option>
+                          </select>
+                        </div>
+                        <div>
+                          <label class="flex items-center">
+                            <input type="checkbox" class="rounded border-neutral-300 dark:border-neutral-600 text-primary-500 focus:ring-primary-500 dark:focus:ring-primary-600">
+                            <span class="ml-2 text-sm text-neutral-700 dark:text-neutral-300">Send email notifications</span>
+                          </label>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="flex justify-end space-x-3 mt-8">
+                      <button onclick="closeModal('largeModal')" class="px-4 py-2 text-neutral-700 dark:text-neutral-300 bg-neutral-100 dark:bg-neutral-800 hover:bg-neutral-200 dark:hover:bg-neutral-700 rounded-lg text-sm font-medium transition-colors">
+                        Cancel
+                      </button>
+                      <button class="px-4 py-2 bg-primary-500 dark:bg-primary-600 hover:bg-primary-600 dark:hover:bg-primary-700 text-white rounded-lg text-sm font-medium transition-colors">
+                        Save Profile
+                      </button>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -83,217 +212,61 @@
           <div id="sizes-html" class="tab-content hidden w-[768px]">
             <div class="bg-neutral-900 dark:bg-neutral-950 rounded-lg overflow-hidden">
               <div class="w-full">
-                <pre class="p-6 text-sm overflow-x-auto"><code class="language-html whitespace-pre break-words" style="word-break: break-all; max-width: 100%;">&lt;!-- Small Modal --&gt;
-&lt;div class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50"&gt;
-  &lt;div class="bg-white dark:bg-neutral-800 rounded-lg shadow-xl max-w-md w-full"&gt;
+                <pre class="p-6 text-sm overflow-x-auto"><code class="language-html">&lt;!-- Small Modal --&gt;
+&lt;div class="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4"&gt;
+  &lt;div class="bg-white dark:bg-neutral-950 rounded-lg shadow-lg max-w-sm w-full"&gt;
+    &lt;div class="flex items-center justify-between p-6 border-b border-neutral-200 dark:border-neutral-700"&gt;
+      &lt;h3 class="text-lg font-semibold text-neutral-900 dark:text-neutral-100"&gt;Modal Title&lt;/h3&gt;
+      &lt;button class="text-neutral-400 hover:text-neutral-600 dark:hover:text-neutral-300" aria-label="Close modal"&gt;
+        &lt;svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"&gt;
+          &lt;path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"&gt;&lt;/path&gt;
+        &lt;/svg&gt;
+      &lt;/button&gt;
+    &lt;/div&gt;
     &lt;div class="p-6"&gt;
-      &lt;div class="flex justify-between items-start mb-4"&gt;
-        &lt;h3 class="text-lg font-semibold text-neutral-900 dark:text-neutral-100"&gt;Small Modal&lt;/h3&gt;
-        &lt;button class="text-neutral-400 hover:text-neutral-600 dark:hover:text-neutral-200"&gt;
-          &lt;svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"&gt;
-            &lt;path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"&gt;&lt;/path&gt;
-          &lt;/svg&gt;
-        &lt;/button&gt;
-      &lt;/div&gt;
-      &lt;p class="text-neutral-600 dark:text-neutral-400 mb-6"&gt;This is a small modal perfect for confirmations and simple messages.&lt;/p&gt;
-      &lt;div class="flex gap-3"&gt;
-        &lt;button class="flex-1 bg-primary-600 hover:bg-primary-700 text-white px-4 py-2 rounded-lg font-medium transition-colors"&gt;
-          Confirm
-        &lt;/button&gt;
-        &lt;button class="flex-1 border border-neutral-300 dark:border-neutral-600 hover:bg-neutral-50 dark:hover:bg-neutral-700 text-neutral-700 dark:text-neutral-300 px-4 py-2 rounded-lg font-medium transition-colors"&gt;
-          Cancel
-        &lt;/button&gt;
+      &lt;p class="text-neutral-600 dark:text-neutral-400 mb-4"&gt;Modal content goes here.&lt;/p&gt;
+      &lt;div class="flex justify-end space-x-3"&gt;
+        &lt;button class="px-4 py-2 text-neutral-700 dark:text-neutral-300 bg-neutral-100 dark:bg-neutral-800 rounded-lg"&gt;Cancel&lt;/button&gt;
+        &lt;button class="px-4 py-2 bg-primary-500 dark:bg-primary-600 text-white rounded-lg"&gt;Confirm&lt;/button&gt;
       &lt;/div&gt;
     &lt;/div&gt;
   &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;!-- Medium Modal --&gt;
-&lt;div class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50"&gt;
-  &lt;div class="bg-white dark:bg-neutral-800 rounded-lg shadow-xl max-w-lg w-full"&gt;
-    &lt;div class="p-6"&gt;
-      &lt;div class="flex justify-between items-start mb-4"&gt;
-        &lt;h3 class="text-lg font-semibold text-neutral-900 dark:text-neutral-100"&gt;Medium Modal&lt;/h3&gt;
-        &lt;button class="text-neutral-400 hover:text-neutral-600 dark:hover:text-neutral-200"&gt;
-          &lt;svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"&gt;
-            &lt;path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"&gt;&lt;/path&gt;
-          &lt;/svg&gt;
-        &lt;/button&gt;
-      &lt;/div&gt;
-      &lt;p class="text-neutral-600 dark:text-neutral-400 mb-6"&gt;This medium-sized modal provides more space for content like forms or detailed information.&lt;/p&gt;
-      &lt;div class="space-y-4 mb-6"&gt;
-        &lt;div&gt;
-          &lt;label class="block text-sm font-medium text-neutral-900 dark:text-neutral-100 mb-1"&gt;Name&lt;/label&gt;
-          &lt;input type="text" class="w-full px-3 py-2 border border-neutral-300 dark:border-neutral-600 rounded-lg bg-white dark:bg-neutral-700 text-neutral-900 dark:text-neutral-100 focus:ring-2 focus:ring-primary-500 focus:border-transparent"&gt;
-        &lt;/div&gt;
-        &lt;div&gt;
-          &lt;label class="block text-sm font-medium text-neutral-900 dark:text-neutral-100 mb-1"&gt;Email&lt;/label&gt;
-          &lt;input type="email" class="w-full px-3 py-2 border border-neutral-300 dark:border-neutral-600 rounded-lg bg-white dark:bg-neutral-700 text-neutral-900 dark:text-neutral-100 focus:ring-2 focus:ring-primary-500 focus:border-transparent"&gt;
-        &lt;/div&gt;
-      &lt;/div&gt;
-      &lt;div class="flex gap-3"&gt;
-        &lt;button class="flex-1 bg-primary-600 hover:bg-primary-700 text-white px-4 py-2 rounded-lg font-medium transition-colors"&gt;
-          Save
-        &lt;/button&gt;
-        &lt;button class="flex-1 border border-neutral-300 dark:border-neutral-600 hover:bg-neutral-50 dark:hover:bg-neutral-700 text-neutral-700 dark:text-neutral-300 px-4 py-2 rounded-lg font-medium transition-colors"&gt;
-          Cancel
-        &lt;/button&gt;
-      &lt;/div&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
-
-&lt;!-- Large Modal --&gt;
-&lt;div class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50"&gt;
-  &lt;div class="bg-white dark:bg-neutral-800 rounded-lg shadow-xl max-w-4xl w-full max-h-[90vh] overflow-hidden"&gt;
-    &lt;div class="p-6"&gt;
-      &lt;div class="flex justify-between items-start mb-4"&gt;
-        &lt;h3 class="text-lg font-semibold text-neutral-900 dark:text-neutral-100"&gt;Large Modal&lt;/h3&gt;
-        &lt;button class="text-neutral-400 hover:text-neutral-600 dark:hover:text-neutral-200"&gt;
-          &lt;svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"&gt;
-            &lt;path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"&gt;&lt;/path&gt;
-          &lt;/svg&gt;
-        &lt;/button&gt;
-      &lt;/div&gt;
-      &lt;div class="overflow-y-auto max-h-[70vh]"&gt;
-        &lt;p class="text-neutral-600 dark:text-neutral-400 mb-6"&gt;This large modal can accommodate complex layouts, tables, or extensive content.&lt;/p&gt;
-        &lt;div class="grid md:grid-cols-2 gap-6 mb-6"&gt;
-          &lt;div class="space-y-4"&gt;
-            &lt;h4 class="font-medium text-neutral-900 dark:text-neutral-100"&gt;Form Section 1&lt;/h4&gt;
-            &lt;input type="text" placeholder="Field 1" class="w-full px-3 py-2 border border-neutral-300 dark:border-neutral-600 rounded-lg bg-white dark:bg-neutral-700 text-neutral-900 dark:text-neutral-100"&gt;
-            &lt;input type="text" placeholder="Field 2" class="w-full px-3 py-2 border border-neutral-300 dark:border-neutral-600 rounded-lg bg-white dark:bg-neutral-700 text-neutral-900 dark:text-neutral-100"&gt;
-          &lt;/div&gt;
-          &lt;div class="space-y-4"&gt;
-            &lt;h4 class="font-medium text-neutral-900 dark:text-neutral-100"&gt;Form Section 2&lt;/h4&gt;
-            &lt;input type="text" placeholder="Field 3" class="w-full px-3 py-2 border border-neutral-300 dark:border-neutral-600 rounded-lg bg-white dark:bg-neutral-700 text-neutral-900 dark:text-neutral-100"&gt;
-            &lt;textarea placeholder="Description" rows="3" class="w-full px-3 py-2 border border-neutral-300 dark:border-neutral-600 rounded-lg bg-white dark:bg-neutral-700 text-neutral-900 dark:text-neutral-100"&gt;&lt;/textarea&gt;
-          &lt;/div&gt;
-        &lt;/div&gt;
-      &lt;/div&gt;
-      &lt;div class="flex gap-3 pt-4 border-t border-neutral-200 dark:border-neutral-700"&gt;
-        &lt;button class="bg-primary-600 hover:bg-primary-700 text-white px-6 py-2 rounded-lg font-medium transition-colors"&gt;
-          Save Changes
-        &lt;/button&gt;
-        &lt;button class="border border-neutral-300 dark:border-neutral-600 hover:bg-neutral-50 dark:hover:bg-neutral-700 text-neutral-700 dark:text-neutral-300 px-6 py-2 rounded-lg font-medium transition-colors"&gt;
-          Cancel
-        &lt;/button&gt;
-      &lt;/div&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;</code></pre>
+&lt;!-- Medium Modal: max-w-md --&gt;
+&lt;!-- Large Modal: max-w-2xl --&gt;</code></pre>
               </div>
             </div>
           </div>
         </section>
 
         <!-- Usage Guidelines -->
-        <div class="bg-white dark:bg-neutral-950 border border-neutral-900 dark:border-neutral-100 rounded-lg p-4">
+        <div class="bg-white dark:bg-neutral-950 border border-neutral-900 dark:border-neutral-100 rounded-lg p-4 mb-8">
           <h3 class="text-sm font-medium text-neutral-900 dark:text-neutral-100 mb-2">Usage Guidelines</h3>
           <ul class="text-sm text-neutral-900 dark:text-neutral-100 space-y-1">
-            <li>• Use appropriate modal sizes for content complexity</li>
-            <li>• Include close buttons and backdrop dismissal</li>
-            <li>• Focus management for accessibility</li>
-            <li>• Escape key support for closing modals</li>
+            <li>• Use modals sparingly - they interrupt the user flow</li>
+            <li>• Choose appropriate sizes based on content complexity</li>
+            <li>• Always provide a clear way to close the modal</li>
+            <li>• Use backdrop clicks and ESC key to close modals</li>
+            <li>• For long content, use scrollable modals with fixed headers/footers</li>
+            <li>• Avoid nested modals unless absolutely necessary</li>
+          </ul>
+        </div>
+
+        <!-- Accessibility Features -->
+        <div class="bg-white dark:bg-neutral-950 border border-neutral-900 dark:border-neutral-100 rounded-lg p-4">
+          <h3 class="text-sm font-medium text-neutral-900 dark:text-neutral-100 mb-2">Accessibility Features</h3>
+          <ul class="text-sm text-neutral-900 dark:text-neutral-100 space-y-1">
+            <li>• Focus management - trap focus within modal while open</li>
+            <li>• ARIA attributes for screen reader compatibility</li>
+            <li>• Keyboard navigation support (ESC to close, Tab cycling)</li>
+            <li>• Proper heading hierarchy within modal content</li>
+            <li>• High contrast close buttons with aria-label attributes</li>
+            <li>• Background scroll prevention when modal is open</li>
           </ul>
         </div>
       </main>
       <div id="footer-container"></div>
-    </div>
-  </div>
-
-  <!-- Modal Templates -->
-  <div id="modal-small" class="modal hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50">
-    <div class="bg-white dark:bg-neutral-800 rounded-lg shadow-xl max-w-md w-full">
-      <div class="p-6">
-        <div class="flex justify-between items-start mb-4">
-          <h3 class="text-lg font-semibold text-neutral-900 dark:text-neutral-100">Small Modal</h3>
-          <button onclick="closeModal('modal-small')" class="text-neutral-400 hover:text-neutral-600 dark:hover:text-neutral-200">
-            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
-            </svg>
-          </button>
-        </div>
-        <p class="text-neutral-600 dark:text-neutral-400 mb-6">This is a small modal perfect for confirmations and simple messages.</p>
-        <div class="flex gap-3">
-          <button onclick="closeModal('modal-small')" class="flex-1 bg-primary-600 hover:bg-primary-700 text-white px-4 py-2 rounded-lg font-medium transition-colors">
-            Confirm
-          </button>
-          <button onclick="closeModal('modal-small')" class="flex-1 border border-neutral-300 dark:border-neutral-600 hover:bg-neutral-50 dark:hover:bg-neutral-700 text-neutral-700 dark:text-neutral-300 px-4 py-2 rounded-lg font-medium transition-colors">
-            Cancel
-          </button>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div id="modal-medium" class="modal hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50">
-    <div class="bg-white dark:bg-neutral-800 rounded-lg shadow-xl max-w-lg w-full">
-      <div class="p-6">
-        <div class="flex justify-between items-start mb-4">
-          <h3 class="text-lg font-semibold text-neutral-900 dark:text-neutral-100">Medium Modal</h3>
-          <button onclick="closeModal('modal-medium')" class="text-neutral-400 hover:text-neutral-600 dark:hover:text-neutral-200">
-            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
-            </svg>
-          </button>
-        </div>
-        <p class="text-neutral-600 dark:text-neutral-400 mb-6">This medium-sized modal provides more space for content like forms or detailed information.</p>
-        <div class="space-y-4 mb-6">
-          <div>
-            <label class="block text-sm font-medium text-neutral-900 dark:text-neutral-100 mb-1">Name</label>
-            <input type="text" class="w-full px-3 py-2 border border-neutral-300 dark:border-neutral-600 rounded-lg bg-white dark:bg-neutral-700 text-neutral-900 dark:text-neutral-100 focus:ring-2 focus:ring-primary-500 focus:border-transparent">
-          </div>
-          <div>
-            <label class="block text-sm font-medium text-neutral-900 dark:text-neutral-100 mb-1">Email</label>
-            <input type="email" class="w-full px-3 py-2 border border-neutral-300 dark:border-neutral-600 rounded-lg bg-white dark:bg-neutral-700 text-neutral-900 dark:text-neutral-100 focus:ring-2 focus:ring-primary-500 focus:border-transparent">
-          </div>
-        </div>
-        <div class="flex gap-3">
-          <button onclick="closeModal('modal-medium')" class="flex-1 bg-primary-600 hover:bg-primary-700 text-white px-4 py-2 rounded-lg font-medium transition-colors">
-            Save
-          </button>
-          <button onclick="closeModal('modal-medium')" class="flex-1 border border-neutral-300 dark:border-neutral-600 hover:bg-neutral-50 dark:hover:bg-neutral-700 text-neutral-700 dark:text-neutral-300 px-4 py-2 rounded-lg font-medium transition-colors">
-            Cancel
-          </button>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div id="modal-large" class="modal hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50">
-    <div class="bg-white dark:bg-neutral-800 rounded-lg shadow-xl max-w-4xl w-full max-h-[90vh] overflow-hidden">
-      <div class="p-6">
-        <div class="flex justify-between items-start mb-4">
-          <h3 class="text-lg font-semibold text-neutral-900 dark:text-neutral-100">Large Modal</h3>
-          <button onclick="closeModal('modal-large')" class="text-neutral-400 hover:text-neutral-600 dark:hover:text-neutral-200">
-            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
-            </svg>
-          </button>
-        </div>
-        <div class="overflow-y-auto max-h-[70vh]">
-          <p class="text-neutral-600 dark:text-neutral-400 mb-6">This large modal can accommodate complex layouts, tables, or extensive content.</p>
-          <div class="grid md:grid-cols-2 gap-6 mb-6">
-            <div class="space-y-4">
-              <h4 class="font-medium text-neutral-900 dark:text-neutral-100">Form Section 1</h4>
-              <input type="text" placeholder="Field 1" class="w-full px-3 py-2 border border-neutral-300 dark:border-neutral-600 rounded-lg bg-white dark:bg-neutral-700 text-neutral-900 dark:text-neutral-100">
-              <input type="text" placeholder="Field 2" class="w-full px-3 py-2 border border-neutral-300 dark:border-neutral-600 rounded-lg bg-white dark:bg-neutral-700 text-neutral-900 dark:text-neutral-100">
-            </div>
-            <div class="space-y-4">
-              <h4 class="font-medium text-neutral-900 dark:text-neutral-100">Form Section 2</h4>
-              <input type="text" placeholder="Field 3" class="w-full px-3 py-2 border border-neutral-300 dark:border-neutral-600 rounded-lg bg-white dark:bg-neutral-700 text-neutral-900 dark:text-neutral-100">
-              <textarea placeholder="Description" rows="3" class="w-full px-3 py-2 border border-neutral-300 dark:border-neutral-600 rounded-lg bg-white dark:bg-neutral-700 text-neutral-900 dark:text-neutral-100"></textarea>
-            </div>
-          </div>
-        </div>
-        <div class="flex gap-3 pt-4 border-t border-neutral-200 dark:border-neutral-700">
-          <button onclick="closeModal('modal-large')" class="bg-primary-600 hover:bg-primary-700 text-white px-6 py-2 rounded-lg font-medium transition-colors">
-            Save Changes
-          </button>
-          <button onclick="closeModal('modal-large')" class="border border-neutral-300 dark:border-neutral-600 hover:bg-neutral-50 dark:hover:bg-neutral-700 text-neutral-700 dark:text-neutral-300 px-6 py-2 rounded-lg font-medium transition-colors">
-            Cancel
-          </button>
-        </div>
-      </div>
     </div>
   </div>
 
@@ -376,20 +349,23 @@
 
     // Close modal on backdrop click
     document.addEventListener('click', function(e) {
-      if (e.target.classList.contains('modal')) {
-        e.target.classList.add('hidden');
-        document.body.style.overflow = '';
+      if (e.target.classList.contains('fixed') && e.target.classList.contains('inset-0')) {
+        const modalId = e.target.id;
+        if (modalId) {
+          closeModal(modalId);
+        }
       }
     });
 
     // Close modal on Escape key
     document.addEventListener('keydown', function(e) {
       if (e.key === 'Escape') {
-        const visibleModal = document.querySelector('.modal:not(.hidden)');
-        if (visibleModal) {
-          visibleModal.classList.add('hidden');
-          document.body.style.overflow = '';
-        }
+        const openModals = document.querySelectorAll('.fixed.inset-0:not(.hidden)');
+        openModals.forEach(modal => {
+          if (modal.id) {
+            closeModal(modal.id);
+          }
+        });
       }
     });
   </script>
