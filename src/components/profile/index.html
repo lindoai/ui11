@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profile - UI11 Design System</title>
+  <link href="/src/style.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-markup.min.js"></script>
+</head>
+<body class="min-h-screen bg-white dark:bg-neutral-950">
+  <div class="flex min-h-screen">
+    <div id="sidebar-container"></div>
+    <div class="flex-1 flex flex-col ml-64 mt-16">
+      <div id="header-container"></div>
+      <main class="flex-1 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <!-- Breadcrumb -->
+        <nav class="flex mb-8" aria-label="Breadcrumb">
+          <ol class="flex items-center space-x-4">
+            <li>
+              <a href="/documentation/" class="text-neutral-600 dark:text-neutral-400 hover:text-primary-500 dark:hover:text-primary-400 transition-colors">Documentation</a>
+            </li>
+            <li class="flex items-center">
+              <svg class="w-4 h-4 text-neutral-400 dark:text-neutral-500 mx-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+              </svg>
+              <span class="text-neutral-500 dark:text-neutral-400">Components</span>
+            </li>
+            <li class="flex items-center">
+              <svg class="w-4 h-4 text-neutral-400 dark:text-neutral-500 mx-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+              </svg>
+              <span class="text-primary-600 dark:text-primary-400 font-medium">Profile</span>
+            </li>
+          </ol>
+        </nav>
+
+        <!-- Page Header -->
+        <div class="mb-12">
+          <h1 class="text-4xl font-semibold text-neutral-900 dark:text-neutral-100 mb-4">Profile</h1>
+          <p class="text-lg text-neutral-600 dark:text-neutral-400 mb-6 max-w-3xl leading-relaxed">
+            User profile components for displaying personal information, avatars, social links, and user statistics with elegant Apple-inspired design.
+          </p>
+        </div>
+
+        <!-- User Info Profile -->
+        <section id="profile-userinfo" class="mb-16">
+          <div class="mb-8">
+            <div class="flex items-center justify-between mb-6">
+              <div>
+                <h2 class="text-2xl font-semibold text-neutral-900 dark:text-neutral-100 mb-2">User Info</h2>
+                <p class="text-neutral-600 dark:text-neutral-400">Complete user profile with personal information, contact details, and bio.</p>
+              </div>
+              <button id="copy-userinfo-btn" class="flex items-center gap-2 px-4 py-2 bg-neutral-100 dark:bg-neutral-800 hover:bg-neutral-200 dark:hover:bg-neutral-700 text-neutral-700 dark:text-neutral-300 rounded-lg text-sm font-medium transition-colors">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
+                </svg>
+                Copy
+              </button>
+            </div>
+          </div>
+
+          <div class="mb-6">
+            <nav class="inline-flex bg-neutral-100 dark:bg-neutral-800 rounded-lg p-1">
+              <button class="tab-button active px-4 py-2 rounded-md bg-white dark:bg-neutral-700 text-neutral-900 dark:text-neutral-100 font-medium text-sm shadow-sm transition-all" data-tab="userinfo-preview">
+                Preview
+              </button>
+              <button class="tab-button px-4 py-2 rounded-md text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-100 font-medium text-sm transition-all" data-tab="userinfo-html">
+                HTML
+              </button>
+            </nav>
+          </div>
+
+          <div id="userinfo-preview" class="tab-content">
+            <div class="bg-neutral-50 dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-700 rounded-lg p-8">
+              <div class="bg-white dark:bg-neutral-950 border border-neutral-200 dark:border-neutral-700 rounded-lg p-6 max-w-2xl">
+                <div class="flex items-start space-x-6">
+                  <div class="flex-shrink-0">
+                    <div class="w-24 h-24 bg-gradient-to-br from-blue-400 to-blue-600 rounded-full flex items-center justify-center">
+                      <span class="text-white text-2xl font-semibold">JD</span>
+                    </div>
+                  </div>
+                  <div class="flex-1 min-w-0">
+                    <div class="flex items-center justify-between mb-4">
+                      <div>
+                        <h3 class="text-xl font-semibold text-neutral-900 dark:text-neutral-100">John Doe</h3>
+                        <p class="text-neutral-600 dark:text-neutral-400">Senior Product Designer</p>
+                      </div>
+                      <div class="flex items-center space-x-2">
+                        <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200">
+                          <span class="w-1.5 h-1.5 mr-1.5 bg-green-400 rounded-full"></span>
+                          Online
+                        </span>
+                      </div>
+                    </div>
+                    
+                    <div class="space-y-3">
+                      <div class="flex items-center text-sm text-neutral-600 dark:text-neutral-400">
+                        <svg class="w-4 h-4 mr-3 text-neutral-500 dark:text-neutral-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                        </svg>
+                        john.doe@company.com
+                      </div>
+                      <div class="flex items-center text-sm text-neutral-600 dark:text-neutral-400">
+                        <svg class="w-4 h-4 mr-3 text-neutral-500 dark:text-neutral-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                        </svg>
+                        San Francisco, CA
+                      </div>
+                      <div class="flex items-center text-sm text-neutral-600 dark:text-neutral-400">
+                        <svg class="w-4 h-4 mr-3 text-neutral-500 dark:text-neutral-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2-2v2m8 0V6a2 2 0 012 2v6a2 2 0 01-2 2H8a2 2 0 01-2-2V8a2 2 0 012-2V6"></path>
+                        </svg>
+                        5 years experience
+                      </div>
+                    </div>
+
+                    <div class="mt-4 pt-4 border-t border-neutral-200 dark:border-neutral-700">
+                      <p class="text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed">
+                        Passionate product designer with expertise in user experience, interface design, and design systems. 
+                        Focused on creating intuitive and accessible digital experiences.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div id="userinfo-html" class="tab-content hidden w-[768px]">
+            <div class="bg-neutral-900 dark:bg-neutral-950 rounded-lg overflow-hidden">
+              <div class="w-full">
+                <pre class="p-6 text-sm overflow-x-auto"><code class="language-html whitespace-pre break-words" style="word-break: break-all; max-width: 100%;">&lt;div class="bg-white dark:bg-neutral-950 border border-neutral-200 dark:border-neutral-700 rounded-lg p-6"&gt;
+  &lt;div class="flex items-start space-x-6"&gt;
+    &lt;div class="flex-shrink-0"&gt;
+      &lt;img src="avatar.jpg" alt="Profile" class="w-24 h-24 rounded-full"&gt;
+    &lt;/div&gt;
+    &lt;div class="flex-1 min-w-0"&gt;
+      &lt;div class="flex items-center justify-between mb-4"&gt;
+        &lt;div&gt;
+          &lt;h3 class="text-xl font-semibold text-neutral-900 dark:text-neutral-100"&gt;John Doe&lt;/h3&gt;
+          &lt;p class="text-neutral-600 dark:text-neutral-400"&gt;Senior Product Designer&lt;/p&gt;
+        &lt;/div&gt;
+        &lt;span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200"&gt;
+          &lt;span class="w-1.5 h-1.5 mr-1.5 bg-green-400 rounded-full"&gt;&lt;/span&gt;
+          Online
+        &lt;/span&gt;
+      &lt;/div&gt;
+      
+      &lt;div class="space-y-3"&gt;
+        &lt;div class="flex items-center text-sm text-neutral-600 dark:text-neutral-400"&gt;
+          &lt;svg class="w-4 h-4 mr-3 text-neutral-500 dark:text-neutral-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"&gt;
+            &lt;path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"&gt;&lt;/path&gt;
+          &lt;/svg&gt;
+          john.doe@company.com
+        &lt;/div&gt;
+      &lt;/div&gt;
+
+      &lt;div class="mt-4 pt-4 border-t border-neutral-200 dark:border-neutral-700"&gt;
+        &lt;p class="text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed"&gt;
+          Passionate product designer with expertise in user experience and interface design.
+        &lt;/p&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;</code></pre>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Avatar Profile -->
+        <section id="profile-avatar" class="mb-16">
+          <div class="mb-8">
+            <div class="flex items-center justify-between mb-6">
+              <div>
+                <h2 class="text-2xl font-semibold text-neutral-900 dark:text-neutral-100 mb-2">Avatar</h2>
+                <p class="text-neutral-600 dark:text-neutral-400">Focused avatar displays with different sizes and status indicators.</p>
+              </div>
+              <button id="copy-avatar-btn" class="flex items-center gap-2 px-4 py-2 bg-neutral-100 dark:bg-neutral-800 hover:bg-neutral-200 dark:hover:bg-neutral-700 text-neutral-700 dark:text-neutral-300 rounded-lg text-sm font-medium transition-colors">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
+                </svg>
+                Copy
+              </button>
+            </div>
+          </div>
+
+          <div class="mb-6">
+            <nav class="inline-flex bg-neutral-100 dark:bg-neutral-800 rounded-lg p-1">
+              <button class="tab-button active px-4 py-2 rounded-md bg-white dark:bg-neutral-700 text-neutral-900 dark:text-neutral-100 font-medium text-sm shadow-sm transition-all" data-tab="avatar-preview">
+                Preview
+              </button>
+              <button class="tab-button px-4 py-2 rounded-md text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-100 font-medium text-sm transition-all" data-tab="avatar-html">
+                HTML
+              </button>
+            </nav>
+          </div>
+
+          <div id="avatar-preview" class="tab-content">
+            <div class="bg-neutral-50 dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-700 rounded-lg p-8">
+              <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Large Avatar -->
+                <div class="text-center">
+                  <div class="relative inline-block mb-4">
+                    <div class="w-32 h-32 bg-gradient-to-br from-purple-400 to-purple-600 rounded-full flex items-center justify-center">
+                      <span class="text-white text-3xl font-semibold">AS</span>
+                    </div>
+                    <div class="absolute bottom-2 right-2 w-6 h-6 bg-green-400 border-4 border-white dark:border-neutral-950 rounded-full"></div>
+                  </div>
+                  <h4 class="text-lg font-semibold text-neutral-900 dark:text-neutral-100">Alex Smith</h4>
+                  <p class="text-sm text-neutral-600 dark:text-neutral-400">Team Lead</p>
+                </div>
+
+                <!-- Medium Avatar -->
+                <div class="text-center">
+                  <div class="relative inline-block mb-4">
+                    <div class="w-20 h-20 bg-gradient-to-br from-green-400 to-green-600 rounded-full flex items-center justify-center">
+                      <span class="text-white text-xl font-semibold">MJ</span>
+                    </div>
+                    <div class="absolute bottom-1 right-1 w-4 h-4 bg-yellow-400 border-3 border-white dark:border-neutral-950 rounded-full"></div>
+                  </div>
+                  <h4 class="text-base font-semibold text-neutral-900 dark:text-neutral-100">Maria Johnson</h4>
+                  <p class="text-sm text-neutral-600 dark:text-neutral-400">Designer</p>
+                </div>
+
+                <!-- Small Avatar -->
+                <div class="text-center">
+                  <div class="relative inline-block mb-4">
+                    <div class="w-16 h-16 bg-gradient-to-br from-red-400 to-red-600 rounded-full flex items-center justify-center">
+                      <span class="text-white text-lg font-semibold">RW</span>
+                    </div>
+                    <div class="absolute bottom-0 right-0 w-3 h-3 bg-gray-400 border-2 border-white dark:border-neutral-950 rounded-full"></div>
+                  </div>
+                  <h4 class="text-sm font-semibold text-neutral-900 dark:text-neutral-100">Robert Wilson</h4>
+                  <p class="text-xs text-neutral-600 dark:text-neutral-400">Developer</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div id="avatar-html" class="tab-content hidden w-[768px]">
+            <div class="bg-neutral-900 dark:bg-neutral-950 rounded-lg overflow-hidden">
+              <div class="w-full">
+                <pre class="p-6 text-sm overflow-x-auto"><code class="language-html whitespace-pre break-words" style="word-break: break-all; max-width: 100%;">&lt;div class="text-center"&gt;
+  &lt;div class="relative inline-block mb-4"&gt;
+    &lt;img src="avatar.jpg" alt="User avatar" class="w-32 h-32 rounded-full"&gt;
+    &lt;div class="absolute bottom-2 right-2 w-6 h-6 bg-green-400 border-4 border-white dark:border-neutral-950 rounded-full"&gt;&lt;/div&gt;
+  &lt;/div&gt;
+  &lt;h4 class="text-lg font-semibold text-neutral-900 dark:text-neutral-100"&gt;Alex Smith&lt;/h4&gt;
+  &lt;p class="text-sm text-neutral-600 dark:text-neutral-400"&gt;Team Lead&lt;/p&gt;
+&lt;/div&gt;</code></pre>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Social Links Profile -->
+        <section id="profile-social" class="mb-16">
+          <div class="mb-8">
+            <div class="flex items-center justify-between mb-6">
+              <div>
+                <h2 class="text-2xl font-semibold text-neutral-900 dark:text-neutral-100 mb-2">Social Links</h2>
+                <p class="text-neutral-600 dark:text-neutral-400">Profile with integrated social media links and contact methods.</p>
+              </div>
+              <button id="copy-social-btn" class="flex items-center gap-2 px-4 py-2 bg-neutral-100 dark:bg-neutral-800 hover:bg-neutral-200 dark:hover:bg-neutral-700 text-neutral-700 dark:text-neutral-300 rounded-lg text-sm font-medium transition-colors">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
+                </svg>
+                Copy
+              </button>
+            </div>
+          </div>
+
+          <div class="mb-6">
+            <nav class="inline-flex bg-neutral-100 dark:bg-neutral-800 rounded-lg p-1">
+              <button class="tab-button active px-4 py-2 rounded-md bg-white dark:bg-neutral-700 text-neutral-900 dark:text-neutral-100 font-medium text-sm shadow-sm transition-all" data-tab="social-preview">
+                Preview
+              </button>
+              <button class="tab-button px-4 py-2 rounded-md text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-100 font-medium text-sm transition-all" data-tab="social-html">
+                HTML
+              </button>
+            </nav>
+          </div>
+
+          <div id="social-preview" class="tab-content">
+            <div class="bg-neutral-50 dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-700 rounded-lg p-8">
+              <div class="bg-white dark:bg-neutral-950 border border-neutral-200 dark:border-neutral-700 rounded-lg p-6 max-w-md mx-auto">
+                <div class="text-center mb-6">
+                  <div class="w-24 h-24 bg-gradient-to-br from-indigo-400 to-indigo-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <span class="text-white text-2xl font-semibold">ES</span>
+                  </div>
+                  <h3 class="text-xl font-semibold text-neutral-900 dark:text-neutral-100 mb-2">Emily Chen</h3>
+                  <p class="text-neutral-600 dark:text-neutral-400 mb-4">UI/UX Designer & Developer</p>
+                  <p class="text-sm text-neutral-500 dark:text-neutral-400 leading-relaxed">
+                    Creating beautiful and functional digital experiences. Always learning and sharing knowledge.
+                  </p>
+                </div>
+
+                <div class="space-y-3">
+                  <a href="#" class="flex items-center p-3 bg-neutral-50 dark:bg-neutral-900 hover:bg-neutral-100 dark:hover:bg-neutral-800 rounded-lg transition-colors group">
+                    <div class="w-10 h-10 bg-blue-500 rounded-lg flex items-center justify-center flex-shrink-0">
+                      <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/>
+                      </svg>
+                    </div>
+                    <div class="ml-3 flex-1">
+                      <p class="text-sm font-medium text-neutral-900 dark:text-neutral-100">Twitter</p>
+                      <p class="text-xs text-neutral-500 dark:text-neutral-400">@emilychen</p>
+                    </div>
+                    <svg class="w-4 h-4 text-neutral-400 group-hover:text-neutral-600 dark:group-hover:text-neutral-300 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                    </svg>
+                  </a>
+
+                  <a href="#" class="flex items-center p-3 bg-neutral-50 dark:bg-neutral-900 hover:bg-neutral-100 dark:hover:bg-neutral-800 rounded-lg transition-colors group">
+                    <div class="w-10 h-10 bg-gray-800 dark:bg-gray-700 rounded-lg flex items-center justify-center flex-shrink-0">
+                      <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                      </svg>
+                    </div>
+                    <div class="ml-3 flex-1">
+                      <p class="text-sm font-medium text-neutral-900 dark:text-neutral-100">GitHub</p>
+                      <p class="text-xs text-neutral-500 dark:text-neutral-400">@emilychen</p>
+                    </div>
+                    <svg class="w-4 h-4 text-neutral-400 group-hover:text-neutral-600 dark:group-hover:text-neutral-300 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                    </svg>
+                  </a>
+
+                  <a href="#" class="flex items-center p-3 bg-neutral-50 dark:bg-neutral-900 hover:bg-neutral-100 dark:hover:bg-neutral-800 rounded-lg transition-colors group">
+                    <div class="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center flex-shrink-0">
+                      <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                      </svg>
+                    </div>
+                    <div class="ml-3 flex-1">
+                      <p class="text-sm font-medium text-neutral-900 dark:text-neutral-100">LinkedIn</p>
+                      <p class="text-xs text-neutral-500 dark:text-neutral-400">Emily Chen</p>
+                    </div>
+                    <svg class="w-4 h-4 text-neutral-400 group-hover:text-neutral-600 dark:group-hover:text-neutral-300 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                    </svg>
+                  </a>
+
+                  <a href="#" class="flex items-center p-3 bg-neutral-50 dark:bg-neutral-900 hover:bg-neutral-100 dark:hover:bg-neutral-800 rounded-lg transition-colors group">
+                    <div class="w-10 h-10 bg-green-500 rounded-lg flex items-center justify-center flex-shrink-0">
+                      <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                      </svg>
+                    </div>
+                    <div class="ml-3 flex-1">
+                      <p class="text-sm font-medium text-neutral-900 dark:text-neutral-100">Email</p>
+                      <p class="text-xs text-neutral-500 dark:text-neutral-400">emily@design.com</p>
+                    </div>
+                    <svg class="w-4 h-4 text-neutral-400 group-hover:text-neutral-600 dark:group-hover:text-neutral-300 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div id="social-html" class="tab-content hidden w-[768px]">
+            <div class="bg-neutral-900 dark:bg-neutral-950 rounded-lg overflow-hidden">
+              <div class="w-full">
+                <pre class="p-6 text-sm overflow-x-auto"><code class="language-html whitespace-pre break-words" style="word-break: break-all; max-width: 100%;">&lt;div class="bg-white dark:bg-neutral-950 border border-neutral-200 dark:border-neutral-700 rounded-lg p-6"&gt;
+  &lt;div class="text-center mb-6"&gt;
+    &lt;img src="avatar.jpg" alt="Profile" class="w-24 h-24 rounded-full mx-auto mb-4"&gt;
+    &lt;h3 class="text-xl font-semibold text-neutral-900 dark:text-neutral-100 mb-2"&gt;Emily Chen&lt;/h3&gt;
+    &lt;p class="text-neutral-600 dark:text-neutral-400 mb-4"&gt;UI/UX Designer &amp; Developer&lt;/p&gt;
+    &lt;p class="text-sm text-neutral-500 dark:text-neutral-400 leading-relaxed"&gt;
+      Creating beautiful and functional digital experiences.
+    &lt;/p&gt;
+  &lt;/div&gt;
+
+  &lt;div class="space-y-3"&gt;
+    &lt;a href="#" class="flex items-center p-3 bg-neutral-50 dark:bg-neutral-900 hover:bg-neutral-100 dark:hover:bg-neutral-800 rounded-lg transition-colors group"&gt;
+      &lt;div class="w-10 h-10 bg-blue-500 rounded-lg flex items-center justify-center flex-shrink-0"&gt;
+        &lt;svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24"&gt;
+          &lt;path d="M24 4.557c-.883.392-1.832.656-2.828.775..."&gt;&lt;/path&gt;
+        &lt;/svg&gt;
+      &lt;/div&gt;
+      &lt;div class="ml-3 flex-1"&gt;
+        &lt;p class="text-sm font-medium text-neutral-900 dark:text-neutral-100"&gt;Twitter&lt;/p&gt;
+        &lt;p class="text-xs text-neutral-500 dark:text-neutral-400"&gt;@emilychen&lt;/p&gt;
+      &lt;/div&gt;
+      &lt;svg class="w-4 h-4 text-neutral-400 group-hover:text-neutral-600 dark:group-hover:text-neutral-300 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24"&gt;
+        &lt;path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"&gt;&lt;/path&gt;
+      &lt;/svg&gt;
+    &lt;/a&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Stats Profile -->
+        <section id="profile-stats" class="mb-16">
+          <div class="mb-8">
+            <div class="flex items-center justify-between mb-6">
+              <div>
+                <h2 class="text-2xl font-semibold text-neutral-900 dark:text-neutral-100 mb-2">Stats</h2>
+                <p class="text-neutral-600 dark:text-neutral-400">Profile with user statistics, achievements, and performance metrics.</p>
+              </div>
+              <button id="copy-stats-btn" class="flex items-center gap-2 px-4 py-2 bg-neutral-100 dark:bg-neutral-800 hover:bg-neutral-200 dark:hover:bg-neutral-700 text-neutral-700 dark:text-neutral-300 rounded-lg text-sm font-medium transition-colors">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
+                </svg>
+                Copy
+              </button>
+            </div>
+          </div>
+
+          <div class="mb-6">
+            <nav class="inline-flex bg-neutral-100 dark:bg-neutral-800 rounded-lg p-1">
+              <button class="tab-button active px-4 py-2 rounded-md bg-white dark:bg-neutral-700 text-neutral-900 dark:text-neutral-100 font-medium text-sm shadow-sm transition-all" data-tab="stats-preview">
+                Preview
+              </button>
+              <button class="tab-button px-4 py-2 rounded-md text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-100 font-medium text-sm transition-all" data-tab="stats-html">
+                HTML
+              </button>
+            </nav>
+          </div>
+
+          <div id="stats-preview" class="tab-content">
+            <div class="bg-neutral-50 dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-700 rounded-lg p-8">
+              <div class="bg-white dark:bg-neutral-950 border border-neutral-200 dark:border-neutral-700 rounded-lg p-6 max-w-2xl mx-auto">
+                <div class="text-center mb-6">
+                  <div class="w-20 h-20 bg-gradient-to-br from-orange-400 to-orange-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <span class="text-white text-xl font-semibold">DM</span>
+                  </div>
+                  <h3 class="text-xl font-semibold text-neutral-900 dark:text-neutral-100 mb-2">David Miller</h3>
+                  <p class="text-neutral-600 dark:text-neutral-400 mb-1">Software Engineer</p>
+                  <div class="flex items-center justify-center space-x-2">
+                    <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200">
+                      <span class="w-1.5 h-1.5 mr-1.5 bg-blue-400 rounded-full"></span>
+                      Level 5
+                    </span>
+                    <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-purple-100 text-purple-800 dark:bg-purple-900 dark:text-purple-200">
+                      Senior
+                    </span>
+                  </div>
+                </div>
+
+                <div class="grid grid-cols-3 gap-6 mb-6">
+                  <div class="text-center">
+                    <div class="text-2xl font-bold text-neutral-900 dark:text-neutral-100">156</div>
+                    <div class="text-sm text-neutral-600 dark:text-neutral-400">Projects</div>
+                  </div>
+                  <div class="text-center">
+                    <div class="text-2xl font-bold text-neutral-900 dark:text-neutral-100">4.8</div>
+                    <div class="text-sm text-neutral-600 dark:text-neutral-400">Rating</div>
+                  </div>
+                  <div class="text-center">
+                    <div class="text-2xl font-bold text-neutral-900 dark:text-neutral-100">892</div>
+                    <div class="text-sm text-neutral-600 dark:text-neutral-400">Reviews</div>
+                  </div>
+                </div>
+
+                <div class="space-y-4">
+                  <div>
+                    <div class="flex justify-between items-center mb-2">
+                      <span class="text-sm font-medium text-neutral-700 dark:text-neutral-300">Profile Completion</span>
+                      <span class="text-sm text-neutral-600 dark:text-neutral-400">85%</span>
+                    </div>
+                    <div class="w-full bg-neutral-200 dark:bg-neutral-700 rounded-full h-2">
+                      <div class="bg-green-500 h-2 rounded-full" style="width: 85%"></div>
+                    </div>
+                  </div>
+
+                  <div>
+                    <div class="flex justify-between items-center mb-2">
+                      <span class="text-sm font-medium text-neutral-700 dark:text-neutral-300">Skills Progress</span>
+                      <span class="text-sm text-neutral-600 dark:text-neutral-400">72%</span>
+                    </div>
+                    <div class="w-full bg-neutral-200 dark:bg-neutral-700 rounded-full h-2">
+                      <div class="bg-blue-500 h-2 rounded-full" style="width: 72%"></div>
+                    </div>
+                  </div>
+
+                  <div>
+                    <div class="flex justify-between items-center mb-2">
+                      <span class="text-sm font-medium text-neutral-700 dark:text-neutral-300">Activity Level</span>
+                      <span class="text-sm text-neutral-600 dark:text-neutral-400">94%</span>
+                    </div>
+                    <div class="w-full bg-neutral-200 dark:bg-neutral-700 rounded-full h-2">
+                      <div class="bg-purple-500 h-2 rounded-full" style="width: 94%"></div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="mt-6 pt-6 border-t border-neutral-200 dark:border-neutral-700">
+                  <div class="grid grid-cols-2 gap-4 text-center">
+                    <div class="bg-neutral-50 dark:bg-neutral-900 rounded-lg p-3">
+                      <div class="text-lg font-semibold text-neutral-900 dark:text-neutral-100">3.2k</div>
+                      <div class="text-xs text-neutral-600 dark:text-neutral-400">Followers</div>
+                    </div>
+                    <div class="bg-neutral-50 dark:bg-neutral-900 rounded-lg p-3">
+                      <div class="text-lg font-semibold text-neutral-900 dark:text-neutral-100">1.8k</div>
+                      <div class="text-xs text-neutral-600 dark:text-neutral-400">Following</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div id="stats-html" class="tab-content hidden w-[768px]">
+            <div class="bg-neutral-900 dark:bg-neutral-950 rounded-lg overflow-hidden">
+              <div class="w-full">
+                <pre class="p-6 text-sm overflow-x-auto"><code class="language-html whitespace-pre break-words" style="word-break: break-all; max-width: 100%;">&lt;div class="bg-white dark:bg-neutral-950 border border-neutral-200 dark:border-neutral-700 rounded-lg p-6"&gt;
+  &lt;div class="text-center mb-6"&gt;
+    &lt;img src="avatar.jpg" alt="Profile" class="w-20 h-20 rounded-full mx-auto mb-4"&gt;
+    &lt;h3 class="text-xl font-semibold text-neutral-900 dark:text-neutral-100 mb-2"&gt;David Miller&lt;/h3&gt;
+    &lt;p class="text-neutral-600 dark:text-neutral-400 mb-1"&gt;Software Engineer&lt;/p&gt;
+    &lt;div class="flex items-center justify-center space-x-2"&gt;
+      &lt;span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200"&gt;
+        &lt;span class="w-1.5 h-1.5 mr-1.5 bg-blue-400 rounded-full"&gt;&lt;/span&gt;
+        Level 5
+      &lt;/span&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;div class="grid grid-cols-3 gap-6 mb-6"&gt;
+    &lt;div class="text-center"&gt;
+      &lt;div class="text-2xl font-bold text-neutral-900 dark:text-neutral-100"&gt;156&lt;/div&gt;
+      &lt;div class="text-sm text-neutral-600 dark:text-neutral-400"&gt;Projects&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="text-center"&gt;
+      &lt;div class="text-2xl font-bold text-neutral-900 dark:text-neutral-100"&gt;4.8&lt;/div&gt;
+      &lt;div class="text-sm text-neutral-600 dark:text-neutral-400"&gt;Rating&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="text-center"&gt;
+      &lt;div class="text-2xl font-bold text-neutral-900 dark:text-neutral-100"&gt;892&lt;/div&gt;
+      &lt;div class="text-sm text-neutral-600 dark:text-neutral-400"&gt;Reviews&lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;div class="space-y-4"&gt;
+    &lt;div&gt;
+      &lt;div class="flex justify-between items-center mb-2"&gt;
+        &lt;span class="text-sm font-medium text-neutral-700 dark:text-neutral-300"&gt;Profile Completion&lt;/span&gt;
+        &lt;span class="text-sm text-neutral-600 dark:text-neutral-400"&gt;85%&lt;/span&gt;
+      &lt;/div&gt;
+      &lt;div class="w-full bg-neutral-200 dark:bg-neutral-700 rounded-full h-2"&gt;
+        &lt;div class="bg-green-500 h-2 rounded-full" style="width: 85%"&gt;&lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Usage Guidelines -->
+        <div class="bg-white dark:bg-neutral-950 border border-neutral-900 dark:border-neutral-100 rounded-lg p-4 mb-8">
+          <h3 class="text-sm font-medium text-neutral-900 dark:text-neutral-100 mb-2">Usage Guidelines</h3>
+          <ul class="text-sm text-neutral-900 dark:text-neutral-100 space-y-1">
+            <li>• Use appropriate avatar sizes for different contexts (large for headers, small for lists)</li>
+            <li>• Include status indicators to show user availability and online presence</li>
+            <li>• Provide clear contact information and social links for user engagement</li>
+            <li>• Display relevant statistics and progress indicators for gamification</li>
+            <li>• Keep social links organized and easily accessible with proper icons</li>
+            <li>• Use consistent formatting for user information across all profile types</li>
+          </ul>
+        </div>
+
+        <!-- Accessibility Features -->
+        <div class="bg-white dark:bg-neutral-950 border border-neutral-900 dark:border-neutral-100 rounded-lg p-4">
+          <h3 class="text-sm font-medium text-neutral-900 dark:text-neutral-100 mb-2">Accessibility Features</h3>
+          <ul class="text-sm text-neutral-900 dark:text-neutral-100 space-y-1">
+            <li>• Alt text for all avatar images and profile photos</li>
+            <li>• High contrast ratios for text and background colors</li>
+            <li>• Keyboard navigation support for all interactive elements</li>
+            <li>• Screen reader friendly structure with proper heading hierarchy</li>
+            <li>• ARIA labels for status indicators and progress bars</li>
+            <li>• Focus indicators for social links and buttons</li>
+          </ul>
+        </div>
+      </main>
+      <div id="footer-container"></div>
+    </div>
+  </div>
+
+  <script type="module">
+    import { generateHeader, generateSidebar, generateFooter, initializeSharedComponents } from '/src/shared/components.js';
+    import { themeManager } from '/src/shared/theme.js';
+    import { toast } from '/src/shared/toast.js';
+
+    document.addEventListener('DOMContentLoaded', function() {
+      // Inject shared components
+      document.getElementById('header-container').innerHTML = generateHeader('documentation');
+      document.getElementById('sidebar-container').innerHTML = generateSidebar('profile');
+      document.getElementById('footer-container').innerHTML = generateFooter();
+      
+      // Initialize shared functionality
+      initializeSharedComponents();
+      themeManager.initializeToggleButtons();
+      
+      // Initialize profile functionality
+      initializeProfile();
+      
+      // Initialize tab switching
+      initializeTabs();
+      
+      // Initialize copy buttons
+      initializeCopyButtons();
+    });
+
+    function initializeProfile() {
+      // Profile functionality would go here
+    }
+
+    function initializeTabs() {
+      const tabButtons = document.querySelectorAll('.tab-button');
+
+      tabButtons.forEach(button => {
+        button.addEventListener('click', () => {
+          const targetTab = button.getAttribute('data-tab');
+          const section = button.closest('section');
+          
+          // Update active states within the section
+          section.querySelectorAll('.tab-button').forEach(btn => {
+            btn.classList.remove('active', 'bg-white', 'dark:bg-neutral-700', 'text-neutral-900', 'dark:text-neutral-100', 'shadow-sm');
+            btn.classList.add('text-neutral-600', 'dark:text-neutral-400');
+          });
+          
+          button.classList.add('active', 'bg-white', 'dark:bg-neutral-700', 'text-neutral-900', 'dark:text-neutral-100', 'shadow-sm');
+          button.classList.remove('text-neutral-600', 'dark:text-neutral-400');
+          
+          // Show/hide content within the section
+          section.querySelectorAll('.tab-content').forEach(content => {
+            content.classList.add('hidden');
+          });
+          
+          const targetContent = section.querySelector(`#${targetTab}`);
+          if (targetContent) {
+            targetContent.classList.remove('hidden');
+          }
+        });
+      });
+    }
+
+    function initializeCopyButtons() {
+      document.getElementById('copy-userinfo-btn')?.addEventListener('click', () => {
+        const code = document.querySelector('#userinfo-html code').textContent;
+        navigator.clipboard.writeText(code).then(() => {
+          toast.show('User info profile code copied!', 'success');
+        });
+      });
+
+      document.getElementById('copy-avatar-btn')?.addEventListener('click', () => {
+        const code = document.querySelector('#avatar-html code').textContent;
+        navigator.clipboard.writeText(code).then(() => {
+          toast.show('Avatar profile code copied!', 'success');
+        });
+      });
+
+      document.getElementById('copy-social-btn')?.addEventListener('click', () => {
+        const code = document.querySelector('#social-html code').textContent;
+        navigator.clipboard.writeText(code).then(() => {
+          toast.show('Social links profile code copied!', 'success');
+        });
+      });
+
+      document.getElementById('copy-stats-btn')?.addEventListener('click', () => {
+        const code = document.querySelector('#stats-html code').textContent;
+        navigator.clipboard.writeText(code).then(() => {
+          toast.show('Stats profile code copied!', 'success');
+        });
+      });
+    }
+  </script>
+</body>
+</html> 

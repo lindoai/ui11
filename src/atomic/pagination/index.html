@@ -131,24 +131,49 @@
           <div id="simple-html" class="tab-content hidden w-[768px]">
             <div class="bg-neutral-900 dark:bg-neutral-950 rounded-lg overflow-hidden">
               <div class="w-full">
-                <pre class="p-6 text-sm overflow-x-auto"><code class="language-html"><!-- Basic Simple Pagination -->
-<nav aria-label="Pagination">
-  <div class="flex items-center justify-between">
-    <button class="flex items-center px-4 py-2 text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-100 hover:bg-neutral-50 dark:hover:bg-neutral-700 rounded-lg transition-colors duration-normal">
-      <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
-      </svg>
+                <pre class="p-6 text-sm overflow-x-auto"><code class="language-html whitespace-pre break-words" style="word-break: break-all; max-width: 100%;">&lt;!-- Basic Simple Pagination --&gt;
+&lt;nav aria-label="Pagination"&gt;
+  &lt;div class="flex items-center justify-between"&gt;
+    &lt;button class="flex items-center px-4 py-2 text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-100 hover:bg-neutral-50 dark:hover:bg-neutral-700 rounded-lg transition-colors duration-normal"&gt;
+      &lt;svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"&gt;
+        &lt;path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"&gt;&lt;/path&gt;
+      &lt;/svg&gt;
       Previous
-    </button>
-    <span class="text-sm text-neutral-600 dark:text-neutral-400">Page 2 of 10</span>
-    <button class="flex items-center px-4 py-2 text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-100 hover:bg-neutral-50 dark:hover:bg-neutral-700 rounded-lg transition-colors duration-normal">
+    &lt;/button&gt;
+    &lt;span class="text-sm text-neutral-600 dark:text-neutral-400"&gt;Page 2 of 10&lt;/span&gt;
+    &lt;button class="flex items-center px-4 py-2 text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-100 hover:bg-neutral-50 dark:hover:bg-neutral-700 rounded-lg transition-colors duration-normal"&gt;
       Next
-      <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-      </svg>
-    </button>
-  </div>
-</nav></code></pre>
+      &lt;svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"&gt;
+        &lt;path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"&gt;&lt;/path&gt;
+      &lt;/svg&gt;
+    &lt;/button&gt;
+  &lt;/div&gt;
+&lt;/nav&gt;
+
+&lt;!-- With Results Count --&gt;
+&lt;nav aria-label="Pagination"&gt;
+  &lt;div class="flex items-center justify-between"&gt;
+    &lt;div&gt;
+      &lt;p class="text-sm text-neutral-600 dark:text-neutral-400"&gt;
+        Showing &lt;span class="font-medium"&gt;11&lt;/span&gt; to &lt;span class="font-medium"&gt;20&lt;/span&gt; of &lt;span class="font-medium"&gt;97&lt;/span&gt; results
+      &lt;/p&gt;
+    &lt;/div&gt;
+    &lt;div class="flex items-center space-x-2"&gt;
+      &lt;button class="flex items-center px-3 py-2 text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-100 hover:bg-neutral-50 dark:hover:bg-neutral-700 rounded-lg transition-colors duration-normal"&gt;
+        &lt;svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"&gt;
+          &lt;path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"&gt;&lt;/path&gt;
+        &lt;/svg&gt;
+        Previous
+      &lt;/button&gt;
+      &lt;button class="flex items-center px-3 py-2 text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-100 hover:bg-neutral-50 dark:hover:bg-neutral-700 rounded-lg transition-colors duration-normal"&gt;
+        Next
+        &lt;svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"&gt;
+          &lt;path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"&gt;&lt;/path&gt;
+        &lt;/svg&gt;
+      &lt;/button&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/nav&gt;</code></pre>
               </div>
             </div>
           </div>

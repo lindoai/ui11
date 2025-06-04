@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Modal - UI11 Design System</title>
+  <link href="/src/style.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-markup.min.js"></script>
+</head>
+<body class="min-h-screen bg-white dark:bg-neutral-950">
+  <div class="flex min-h-screen">
+    <div id="sidebar-container"></div>
+    <div class="flex-1 flex flex-col ml-64 mt-16">
+      <div id="header-container"></div>
+      <main class="flex-1 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <nav class="flex mb-8" aria-label="Breadcrumb">
+          <ol class="flex items-center space-x-4">
+            <li><a href="/documentation/" class="text-neutral-600 dark:text-neutral-400 hover:text-primary-500 dark:hover:text-primary-400 transition-colors">Documentation</a></li>
+            <li class="flex items-center">
+              <svg class="w-4 h-4 text-neutral-400 dark:text-neutral-500 mx-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+              </svg>
+              <span class="text-neutral-500 dark:text-neutral-400">Components</span>
+            </li>
+            <li class="flex items-center">
+              <svg class="w-4 h-4 text-neutral-400 dark:text-neutral-500 mx-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+              </svg>
+              <span class="text-primary-600 dark:text-primary-400 font-medium">Modal</span>
+            </li>
+          </ol>
+        </nav>
+
+        <div class="mb-12">
+          <h1 class="text-4xl font-semibold text-neutral-900 dark:text-neutral-100 mb-4">Modal</h1>
+          <p class="text-lg text-neutral-600 dark:text-neutral-400 mb-6 max-w-3xl leading-relaxed">
+            Overlay dialogs with different sizes, backdrop options, scrollable content, and nested modal support.
+          </p>
+        </div>
+
+        <!-- Modal Sizes Section -->
+        <section id="modal-sizes" class="mb-16">
+          <div class="mb-8">
+            <div class="flex items-center justify-between mb-6">
+              <div>
+                <h2 class="text-2xl font-semibold text-neutral-900 dark:text-neutral-100 mb-2">Modal Sizes</h2>
+                <p class="text-neutral-600 dark:text-neutral-400">Small, medium, and large modal sizes for different content types.</p>
+              </div>
+              <button id="copy-sizes-btn" class="flex items-center gap-2 px-4 py-2 bg-neutral-100 dark:bg-neutral-800 hover:bg-neutral-200 dark:hover:bg-neutral-700 text-neutral-700 dark:text-neutral-300 rounded-lg text-sm font-medium transition-colors">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
+                </svg>
+                Copy
+              </button>
+            </div>
+          </div>
+          
+          <div class="mb-6">
+            <nav class="inline-flex bg-neutral-100 dark:bg-neutral-800 rounded-lg p-1">
+              <button class="tab-button active px-4 py-2 rounded-md bg-white dark:bg-neutral-700 text-neutral-900 dark:text-neutral-100 font-medium text-sm shadow-sm transition-all" data-tab="sizes-preview">Preview</button>
+              <button class="tab-button px-4 py-2 rounded-md text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-100 font-medium text-sm transition-all" data-tab="sizes-html">HTML</button>
+            </nav>
+          </div>
+
+          <div id="sizes-preview" class="tab-content">
+            <div class="bg-neutral-50 dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-700 rounded-lg p-8">
+              <div class="flex flex-wrap gap-4">
+                <button onclick="openModal('modal-small')" class="px-4 py-2 bg-primary-600 hover:bg-primary-700 text-white rounded-lg font-medium transition-colors">
+                  Small Modal
+                </button>
+                <button onclick="openModal('modal-medium')" class="px-4 py-2 bg-primary-600 hover:bg-primary-700 text-white rounded-lg font-medium transition-colors">
+                  Medium Modal
+                </button>
+                <button onclick="openModal('modal-large')" class="px-4 py-2 bg-primary-600 hover:bg-primary-700 text-white rounded-lg font-medium transition-colors">
+                  Large Modal
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div id="sizes-html" class="tab-content hidden w-[768px]">
+            <div class="bg-neutral-900 dark:bg-neutral-950 rounded-lg overflow-hidden">
+              <div class="w-full">
+                <pre class="p-6 text-sm overflow-x-auto"><code class="language-html whitespace-pre break-words" style="word-break: break-all; max-width: 100%;">&lt;!-- Small Modal --&gt;
+&lt;div class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50"&gt;
+  &lt;div class="bg-white dark:bg-neutral-800 rounded-lg shadow-xl max-w-md w-full"&gt;
+    &lt;div class="p-6"&gt;
+      &lt;div class="flex justify-between items-start mb-4"&gt;
+        &lt;h3 class="text-lg font-semibold text-neutral-900 dark:text-neutral-100"&gt;Small Modal&lt;/h3&gt;
+        &lt;button class="text-neutral-400 hover:text-neutral-600 dark:hover:text-neutral-200"&gt;
+          &lt;svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"&gt;
+            &lt;path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"&gt;&lt;/path&gt;
+          &lt;/svg&gt;
+        &lt;/button&gt;
+      &lt;/div&gt;
+      &lt;p class="text-neutral-600 dark:text-neutral-400 mb-6"&gt;This is a small modal perfect for confirmations and simple messages.&lt;/p&gt;
+      &lt;div class="flex gap-3"&gt;
+        &lt;button class="flex-1 bg-primary-600 hover:bg-primary-700 text-white px-4 py-2 rounded-lg font-medium transition-colors"&gt;
+          Confirm
+        &lt;/button&gt;
+        &lt;button class="flex-1 border border-neutral-300 dark:border-neutral-600 hover:bg-neutral-50 dark:hover:bg-neutral-700 text-neutral-700 dark:text-neutral-300 px-4 py-2 rounded-lg font-medium transition-colors"&gt;
+          Cancel
+        &lt;/button&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- Medium Modal --&gt;
+&lt;div class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50"&gt;
+  &lt;div class="bg-white dark:bg-neutral-800 rounded-lg shadow-xl max-w-lg w-full"&gt;
+    &lt;div class="p-6"&gt;
+      &lt;div class="flex justify-between items-start mb-4"&gt;
+        &lt;h3 class="text-lg font-semibold text-neutral-900 dark:text-neutral-100"&gt;Medium Modal&lt;/h3&gt;
+        &lt;button class="text-neutral-400 hover:text-neutral-600 dark:hover:text-neutral-200"&gt;
+          &lt;svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"&gt;
+            &lt;path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"&gt;&lt;/path&gt;
+          &lt;/svg&gt;
+        &lt;/button&gt;
+      &lt;/div&gt;
+      &lt;p class="text-neutral-600 dark:text-neutral-400 mb-6"&gt;This medium-sized modal provides more space for content like forms or detailed information.&lt;/p&gt;
+      &lt;div class="space-y-4 mb-6"&gt;
+        &lt;div&gt;
+          &lt;label class="block text-sm font-medium text-neutral-900 dark:text-neutral-100 mb-1"&gt;Name&lt;/label&gt;
+          &lt;input type="text" class="w-full px-3 py-2 border border-neutral-300 dark:border-neutral-600 rounded-lg bg-white dark:bg-neutral-700 text-neutral-900 dark:text-neutral-100 focus:ring-2 focus:ring-primary-500 focus:border-transparent"&gt;
+        &lt;/div&gt;
+        &lt;div&gt;
+          &lt;label class="block text-sm font-medium text-neutral-900 dark:text-neutral-100 mb-1"&gt;Email&lt;/label&gt;
+          &lt;input type="email" class="w-full px-3 py-2 border border-neutral-300 dark:border-neutral-600 rounded-lg bg-white dark:bg-neutral-700 text-neutral-900 dark:text-neutral-100 focus:ring-2 focus:ring-primary-500 focus:border-transparent"&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;div class="flex gap-3"&gt;
+        &lt;button class="flex-1 bg-primary-600 hover:bg-primary-700 text-white px-4 py-2 rounded-lg font-medium transition-colors"&gt;
+          Save
+        &lt;/button&gt;
+        &lt;button class="flex-1 border border-neutral-300 dark:border-neutral-600 hover:bg-neutral-50 dark:hover:bg-neutral-700 text-neutral-700 dark:text-neutral-300 px-4 py-2 rounded-lg font-medium transition-colors"&gt;
+          Cancel
+        &lt;/button&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- Large Modal --&gt;
+&lt;div class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50"&gt;
+  &lt;div class="bg-white dark:bg-neutral-800 rounded-lg shadow-xl max-w-4xl w-full max-h-[90vh] overflow-hidden"&gt;
+    &lt;div class="p-6"&gt;
+      &lt;div class="flex justify-between items-start mb-4"&gt;
+        &lt;h3 class="text-lg font-semibold text-neutral-900 dark:text-neutral-100"&gt;Large Modal&lt;/h3&gt;
+        &lt;button class="text-neutral-400 hover:text-neutral-600 dark:hover:text-neutral-200"&gt;
+          &lt;svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"&gt;
+            &lt;path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"&gt;&lt;/path&gt;
+          &lt;/svg&gt;
+        &lt;/button&gt;
+      &lt;/div&gt;
+      &lt;div class="overflow-y-auto max-h-[70vh]"&gt;
+        &lt;p class="text-neutral-600 dark:text-neutral-400 mb-6"&gt;This large modal can accommodate complex layouts, tables, or extensive content.&lt;/p&gt;
+        &lt;div class="grid md:grid-cols-2 gap-6 mb-6"&gt;
+          &lt;div class="space-y-4"&gt;
+            &lt;h4 class="font-medium text-neutral-900 dark:text-neutral-100"&gt;Form Section 1&lt;/h4&gt;
+            &lt;input type="text" placeholder="Field 1" class="w-full px-3 py-2 border border-neutral-300 dark:border-neutral-600 rounded-lg bg-white dark:bg-neutral-700 text-neutral-900 dark:text-neutral-100"&gt;
+            &lt;input type="text" placeholder="Field 2" class="w-full px-3 py-2 border border-neutral-300 dark:border-neutral-600 rounded-lg bg-white dark:bg-neutral-700 text-neutral-900 dark:text-neutral-100"&gt;
+          &lt;/div&gt;
+          &lt;div class="space-y-4"&gt;
+            &lt;h4 class="font-medium text-neutral-900 dark:text-neutral-100"&gt;Form Section 2&lt;/h4&gt;
+            &lt;input type="text" placeholder="Field 3" class="w-full px-3 py-2 border border-neutral-300 dark:border-neutral-600 rounded-lg bg-white dark:bg-neutral-700 text-neutral-900 dark:text-neutral-100"&gt;
+            &lt;textarea placeholder="Description" rows="3" class="w-full px-3 py-2 border border-neutral-300 dark:border-neutral-600 rounded-lg bg-white dark:bg-neutral-700 text-neutral-900 dark:text-neutral-100"&gt;&lt;/textarea&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;div class="flex gap-3 pt-4 border-t border-neutral-200 dark:border-neutral-700"&gt;
+        &lt;button class="bg-primary-600 hover:bg-primary-700 text-white px-6 py-2 rounded-lg font-medium transition-colors"&gt;
+          Save Changes
+        &lt;/button&gt;
+        &lt;button class="border border-neutral-300 dark:border-neutral-600 hover:bg-neutral-50 dark:hover:bg-neutral-700 text-neutral-700 dark:text-neutral-300 px-6 py-2 rounded-lg font-medium transition-colors"&gt;
+          Cancel
+        &lt;/button&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;</code></pre>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Usage Guidelines -->
+        <div class="bg-white dark:bg-neutral-950 border border-neutral-900 dark:border-neutral-100 rounded-lg p-4">
+          <h3 class="text-sm font-medium text-neutral-900 dark:text-neutral-100 mb-2">Usage Guidelines</h3>
+          <ul class="text-sm text-neutral-900 dark:text-neutral-100 space-y-1">
+            <li>• Use appropriate modal sizes for content complexity</li>
+            <li>• Include close buttons and backdrop dismissal</li>
+            <li>• Focus management for accessibility</li>
+            <li>• Escape key support for closing modals</li>
+          </ul>
+        </div>
+      </main>
+      <div id="footer-container"></div>
+    </div>
+  </div>
+
+  <!-- Modal Templates -->
+  <div id="modal-small" class="modal hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50">
+    <div class="bg-white dark:bg-neutral-800 rounded-lg shadow-xl max-w-md w-full">
+      <div class="p-6">
+        <div class="flex justify-between items-start mb-4">
+          <h3 class="text-lg font-semibold text-neutral-900 dark:text-neutral-100">Small Modal</h3>
+          <button onclick="closeModal('modal-small')" class="text-neutral-400 hover:text-neutral-600 dark:hover:text-neutral-200">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+            </svg>
+          </button>
+        </div>
+        <p class="text-neutral-600 dark:text-neutral-400 mb-6">This is a small modal perfect for confirmations and simple messages.</p>
+        <div class="flex gap-3">
+          <button onclick="closeModal('modal-small')" class="flex-1 bg-primary-600 hover:bg-primary-700 text-white px-4 py-2 rounded-lg font-medium transition-colors">
+            Confirm
+          </button>
+          <button onclick="closeModal('modal-small')" class="flex-1 border border-neutral-300 dark:border-neutral-600 hover:bg-neutral-50 dark:hover:bg-neutral-700 text-neutral-700 dark:text-neutral-300 px-4 py-2 rounded-lg font-medium transition-colors">
+            Cancel
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="modal-medium" class="modal hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50">
+    <div class="bg-white dark:bg-neutral-800 rounded-lg shadow-xl max-w-lg w-full">
+      <div class="p-6">
+        <div class="flex justify-between items-start mb-4">
+          <h3 class="text-lg font-semibold text-neutral-900 dark:text-neutral-100">Medium Modal</h3>
+          <button onclick="closeModal('modal-medium')" class="text-neutral-400 hover:text-neutral-600 dark:hover:text-neutral-200">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+            </svg>
+          </button>
+        </div>
+        <p class="text-neutral-600 dark:text-neutral-400 mb-6">This medium-sized modal provides more space for content like forms or detailed information.</p>
+        <div class="space-y-4 mb-6">
+          <div>
+            <label class="block text-sm font-medium text-neutral-900 dark:text-neutral-100 mb-1">Name</label>
+            <input type="text" class="w-full px-3 py-2 border border-neutral-300 dark:border-neutral-600 rounded-lg bg-white dark:bg-neutral-700 text-neutral-900 dark:text-neutral-100 focus:ring-2 focus:ring-primary-500 focus:border-transparent">
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-neutral-900 dark:text-neutral-100 mb-1">Email</label>
+            <input type="email" class="w-full px-3 py-2 border border-neutral-300 dark:border-neutral-600 rounded-lg bg-white dark:bg-neutral-700 text-neutral-900 dark:text-neutral-100 focus:ring-2 focus:ring-primary-500 focus:border-transparent">
+          </div>
+        </div>
+        <div class="flex gap-3">
+          <button onclick="closeModal('modal-medium')" class="flex-1 bg-primary-600 hover:bg-primary-700 text-white px-4 py-2 rounded-lg font-medium transition-colors">
+            Save
+          </button>
+          <button onclick="closeModal('modal-medium')" class="flex-1 border border-neutral-300 dark:border-neutral-600 hover:bg-neutral-50 dark:hover:bg-neutral-700 text-neutral-700 dark:text-neutral-300 px-4 py-2 rounded-lg font-medium transition-colors">
+            Cancel
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="modal-large" class="modal hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50">
+    <div class="bg-white dark:bg-neutral-800 rounded-lg shadow-xl max-w-4xl w-full max-h-[90vh] overflow-hidden">
+      <div class="p-6">
+        <div class="flex justify-between items-start mb-4">
+          <h3 class="text-lg font-semibold text-neutral-900 dark:text-neutral-100">Large Modal</h3>
+          <button onclick="closeModal('modal-large')" class="text-neutral-400 hover:text-neutral-600 dark:hover:text-neutral-200">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+            </svg>
+          </button>
+        </div>
+        <div class="overflow-y-auto max-h-[70vh]">
+          <p class="text-neutral-600 dark:text-neutral-400 mb-6">This large modal can accommodate complex layouts, tables, or extensive content.</p>
+          <div class="grid md:grid-cols-2 gap-6 mb-6">
+            <div class="space-y-4">
+              <h4 class="font-medium text-neutral-900 dark:text-neutral-100">Form Section 1</h4>
+              <input type="text" placeholder="Field 1" class="w-full px-3 py-2 border border-neutral-300 dark:border-neutral-600 rounded-lg bg-white dark:bg-neutral-700 text-neutral-900 dark:text-neutral-100">
+              <input type="text" placeholder="Field 2" class="w-full px-3 py-2 border border-neutral-300 dark:border-neutral-600 rounded-lg bg-white dark:bg-neutral-700 text-neutral-900 dark:text-neutral-100">
+            </div>
+            <div class="space-y-4">
+              <h4 class="font-medium text-neutral-900 dark:text-neutral-100">Form Section 2</h4>
+              <input type="text" placeholder="Field 3" class="w-full px-3 py-2 border border-neutral-300 dark:border-neutral-600 rounded-lg bg-white dark:bg-neutral-700 text-neutral-900 dark:text-neutral-100">
+              <textarea placeholder="Description" rows="3" class="w-full px-3 py-2 border border-neutral-300 dark:border-neutral-600 rounded-lg bg-white dark:bg-neutral-700 text-neutral-900 dark:text-neutral-100"></textarea>
+            </div>
+          </div>
+        </div>
+        <div class="flex gap-3 pt-4 border-t border-neutral-200 dark:border-neutral-700">
+          <button onclick="closeModal('modal-large')" class="bg-primary-600 hover:bg-primary-700 text-white px-6 py-2 rounded-lg font-medium transition-colors">
+            Save Changes
+          </button>
+          <button onclick="closeModal('modal-large')" class="border border-neutral-300 dark:border-neutral-600 hover:bg-neutral-50 dark:hover:bg-neutral-700 text-neutral-700 dark:text-neutral-300 px-6 py-2 rounded-lg font-medium transition-colors">
+            Cancel
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script type="module">
+    import { generateHeader, generateSidebar, generateFooter, initializeSharedComponents } from '/src/shared/components.js';
+    import { themeManager } from '/src/shared/theme.js';
+    import { toast } from '/src/shared/toast.js';
+
+    document.addEventListener('DOMContentLoaded', function() {
+      document.getElementById('header-container').innerHTML = generateHeader('documentation');
+      document.getElementById('sidebar-container').innerHTML = generateSidebar('modal');
+      document.getElementById('footer-container').innerHTML = generateFooter();
+
+      initializeSharedComponents();
+      themeManager.initializeToggleButtons();
+
+      // Tab functionality
+      const tabButtons = document.querySelectorAll('.tab-button');
+      tabButtons.forEach(button => {
+        button.addEventListener('click', () => {
+          const targetTab = button.getAttribute('data-tab');
+          const section = button.closest('section');
+          
+          section.querySelectorAll('.tab-button').forEach(btn => {
+            btn.classList.remove('active', 'bg-white', 'dark:bg-neutral-700', 'text-neutral-900', 'dark:text-neutral-100', 'shadow-sm');
+            btn.classList.add('text-neutral-600', 'dark:text-neutral-400');
+          });
+          
+          button.classList.add('active', 'bg-white', 'dark:bg-neutral-700', 'text-neutral-900', 'dark:text-neutral-100', 'shadow-sm');
+          button.classList.remove('text-neutral-600', 'dark:text-neutral-400');
+          
+          section.querySelectorAll('.tab-content').forEach(content => {
+            content.classList.add('hidden');
+          });
+          
+          const targetContent = section.querySelector(`#${targetTab}`);
+          if (targetContent) {
+            targetContent.classList.remove('hidden');
+          }
+        });
+      });
+
+      // Copy functionality
+      const copyButtons = document.querySelectorAll('[id^="copy-"]');
+      copyButtons.forEach(button => {
+        button.addEventListener('click', () => {
+          const section = button.closest('section');
+          const htmlTab = section.querySelector('[id$="-html"]');
+          
+          if (htmlTab) {
+            const codeElement = htmlTab.querySelector('code');
+            if (codeElement) {
+              navigator.clipboard.writeText(codeElement.textContent).then(() => {
+                toast.success('Code copied to clipboard!');
+              }).catch(() => {
+                toast.error('Failed to copy code');
+              });
+            }
+          }
+        });
+      });
+    });
+
+    // Modal functions
+    window.openModal = function(modalId) {
+      const modal = document.getElementById(modalId);
+      if (modal) {
+        modal.classList.remove('hidden');
+        document.body.style.overflow = 'hidden';
+      }
+    };
+
+    window.closeModal = function(modalId) {
+      const modal = document.getElementById(modalId);
+      if (modal) {
+        modal.classList.add('hidden');
+        document.body.style.overflow = '';
+      }
+    };
+
+    // Close modal on backdrop click
+    document.addEventListener('click', function(e) {
+      if (e.target.classList.contains('modal')) {
+        e.target.classList.add('hidden');
+        document.body.style.overflow = '';
+      }
+    });
+
+    // Close modal on Escape key
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') {
+        const visibleModal = document.querySelector('.modal:not(.hidden)');
+        if (visibleModal) {
+          visibleModal.classList.add('hidden');
+          document.body.style.overflow = '';
+        }
+      }
+    });
+  </script>
+</body>
+</html> 

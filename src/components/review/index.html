@@ -1,0 +1,922 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Review - UI11 Design System</title>
+  <link href="/src/style.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-markup.min.js"></script>
+</head>
+<body class="min-h-screen bg-white dark:bg-neutral-950">
+  <div class="flex min-h-screen">
+    <div id="sidebar-container"></div>
+    <div class="flex-1 flex flex-col ml-64 mt-16">
+      <div id="header-container"></div>
+      <main class="flex-1 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <!-- Breadcrumb -->
+        <nav class="flex mb-8" aria-label="Breadcrumb">
+          <ol class="flex items-center space-x-4">
+            <li>
+              <a href="/documentation/" class="text-neutral-600 dark:text-neutral-400 hover:text-primary-500 dark:hover:text-primary-400 transition-colors">Documentation</a>
+            </li>
+            <li class="flex items-center">
+              <svg class="w-4 h-4 text-neutral-400 dark:text-neutral-500 mx-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+              </svg>
+              <span class="text-neutral-500 dark:text-neutral-400">Components</span>
+            </li>
+            <li class="flex items-center">
+              <svg class="w-4 h-4 text-neutral-400 dark:text-neutral-500 mx-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+              </svg>
+              <span class="text-primary-600 dark:text-primary-400 font-medium">Review</span>
+            </li>
+          </ol>
+        </nav>
+
+        <!-- Page Header -->
+        <div class="mb-12">
+          <h1 class="text-4xl font-semibold text-neutral-900 dark:text-neutral-100 mb-4">Review</h1>
+          <p class="text-lg text-neutral-600 dark:text-neutral-400 mb-6 max-w-3xl leading-relaxed">
+            Review and rating components for user feedback, testimonials, and product evaluations with comprehensive rating systems and interactive features.
+          </p>
+        </div>
+
+        <!-- Ratings Review -->
+        <section id="review-ratings" class="mb-16">
+          <div class="mb-8">
+            <div class="flex items-center justify-between mb-6">
+              <div>
+                <h2 class="text-2xl font-semibold text-neutral-900 dark:text-neutral-100 mb-2">Ratings</h2>
+                <p class="text-neutral-600 dark:text-neutral-400">Star rating displays with numerical scores and interactive rating selection.</p>
+              </div>
+              <button id="copy-ratings-btn" class="flex items-center gap-2 px-4 py-2 bg-neutral-100 dark:bg-neutral-800 hover:bg-neutral-200 dark:hover:bg-neutral-700 text-neutral-700 dark:text-neutral-300 rounded-lg text-sm font-medium transition-colors">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
+                </svg>
+                Copy
+              </button>
+            </div>
+          </div>
+
+          <div class="mb-6">
+            <nav class="inline-flex bg-neutral-100 dark:bg-neutral-800 rounded-lg p-1">
+              <button class="tab-button active px-4 py-2 rounded-md bg-white dark:bg-neutral-700 text-neutral-900 dark:text-neutral-100 font-medium text-sm shadow-sm transition-all" data-tab="ratings-preview">
+                Preview
+              </button>
+              <button class="tab-button px-4 py-2 rounded-md text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-100 font-medium text-sm transition-all" data-tab="ratings-html">
+                HTML
+              </button>
+            </nav>
+          </div>
+
+          <div id="ratings-preview" class="tab-content">
+            <div class="bg-neutral-50 dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-700 rounded-lg p-8">
+              <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Simple Rating -->
+                <div class="bg-white dark:bg-neutral-950 border border-neutral-200 dark:border-neutral-700 rounded-lg p-6">
+                  <h4 class="text-lg font-semibold text-neutral-900 dark:text-neutral-100 mb-4">Simple Rating</h4>
+                  <div class="flex items-center space-x-2">
+                    <div class="flex items-center">
+                      <svg class="w-5 h-5 text-yellow-400 fill-current" viewBox="0 0 24 24">
+                        <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/>
+                      </svg>
+                      <svg class="w-5 h-5 text-yellow-400 fill-current" viewBox="0 0 24 24">
+                        <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/>
+                      </svg>
+                      <svg class="w-5 h-5 text-yellow-400 fill-current" viewBox="0 0 24 24">
+                        <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/>
+                      </svg>
+                      <svg class="w-5 h-5 text-yellow-400 fill-current" viewBox="0 0 24 24">
+                        <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/>
+                      </svg>
+                      <svg class="w-5 h-5 text-neutral-300 dark:text-neutral-600 fill-current" viewBox="0 0 24 24">
+                        <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/>
+                      </svg>
+                    </div>
+                    <span class="text-sm font-medium text-neutral-700 dark:text-neutral-300">4.0</span>
+                  </div>
+                </div>
+
+                <!-- Rating with Count -->
+                <div class="bg-white dark:bg-neutral-950 border border-neutral-200 dark:border-neutral-700 rounded-lg p-6">
+                  <h4 class="text-lg font-semibold text-neutral-900 dark:text-neutral-100 mb-4">Rating with Count</h4>
+                  <div class="flex items-center space-x-2">
+                    <div class="flex items-center">
+                      <svg class="w-5 h-5 text-yellow-400 fill-current" viewBox="0 0 24 24">
+                        <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/>
+                      </svg>
+                      <svg class="w-5 h-5 text-yellow-400 fill-current" viewBox="0 0 24 24">
+                        <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/>
+                      </svg>
+                      <svg class="w-5 h-5 text-yellow-400 fill-current" viewBox="0 0 24 24">
+                        <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/>
+                      </svg>
+                      <svg class="w-5 h-5 text-yellow-400 fill-current" viewBox="0 0 24 24">
+                        <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/>
+                      </svg>
+                      <svg class="w-5 h-5 text-yellow-400 fill-current" viewBox="0 0 24 24">
+                        <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/>
+                      </svg>
+                    </div>
+                    <span class="text-sm font-medium text-neutral-700 dark:text-neutral-300">4.8</span>
+                    <span class="text-sm text-neutral-500 dark:text-neutral-400">(142 reviews)</span>
+                  </div>
+                </div>
+
+                <!-- Interactive Rating -->
+                <div class="bg-white dark:bg-neutral-950 border border-neutral-200 dark:border-neutral-700 rounded-lg p-6">
+                  <h4 class="text-lg font-semibold text-neutral-900 dark:text-neutral-100 mb-4">Interactive Rating</h4>
+                  <div class="flex items-center space-x-2">
+                    <div class="flex items-center space-x-1 rating-interactive">
+                      <button class="rating-star text-neutral-300 dark:text-neutral-600 hover:text-yellow-400 transition-colors" data-rating="1" aria-label="Rate 1 star">
+                        <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24">
+                          <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/>
+                        </svg>
+                      </button>
+                      <button class="rating-star text-neutral-300 dark:text-neutral-600 hover:text-yellow-400 transition-colors" data-rating="2" aria-label="Rate 2 stars">
+                        <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24">
+                          <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/>
+                        </svg>
+                      </button>
+                      <button class="rating-star text-neutral-300 dark:text-neutral-600 hover:text-yellow-400 transition-colors" data-rating="3" aria-label="Rate 3 stars">
+                        <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24">
+                          <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/>
+                        </svg>
+                      </button>
+                      <button class="rating-star text-neutral-300 dark:text-neutral-600 hover:text-yellow-400 transition-colors" data-rating="4" aria-label="Rate 4 stars">
+                        <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24">
+                          <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/>
+                        </svg>
+                      </button>
+                      <button class="rating-star text-neutral-300 dark:text-neutral-600 hover:text-yellow-400 transition-colors" data-rating="5" aria-label="Rate 5 stars">
+                        <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24">
+                          <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/>
+                        </svg>
+                      </button>
+                    </div>
+                    <span class="text-sm text-neutral-500 dark:text-neutral-400">Click to rate</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div id="ratings-html" class="tab-content hidden w-[768px]">
+            <div class="bg-neutral-900 dark:bg-neutral-950 rounded-lg overflow-hidden">
+              <div class="w-full">
+                <pre class="p-6 text-sm overflow-x-auto"><code class="language-html whitespace-pre break-words" style="word-break: break-all; max-width: 100%;">&lt;div class="flex items-center space-x-2"&gt;
+  &lt;div class="flex items-center"&gt;
+    &lt;svg class="w-5 h-5 text-yellow-400 fill-current" viewBox="0 0 24 24"&gt;
+      &lt;path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/&gt;
+    &lt;/svg&gt;
+    &lt;svg class="w-5 h-5 text-yellow-400 fill-current" viewBox="0 0 24 24"&gt;
+      &lt;path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/&gt;
+    &lt;/svg&gt;
+    &lt;svg class="w-5 h-5 text-yellow-400 fill-current" viewBox="0 0 24 24"&gt;
+      &lt;path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/&gt;
+    &lt;/svg&gt;
+    &lt;svg class="w-5 h-5 text-yellow-400 fill-current" viewBox="0 0 24 24"&gt;
+      &lt;path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/&gt;
+    &lt;/svg&gt;
+    &lt;svg class="w-5 h-5 text-neutral-300 dark:text-neutral-600 fill-current" viewBox="0 0 24 24"&gt;
+      &lt;path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/&gt;
+    &lt;/svg&gt;
+  &lt;/div&gt;
+  &lt;span class="text-sm font-medium text-neutral-700 dark:text-neutral-300"&gt;4.0&lt;/span&gt;
+  &lt;span class="text-sm text-neutral-500 dark:text-neutral-400"&gt;(142 reviews)&lt;/span&gt;
+&lt;/div&gt;</code></pre>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Comments Review -->
+        <section id="review-comments" class="mb-16">
+          <div class="mb-8">
+            <div class="flex items-center justify-between mb-6">
+              <div>
+                <h2 class="text-2xl font-semibold text-neutral-900 dark:text-neutral-100 mb-2">Comments</h2>
+                <p class="text-neutral-600 dark:text-neutral-400">Review comments with timestamps, user avatars, and formatted content.</p>
+              </div>
+              <button id="copy-comments-btn" class="flex items-center gap-2 px-4 py-2 bg-neutral-100 dark:bg-neutral-800 hover:bg-neutral-200 dark:hover:bg-neutral-700 text-neutral-700 dark:text-neutral-300 rounded-lg text-sm font-medium transition-colors">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
+                </svg>
+                Copy
+              </button>
+            </div>
+          </div>
+
+          <div class="mb-6">
+            <nav class="inline-flex bg-neutral-100 dark:bg-neutral-800 rounded-lg p-1">
+              <button class="tab-button active px-4 py-2 rounded-md bg-white dark:bg-neutral-700 text-neutral-900 dark:text-neutral-100 font-medium text-sm shadow-sm transition-all" data-tab="comments-preview">
+                Preview
+              </button>
+              <button class="tab-button px-4 py-2 rounded-md text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-100 font-medium text-sm transition-all" data-tab="comments-html">
+                HTML
+              </button>
+            </nav>
+          </div>
+
+          <div id="comments-preview" class="tab-content">
+            <div class="bg-neutral-50 dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-700 rounded-lg p-8">
+              <div class="space-y-6">
+                <!-- Review Comment 1 -->
+                <div class="bg-white dark:bg-neutral-950 border border-neutral-200 dark:border-neutral-700 rounded-lg p-6">
+                  <div class="flex items-start space-x-4">
+                    <div class="flex-shrink-0">
+                      <div class="w-12 h-12 bg-gradient-to-br from-blue-400 to-blue-600 rounded-full flex items-center justify-center">
+                        <span class="text-white text-sm font-semibold">JD</span>
+                      </div>
+                    </div>
+                    <div class="flex-1 min-w-0">
+                      <div class="flex items-center justify-between mb-2">
+                        <div>
+                          <h4 class="text-sm font-semibold text-neutral-900 dark:text-neutral-100">John Doe</h4>
+                          <div class="flex items-center space-x-2 mt-1">
+                            <div class="flex items-center">
+                              <svg class="w-4 h-4 text-yellow-400 fill-current" viewBox="0 0 24 24">
+                                <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/>
+                              </svg>
+                              <svg class="w-4 h-4 text-yellow-400 fill-current" viewBox="0 0 24 24">
+                                <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/>
+                              </svg>
+                              <svg class="w-4 h-4 text-yellow-400 fill-current" viewBox="0 0 24 24">
+                                <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/>
+                              </svg>
+                              <svg class="w-4 h-4 text-yellow-400 fill-current" viewBox="0 0 24 24">
+                                <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/>
+                              </svg>
+                              <svg class="w-4 h-4 text-yellow-400 fill-current" viewBox="0 0 24 24">
+                                <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/>
+                              </svg>
+                            </div>
+                            <span class="text-xs text-neutral-500 dark:text-neutral-400">5.0</span>
+                          </div>
+                        </div>
+                        <span class="text-xs text-neutral-500 dark:text-neutral-400">2 days ago</span>
+                      </div>
+                      <p class="text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed">
+                        Excellent product! The quality exceeded my expectations and the delivery was super fast. 
+                        Would definitely recommend to others and purchase again.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Review Comment 2 -->
+                <div class="bg-white dark:bg-neutral-950 border border-neutral-200 dark:border-neutral-700 rounded-lg p-6">
+                  <div class="flex items-start space-x-4">
+                    <div class="flex-shrink-0">
+                      <div class="w-12 h-12 bg-gradient-to-br from-green-400 to-green-600 rounded-full flex items-center justify-center">
+                        <span class="text-white text-sm font-semibold">MS</span>
+                      </div>
+                    </div>
+                    <div class="flex-1 min-w-0">
+                      <div class="flex items-center justify-between mb-2">
+                        <div>
+                          <h4 class="text-sm font-semibold text-neutral-900 dark:text-neutral-100">Maria Smith</h4>
+                          <div class="flex items-center space-x-2 mt-1">
+                            <div class="flex items-center">
+                              <svg class="w-4 h-4 text-yellow-400 fill-current" viewBox="0 0 24 24">
+                                <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/>
+                              </svg>
+                              <svg class="w-4 h-4 text-yellow-400 fill-current" viewBox="0 0 24 24">
+                                <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/>
+                              </svg>
+                              <svg class="w-4 h-4 text-yellow-400 fill-current" viewBox="0 0 24 24">
+                                <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/>
+                              </svg>
+                              <svg class="w-4 h-4 text-yellow-400 fill-current" viewBox="0 0 24 24">
+                                <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/>
+                              </svg>
+                              <svg class="w-4 h-4 text-neutral-300 dark:text-neutral-600 fill-current" viewBox="0 0 24 24">
+                                <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/>
+                              </svg>
+                            </div>
+                            <span class="text-xs text-neutral-500 dark:text-neutral-400">4.0</span>
+                          </div>
+                        </div>
+                        <span class="text-xs text-neutral-500 dark:text-neutral-400">1 week ago</span>
+                      </div>
+                      <p class="text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed">
+                        Good value for money. The product works as described, though there's room for improvement 
+                        in the packaging. Overall satisfied with the purchase.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div id="comments-html" class="tab-content hidden w-[768px]">
+            <div class="bg-neutral-900 dark:bg-neutral-950 rounded-lg overflow-hidden">
+              <div class="w-full">
+                <pre class="p-6 text-sm overflow-x-auto"><code class="language-html whitespace-pre break-words" style="word-break: break-all; max-width: 100%;">&lt;div class="bg-white dark:bg-neutral-950 border border-neutral-200 dark:border-neutral-700 rounded-lg p-6"&gt;
+  &lt;div class="flex items-start space-x-4"&gt;
+    &lt;div class="flex-shrink-0"&gt;
+      &lt;img src="avatar.jpg" alt="User avatar" class="w-12 h-12 rounded-full"&gt;
+    &lt;/div&gt;
+    &lt;div class="flex-1 min-w-0"&gt;
+      &lt;div class="flex items-center justify-between mb-2"&gt;
+        &lt;div&gt;
+          &lt;h4 class="text-sm font-semibold text-neutral-900 dark:text-neutral-100"&gt;John Doe&lt;/h4&gt;
+          &lt;div class="flex items-center space-x-2 mt-1"&gt;
+            &lt;div class="flex items-center"&gt;
+              &lt;svg class="w-4 h-4 text-yellow-400 fill-current" viewBox="0 0 24 24"&gt;
+                &lt;path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/&gt;
+              &lt;/svg&gt;
+              &lt;!-- More stars... --&gt;
+            &lt;/div&gt;
+            &lt;span class="text-xs text-neutral-500 dark:text-neutral-400"&gt;5.0&lt;/span&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;span class="text-xs text-neutral-500 dark:text-neutral-400"&gt;2 days ago&lt;/span&gt;
+      &lt;/div&gt;
+      
+      &lt;p class="text-neutral-600 dark:text-neutral-400 leading-relaxed mb-4"&gt;
+        Excellent product! The quality exceeded my expectations and the delivery was super fast.
+      &lt;/p&gt;
+
+      &lt;div class="flex items-center justify-between pt-3 border-t border-neutral-200 dark:border-neutral-700"&gt;
+        &lt;div class="flex items-center space-x-4"&gt;
+          &lt;span class="text-sm text-neutral-500 dark:text-neutral-400"&gt;Was this helpful?&lt;/span&gt;
+          &lt;div class="flex items-center space-x-2"&gt;
+            &lt;button class="flex items-center space-x-1 text-sm text-neutral-600 dark:text-neutral-400 hover:text-green-600 dark:hover:text-green-400"&gt;
+              &lt;svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"&gt;
+                &lt;path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 10h4.764a2 2 0 011.789 2.894l-3.5 7A2 2 0 0115.263 21h-4.017c-.163 0-.326-.02-.485-.06L7 20m7-10V5a2 2 0 00-2-2h-.095c-.5 0-.905.405-.905.905 0 .714-.211 1.412-.608 2.006L7 11v9m7-10h-2M7 20H5a2 2 0 01-2-2v-6a2 2 0 012-2h2.5"&gt;&lt;/path&gt;
+              &lt;/svg&gt;
+              &lt;span&gt;24&lt;/span&gt;
+            &lt;/button&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- User Info Review -->
+        <section id="review-userinfo" class="mb-16">
+          <div class="mb-8">
+            <div class="flex items-center justify-between mb-6">
+              <div>
+                <h2 class="text-2xl font-semibold text-neutral-900 dark:text-neutral-100 mb-2">User Info</h2>
+                <p class="text-neutral-600 dark:text-neutral-400">Comprehensive review cards with detailed user information and verified badges.</p>
+              </div>
+              <button id="copy-userinfo-btn" class="flex items-center gap-2 px-4 py-2 bg-neutral-100 dark:bg-neutral-800 hover:bg-neutral-200 dark:hover:bg-neutral-700 text-neutral-700 dark:text-neutral-300 rounded-lg text-sm font-medium transition-colors">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
+                </svg>
+                Copy
+              </button>
+            </div>
+          </div>
+
+          <div class="mb-6">
+            <nav class="inline-flex bg-neutral-100 dark:bg-neutral-800 rounded-lg p-1">
+              <button class="tab-button active px-4 py-2 rounded-md bg-white dark:bg-neutral-700 text-neutral-900 dark:text-neutral-100 font-medium text-sm shadow-sm transition-all" data-tab="userinfo-preview">
+                Preview
+              </button>
+              <button class="tab-button px-4 py-2 rounded-md text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-100 font-medium text-sm transition-all" data-tab="userinfo-html">
+                HTML
+              </button>
+            </nav>
+          </div>
+
+          <div id="userinfo-preview" class="tab-content">
+            <div class="bg-neutral-50 dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-700 rounded-lg p-8">
+              <div class="bg-white dark:bg-neutral-950 border border-neutral-200 dark:border-neutral-700 rounded-lg p-6 max-w-2xl mx-auto">
+                <div class="flex items-start space-x-4">
+                  <div class="flex-shrink-0">
+                    <div class="w-16 h-16 bg-gradient-to-br from-purple-400 to-purple-600 rounded-full flex items-center justify-center">
+                      <span class="text-white text-lg font-semibold">AJ</span>
+                    </div>
+                  </div>
+                  <div class="flex-1 min-w-0">
+                    <div class="flex items-start justify-between mb-3">
+                      <div>
+                        <div class="flex items-center space-x-2 mb-1">
+                          <h4 class="text-lg font-semibold text-neutral-900 dark:text-neutral-100">Alex Johnson</h4>
+                          <span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200">
+                            <svg class="w-3 h-3 mr-1" fill="currentColor" viewBox="0 0 20 20">
+                              <path fill-rule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                            </svg>
+                            Verified
+                          </span>
+                        </div>
+                        <div class="flex items-center space-x-4 text-sm text-neutral-600 dark:text-neutral-400">
+                          <span>Premium Member</span>
+                          <span>•</span>
+                          <span>127 reviews</span>
+                          <span>•</span>
+                          <span>Member since 2021</span>
+                        </div>
+                        <div class="flex items-center space-x-2 mt-2">
+                          <div class="flex items-center">
+                            <svg class="w-4 h-4 text-yellow-400 fill-current" viewBox="0 0 24 24">
+                              <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/>
+                            </svg>
+                            <svg class="w-4 h-4 text-yellow-400 fill-current" viewBox="0 0 24 24">
+                              <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/>
+                            </svg>
+                            <svg class="w-4 h-4 text-yellow-400 fill-current" viewBox="0 0 24 24">
+                              <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/>
+                            </svg>
+                            <svg class="w-4 h-4 text-yellow-400 fill-current" viewBox="0 0 24 24">
+                              <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/>
+                            </svg>
+                            <svg class="w-4 h-4 text-yellow-400 fill-current" viewBox="0 0 24 24">
+                              <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/>
+                            </svg>
+                          </div>
+                          <span class="text-sm font-medium text-neutral-700 dark:text-neutral-300">5.0</span>
+                        </div>
+                      </div>
+                      <span class="text-sm text-neutral-500 dark:text-neutral-400">3 days ago</span>
+                    </div>
+                    
+                    <p class="text-neutral-600 dark:text-neutral-400 leading-relaxed mb-4">
+                      Absolutely fantastic product! As a long-time customer, I can confidently say this exceeds all expectations. 
+                      The build quality is outstanding, delivery was lightning fast, and customer service was incredibly helpful 
+                      when I had questions. Highly recommend to anyone considering this purchase.
+                    </p>
+
+                    <div class="flex items-center justify-between pt-3 border-t border-neutral-200 dark:border-neutral-700">
+                      <div class="flex items-center space-x-4">
+                        <span class="text-sm text-neutral-500 dark:text-neutral-400">Was this helpful?</span>
+                        <div class="flex items-center space-x-2">
+                          <button class="flex items-center space-x-1 text-sm text-neutral-600 dark:text-neutral-400 hover:text-green-600 dark:hover:text-green-400 transition-colors">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 10h4.764a2 2 0 011.789 2.894l-3.5 7A2 2 0 0115.263 21h-4.017c-.163 0-.326-.02-.485-.06L7 20m7-10V5a2 2 0 00-2-2h-.095c-.5 0-.905.405-.905.905 0 .714-.211 1.412-.608 2.006L7 11v9m7-10h-2M7 20H5a2 2 0 01-2-2v-6a2 2 0 012-2h2.5"></path>
+                            </svg>
+                            <span>24</span>
+                          </button>
+                          <button class="flex items-center space-x-1 text-sm text-neutral-600 dark:text-neutral-400 hover:text-red-600 dark:hover:text-red-400 transition-colors">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 14H5.236a2 2 0 01-1.789-2.894l3.5-7A2 2 0 018.736 3h4.018c.163 0 .326.02.485.06L17 4m-7 10v2a2 2 0 002 2h.095c.5 0 .905-.405.905-.905 0-.714.211-1.412.608-2.006L17 13V4m-7 10h2m5-10h2a2 2 0 012 2v6a2 2 0 01-2 2h-2.5"></path>
+                            </svg>
+                            <span>2</span>
+                          </button>
+                        </div>
+                      </div>
+                      <button class="text-sm text-neutral-500 dark:text-neutral-400 hover:text-neutral-700 dark:hover:text-neutral-200 transition-colors">
+                        Reply
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div id="userinfo-html" class="tab-content hidden w-[768px]">
+            <div class="bg-neutral-900 dark:bg-neutral-950 rounded-lg overflow-hidden">
+              <div class="w-full">
+                <pre class="p-6 text-sm overflow-x-auto"><code class="language-html whitespace-pre break-words" style="word-break: break-all; max-width: 100%;">&lt;div class="bg-white dark:bg-neutral-950 border border-neutral-200 dark:border-neutral-700 rounded-lg p-6"&gt;
+  &lt;div class="flex items-start space-x-4"&gt;
+    &lt;div class="flex-shrink-0"&gt;
+      &lt;img src="avatar.jpg" alt="User avatar" class="w-16 h-16 rounded-full"&gt;
+    &lt;/div&gt;
+    &lt;div class="flex-1 min-w-0"&gt;
+      &lt;div class="flex items-start justify-between mb-3"&gt;
+        &lt;div&gt;
+          &lt;div class="flex items-center space-x-2 mb-1"&gt;
+            &lt;h4 class="text-sm font-semibold text-neutral-900 dark:text-neutral-100"&gt;Alex Johnson&lt;/h4&gt;
+            &lt;span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200"&gt;
+              &lt;svg class="w-3 h-3 mr-1" fill="currentColor" viewBox="0 0 20 20"&gt;
+                &lt;path fill-rule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723..."&gt;&lt;/path&gt;
+              &lt;/svg&gt;
+              Verified
+            &lt;/span&gt;
+          &lt;/div&gt;
+          &lt;div class="flex items-center space-x-4 text-sm text-neutral-600 dark:text-neutral-400"&gt;
+            &lt;span&gt;Premium Member&lt;/span&gt;
+            &lt;span&gt;•&lt;/span&gt;
+            &lt;span&gt;127 reviews&lt;/span&gt;
+          &lt;/div&gt;
+          &lt;div class="flex items-center space-x-2 mt-2"&gt;
+            &lt;div class="flex items-center"&gt;
+              &lt;!-- Star rating icons --&gt;
+            &lt;/div&gt;
+            &lt;span class="text-sm font-medium text-neutral-700 dark:text-neutral-300"&gt;5.0&lt;/span&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;span class="text-xs text-neutral-500 dark:text-neutral-400"&gt;3 days ago&lt;/span&gt;
+      &lt;/div&gt;
+      
+      &lt;p class="text-neutral-600 dark:text-neutral-400 leading-relaxed mb-4"&gt;
+        Absolutely fantastic product! As a long-time customer, I can confidently say this exceeds all expectations.
+      &lt;/p&gt;
+
+      &lt;div class="flex items-center justify-between"&gt;
+        &lt;div class="flex items-center space-x-6"&gt;
+          &lt;div class="flex items-center space-x-3"&gt;
+            &lt;span class="text-sm text-neutral-500 dark:text-neutral-400"&gt;Helpful?&lt;/span&gt;
+            &lt;div class="flex items-center space-x-2"&gt;
+              &lt;button class="flex items-center space-x-1 px-3 py-1.5 bg-neutral-100 dark:bg-neutral-800 hover:bg-green-100 dark:hover:bg-green-900 text-neutral-600 dark:text-neutral-400 hover:text-green-600 dark:hover:text-green-400 rounded-md text-sm font-medium transition-colors"&gt;
+                &lt;svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"&gt;
+                  &lt;path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 10h4.764a2 2 0 011.789 2.894l-3.5 7A2 2 0 0115.263 21h-4.017c-.163 0-.326-.02-.485-.06L7 20m7-10V5a2 2 0 00-2-2h-.095c-.5 0-.905.405-.905.905 0 .714-.211 1.412-.608 2.006L7 11v9m7-10h-2M7 20H5a2 2 0 01-2-2v-6a2 2 0 012-2h2.5"&gt;&lt;/path&gt;
+                &lt;/svg&gt;
+                &lt;span&gt;24&lt;/span&gt;
+              &lt;/button&gt;
+              &lt;button class="flex items-center space-x-1 px-3 py-1.5 bg-neutral-100 dark:bg-neutral-800 hover:bg-red-100 dark:hover:bg-red-900 text-neutral-600 dark:text-neutral-400 hover:text-red-600 dark:hover:text-red-400 rounded-md text-sm font-medium transition-colors"&gt;
+                &lt;svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"&gt;
+                  &lt;path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 14H5.236a2 2 0 01-1.789-2.894l3.5-7A2 2 0 018.736 3h4.018c.163 0 .326.02.485.06L17 4m-7 10v2a2 2 0 002 2h.095c.5 0 .905-.405.905-.905 0-.714.211-1.412.608-2.006L17 13V4m-7 10h2m5-10h2a2 2 0 012 2v6a2 2 0 01-2 2h-2.5"&gt;&lt;/path&gt;
+                &lt;/svg&gt;
+                &lt;span&gt;2&lt;/span&gt;
+              &lt;/button&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Helpful Votes Review -->
+        <section id="review-helpful" class="mb-16">
+          <div class="mb-8">
+            <div class="flex items-center justify-between mb-6">
+              <div>
+                <h2 class="text-2xl font-semibold text-neutral-900 dark:text-neutral-100 mb-2">Helpful Votes</h2>
+                <p class="text-neutral-600 dark:text-neutral-400">Interactive review voting system with thumbs up/down and engagement metrics.</p>
+              </div>
+              <button id="copy-helpful-btn" class="flex items-center gap-2 px-4 py-2 bg-neutral-100 dark:bg-neutral-800 hover:bg-neutral-200 dark:hover:bg-neutral-700 text-neutral-700 dark:text-neutral-300 rounded-lg text-sm font-medium transition-colors">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
+                </svg>
+                Copy
+              </button>
+            </div>
+          </div>
+
+          <div class="mb-6">
+            <nav class="inline-flex bg-neutral-100 dark:bg-neutral-800 rounded-lg p-1">
+              <button class="tab-button active px-4 py-2 rounded-md bg-white dark:bg-neutral-700 text-neutral-900 dark:text-neutral-100 font-medium text-sm shadow-sm transition-all" data-tab="helpful-preview">
+                Preview
+              </button>
+              <button class="tab-button px-4 py-2 rounded-md text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-100 font-medium text-sm transition-all" data-tab="helpful-html">
+                HTML
+              </button>
+            </nav>
+          </div>
+
+          <div id="helpful-preview" class="tab-content">
+            <div class="bg-neutral-50 dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-700 rounded-lg p-8">
+              <div class="space-y-6">
+                <!-- Helpful Vote Example 1 -->
+                <div class="bg-white dark:bg-neutral-950 border border-neutral-200 dark:border-neutral-700 rounded-lg p-6">
+                  <div class="flex items-start space-x-4">
+                    <div class="flex-shrink-0">
+                      <div class="w-12 h-12 bg-gradient-to-br from-orange-400 to-orange-600 rounded-full flex items-center justify-center">
+                        <span class="text-white text-sm font-semibold">LW</span>
+                      </div>
+                    </div>
+                    <div class="flex-1 min-w-0">
+                      <div class="flex items-center justify-between mb-2">
+                        <div class="flex items-center space-x-3">
+                          <h4 class="text-sm font-semibold text-neutral-900 dark:text-neutral-100">Lisa Wang</h4>
+                          <div class="flex items-center">
+                            <svg class="w-4 h-4 text-yellow-400 fill-current" viewBox="0 0 24 24">
+                              <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/>
+                            </svg>
+                            <svg class="w-4 h-4 text-yellow-400 fill-current" viewBox="0 0 24 24">
+                              <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/>
+                            </svg>
+                            <svg class="w-4 h-4 text-yellow-400 fill-current" viewBox="0 0 24 24">
+                              <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/>
+                            </svg>
+                            <svg class="w-4 h-4 text-yellow-400 fill-current" viewBox="0 0 24 24">
+                              <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/>
+                            </svg>
+                            <svg class="w-4 h-4 text-neutral-300 dark:text-neutral-600 fill-current" viewBox="0 0 24 24">
+                              <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/>
+                            </svg>
+                            <span class="ml-2 text-xs text-neutral-500 dark:text-neutral-400">4.0</span>
+                          </div>
+                        </div>
+                        <span class="text-xs text-neutral-500 dark:text-neutral-400">5 days ago</span>
+                      </div>
+                      <p class="text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed mb-4">
+                        Great product overall! The design is sleek and functionality is solid. However, the setup process 
+                        could be more intuitive. Worth the investment for the long-term value.
+                      </p>
+                      
+                      <div class="flex items-center justify-between">
+                        <div class="flex items-center space-x-6">
+                          <div class="flex items-center space-x-3">
+                            <span class="text-sm text-neutral-500 dark:text-neutral-400">Helpful?</span>
+                            <div class="flex items-center space-x-2">
+                              <button class="flex items-center space-x-1 px-3 py-1.5 bg-neutral-100 dark:bg-neutral-800 hover:bg-green-100 dark:hover:bg-green-900 text-neutral-600 dark:text-neutral-400 hover:text-green-600 dark:hover:text-green-400 rounded-md text-sm font-medium transition-colors" data-type="up">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 10h4.764a2 2 0 011.789 2.894l-3.5 7A2 2 0 0115.263 21h-4.017c-.163 0-.326-.02-.485-.06L7 20m7-10V5a2 2 0 00-2-2h-.095c-.5 0-.905.405-.905.905 0 .714-.211 1.412-.608 2.006L7 11v9m7-10h-2M7 20H5a2 2 0 01-2-2v-6a2 2 0 012-2h2.5"></path>
+                                </svg>
+                                <span class="vote-count">18</span>
+                              </button>
+                              <button class="flex items-center space-x-1 px-3 py-1.5 bg-neutral-100 dark:bg-neutral-800 hover:bg-red-100 dark:hover:bg-red-900 text-neutral-600 dark:text-neutral-400 hover:text-red-600 dark:hover:text-red-400 rounded-md text-sm font-medium transition-colors" data-type="down">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 14H5.236a2 2 0 01-1.789-2.894l3.5-7A2 2 0 018.736 3h4.018c.163 0 .326.02.485.06L17 4m-7 10v2a2 2 0 002 2h.095c.5 0 .905-.405.905-.905 0-.714.211-1.412.608-2.006L17 13V4m-7 10h2m5-10h2a2 2 0 012 2v6a2 2 0 01-2 2h-2.5"></path>
+                                </svg>
+                                <span class="vote-count">3</span>
+                              </button>
+                            </div>
+                          </div>
+                          <div class="flex items-center space-x-2 text-sm text-neutral-500 dark:text-neutral-400">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path>
+                            </svg>
+                            <span>5 replies</span>
+                          </div>
+                        </div>
+                        <button class="text-sm text-neutral-500 dark:text-neutral-400 hover:text-neutral-700 dark:hover:text-neutral-200 transition-colors">
+                          Share
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Helpful Vote Example 2 -->
+                <div class="bg-white dark:bg-neutral-950 border border-neutral-200 dark:border-neutral-700 rounded-lg p-6">
+                  <div class="flex items-start space-x-4">
+                    <div class="flex-shrink-0">
+                      <div class="w-12 h-12 bg-gradient-to-br from-teal-400 to-teal-600 rounded-full flex items-center justify-center">
+                        <span class="text-white text-sm font-semibold">RB</span>
+                      </div>
+                    </div>
+                    <div class="flex-1 min-w-0">
+                      <div class="flex items-center justify-between mb-2">
+                        <div class="flex items-center space-x-3">
+                          <h4 class="text-sm font-semibold text-neutral-900 dark:text-neutral-100">Robert Brown</h4>
+                          <div class="flex items-center">
+                            <svg class="w-4 h-4 text-yellow-400 fill-current" viewBox="0 0 24 24">
+                              <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/>
+                            </svg>
+                            <svg class="w-4 h-4 text-yellow-400 fill-current" viewBox="0 0 24 24">
+                              <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/>
+                            </svg>
+                            <svg class="w-4 h-4 text-neutral-300 dark:text-neutral-600 fill-current" viewBox="0 0 24 24">
+                              <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/>
+                            </svg>
+                            <svg class="w-4 h-4 text-neutral-300 dark:text-neutral-600 fill-current" viewBox="0 0 24 24">
+                              <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/>
+                            </svg>
+                            <svg class="w-4 h-4 text-neutral-300 dark:text-neutral-600 fill-current" viewBox="0 0 24 24">
+                              <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/>
+                            </svg>
+                            <span class="ml-2 text-xs text-neutral-500 dark:text-neutral-400">2.0</span>
+                          </div>
+                        </div>
+                        <span class="text-xs text-neutral-500 dark:text-neutral-400">1 week ago</span>
+                      </div>
+                      <p class="text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed mb-4">
+                        Disappointed with this purchase. The quality doesn't match the price point, and customer service 
+                        was unhelpful when I reached out about issues. Would not recommend.
+                      </p>
+                      
+                      <div class="flex items-center justify-between">
+                        <div class="flex items-center space-x-6">
+                          <div class="flex items-center space-x-3">
+                            <span class="text-sm text-neutral-500 dark:text-neutral-400">Helpful?</span>
+                            <div class="flex items-center space-x-2">
+                              <button class="flex items-center space-x-1 px-3 py-1.5 bg-neutral-100 dark:bg-neutral-800 hover:bg-green-100 dark:hover:bg-green-900 text-neutral-600 dark:text-neutral-400 hover:text-green-600 dark:hover:text-green-400 rounded-md text-sm font-medium transition-colors" data-type="up">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 10h4.764a2 2 0 011.789 2.894l-3.5 7A2 2 0 0115.263 21h-4.017c-.163 0-.326-.02-.485-.06L7 20m7-10V5a2 2 0 00-2-2h-.095c-.5 0-.905.405-.905.905 0 .714-.211 1.412-.608 2.006L7 11v9m7-10h-2M7 20H5a2 2 0 01-2-2v-6a2 2 0 012-2h2.5"></path>
+                                </svg>
+                                <span class="vote-count">7</span>
+                              </button>
+                              <button class="flex items-center space-x-1 px-3 py-1.5 bg-neutral-100 dark:bg-neutral-800 hover:bg-red-100 dark:hover:bg-red-900 text-neutral-600 dark:text-neutral-400 hover:text-red-600 dark:hover:text-red-400 rounded-md text-sm font-medium transition-colors" data-type="down">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 14H5.236a2 2 0 01-1.789-2.894l3.5-7A2 2 0 018.736 3h4.018c.163 0 .326.02.485.06L17 4m-7 10v2a2 2 0 002 2h.095c.5 0 .905-.405.905-.905 0-.714.211-1.412.608-2.006L17 13V4m-7 10h2m5-10h2a2 2 0 012 2v6a2 2 0 01-2 2h-2.5"></path>
+                                </svg>
+                                <span class="vote-count">12</span>
+                              </button>
+                            </div>
+                          </div>
+                          <div class="flex items-center space-x-2 text-sm text-neutral-500 dark:text-neutral-400">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path>
+                            </svg>
+                            <span>2 replies</span>
+                          </div>
+                        </div>
+                        <button class="text-sm text-neutral-500 dark:text-neutral-400 hover:text-neutral-700 dark:hover:text-neutral-200 transition-colors">
+                          Share
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div id="helpful-html" class="tab-content hidden w-[768px]">
+            <div class="bg-neutral-900 dark:bg-neutral-950 rounded-lg overflow-hidden">
+              <div class="w-full">
+                <pre class="p-6 text-sm overflow-x-auto"><code class="language-html whitespace-pre break-words" style="word-break: break-all; max-width: 100%;">&lt;div class="bg-white dark:bg-neutral-950 border border-neutral-200 dark:border-neutral-700 rounded-lg p-6"&gt;
+  &lt;div class="flex items-start space-x-4"&gt;
+    &lt;div class="flex-shrink-0"&gt;
+      &lt;img src="avatar.jpg" alt="User avatar" class="w-12 h-12 rounded-full"&gt;
+    &lt;/div&gt;
+    &lt;div class="flex-1 min-w-0"&gt;
+      &lt;div class="flex items-center justify-between mb-2"&gt;
+        &lt;div class="flex items-center space-x-3"&gt;
+          &lt;h4 class="text-sm font-semibold text-neutral-900 dark:text-neutral-100"&gt;Lisa Wang&lt;/h4&gt;
+          &lt;div class="flex items-center"&gt;
+            &lt;!-- Star rating --&gt;
+            &lt;span class="ml-2 text-xs text-neutral-500 dark:text-neutral-400"&gt;4.0&lt;/span&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;span class="text-xs text-neutral-500 dark:text-neutral-400"&gt;5 days ago&lt;/span&gt;
+      &lt;/div&gt;
+      &lt;p class="text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed mb-4"&gt;
+        Great product overall! The design is sleek and functionality is solid.
+      &lt;/p&gt;
+      
+      &lt;div class="flex items-center justify-between"&gt;
+        &lt;div class="flex items-center space-x-6"&gt;
+          &lt;div class="flex items-center space-x-3"&gt;
+            &lt;span class="text-sm text-neutral-500 dark:text-neutral-400"&gt;Helpful?&lt;/span&gt;
+            &lt;div class="flex items-center space-x-2"&gt;
+              &lt;button class="flex items-center space-x-1 px-3 py-1.5 bg-neutral-100 dark:bg-neutral-800 hover:bg-green-100 dark:hover:bg-green-900 text-neutral-600 dark:text-neutral-400 hover:text-green-600 dark:hover:text-green-400 rounded-md text-sm font-medium transition-colors"&gt;
+                &lt;svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"&gt;
+                  &lt;path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 10h4.764a2 2 0 011.789 2.894l-3.5 7A2 2 0 0115.263 21h-4.017c-.163 0-.326-.02-.485-.06L7 20m7-10V5a2 2 0 00-2-2h-.095c-.5 0-.905.405-.905.905 0 .714-.211 1.412-.608 2.006L7 11v9m7-10h-2M7 20H5a2 2 0 01-2-2v-6a2 2 0 012-2h2.5"&gt;&lt;/path&gt;
+                &lt;/svg&gt;
+                &lt;span&gt;18&lt;/span&gt;
+              &lt;/button&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Usage Guidelines -->
+        <div class="bg-white dark:bg-neutral-950 border border-neutral-900 dark:border-neutral-100 rounded-lg p-4 mb-8">
+          <h3 class="text-sm font-medium text-neutral-900 dark:text-neutral-100 mb-2">Usage Guidelines</h3>
+          <ul class="text-sm text-neutral-900 dark:text-neutral-100 space-y-1">
+            <li>• Use star ratings for quick visual assessment of review quality</li>
+            <li>• Include review counts to provide context for rating reliability</li>
+            <li>• Add interactive rating systems for user engagement and feedback collection</li>
+            <li>• Display user information and verification badges to build trust</li>
+            <li>• Implement helpful voting to surface the most valuable reviews</li>
+            <li>• Include timestamps to show review recency and relevance</li>
+          </ul>
+        </div>
+
+        <!-- Accessibility Features -->
+        <div class="bg-white dark:bg-neutral-950 border border-neutral-900 dark:border-neutral-100 rounded-lg p-4">
+          <h3 class="text-sm font-medium text-neutral-900 dark:text-neutral-100 mb-2">Accessibility Features</h3>
+          <ul class="text-sm text-neutral-900 dark:text-neutral-100 space-y-1">
+            <li>• ARIA labels for star rating buttons and interactive elements</li>
+            <li>• Screen reader compatible rating announcements</li>
+            <li>• Keyboard navigation support for all voting and rating functions</li>
+            <li>• High contrast ratios for text and interactive elements</li>
+            <li>• Focus indicators for buttons and clickable areas</li>
+            <li>• Alternative text for user avatars and verification badges</li>
+          </ul>
+        </div>
+      </main>
+      <div id="footer-container"></div>
+    </div>
+  </div>
+
+  <script type="module">
+    import { generateHeader, generateSidebar, generateFooter, initializeSharedComponents } from '/src/shared/components.js';
+    import { themeManager } from '/src/shared/theme.js';
+    import { toast } from '/src/shared/toast.js';
+
+    document.addEventListener('DOMContentLoaded', function() {
+      // Inject shared components
+      document.getElementById('header-container').innerHTML = generateHeader('documentation');
+      document.getElementById('sidebar-container').innerHTML = generateSidebar('review');
+      document.getElementById('footer-container').innerHTML = generateFooter();
+      
+      // Initialize shared functionality
+      initializeSharedComponents();
+      themeManager.initializeToggleButtons();
+      
+      // Initialize review functionality
+      initializeReview();
+      
+      // Initialize tab switching
+      initializeTabs();
+      
+      // Initialize copy buttons
+      initializeCopyButtons();
+    });
+
+    function initializeReview() {
+      // Interactive rating functionality
+      const ratingStars = document.querySelectorAll('.rating-star');
+      let currentRating = 0;
+
+      ratingStars.forEach((star, index) => {
+        star.addEventListener('mouseenter', () => {
+          highlightStars(index + 1);
+        });
+
+        star.addEventListener('mouseleave', () => {
+          highlightStars(currentRating);
+        });
+
+        star.addEventListener('click', () => {
+          currentRating = index + 1;
+          highlightStars(currentRating);
+          // You can add additional logic here to handle the rating submission
+        });
+      });
+
+      function highlightStars(rating) {
+        ratingStars.forEach((star, index) => {
+          if (index < rating) {
+            star.classList.remove('text-neutral-300', 'dark:text-neutral-600');
+            star.classList.add('text-yellow-400');
+          } else {
+            star.classList.remove('text-yellow-400');
+            star.classList.add('text-neutral-300', 'dark:text-neutral-600');
+          }
+        });
+      }
+    }
+
+    function initializeTabs() {
+      const tabButtons = document.querySelectorAll('.tab-button');
+
+      tabButtons.forEach(button => {
+        button.addEventListener('click', () => {
+          const targetTab = button.getAttribute('data-tab');
+          const section = button.closest('section');
+          
+          // Update active states within the section
+          section.querySelectorAll('.tab-button').forEach(btn => {
+            btn.classList.remove('active', 'bg-white', 'dark:bg-neutral-700', 'text-neutral-900', 'dark:text-neutral-100', 'shadow-sm');
+            btn.classList.add('text-neutral-600', 'dark:text-neutral-400');
+          });
+          
+          button.classList.add('active', 'bg-white', 'dark:bg-neutral-700', 'text-neutral-900', 'dark:text-neutral-100', 'shadow-sm');
+          button.classList.remove('text-neutral-600', 'dark:text-neutral-400');
+          
+          // Show/hide content within the section
+          section.querySelectorAll('.tab-content').forEach(content => {
+            content.classList.add('hidden');
+          });
+          
+          const targetContent = section.querySelector(`#${targetTab}`);
+          if (targetContent) {
+            targetContent.classList.remove('hidden');
+          }
+        });
+      });
+    }
+
+    function initializeCopyButtons() {
+      document.getElementById('copy-ratings-btn')?.addEventListener('click', () => {
+        const code = document.querySelector('#ratings-html code').textContent;
+        navigator.clipboard.writeText(code).then(() => {
+          toast.show('Ratings review code copied!', 'success');
+        });
+      });
+
+      document.getElementById('copy-comments-btn')?.addEventListener('click', () => {
+        const code = document.querySelector('#comments-html code').textContent;
+        navigator.clipboard.writeText(code).then(() => {
+          toast.show('Comments review code copied!', 'success');
+        });
+      });
+
+      document.getElementById('copy-userinfo-btn')?.addEventListener('click', () => {
+        const code = document.querySelector('#userinfo-html code').textContent;
+        navigator.clipboard.writeText(code).then(() => {
+          toast.show('User info review code copied!', 'success');
+        });
+      });
+
+      document.getElementById('copy-helpful-btn')?.addEventListener('click', () => {
+        const code = document.querySelector('#helpful-html code').textContent;
+        navigator.clipboard.writeText(code).then(() => {
+          toast.show('Helpful votes review code copied!', 'success');
+        });
+      });
+    }
+  </script>
+</body>
+</html> 

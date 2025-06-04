@@ -125,24 +125,225 @@
           <div id="column-html" class="tab-content hidden w-[768px]">
             <div class="bg-neutral-900 dark:bg-neutral-950 rounded-lg overflow-hidden">
               <div class="w-full">
-                <pre class="p-6 text-sm overflow-x-auto"><code class="language-html"><!-- 12 Column Grid -->
-<div class="grid grid-cols-12 gap-4">
-  <div class="col-span-6">Half width</div>
-  <div class="col-span-6">Half width</div>
-</div>
+                <pre class="p-6 text-sm overflow-x-auto"><code class="language-html whitespace-pre break-words" style="word-break: break-all; max-width: 100%;">&lt;!-- 12 Column Grid --&gt;
+&lt;div class="grid grid-cols-12 gap-4"&gt;
+  &lt;div class="col-span-6"&gt;Half width&lt;/div&gt;
+  &lt;div class="col-span-6"&gt;Half width&lt;/div&gt;
+&lt;/div&gt;
 
-<!-- Three Column Layout -->
-<div class="grid grid-cols-12 gap-4">
-  <div class="col-span-4">Column 1</div>
-  <div class="col-span-4">Column 2</div>
-  <div class="col-span-4">Column 3</div>
-</div>
+&lt;!-- Three Column Layout --&gt;
+&lt;div class="grid grid-cols-12 gap-4"&gt;
+  &lt;div class="col-span-4"&gt;Column 1&lt;/div&gt;
+  &lt;div class="col-span-4"&gt;Column 2&lt;/div&gt;
+  &lt;div class="col-span-4"&gt;Column 3&lt;/div&gt;
+&lt;/div&gt;
 
-<!-- Sidebar Layout -->
-<div class="grid grid-cols-12 gap-4">
-  <div class="col-span-3">Sidebar</div>
-  <div class="col-span-9">Main Content</div>
-</div></code></pre>
+&lt;!-- Sidebar Layout --&gt;
+&lt;div class="grid grid-cols-12 gap-4"&gt;
+  &lt;div class="col-span-3"&gt;Sidebar&lt;/div&gt;
+  &lt;div class="col-span-9"&gt;Main Content&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Responsive Grid Section -->
+        <section id="responsive-grid" class="mb-16">
+          <div class="mb-8">
+            <div class="flex items-center justify-between mb-6">
+              <div>
+                <h2 class="text-2xl font-semibold text-neutral-900 dark:text-neutral-100 mb-2">Responsive Grid</h2>
+                <p class="text-neutral-600 dark:text-neutral-400">Grid layouts that adapt across different screen sizes and breakpoints.</p>
+              </div>
+              <div class="flex items-center gap-3">
+                <button data-theme-toggle class="p-2 rounded-lg bg-neutral-100 dark:bg-neutral-800 hover:bg-neutral-200 dark:hover:bg-neutral-700 text-neutral-600 dark:text-neutral-400 transition-colors duration-normal" aria-label="Toggle theme">
+                  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 718.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path>
+                  </svg>
+                </button>
+                <button id="copy-responsive-btn" class="flex items-center gap-2 px-4 py-2 bg-neutral-100 dark:bg-neutral-800 hover:bg-neutral-200 dark:hover:bg-neutral-700 text-neutral-700 dark:text-neutral-300 rounded-lg text-sm font-medium transition-colors duration-normal">
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
+                  </svg>
+                  Copy
+                </button>
+              </div>
+            </div>
+          </div>
+          
+          <div class="mb-6">
+            <nav class="inline-flex bg-neutral-100 dark:bg-neutral-800 rounded-lg p-1">
+              <button class="tab-button active px-4 py-2 rounded-md bg-white dark:bg-neutral-700 text-neutral-900 dark:text-neutral-100 font-medium text-sm shadow-sm transition-all duration-normal" data-tab="responsive-preview">Preview</button>
+              <button class="tab-button px-4 py-2 rounded-md text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-100 font-medium text-sm transition-all duration-normal" data-tab="responsive-html">HTML</button>
+            </nav>
+          </div>
+
+          <div id="responsive-preview" class="tab-content">
+            <div class="bg-white dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700 rounded-lg p-8">
+              <div class="space-y-6">
+                <!-- Mobile First -->
+                <div>
+                  <h3 class="text-sm font-medium text-neutral-900 dark:text-neutral-100 mb-3">Mobile First Responsive</h3>
+                  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                    <div class="bg-primary-100 dark:bg-primary-900/30 border border-primary-200 dark:border-primary-800 rounded p-4 text-center text-sm text-primary-700 dark:text-primary-300">1 → 2 → 3 cols</div>
+                    <div class="bg-primary-100 dark:bg-primary-900/30 border border-primary-200 dark:border-primary-800 rounded p-4 text-center text-sm text-primary-700 dark:text-primary-300">1 → 2 → 3 cols</div>
+                    <div class="bg-primary-100 dark:bg-primary-900/30 border border-primary-200 dark:border-primary-800 rounded p-4 text-center text-sm text-primary-700 dark:text-primary-300">1 → 2 → 3 cols</div>
+                  </div>
+                  <p class="text-xs text-neutral-500 dark:text-neutral-400 mt-2">
+                    1 column on mobile, 2 on tablet, 3 on desktop
+                  </p>
+                </div>
+
+                <!-- Responsive 12-Column -->
+                <div>
+                  <h3 class="text-sm font-medium text-neutral-900 dark:text-neutral-100 mb-3">Responsive 12-Column Layout</h3>
+                  <div class="grid grid-cols-12 gap-4">
+                    <div class="col-span-12 sm:col-span-6 lg:col-span-4 bg-neutral-100 dark:bg-neutral-700 border border-neutral-200 dark:border-neutral-600 rounded p-4 text-center text-sm text-neutral-700 dark:text-neutral-300">12 → 6 → 4</div>
+                    <div class="col-span-12 sm:col-span-6 lg:col-span-4 bg-neutral-100 dark:bg-neutral-700 border border-neutral-200 dark:border-neutral-600 rounded p-4 text-center text-sm text-neutral-700 dark:text-neutral-300">12 → 6 → 4</div>
+                    <div class="col-span-12 sm:col-span-12 lg:col-span-4 bg-neutral-100 dark:bg-neutral-700 border border-neutral-200 dark:border-neutral-600 rounded p-4 text-center text-sm text-neutral-700 dark:text-neutral-300">12 → 12 → 4</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div id="responsive-html" class="tab-content hidden w-[768px]">
+            <div class="bg-neutral-900 dark:bg-neutral-950 rounded-lg overflow-hidden">
+              <div class="w-full">
+                <pre class="p-6 text-sm overflow-x-auto"><code class="language-html whitespace-pre break-words" style="word-break: break-all; max-width: 100%;">&lt;!-- Mobile First Responsive --&gt;
+&lt;div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4"&gt;
+  &lt;div&gt;Item 1&lt;/div&gt;
+  &lt;div&gt;Item 2&lt;/div&gt;
+  &lt;div&gt;Item 3&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- Responsive 12-Column Layout --&gt;
+&lt;div class="grid grid-cols-12 gap-4"&gt;
+  &lt;div class="col-span-12 sm:col-span-6 lg:col-span-4"&gt;Item 1&lt;/div&gt;
+  &lt;div class="col-span-12 sm:col-span-6 lg:col-span-4"&gt;Item 2&lt;/div&gt;
+  &lt;div class="col-span-12 sm:col-span-12 lg:col-span-4"&gt;Item 3&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- Auto-fit Responsive --&gt;
+&lt;div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4"&gt;
+  &lt;div&gt;Auto responsive item&lt;/div&gt;
+  &lt;div&gt;Auto responsive item&lt;/div&gt;
+  &lt;div&gt;Auto responsive item&lt;/div&gt;
+  &lt;div&gt;Auto responsive item&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Gutters Section -->
+        <section id="gutters-grid" class="mb-16">
+          <div class="mb-8">
+            <div class="flex items-center justify-between mb-6">
+              <div>
+                <h2 class="text-2xl font-semibold text-neutral-900 dark:text-neutral-100 mb-2">Gutters</h2>
+                <p class="text-neutral-600 dark:text-neutral-400">Control spacing between grid items with different gap sizes.</p>
+              </div>
+              <div class="flex items-center gap-3">
+                <button data-theme-toggle class="p-2 rounded-lg bg-neutral-100 dark:bg-neutral-800 hover:bg-neutral-200 dark:hover:bg-neutral-700 text-neutral-600 dark:text-neutral-400 transition-colors duration-normal" aria-label="Toggle theme">
+                  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 718.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path>
+                  </svg>
+                </button>
+                <button id="copy-gutters-btn" class="flex items-center gap-2 px-4 py-2 bg-neutral-100 dark:bg-neutral-800 hover:bg-neutral-200 dark:hover:bg-neutral-700 text-neutral-700 dark:text-neutral-300 rounded-lg text-sm font-medium transition-colors duration-normal">
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
+                  </svg>
+                  Copy
+                </button>
+              </div>
+            </div>
+          </div>
+          
+          <div class="mb-6">
+            <nav class="inline-flex bg-neutral-100 dark:bg-neutral-800 rounded-lg p-1">
+              <button class="tab-button active px-4 py-2 rounded-md bg-white dark:bg-neutral-700 text-neutral-900 dark:text-neutral-100 font-medium text-sm shadow-sm transition-all duration-normal" data-tab="gutters-preview">Preview</button>
+              <button class="tab-button px-4 py-2 rounded-md text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-100 font-medium text-sm transition-all duration-normal" data-tab="gutters-html">HTML</button>
+            </nav>
+          </div>
+
+          <div id="gutters-preview" class="tab-content">
+            <div class="bg-white dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700 rounded-lg p-8">
+              <div class="space-y-8">
+                <!-- No Gap -->
+                <div>
+                  <h3 class="text-sm font-medium text-neutral-900 dark:text-neutral-100 mb-3">No Gap (gap-0)</h3>
+                  <div class="grid grid-cols-4 gap-0">
+                    <div class="bg-primary-100 dark:bg-primary-900/30 border border-primary-200 dark:border-primary-800 p-3 text-center text-xs text-primary-700 dark:text-primary-300">1</div>
+                    <div class="bg-primary-100 dark:bg-primary-900/30 border border-primary-200 dark:border-primary-800 p-3 text-center text-xs text-primary-700 dark:text-primary-300">2</div>
+                    <div class="bg-primary-100 dark:bg-primary-900/30 border border-primary-200 dark:border-primary-800 p-3 text-center text-xs text-primary-700 dark:text-primary-300">3</div>
+                    <div class="bg-primary-100 dark:bg-primary-900/30 border border-primary-200 dark:border-primary-800 p-3 text-center text-xs text-primary-700 dark:text-primary-300">4</div>
+                  </div>
+                </div>
+
+                <!-- Small Gap -->
+                <div>
+                  <h3 class="text-sm font-medium text-neutral-900 dark:text-neutral-100 mb-3">Small Gap (gap-2)</h3>
+                  <div class="grid grid-cols-4 gap-2">
+                    <div class="bg-neutral-100 dark:bg-neutral-700 border border-neutral-200 dark:border-neutral-600 rounded p-3 text-center text-xs text-neutral-700 dark:text-neutral-300">1</div>
+                    <div class="bg-neutral-100 dark:bg-neutral-700 border border-neutral-200 dark:border-neutral-600 rounded p-3 text-center text-xs text-neutral-700 dark:text-neutral-300">2</div>
+                    <div class="bg-neutral-100 dark:bg-neutral-700 border border-neutral-200 dark:border-neutral-600 rounded p-3 text-center text-xs text-neutral-700 dark:text-neutral-300">3</div>
+                    <div class="bg-neutral-100 dark:bg-neutral-700 border border-neutral-200 dark:border-neutral-600 rounded p-3 text-center text-xs text-neutral-700 dark:text-neutral-300">4</div>
+                  </div>
+                </div>
+
+                <!-- Large Gap -->
+                <div>
+                  <h3 class="text-sm font-medium text-neutral-900 dark:text-neutral-100 mb-3">Large Gap (gap-6)</h3>
+                  <div class="grid grid-cols-3 gap-6">
+                    <div class="bg-warning-100 dark:bg-warning-900/30 border border-warning-200 dark:border-warning-800 rounded p-4 text-center text-sm text-warning-700 dark:text-warning-300">1</div>
+                    <div class="bg-warning-100 dark:bg-warning-900/30 border border-warning-200 dark:border-warning-800 rounded p-4 text-center text-sm text-warning-700 dark:text-warning-300">2</div>
+                    <div class="bg-warning-100 dark:bg-warning-900/30 border border-warning-200 dark:border-warning-800 rounded p-4 text-center text-sm text-warning-700 dark:text-warning-300">3</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div id="gutters-html" class="tab-content hidden w-[768px]">
+            <div class="bg-neutral-900 dark:bg-neutral-950 rounded-lg overflow-hidden">
+              <div class="w-full">
+                <pre class="p-6 text-sm overflow-x-auto"><code class="language-html whitespace-pre break-words" style="word-break: break-all; max-width: 100%;">&lt;!-- No Gap --&gt;
+&lt;div class="grid grid-cols-4 gap-0"&gt;
+  &lt;div&gt;Item 1&lt;/div&gt;
+  &lt;div&gt;Item 2&lt;/div&gt;
+  &lt;div&gt;Item 3&lt;/div&gt;
+  &lt;div&gt;Item 4&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- Small Gap --&gt;
+&lt;div class="grid grid-cols-4 gap-2"&gt;
+  &lt;div&gt;Item 1&lt;/div&gt;
+  &lt;div&gt;Item 2&lt;/div&gt;
+  &lt;div&gt;Item 3&lt;/div&gt;
+  &lt;div&gt;Item 4&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- Medium Gap --&gt;
+&lt;div class="grid grid-cols-3 gap-4"&gt;
+  &lt;div&gt;Item 1&lt;/div&gt;
+  &lt;div&gt;Item 2&lt;/div&gt;
+  &lt;div&gt;Item 3&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- Large Gap --&gt;
+&lt;div class="grid grid-cols-3 gap-6"&gt;
+  &lt;div&gt;Item 1&lt;/div&gt;
+  &lt;div&gt;Item 2&lt;/div&gt;
+  &lt;div&gt;Item 3&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- Responsive Gaps --&gt;
+&lt;div class="grid grid-cols-2 gap-2 md:gap-4 lg:gap-6"&gt;
+  &lt;div&gt;Responsive gap item&lt;/div&gt;
+  &lt;div&gt;Responsive gap item&lt;/div&gt;
+&lt;/div&gt;</code></pre>
               </div>
             </div>
           </div>

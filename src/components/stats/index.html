@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stats - UI11 Design System</title>
+  <link href="/src/style.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-markup.min.js"></script>
+</head>
+<body class="min-h-screen bg-white dark:bg-neutral-950">
+  <div class="flex min-h-screen">
+    <div id="sidebar-container"></div>
+    <div class="flex-1 flex flex-col ml-64 mt-16">
+      <div id="header-container"></div>
+      <main class="flex-1 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <!-- Breadcrumb -->
+        <nav class="flex mb-8" aria-label="Breadcrumb">
+          <ol class="flex items-center space-x-4">
+            <li>
+              <a href="/documentation/" class="text-neutral-600 dark:text-neutral-400 hover:text-primary-500 dark:hover:text-primary-400 transition-colors">Documentation</a>
+            </li>
+            <li class="flex items-center">
+              <svg class="w-4 h-4 text-neutral-400 dark:text-neutral-500 mx-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+              </svg>
+              <span class="text-neutral-500 dark:text-neutral-400">Components</span>
+            </li>
+            <li class="flex items-center">
+              <svg class="w-4 h-4 text-neutral-400 dark:text-neutral-500 mx-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+              </svg>
+              <span class="text-primary-600 dark:text-primary-400 font-medium">Stats</span>
+            </li>
+          </ol>
+        </nav>
+
+        <!-- Page Header -->
+        <div class="mb-12">
+          <h1 class="text-4xl font-semibold text-neutral-900 dark:text-neutral-100 mb-4">Stats</h1>
+          <p class="text-lg text-neutral-600 dark:text-neutral-400 mb-6 max-w-3xl leading-relaxed">
+            Statistical display components for showcasing key metrics, counters, trends, and data comparisons with professional Apple-inspired styling.
+          </p>
+        </div>
+
+        <!-- Counters Stats -->
+        <section id="stats-counters" class="mb-16">
+          <div class="mb-8">
+            <div class="flex items-center justify-between mb-6">
+              <div>
+                <h2 class="text-2xl font-semibold text-neutral-900 dark:text-neutral-100 mb-2">Counters</h2>
+                <p class="text-neutral-600 dark:text-neutral-400">Animated number counters for displaying impressive statistics and achievements.</p>
+              </div>
+              <button id="copy-counters-btn" class="flex items-center gap-2 px-4 py-2 bg-neutral-100 dark:bg-neutral-800 hover:bg-neutral-200 dark:hover:bg-neutral-700 text-neutral-700 dark:text-neutral-300 rounded-lg text-sm font-medium transition-colors">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
+                </svg>
+                Copy
+              </button>
+            </div>
+          </div>
+
+          <div class="mb-6">
+            <nav class="inline-flex bg-neutral-100 dark:bg-neutral-800 rounded-lg p-1">
+              <button class="tab-button active px-4 py-2 rounded-md bg-white dark:bg-neutral-700 text-neutral-900 dark:text-neutral-100 font-medium text-sm shadow-sm transition-all" data-tab="counters-preview">
+                Preview
+              </button>
+              <button class="tab-button px-4 py-2 rounded-md text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-100 font-medium text-sm transition-all" data-tab="counters-html">
+                HTML
+              </button>
+            </nav>
+          </div>
+
+          <div id="counters-preview" class="tab-content">
+            <div class="bg-neutral-50 dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-700 rounded-lg p-8">
+              <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="text-center">
+                  <div class="counter text-4xl font-semibold text-neutral-900 dark:text-neutral-100 mb-2" data-target="10000">0</div>
+                  <div class="text-sm font-medium text-neutral-600 dark:text-neutral-400">Active Users</div>
+                </div>
+                <div class="text-center">
+                  <div class="counter text-4xl font-semibold text-neutral-900 dark:text-neutral-100 mb-2" data-target="250">0</div>
+                  <div class="text-sm font-medium text-neutral-600 dark:text-neutral-400">Projects Completed</div>
+                </div>
+                <div class="text-center">
+                  <div class="counter text-4xl font-semibold text-neutral-900 dark:text-neutral-100 mb-2" data-target="95">0</div>
+                  <div class="text-sm font-medium text-neutral-600 dark:text-neutral-400">Customer Satisfaction</div>
+                </div>
+                <div class="text-center">
+                  <div class="counter text-4xl font-semibold text-neutral-900 dark:text-neutral-100 mb-2" data-target="24">0</div>
+                  <div class="text-sm font-medium text-neutral-600 dark:text-neutral-400">Support Availability</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div id="counters-html" class="tab-content hidden w-[768px]">
+            <div class="bg-neutral-900 dark:bg-neutral-950 rounded-lg overflow-hidden">
+              <div class="w-full">
+                <pre class="p-6 text-sm overflow-x-auto"><code class="language-html whitespace-pre break-words" style="word-break: break-all; max-width: 100%;">&lt;div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8"&gt;
+  &lt;div class="text-center"&gt;
+    &lt;div class="counter text-4xl font-semibold text-neutral-900 dark:text-neutral-100 mb-2" data-target="10000"&gt;0&lt;/div&gt;
+    &lt;div class="text-sm font-medium text-neutral-600 dark:text-neutral-400"&gt;Active Users&lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class="text-center"&gt;
+    &lt;div class="counter text-4xl font-semibold text-neutral-900 dark:text-neutral-100 mb-2" data-target="250"&gt;0&lt;/div&gt;
+    &lt;div class="text-sm font-medium text-neutral-600 dark:text-neutral-400"&gt;Projects Completed&lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class="text-center"&gt;
+    &lt;div class="counter text-4xl font-semibold text-neutral-900 dark:text-neutral-100 mb-2" data-target="95"&gt;0&lt;/div&gt;
+    &lt;div class="text-sm font-medium text-neutral-600 dark:text-neutral-400"&gt;Customer Satisfaction&lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class="text-center"&gt;
+    &lt;div class="counter text-4xl font-semibold text-neutral-900 dark:text-neutral-100 mb-2" data-target="24"&gt;0&lt;/div&gt;
+    &lt;div class="text-sm font-medium text-neutral-600 dark:text-neutral-400"&gt;Support Availability&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Metrics Stats -->
+        <section id="stats-metrics" class="mb-16">
+          <div class="mb-8">
+            <div class="flex items-center justify-between mb-6">
+              <div>
+                <h2 class="text-2xl font-semibold text-neutral-900 dark:text-neutral-100 mb-2">Metrics</h2>
+                <p class="text-neutral-600 dark:text-neutral-400">Key performance indicators and business metrics with descriptive labels and values.</p>
+              </div>
+              <button id="copy-metrics-btn" class="flex items-center gap-2 px-4 py-2 bg-neutral-100 dark:bg-neutral-800 hover:bg-neutral-200 dark:hover:bg-neutral-700 text-neutral-700 dark:text-neutral-300 rounded-lg text-sm font-medium transition-colors">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
+                </svg>
+                Copy
+              </button>
+            </div>
+          </div>
+
+          <div class="mb-6">
+            <nav class="inline-flex bg-neutral-100 dark:bg-neutral-800 rounded-lg p-1">
+              <button class="tab-button active px-4 py-2 rounded-md bg-white dark:bg-neutral-700 text-neutral-900 dark:text-neutral-100 font-medium text-sm shadow-sm transition-all" data-tab="metrics-preview">
+                Preview
+              </button>
+              <button class="tab-button px-4 py-2 rounded-md text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-100 font-medium text-sm transition-all" data-tab="metrics-html">
+                HTML
+              </button>
+            </nav>
+          </div>
+
+          <div id="metrics-preview" class="tab-content">
+            <div class="bg-neutral-50 dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-700 rounded-lg p-8">
+              <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="bg-white dark:bg-neutral-950 border border-neutral-200 dark:border-neutral-700 rounded-lg p-6">
+                  <div class="flex items-center justify-between mb-4">
+                    <div class="p-3 bg-blue-100 dark:bg-blue-900 rounded-lg">
+                      <svg class="w-6 h-6 text-blue-600 dark:text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
+                      </svg>
+                    </div>
+                  </div>
+                  <div class="text-2xl font-semibold text-neutral-900 dark:text-neutral-100 mb-1">12,543</div>
+                  <div class="text-sm text-neutral-600 dark:text-neutral-400">Total Users</div>
+                  <div class="text-xs text-green-600 dark:text-green-400 mt-2">+12% from last month</div>
+                </div>
+
+                <div class="bg-white dark:bg-neutral-950 border border-neutral-200 dark:border-neutral-700 rounded-lg p-6">
+                  <div class="flex items-center justify-between mb-4">
+                    <div class="p-3 bg-green-100 dark:bg-green-900 rounded-lg">
+                      <svg class="w-6 h-6 text-green-600 dark:text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1"></path>
+                      </svg>
+                    </div>
+                  </div>
+                  <div class="text-2xl font-semibold text-neutral-900 dark:text-neutral-100 mb-1">$45,230</div>
+                  <div class="text-sm text-neutral-600 dark:text-neutral-400">Revenue</div>
+                  <div class="text-xs text-green-600 dark:text-green-400 mt-2">+8% from last month</div>
+                </div>
+
+                <div class="bg-white dark:bg-neutral-950 border border-neutral-200 dark:border-neutral-700 rounded-lg p-6">
+                  <div class="flex items-center justify-between mb-4">
+                    <div class="p-3 bg-purple-100 dark:bg-purple-900 rounded-lg">
+                      <svg class="w-6 h-6 text-purple-600 dark:text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
+                      </svg>
+                    </div>
+                  </div>
+                  <div class="text-2xl font-semibold text-neutral-900 dark:text-neutral-100 mb-1">89.2%</div>
+                  <div class="text-sm text-neutral-600 dark:text-neutral-400">Conversion Rate</div>
+                  <div class="text-xs text-red-600 dark:text-red-400 mt-2">-2% from last month</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div id="metrics-html" class="tab-content hidden w-[768px]">
+            <div class="bg-neutral-900 dark:bg-neutral-950 rounded-lg overflow-hidden">
+              <div class="w-full">
+                <pre class="p-6 text-sm overflow-x-auto"><code class="language-html whitespace-pre break-words" style="word-break: break-all; max-width: 100%;">&lt;div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"&gt;
+  &lt;div class="bg-white dark:bg-neutral-950 border border-neutral-200 dark:border-neutral-700 rounded-lg p-6"&gt;
+    &lt;div class="flex items-center justify-between mb-4"&gt;
+      &lt;div class="p-3 bg-blue-100 dark:bg-blue-900 rounded-lg"&gt;
+        &lt;svg class="w-6 h-6 text-blue-600 dark:text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"&gt;
+          &lt;path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"&gt;&lt;/path&gt;
+        &lt;/svg&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="text-2xl font-semibold text-neutral-900 dark:text-neutral-100 mb-1"&gt;12,543&lt;/div&gt;
+    &lt;div class="text-sm text-neutral-600 dark:text-neutral-400"&gt;Total Users&lt;/div&gt;
+    &lt;div class="text-xs text-green-600 dark:text-green-400 mt-2"&gt;+12% from last month&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Trends Stats -->
+        <section id="stats-trends" class="mb-16">
+          <div class="mb-8">
+            <div class="flex items-center justify-between mb-6">
+              <div>
+                <h2 class="text-2xl font-semibold text-neutral-900 dark:text-neutral-100 mb-2">Trends</h2>
+                <p class="text-neutral-600 dark:text-neutral-400">Statistical trends with visual indicators showing growth, decline, or stability over time.</p>
+              </div>
+              <button id="copy-trends-btn" class="flex items-center gap-2 px-4 py-2 bg-neutral-100 dark:bg-neutral-800 hover:bg-neutral-200 dark:hover:bg-neutral-700 text-neutral-700 dark:text-neutral-300 rounded-lg text-sm font-medium transition-colors">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
+                </svg>
+                Copy
+              </button>
+            </div>
+          </div>
+
+          <div class="mb-6">
+            <nav class="inline-flex bg-neutral-100 dark:bg-neutral-800 rounded-lg p-1">
+              <button class="tab-button active px-4 py-2 rounded-md bg-white dark:bg-neutral-700 text-neutral-900 dark:text-neutral-100 font-medium text-sm shadow-sm transition-all" data-tab="trends-preview">
+                Preview
+              </button>
+              <button class="tab-button px-4 py-2 rounded-md text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-100 font-medium text-sm transition-all" data-tab="trends-html">
+                HTML
+              </button>
+            </nav>
+          </div>
+
+          <div id="trends-preview" class="tab-content">
+            <div class="bg-neutral-50 dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-700 rounded-lg p-8">
+              <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="text-center">
+                  <div class="flex items-center justify-center mb-3">
+                    <svg class="w-6 h-6 text-green-500 dark:text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path>
+                    </svg>
+                  </div>
+                  <div class="text-3xl font-semibold text-neutral-900 dark:text-neutral-100 mb-1">+23.5%</div>
+                  <div class="text-sm text-neutral-600 dark:text-neutral-400">Sales Growth</div>
+                  <div class="text-xs text-green-600 dark:text-green-400 mt-1">↗ Trending up</div>
+                </div>
+
+                <div class="text-center">
+                  <div class="flex items-center justify-center mb-3">
+                    <svg class="w-6 h-6 text-red-500 dark:text-red-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 17h8m0 0V9m0 8l-8-8-4 4-6-6"></path>
+                    </svg>
+                  </div>
+                  <div class="text-3xl font-semibold text-neutral-900 dark:text-neutral-100 mb-1">-5.2%</div>
+                  <div class="text-sm text-neutral-600 dark:text-neutral-400">Bounce Rate</div>
+                  <div class="text-xs text-red-600 dark:text-red-400 mt-1">↘ Trending down</div>
+                </div>
+
+                <div class="text-center">
+                  <div class="flex items-center justify-center mb-3">
+                    <svg class="w-6 h-6 text-blue-500 dark:text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
+                    </svg>
+                  </div>
+                  <div class="text-3xl font-semibold text-neutral-900 dark:text-neutral-100 mb-1">+12.8%</div>
+                  <div class="text-sm text-neutral-600 dark:text-neutral-400">Conversion</div>
+                  <div class="text-xs text-blue-600 dark:text-blue-400 mt-1">→ Steady growth</div>
+                </div>
+
+                <div class="text-center">
+                  <div class="flex items-center justify-center mb-3">
+                    <svg class="w-6 h-6 text-yellow-500 dark:text-yellow-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707"></path>
+                    </svg>
+                  </div>
+                  <div class="text-3xl font-semibold text-neutral-900 dark:text-neutral-100 mb-1">0.3%</div>
+                  <div class="text-sm text-neutral-600 dark:text-neutral-400">Churn Rate</div>
+                  <div class="text-xs text-yellow-600 dark:text-yellow-400 mt-1">↔ Stable</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div id="trends-html" class="tab-content hidden w-[768px]">
+            <div class="bg-neutral-900 dark:bg-neutral-950 rounded-lg overflow-hidden">
+              <div class="w-full">
+                <pre class="p-6 text-sm overflow-x-auto"><code class="language-html whitespace-pre break-words" style="word-break: break-all; max-width: 100%;">&lt;div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"&gt;
+  &lt;div class="text-center"&gt;
+    &lt;div class="flex items-center justify-center mb-3"&gt;
+      &lt;svg class="w-6 h-6 text-green-500 dark:text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"&gt;
+        &lt;path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"&gt;&lt;/path&gt;
+      &lt;/svg&gt;
+    &lt;/div&gt;
+    &lt;div class="text-3xl font-semibold text-neutral-900 dark:text-neutral-100 mb-1"&gt;+23.5%&lt;/div&gt;
+    &lt;div class="text-sm text-neutral-600 dark:text-neutral-400"&gt;Sales Growth&lt;/div&gt;
+    &lt;div class="text-xs text-green-600 dark:text-green-400 mt-1"&gt;↗ Trending up&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Comparisons Stats -->
+        <section id="stats-comparisons" class="mb-16">
+          <div class="mb-8">
+            <div class="flex items-center justify-between mb-6">
+              <div>
+                <h2 class="text-2xl font-semibold text-neutral-900 dark:text-neutral-100 mb-2">Comparisons</h2>
+                <p class="text-neutral-600 dark:text-neutral-400">Side-by-side statistical comparisons with progress bars and percentage differences.</p>
+              </div>
+              <button id="copy-comparisons-btn" class="flex items-center gap-2 px-4 py-2 bg-neutral-100 dark:bg-neutral-800 hover:bg-neutral-200 dark:hover:bg-neutral-700 text-neutral-700 dark:text-neutral-300 rounded-lg text-sm font-medium transition-colors">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
+                </svg>
+                Copy
+              </button>
+            </div>
+          </div>
+
+          <div class="mb-6">
+            <nav class="inline-flex bg-neutral-100 dark:bg-neutral-800 rounded-lg p-1">
+              <button class="tab-button active px-4 py-2 rounded-md bg-white dark:bg-neutral-700 text-neutral-900 dark:text-neutral-100 font-medium text-sm shadow-sm transition-all" data-tab="comparisons-preview">
+                Preview
+              </button>
+              <button class="tab-button px-4 py-2 rounded-md text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-100 font-medium text-sm transition-all" data-tab="comparisons-html">
+                HTML
+              </button>
+            </nav>
+          </div>
+
+          <div id="comparisons-preview" class="tab-content">
+            <div class="bg-neutral-50 dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-700 rounded-lg p-8">
+              <div class="space-y-6">
+                <div class="flex items-center justify-between">
+                  <div class="flex-1">
+                    <div class="flex items-center justify-between mb-2">
+                      <span class="text-sm font-medium text-neutral-900 dark:text-neutral-100">Desktop Traffic</span>
+                      <span class="text-sm text-neutral-600 dark:text-neutral-400">68%</span>
+                    </div>
+                    <div class="w-full bg-neutral-200 dark:bg-neutral-700 rounded-full h-2">
+                      <div class="bg-blue-500 h-2 rounded-full transition-all duration-500" style="width: 68%"></div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="flex items-center justify-between">
+                  <div class="flex-1">
+                    <div class="flex items-center justify-between mb-2">
+                      <span class="text-sm font-medium text-neutral-900 dark:text-neutral-100">Mobile Traffic</span>
+                      <span class="text-sm text-neutral-600 dark:text-neutral-400">28%</span>
+                    </div>
+                    <div class="w-full bg-neutral-200 dark:bg-neutral-700 rounded-full h-2">
+                      <div class="bg-green-500 h-2 rounded-full transition-all duration-500" style="width: 28%"></div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="flex items-center justify-between">
+                  <div class="flex-1">
+                    <div class="flex items-center justify-between mb-2">
+                      <span class="text-sm font-medium text-neutral-900 dark:text-neutral-100">Tablet Traffic</span>
+                      <span class="text-sm text-neutral-600 dark:text-neutral-400">4%</span>
+                    </div>
+                    <div class="w-full bg-neutral-200 dark:bg-neutral-700 rounded-full h-2">
+                      <div class="bg-purple-500 h-2 rounded-full transition-all duration-500" style="width: 4%"></div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="pt-4 border-t border-neutral-200 dark:border-neutral-700">
+                  <div class="grid grid-cols-2 gap-6">
+                    <div class="text-center">
+                      <div class="text-2xl font-semibold text-neutral-900 dark:text-neutral-100">24,789</div>
+                      <div class="text-sm text-neutral-600 dark:text-neutral-400">This Month</div>
+                    </div>
+                    <div class="text-center">
+                      <div class="text-2xl font-semibold text-neutral-900 dark:text-neutral-100">19,234</div>
+                      <div class="text-sm text-neutral-600 dark:text-neutral-400">Last Month</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div id="comparisons-html" class="tab-content hidden w-[768px]">
+            <div class="bg-neutral-900 dark:bg-neutral-950 rounded-lg overflow-hidden">
+              <div class="w-full">
+                <pre class="p-6 text-sm overflow-x-auto"><code class="language-html whitespace-pre break-words" style="word-break: break-all; max-width: 100%;">&lt;div class="space-y-6"&gt;
+  &lt;div class="flex items-center justify-between"&gt;
+    &lt;div class="flex-1"&gt;
+      &lt;div class="flex items-center justify-between mb-2"&gt;
+        &lt;span class="text-sm font-medium text-neutral-900 dark:text-neutral-100"&gt;Desktop Traffic&lt;/span&gt;
+        &lt;span class="text-sm text-neutral-600 dark:text-neutral-400"&gt;68%&lt;/span&gt;
+      &lt;/div&gt;
+      &lt;div class="w-full bg-neutral-200 dark:bg-neutral-700 rounded-full h-2"&gt;
+        &lt;div class="bg-blue-500 h-2 rounded-full transition-all duration-500" style="width: 68%"&gt;&lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;div class="pt-4 border-t border-neutral-200 dark:border-neutral-700"&gt;
+    &lt;div class="grid grid-cols-2 gap-6"&gt;
+      &lt;div class="text-center"&gt;
+        &lt;div class="text-2xl font-semibold text-neutral-900 dark:text-neutral-100"&gt;24,789&lt;/div&gt;
+        &lt;div class="text-sm text-neutral-600 dark:text-neutral-400"&gt;This Month&lt;/div&gt;
+      &lt;/div&gt;
+      &lt;div class="text-center"&gt;
+        &lt;div class="text-2xl font-semibold text-neutral-900 dark:text-neutral-100"&gt;19,234&lt;/div&gt;
+        &lt;div class="text-sm text-neutral-600 dark:text-neutral-400"&gt;Last Month&lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Usage Guidelines -->
+        <div class="bg-white dark:bg-neutral-950 border border-neutral-900 dark:border-neutral-100 rounded-lg p-4 mb-8">
+          <h3 class="text-sm font-medium text-neutral-900 dark:text-neutral-100 mb-2">Usage Guidelines</h3>
+          <ul class="text-sm text-neutral-900 dark:text-neutral-100 space-y-1">
+            <li>• Use counters for impressive numbers that warrant emphasis</li>
+            <li>• Display metrics with meaningful context and change indicators</li>
+            <li>• Show trends with appropriate visual cues (arrows, colors)</li>
+            <li>• Use comparisons to highlight relationships between data points</li>
+            <li>• Ensure all statistics are accurate and up-to-date</li>
+            <li>• Provide clear labels and units for all numerical values</li>
+          </ul>
+        </div>
+
+        <!-- Accessibility Features -->
+        <div class="bg-white dark:bg-neutral-950 border border-neutral-900 dark:border-neutral-100 rounded-lg p-4">
+          <h3 class="text-sm font-medium text-neutral-900 dark:text-neutral-100 mb-2">Accessibility Features</h3>
+          <ul class="text-sm text-neutral-900 dark:text-neutral-100 space-y-1">
+            <li>• ARIA labels for all statistical values and indicators</li>
+            <li>• High contrast colors for trend indicators</li>
+            <li>• Screen reader friendly descriptions for visual elements</li>
+            <li>• Keyboard navigation support for interactive statistics</li>
+            <li>• Clear color coding with additional text indicators</li>
+            <li>• Proper semantic HTML structure for data presentation</li>
+          </ul>
+        </div>
+
+        <!-- Continue with other sections... -->
+      </main>
+      <div id="footer-container"></div>
+    </div>
+  </div>
+
+  <script type="module">
+    import { generateHeader, generateSidebar, generateFooter, initializeSharedComponents } from '/src/shared/components.js';
+    import { themeManager } from '/src/shared/theme.js';
+    import { toast } from '/src/shared/toast.js';
+
+    document.addEventListener('DOMContentLoaded', function() {
+      // Inject shared components
+      document.getElementById('header-container').innerHTML = generateHeader('documentation');
+      document.getElementById('sidebar-container').innerHTML = generateSidebar('stats');
+      document.getElementById('footer-container').innerHTML = generateFooter();
+      
+      // Initialize shared functionality
+      initializeSharedComponents();
+      themeManager.initializeToggleButtons();
+      
+      // Initialize stats functionality
+      initializeStats();
+      
+      // Initialize tab switching
+      initializeTabs();
+      
+      // Initialize copy buttons
+      initializeCopyButtons();
+    });
+
+    function initializeStats() {
+      // Initialize counter animations
+      initializeCounters();
+    }
+
+    function initializeCounters() {
+      const counters = document.querySelectorAll('.counter');
+      
+      const animateCounter = (counter) => {
+        const target = parseInt(counter.getAttribute('data-target'));
+        const duration = 2000; // 2 seconds
+        const steps = 60;
+        const increment = target / steps;
+        let current = 0;
+        
+        const timer = setInterval(() => {
+          current += increment;
+          if (current >= target) {
+            counter.textContent = target.toLocaleString();
+            clearInterval(timer);
+          } else {
+            counter.textContent = Math.floor(current).toLocaleString();
+          }
+        }, duration / steps);
+      };
+
+      // Start animation when component is visible
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            animateCounter(entry.target);
+            observer.unobserve(entry.target);
+          }
+        });
+      });
+
+      counters.forEach(counter => observer.observe(counter));
+    }
+
+    function initializeTabs() {
+      const tabButtons = document.querySelectorAll('.tab-button');
+
+      tabButtons.forEach(button => {
+        button.addEventListener('click', () => {
+          const targetTab = button.getAttribute('data-tab');
+          const section = button.closest('section');
+          
+          // Update active states within the section
+          section.querySelectorAll('.tab-button').forEach(btn => {
+            btn.classList.remove('active', 'bg-white', 'dark:bg-neutral-700', 'text-neutral-900', 'dark:text-neutral-100', 'shadow-sm');
+            btn.classList.add('text-neutral-600', 'dark:text-neutral-400');
+          });
+          
+          button.classList.add('active', 'bg-white', 'dark:bg-neutral-700', 'text-neutral-900', 'dark:text-neutral-100', 'shadow-sm');
+          button.classList.remove('text-neutral-600', 'dark:text-neutral-400');
+          
+          // Show/hide content within the section
+          section.querySelectorAll('.tab-content').forEach(content => {
+            content.classList.add('hidden');
+          });
+          
+          const targetContent = section.querySelector(`#${targetTab}`);
+          if (targetContent) {
+            targetContent.classList.remove('hidden');
+          }
+        });
+      });
+    }
+
+    function initializeCopyButtons() {
+      document.getElementById('copy-counters-btn')?.addEventListener('click', () => {
+        const code = document.querySelector('#counters-html code').textContent;
+        navigator.clipboard.writeText(code).then(() => {
+          toast.show('Counter stats code copied!', 'success');
+        });
+      });
+
+      document.getElementById('copy-metrics-btn')?.addEventListener('click', () => {
+        const code = document.querySelector('#metrics-html code').textContent;
+        navigator.clipboard.writeText(code).then(() => {
+          toast.show('Metrics stats code copied!', 'success');
+        });
+      });
+
+      document.getElementById('copy-trends-btn')?.addEventListener('click', () => {
+        const code = document.querySelector('#trends-html code').textContent;
+        navigator.clipboard.writeText(code).then(() => {
+          toast.show('Trends stats code copied!', 'success');
+        });
+      });
+
+      document.getElementById('copy-comparisons-btn')?.addEventListener('click', () => {
+        const code = document.querySelector('#comparisons-html code').textContent;
+        navigator.clipboard.writeText(code).then(() => {
+          toast.show('Comparisons stats code copied!', 'success');
+        });
+      });
+    }
+  </script>
+</body>
+</html> 

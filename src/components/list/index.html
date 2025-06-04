@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>List - UI11 Design System</title>
+  <link href="/src/style.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-markup.min.js"></script>
+</head>
+<body class="min-h-screen bg-white dark:bg-neutral-950">
+  <div class="flex min-h-screen">
+    <div id="sidebar-container"></div>
+    <div class="flex-1 flex flex-col ml-64 mt-16">
+      <div id="header-container"></div>
+      <main class="flex-1 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <!-- Breadcrumb -->
+        <nav class="flex mb-8" aria-label="Breadcrumb">
+          <ol class="flex items-center space-x-4">
+            <li>
+              <a href="/documentation/" class="text-neutral-600 dark:text-neutral-400 hover:text-primary-500 dark:hover:text-primary-400 transition-colors">Documentation</a>
+            </li>
+            <li class="flex items-center">
+              <svg class="w-4 h-4 text-neutral-400 dark:text-neutral-500 mx-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+              </svg>
+              <span class="text-neutral-500 dark:text-neutral-400">Components</span>
+            </li>
+            <li class="flex items-center">
+              <svg class="w-4 h-4 text-neutral-400 dark:text-neutral-500 mx-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+              </svg>
+              <span class="text-primary-600 dark:text-primary-400 font-medium">List</span>
+            </li>
+          </ol>
+        </nav>
+
+        <!-- Page Header -->
+        <div class="mb-12">
+          <h1 class="text-4xl font-semibold text-neutral-900 dark:text-neutral-100 mb-4">List</h1>
+          <p class="text-lg text-neutral-600 dark:text-neutral-400 mb-6 max-w-3xl leading-relaxed">
+            Flexible list components for displaying collections of data with various layouts including basic, avatar, actions, and nested structures.
+          </p>
+        </div>
+
+        <!-- Basic List -->
+        <section id="list-basic" class="mb-16">
+          <div class="mb-8">
+            <div class="flex items-center justify-between mb-6">
+              <div>
+                <h2 class="text-2xl font-semibold text-neutral-900 dark:text-neutral-100 mb-2">Basic</h2>
+                <p class="text-neutral-600 dark:text-neutral-400">Simple list layout for displaying basic information in a clean, organized format.</p>
+              </div>
+              <button id="copy-basic-btn" class="flex items-center gap-2 px-4 py-2 bg-neutral-100 dark:bg-neutral-800 hover:bg-neutral-200 dark:hover:bg-neutral-700 text-neutral-700 dark:text-neutral-300 rounded-lg text-sm font-medium transition-colors">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
+                </svg>
+                Copy
+              </button>
+            </div>
+          </div>
+
+          <div class="mb-6">
+            <nav class="inline-flex bg-neutral-100 dark:bg-neutral-800 rounded-lg p-1">
+              <button class="tab-button active px-4 py-2 rounded-md bg-white dark:bg-neutral-700 text-neutral-900 dark:text-neutral-100 font-medium text-sm shadow-sm transition-all" data-tab="basic-preview">
+                Preview
+              </button>
+              <button class="tab-button px-4 py-2 rounded-md text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-100 font-medium text-sm transition-all" data-tab="basic-html">
+                HTML
+              </button>
+            </nav>
+          </div>
+
+          <div id="basic-preview" class="tab-content">
+            <div class="bg-neutral-50 dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-700 rounded-lg p-8">
+              <div class="max-w-md mx-auto">
+                <ul class="bg-white dark:bg-neutral-950 border border-neutral-200 dark:border-neutral-700 rounded-lg divide-y divide-neutral-200 dark:divide-neutral-700">
+                  <li class="px-6 py-4 hover:bg-neutral-50 dark:hover:bg-neutral-800 transition-colors">
+                    <div class="text-sm font-medium text-neutral-900 dark:text-neutral-100">Dashboard</div>
+                    <div class="text-sm text-neutral-500 dark:text-neutral-400">Overview of your account</div>
+                  </li>
+                  <li class="px-6 py-4 hover:bg-neutral-50 dark:hover:bg-neutral-800 transition-colors">
+                    <div class="text-sm font-medium text-neutral-900 dark:text-neutral-100">Projects</div>
+                    <div class="text-sm text-neutral-500 dark:text-neutral-400">Manage your projects</div>
+                  </li>
+                  <li class="px-6 py-4 hover:bg-neutral-50 dark:hover:bg-neutral-800 transition-colors">
+                    <div class="text-sm font-medium text-neutral-900 dark:text-neutral-100">Team</div>
+                    <div class="text-sm text-neutral-500 dark:text-neutral-400">Collaborate with your team</div>
+                  </li>
+                  <li class="px-6 py-4 hover:bg-neutral-50 dark:hover:bg-neutral-800 transition-colors">
+                    <div class="text-sm font-medium text-neutral-900 dark:text-neutral-100">Settings</div>
+                    <div class="text-sm text-neutral-500 dark:text-neutral-400">Configure your preferences</div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div id="basic-html" class="tab-content hidden w-[768px]">
+            <div class="bg-neutral-900 dark:bg-neutral-950 rounded-lg overflow-hidden">
+              <div class="w-full">
+                <pre class="p-6 text-sm overflow-x-auto"><code class="language-html whitespace-pre break-words" style="word-break: break-all; max-width: 100%;">&lt;ul class="bg-white dark:bg-neutral-950 border border-neutral-200 dark:border-neutral-700 rounded-lg divide-y divide-neutral-200 dark:divide-neutral-700"&gt;
+  &lt;li class="px-6 py-4 hover:bg-neutral-50 dark:hover:bg-neutral-800 transition-colors"&gt;
+    &lt;div class="text-sm font-medium text-neutral-900 dark:text-neutral-100"&gt;Dashboard&lt;/div&gt;
+    &lt;div class="text-sm text-neutral-500 dark:text-neutral-400"&gt;Overview of your account&lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li class="px-6 py-4 hover:bg-neutral-50 dark:hover:bg-neutral-800 transition-colors"&gt;
+    &lt;div class="text-sm font-medium text-neutral-900 dark:text-neutral-100"&gt;Projects&lt;/div&gt;
+    &lt;div class="text-sm text-neutral-500 dark:text-neutral-400"&gt;Manage your projects&lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li class="px-6 py-4 hover:bg-neutral-50 dark:hover:bg-neutral-800 transition-colors"&gt;
+    &lt;div class="text-sm font-medium text-neutral-900 dark:text-neutral-100"&gt;Team&lt;/div&gt;
+    &lt;div class="text-sm text-neutral-500 dark:text-neutral-400"&gt;Collaborate with your team&lt;/div&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Avatar List -->
+        <section id="list-avatar" class="mb-16">
+          <div class="mb-8">
+            <div class="flex items-center justify-between mb-6">
+              <div>
+                <h2 class="text-2xl font-semibold text-neutral-900 dark:text-neutral-100 mb-2">Avatar</h2>
+                <p class="text-neutral-600 dark:text-neutral-400">List with avatar images for displaying user information and profiles.</p>
+              </div>
+              <button id="copy-avatar-btn" class="flex items-center gap-2 px-4 py-2 bg-neutral-100 dark:bg-neutral-800 hover:bg-neutral-200 dark:hover:bg-neutral-700 text-neutral-700 dark:text-neutral-300 rounded-lg text-sm font-medium transition-colors">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
+                </svg>
+                Copy
+              </button>
+            </div>
+          </div>
+
+          <div class="mb-6">
+            <nav class="inline-flex bg-neutral-100 dark:bg-neutral-800 rounded-lg p-1">
+              <button class="tab-button active px-4 py-2 rounded-md bg-white dark:bg-neutral-700 text-neutral-900 dark:text-neutral-100 font-medium text-sm shadow-sm transition-all" data-tab="avatar-preview">
+                Preview
+              </button>
+              <button class="tab-button px-4 py-2 rounded-md text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-100 font-medium text-sm transition-all" data-tab="avatar-html">
+                HTML
+              </button>
+            </nav>
+          </div>
+
+          <div id="avatar-preview" class="tab-content">
+            <div class="bg-neutral-50 dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-700 rounded-lg p-8">
+              <div class="max-w-md mx-auto">
+                <ul class="bg-white dark:bg-neutral-950 border border-neutral-200 dark:border-neutral-700 rounded-lg divide-y divide-neutral-200 dark:divide-neutral-700">
+                  <li class="px-6 py-4 hover:bg-neutral-50 dark:hover:bg-neutral-800 transition-colors">
+                    <div class="flex items-center space-x-4">
+                      <div class="flex-shrink-0">
+                        <div class="h-10 w-10 rounded-full bg-neutral-200 dark:bg-neutral-700 flex items-center justify-center">
+                          <span class="text-sm font-medium text-neutral-600 dark:text-neutral-300">JD</span>
+                        </div>
+                      </div>
+                      <div class="flex-1 min-w-0">
+                        <div class="text-sm font-medium text-neutral-900 dark:text-neutral-100 truncate">John Doe</div>
+                        <div class="text-sm text-neutral-500 dark:text-neutral-400 truncate">john@example.com</div>
+                      </div>
+                      <div class="flex-shrink-0">
+                        <span class="inline-flex px-2 py-1 text-xs font-semibold rounded-full bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200">Active</span>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="px-6 py-4 hover:bg-neutral-50 dark:hover:bg-neutral-800 transition-colors">
+                    <div class="flex items-center space-x-4">
+                      <div class="flex-shrink-0">
+                        <div class="h-10 w-10 rounded-full bg-neutral-200 dark:bg-neutral-700 flex items-center justify-center">
+                          <span class="text-sm font-medium text-neutral-600 dark:text-neutral-300">JS</span>
+                        </div>
+                      </div>
+                      <div class="flex-1 min-w-0">
+                        <div class="text-sm font-medium text-neutral-900 dark:text-neutral-100 truncate">Jane Smith</div>
+                        <div class="text-sm text-neutral-500 dark:text-neutral-400 truncate">jane@example.com</div>
+                      </div>
+                      <div class="flex-shrink-0">
+                        <span class="inline-flex px-2 py-1 text-xs font-semibold rounded-full bg-yellow-100 dark:bg-yellow-900 text-yellow-800 dark:text-yellow-200">Pending</span>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="px-6 py-4 hover:bg-neutral-50 dark:hover:bg-neutral-800 transition-colors">
+                    <div class="flex items-center space-x-4">
+                      <div class="flex-shrink-0">
+                        <div class="h-10 w-10 rounded-full bg-neutral-200 dark:bg-neutral-700 flex items-center justify-center">
+                          <span class="text-sm font-medium text-neutral-600 dark:text-neutral-300">BW</span>
+                        </div>
+                      </div>
+                      <div class="flex-1 min-w-0">
+                        <div class="text-sm font-medium text-neutral-900 dark:text-neutral-100 truncate">Bob Wilson</div>
+                        <div class="text-sm text-neutral-500 dark:text-neutral-400 truncate">bob@example.com</div>
+                      </div>
+                      <div class="flex-shrink-0">
+                        <span class="inline-flex px-2 py-1 text-xs font-semibold rounded-full bg-red-100 dark:bg-red-900 text-red-800 dark:text-red-200">Inactive</span>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div id="avatar-html" class="tab-content hidden w-[768px]">
+            <div class="bg-neutral-900 dark:bg-neutral-950 rounded-lg overflow-hidden">
+              <div class="w-full">
+                <pre class="p-6 text-sm overflow-x-auto"><code class="language-html whitespace-pre break-words" style="word-break: break-all; max-width: 100%;">&lt;ul class="bg-white dark:bg-neutral-950 border border-neutral-200 dark:border-neutral-700 rounded-lg divide-y divide-neutral-200 dark:divide-neutral-700"&gt;
+  &lt;li class="px-6 py-4 hover:bg-neutral-50 dark:hover:bg-neutral-800 transition-colors"&gt;
+    &lt;div class="flex items-center space-x-4"&gt;
+      &lt;div class="flex-shrink-0"&gt;
+        &lt;div class="h-10 w-10 rounded-full bg-neutral-200 dark:bg-neutral-700 flex items-center justify-center"&gt;
+          &lt;span class="text-sm font-medium text-neutral-600 dark:text-neutral-300"&gt;JD&lt;/span&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;div class="flex-1 min-w-0"&gt;
+        &lt;div class="text-sm font-medium text-neutral-900 dark:text-neutral-100 truncate"&gt;John Doe&lt;/div&gt;
+        &lt;div class="text-sm text-neutral-500 dark:text-neutral-400 truncate"&gt;john@example.com&lt;/div&gt;
+      &lt;/div&gt;
+      &lt;div class="flex-shrink-0"&gt;
+        &lt;span class="inline-flex px-2 py-1 text-xs font-semibold rounded-full bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200"&gt;Active&lt;/span&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Usage Guidelines -->
+        <div class="bg-white dark:bg-neutral-950 border border-neutral-900 dark:border-neutral-100 rounded-lg p-4 mb-8">
+          <h3 class="text-sm font-medium text-neutral-900 dark:text-neutral-100 mb-2">Usage Guidelines</h3>
+          <ul class="text-sm text-neutral-900 dark:text-neutral-100 space-y-1">
+            <li>• Use basic lists for simple navigation or menu items</li>
+            <li>• Add avatars when displaying user or people-related content</li>
+            <li>• Include actions for interactive list items that need user operations</li>
+            <li>• Implement nesting for hierarchical data structures</li>
+            <li>• Maintain consistent spacing and alignment throughout</li>
+            <li>• Use hover states to indicate interactive elements</li>
+          </ul>
+        </div>
+
+        <!-- Accessibility Features -->
+        <div class="bg-white dark:bg-neutral-950 border border-neutral-900 dark:border-neutral-100 rounded-lg p-4">
+          <h3 class="text-sm font-medium text-neutral-900 dark:text-neutral-100 mb-2">Accessibility Features</h3>
+          <ul class="text-sm text-neutral-900 dark:text-neutral-100 space-y-1">
+            <li>• Semantic list structure with ul/ol and li elements</li>
+            <li>• Keyboard navigation support for interactive lists</li>
+            <li>• ARIA labels for complex list items and actions</li>
+            <li>• High contrast focus indicators for keyboard users</li>
+            <li>• Screen reader announcements for list updates</li>
+            <li>• Proper heading hierarchy for nested lists</li>
+          </ul>
+        </div>
+      </main>
+      <div id="footer-container"></div>
+    </div>
+  </div>
+
+  <script type="module">
+    import { generateHeader, generateSidebar, generateFooter, initializeSharedComponents } from '/src/shared/components.js';
+    import { themeManager } from '/src/shared/theme.js';
+    import { toast } from '/src/shared/toast.js';
+
+    document.addEventListener('DOMContentLoaded', function() {
+      // Inject shared components
+      document.getElementById('header-container').innerHTML = generateHeader('documentation');
+      document.getElementById('sidebar-container').innerHTML = generateSidebar('list');
+      document.getElementById('footer-container').innerHTML = generateFooter();
+      
+      // Initialize shared functionality
+      initializeSharedComponents();
+      themeManager.initializeToggleButtons();
+      
+      // Initialize tab switching
+      initializeTabs();
+      
+      // Initialize copy buttons
+      initializeCopyButtons();
+    });
+
+    function initializeTabs() {
+      const tabButtons = document.querySelectorAll('.tab-button');
+
+      tabButtons.forEach(button => {
+        button.addEventListener('click', () => {
+          const targetTab = button.getAttribute('data-tab');
+          const section = button.closest('section');
+          
+          // Update active states within the section
+          section.querySelectorAll('.tab-button').forEach(btn => {
+            btn.classList.remove('active', 'bg-white', 'dark:bg-neutral-700', 'text-neutral-900', 'dark:text-neutral-100', 'shadow-sm');
+            btn.classList.add('text-neutral-600', 'dark:text-neutral-400');
+          });
+          
+          button.classList.add('active', 'bg-white', 'dark:bg-neutral-700', 'text-neutral-900', 'dark:text-neutral-100', 'shadow-sm');
+          button.classList.remove('text-neutral-600', 'dark:text-neutral-400');
+          
+          // Show/hide content within the section
+          section.querySelectorAll('.tab-content').forEach(content => {
+            content.classList.add('hidden');
+          });
+          
+          const targetContent = section.querySelector(`#${targetTab}`);
+          if (targetContent) {
+            targetContent.classList.remove('hidden');
+          }
+        });
+      });
+    }
+
+    function initializeCopyButtons() {
+      document.getElementById('copy-basic-btn')?.addEventListener('click', () => {
+        const code = document.querySelector('#basic-html code').textContent;
+        navigator.clipboard.writeText(code).then(() => {
+          toast.show('Basic list code copied!', 'success');
+        });
+      });
+
+      document.getElementById('copy-avatar-btn')?.addEventListener('click', () => {
+        const code = document.querySelector('#avatar-html code').textContent;
+        navigator.clipboard.writeText(code).then(() => {
+          toast.show('Avatar list code copied!', 'success');
+        });
+      });
+    }
+  </script>
+</body>
+</html> 

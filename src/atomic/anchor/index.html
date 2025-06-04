@@ -109,25 +109,25 @@
           <div id="scroll-html" class="tab-content hidden w-[768px]">
             <div class="bg-neutral-900 dark:bg-neutral-950 rounded-lg overflow-hidden">
               <div class="w-full">
-                <pre class="p-6 text-sm overflow-x-auto"><code class="language-html"><!-- HTML with scroll-smooth class -->
-<html class="scroll-smooth">
+                <pre class="p-6 text-sm overflow-x-auto"><code class="language-html whitespace-pre break-words" style="word-break: break-all; max-width: 100%;">&lt;!-- HTML with scroll-smooth class --&gt;
+&lt;html class="scroll-smooth"&gt;
 
-<!-- Anchor Links -->
-<nav class="space-y-2">
-  <a href="#section-1" class="block text-neutral-600 dark:text-neutral-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-normal">1. Introduction</a>
-  <a href="#section-2" class="block text-neutral-600 dark:text-neutral-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-normal">2. Getting Started</a>
-</nav>
+&lt;!-- Anchor Links --&gt;
+&lt;nav class="space-y-2"&gt;
+  &lt;a href="#section-1" class="block text-neutral-600 dark:text-neutral-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-normal"&gt;1. Introduction&lt;/a&gt;
+  &lt;a href="#section-2" class="block text-neutral-600 dark:text-neutral-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-normal"&gt;2. Getting Started&lt;/a&gt;
+&lt;/nav&gt;
 
-<!-- Target Sections -->
-<section id="section-1">
-  <h3>1. Introduction</h3>
-  <p>Content here...</p>
-</section>
+&lt;!-- Target Sections --&gt;
+&lt;section id="section-1"&gt;
+  &lt;h3&gt;1. Introduction&lt;/h3&gt;
+  &lt;p&gt;Content here...&lt;/p&gt;
+&lt;/section&gt;
 
-<section id="section-2">
-  <h3>2. Getting Started</h3>
-  <p>Content here...</p>
-</section></code></pre>
+&lt;section id="section-2"&gt;
+  &lt;h3&gt;2. Getting Started&lt;/h3&gt;
+  &lt;p&gt;Content here...&lt;/p&gt;
+&lt;/section&gt;</code></pre>
               </div>
             </div>
           </div>
@@ -186,23 +186,23 @@
           <div id="offset-html" class="tab-content hidden w-[768px]">
             <div class="bg-neutral-900 dark:bg-neutral-950 rounded-lg overflow-hidden">
               <div class="w-full">
-                <pre class="p-6 text-sm overflow-x-auto"><code class="language-html"><!-- CSS: Use scroll-margin-top for offset -->
-<style>
+                <pre class="p-6 text-sm overflow-x-auto"><code class="language-html whitespace-pre break-words" style="word-break: break-all; max-width: 100%;">&lt;!-- CSS: Use scroll-margin-top for offset --&gt;
+&lt;style&gt;
   .anchor-offset {
     scroll-margin-top: 80px; /* Adjust for fixed header height */
   }
-</style>
+&lt;/style&gt;
 
-<!-- Or use Tailwind utility -->
-<section id="target-section" class="scroll-mt-20">
-  <h2>Section with Offset</h2>
-  <p>Content that won't be hidden behind fixed header</p>
-</section>
+&lt;!-- Or use Tailwind utility --&gt;
+&lt;section id="target-section" class="scroll-mt-20"&gt;
+  &lt;h2&gt;Section with Offset&lt;/h2&gt;
+  &lt;p&gt;Content that won't be hidden behind fixed header&lt;/p&gt;
+&lt;/section&gt;
 
-<!-- Anchor link -->
-<a href="#target-section" class="text-primary-600 dark:text-primary-400 hover:text-primary-800 dark:hover:text-primary-200 transition-colors duration-normal">
+&lt;!-- Anchor link --&gt;
+&lt;a href="#target-section" class="text-primary-600 dark:text-primary-400 hover:text-primary-800 dark:hover:text-primary-200 transition-colors duration-normal"&gt;
   Go to Section
-</a></code></pre>
+&lt;/a&gt;</code></pre>
               </div>
             </div>
           </div>
@@ -283,27 +283,34 @@
           <div id="active-html" class="tab-content hidden w-[768px]">
             <div class="bg-neutral-900 dark:bg-neutral-950 rounded-lg overflow-hidden">
               <div class="w-full">
-                <pre class="p-6 text-sm overflow-x-auto"><code class="language-html"><!-- Active State with Indicator -->
-<nav class="space-y-2">
-  <a href="#intro" class="flex items-center text-primary-600 dark:text-primary-400 font-medium">
-    <div class="w-1 h-4 bg-primary-600 dark:bg-primary-400 rounded-full mr-3"></div>
+                <pre class="p-6 text-sm overflow-x-auto"><code class="language-html whitespace-pre break-words" style="word-break: break-all; max-width: 100%;">&lt;!-- Active State with Indicator --&gt;
+&lt;nav class="space-y-2"&gt;
+  &lt;a href="#intro" class="flex items-center text-primary-600 dark:text-primary-400 font-medium"&gt;
+    &lt;div class="w-1 h-4 bg-primary-600 dark:bg-primary-400 rounded-full mr-3"&gt;&lt;/div&gt;
     Introduction (Active)
-  </a>
-  <a href="#features" class="flex items-center text-neutral-600 dark:text-neutral-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-normal">
-    <div class="w-1 h-4 bg-transparent mr-3"></div>
+  &lt;/a&gt;
+  &lt;a href="#features" class="flex items-center text-neutral-600 dark:text-neutral-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-normal"&gt;
+    &lt;div class="w-1 h-4 bg-transparent mr-3"&gt;&lt;/div&gt;
     Features
-  </a>
-</nav>
+  &lt;/a&gt;
+  &lt;a href="#examples" class="flex items-center text-neutral-600 dark:text-neutral-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-normal"&gt;
+    &lt;div class="w-1 h-4 bg-transparent mr-3"&gt;&lt;/div&gt;
+    Examples
+  &lt;/a&gt;
+&lt;/nav&gt;
 
-<!-- Alternative Active Style -->
-<nav class="space-y-1">
-  <a href="#intro" class="block px-3 py-2 bg-primary-50 dark:bg-primary-900/20 text-primary-700 dark:text-primary-300 rounded-lg font-medium">
+&lt;!-- Alternative Active Style --&gt;
+&lt;nav class="space-y-1"&gt;
+  &lt;a href="#intro" class="block px-3 py-2 bg-primary-50 dark:bg-primary-900/20 text-primary-700 dark:text-primary-300 rounded-lg font-medium"&gt;
     Introduction (Active)
-  </a>
-  <a href="#features" class="block px-3 py-2 text-neutral-600 dark:text-neutral-400 hover:bg-neutral-50 dark:hover:bg-neutral-700 rounded-lg transition-colors duration-normal">
+  &lt;/a&gt;
+  &lt;a href="#features" class="block px-3 py-2 text-neutral-600 dark:text-neutral-400 hover:bg-neutral-50 dark:hover:bg-neutral-700 rounded-lg transition-colors duration-normal"&gt;
     Features
-  </a>
-</nav></code></pre>
+  &lt;/a&gt;
+  &lt;a href="#examples" class="block px-3 py-2 text-neutral-600 dark:text-neutral-400 hover:bg-neutral-50 dark:hover:bg-neutral-700 rounded-lg transition-colors duration-normal"&gt;
+    Examples
+  &lt;/a&gt;
+&lt;/nav&gt;</code></pre>
               </div>
             </div>
           </div>

@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dropdown - UI11 Design System</title>
+  <link href="/src/style.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-markup.min.js"></script>
+</head>
+<body class="min-h-screen bg-white dark:bg-neutral-950">
+  <div class="flex min-h-screen">
+    <div id="sidebar-container"></div>
+    <div class="flex-1 flex flex-col ml-64 mt-16">
+      <div id="header-container"></div>
+      <main class="flex-1 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <!-- Breadcrumb -->
+        <nav class="flex mb-8" aria-label="Breadcrumb">
+          <ol class="flex items-center space-x-4">
+            <li>
+              <a href="/documentation/" class="text-neutral-600 dark:text-neutral-400 hover:text-primary-500 dark:hover:text-primary-400 transition-colors">Documentation</a>
+            </li>
+            <li class="flex items-center">
+              <svg class="w-4 h-4 text-neutral-400 dark:text-neutral-500 mx-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+              </svg>
+              <span class="text-neutral-500 dark:text-neutral-400">Components</span>
+            </li>
+            <li class="flex items-center">
+              <svg class="w-4 h-4 text-neutral-400 dark:text-neutral-500 mx-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+              </svg>
+              <span class="text-primary-600 dark:text-primary-400 font-medium">Dropdown</span>
+            </li>
+          </ol>
+        </nav>
+
+        <!-- Page Header -->
+        <div class="mb-12">
+          <h1 class="text-4xl font-semibold text-neutral-900 dark:text-neutral-100 mb-4">Dropdown</h1>
+          <p class="text-lg text-neutral-600 dark:text-neutral-400 mb-6 max-w-3xl leading-relaxed">
+            Interactive dropdown components for selecting options from a list with search capabilities and multi-selection support.
+          </p>
+        </div>
+
+        <!-- Select-like Dropdown -->
+        <section id="dropdown-select" class="mb-16">
+          <div class="mb-8">
+            <div class="flex items-center justify-between mb-6">
+              <div>
+                <h2 class="text-2xl font-semibold text-neutral-900 dark:text-neutral-100 mb-2">Select-like</h2>
+                <p class="text-neutral-600 dark:text-neutral-400">Standard dropdown that behaves like a select element with clean styling.</p>
+              </div>
+              <button id="copy-select-btn" class="flex items-center gap-2 px-4 py-2 bg-neutral-100 dark:bg-neutral-800 hover:bg-neutral-200 dark:hover:bg-neutral-700 text-neutral-700 dark:text-neutral-300 rounded-lg text-sm font-medium transition-colors">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
+                </svg>
+                Copy
+              </button>
+            </div>
+          </div>
+
+          <div class="mb-6">
+            <nav class="inline-flex bg-neutral-100 dark:bg-neutral-800 rounded-lg p-1">
+              <button class="tab-button active px-4 py-2 rounded-md bg-white dark:bg-neutral-700 text-neutral-900 dark:text-neutral-100 font-medium text-sm shadow-sm transition-all" data-tab="select-preview">
+                Preview
+              </button>
+              <button class="tab-button px-4 py-2 rounded-md text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-100 font-medium text-sm transition-all" data-tab="select-html">
+                HTML
+              </button>
+            </nav>
+          </div>
+
+          <div id="select-preview" class="tab-content">
+            <div class="bg-neutral-50 dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-700 rounded-lg p-8">
+              <div class="max-w-md mx-auto space-y-6">
+                <!-- Basic Dropdown -->
+                <div>
+                  <label class="block text-sm font-medium text-neutral-700 dark:text-neutral-300 mb-2">Country</label>
+                  <div class="dropdown-container relative" data-dropdown="basic">
+                    <button class="dropdown-toggle w-full bg-white dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700 rounded-lg px-4 py-3 text-left text-neutral-900 dark:text-neutral-100 hover:border-neutral-300 dark:hover:border-neutral-600 focus:outline-none focus:ring-2 focus:ring-primary-500 dark:focus:ring-primary-400 focus:border-transparent transition-colors" aria-haspopup="listbox" aria-expanded="false">
+                      <span class="dropdown-selected">Select country...</span>
+                      <svg class="dropdown-arrow absolute right-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-neutral-400 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                      </svg>
+                    </button>
+                    <ul class="dropdown-menu absolute z-50 w-full mt-1 bg-white dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700 rounded-lg shadow-lg max-h-48 overflow-auto hidden" role="listbox">
+                      <li class="dropdown-option px-4 py-2 text-neutral-900 dark:text-neutral-100 hover:bg-neutral-50 dark:hover:bg-neutral-700 cursor-pointer transition-colors" data-value="us" role="option">United States</li>
+                      <li class="dropdown-option px-4 py-2 text-neutral-900 dark:text-neutral-100 hover:bg-neutral-50 dark:hover:bg-neutral-700 cursor-pointer transition-colors" data-value="ca" role="option">Canada</li>
+                      <li class="dropdown-option px-4 py-2 text-neutral-900 dark:text-neutral-100 hover:bg-neutral-50 dark:hover:bg-neutral-700 cursor-pointer transition-colors" data-value="uk" role="option">United Kingdom</li>
+                      <li class="dropdown-option px-4 py-2 text-neutral-900 dark:text-neutral-100 hover:bg-neutral-50 dark:hover:bg-neutral-700 cursor-pointer transition-colors" data-value="de" role="option">Germany</li>
+                      <li class="dropdown-option px-4 py-2 text-neutral-900 dark:text-neutral-100 hover:bg-neutral-50 dark:hover:bg-neutral-700 cursor-pointer transition-colors" data-value="fr" role="option">France</li>
+                    </ul>
+                  </div>
+                </div>
+
+                <!-- Dropdown with Icons -->
+                <div>
+                  <label class="block text-sm font-medium text-neutral-700 dark:text-neutral-300 mb-2">Priority</label>
+                  <div class="dropdown-container relative" data-dropdown="priority">
+                    <button class="dropdown-toggle w-full bg-white dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700 rounded-lg px-4 py-3 text-left text-neutral-900 dark:text-neutral-100 hover:border-neutral-300 dark:hover:border-neutral-600 focus:outline-none focus:ring-2 focus:ring-primary-500 dark:focus:ring-primary-400 focus:border-transparent transition-colors" aria-haspopup="listbox" aria-expanded="false">
+                      <span class="dropdown-selected">Select priority...</span>
+                      <svg class="dropdown-arrow absolute right-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-neutral-400 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                      </svg>
+                    </button>
+                    <ul class="dropdown-menu absolute z-50 w-full mt-1 bg-white dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700 rounded-lg shadow-lg max-h-48 overflow-auto hidden" role="listbox">
+                      <li class="dropdown-option flex items-center px-4 py-2 text-neutral-900 dark:text-neutral-100 hover:bg-neutral-50 dark:hover:bg-neutral-700 cursor-pointer transition-colors" data-value="high" role="option">
+                        <div class="w-2 h-2 bg-red-500 rounded-full mr-3"></div>
+                        High Priority
+                      </li>
+                      <li class="dropdown-option flex items-center px-4 py-2 text-neutral-900 dark:text-neutral-100 hover:bg-neutral-50 dark:hover:bg-neutral-700 cursor-pointer transition-colors" data-value="medium" role="option">
+                        <div class="w-2 h-2 bg-yellow-500 rounded-full mr-3"></div>
+                        Medium Priority
+                      </li>
+                      <li class="dropdown-option flex items-center px-4 py-2 text-neutral-900 dark:text-neutral-100 hover:bg-neutral-50 dark:hover:bg-neutral-700 cursor-pointer transition-colors" data-value="low" role="option">
+                        <div class="w-2 h-2 bg-green-500 rounded-full mr-3"></div>
+                        Low Priority
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div id="select-html" class="tab-content hidden w-[768px]">
+            <div class="bg-neutral-900 dark:bg-neutral-950 rounded-lg overflow-hidden">
+              <div class="w-full">
+                <pre class="p-6 text-sm overflow-x-auto"><code class="language-html whitespace-pre break-words" style="word-break: break-all; max-width: 100%;"><!-- Select-like Dropdown -->
+&lt;div class="dropdown-container relative" data-dropdown="basic"&gt;
+  &lt;button class="dropdown-toggle w-full bg-white dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700 rounded-lg px-4 py-3 text-left text-neutral-900 dark:text-neutral-100 focus:ring-2 focus:ring-primary-500"&gt;
+    &lt;span class="dropdown-selected"&gt;Select option...&lt;/span&gt;
+    &lt;svg class="dropdown-arrow absolute right-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-neutral-400"&gt;
+      &lt;path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"&gt;&lt;/path&gt;
+    &lt;/svg&gt;
+  &lt;/button&gt;
+  &lt;ul class="dropdown-menu absolute z-50 w-full mt-1 bg-white dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700 rounded-lg shadow-lg hidden"&gt;
+    &lt;li class="dropdown-option px-4 py-2 hover:bg-neutral-50 dark:hover:bg-neutral-700 cursor-pointer" data-value="option1"&gt;Option 1&lt;/li&gt;
+    &lt;li class="dropdown-option px-4 py-2 hover:bg-neutral-50 dark:hover:bg-neutral-700 cursor-pointer" data-value="option2"&gt;Option 2&lt;/li&gt;
+    &lt;li class="dropdown-option px-4 py-2 hover:bg-neutral-50 dark:hover:bg-neutral-700 cursor-pointer" data-value="option3"&gt;Option 3&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/div&gt;</code></pre>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- With Search Dropdown -->
+        <section id="dropdown-search" class="mb-16">
+          <div class="mb-8">
+            <div class="flex items-center justify-between mb-6">
+              <div>
+                <h2 class="text-2xl font-semibold text-neutral-900 dark:text-neutral-100 mb-2">With Search</h2>
+                <p class="text-neutral-600 dark:text-neutral-400">Searchable dropdown with filter functionality for large option lists.</p>
+              </div>
+              <button id="copy-search-btn" class="flex items-center gap-2 px-4 py-2 bg-neutral-100 dark:bg-neutral-800 hover:bg-neutral-200 dark:hover:bg-neutral-700 text-neutral-700 dark:text-neutral-300 rounded-lg text-sm font-medium transition-colors">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
+                </svg>
+                Copy
+              </button>
+            </div>
+          </div>
+
+          <div class="mb-6">
+            <nav class="inline-flex bg-neutral-100 dark:bg-neutral-800 rounded-lg p-1">
+              <button class="tab-button active px-4 py-2 rounded-md bg-white dark:bg-neutral-700 text-neutral-900 dark:text-neutral-100 font-medium text-sm shadow-sm transition-all" data-tab="search-preview">
+                Preview
+              </button>
+              <button class="tab-button px-4 py-2 rounded-md text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-100 font-medium text-sm transition-all" data-tab="search-html">
+                HTML
+              </button>
+            </nav>
+          </div>
+
+          <div id="search-preview" class="tab-content">
+            <div class="bg-neutral-50 dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-700 rounded-lg p-8">
+              <div class="max-w-md mx-auto">
+                <label class="block text-sm font-medium text-neutral-700 dark:text-neutral-300 mb-2">Technology</label>
+                <div class="dropdown-container relative" data-dropdown="search">
+                  <div class="relative">
+                    <input type="text" class="dropdown-search w-full bg-white dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700 rounded-lg px-4 py-3 pr-10 text-neutral-900 dark:text-neutral-100 placeholder-neutral-400 dark:placeholder-neutral-500 focus:outline-none focus:ring-2 focus:ring-primary-500 dark:focus:ring-primary-400 focus:border-transparent transition-colors" placeholder="Search technologies..." autocomplete="off">
+                    <svg class="absolute right-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-neutral-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                    </svg>
+                  </div>
+                  <ul class="dropdown-menu absolute z-50 w-full mt-1 bg-white dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700 rounded-lg shadow-lg max-h-48 overflow-auto hidden" role="listbox">
+                    <li class="dropdown-option px-4 py-2 text-neutral-900 dark:text-neutral-100 hover:bg-neutral-50 dark:hover:bg-neutral-700 cursor-pointer transition-colors" data-value="javascript" data-text="JavaScript" role="option">JavaScript</li>
+                    <li class="dropdown-option px-4 py-2 text-neutral-900 dark:text-neutral-100 hover:bg-neutral-50 dark:hover:bg-neutral-700 cursor-pointer transition-colors" data-value="typescript" data-text="TypeScript" role="option">TypeScript</li>
+                    <li class="dropdown-option px-4 py-2 text-neutral-900 dark:text-neutral-100 hover:bg-neutral-50 dark:hover:bg-neutral-700 cursor-pointer transition-colors" data-value="react" data-text="React" role="option">React</li>
+                    <li class="dropdown-option px-4 py-2 text-neutral-900 dark:text-neutral-100 hover:bg-neutral-50 dark:hover:bg-neutral-700 cursor-pointer transition-colors" data-value="vue" data-text="Vue.js" role="option">Vue.js</li>
+                    <li class="dropdown-option px-4 py-2 text-neutral-900 dark:text-neutral-100 hover:bg-neutral-50 dark:hover:bg-neutral-700 cursor-pointer transition-colors" data-value="angular" data-text="Angular" role="option">Angular</li>
+                    <li class="dropdown-option px-4 py-2 text-neutral-900 dark:text-neutral-100 hover:bg-neutral-50 dark:hover:bg-neutral-700 cursor-pointer transition-colors" data-value="nodejs" data-text="Node.js" role="option">Node.js</li>
+                    <li class="dropdown-option px-4 py-2 text-neutral-900 dark:text-neutral-100 hover:bg-neutral-50 dark:hover:bg-neutral-700 cursor-pointer transition-colors" data-value="python" data-text="Python" role="option">Python</li>
+                    <li class="dropdown-option px-4 py-2 text-neutral-900 dark:text-neutral-100 hover:bg-neutral-50 dark:hover:bg-neutral-700 cursor-pointer transition-colors" data-value="golang" data-text="Go" role="option">Go</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div id="search-html" class="tab-content hidden w-[768px]">
+            <div class="bg-neutral-900 dark:bg-neutral-950 rounded-lg overflow-hidden">
+              <div class="w-full">
+                <pre class="p-6 text-sm overflow-x-auto"><code class="language-html whitespace-pre break-words" style="word-break: break-all; max-width: 100%;"><!-- Searchable Dropdown -->
+&lt;div class="dropdown-container relative" data-dropdown="search"&gt;
+  &lt;div class="relative"&gt;
+    &lt;input type="text" class="dropdown-search w-full bg-white dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700 rounded-lg px-4 py-3 pr-10 placeholder-neutral-400 focus:ring-2 focus:ring-primary-500" placeholder="Search options..."&gt;
+    &lt;svg class="absolute right-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-neutral-400"&gt;
+      &lt;path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"&gt;&lt;/path&gt;
+    &lt;/svg&gt;
+  &lt;/div&gt;
+  &lt;ul class="dropdown-menu absolute z-50 w-full mt-1 bg-white dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700 rounded-lg shadow-lg hidden"&gt;
+    &lt;li class="dropdown-option px-4 py-2 hover:bg-neutral-50 dark:hover:bg-neutral-700 cursor-pointer" data-value="option1"&gt;Option 1&lt;/li&gt;
+    &lt;li class="dropdown-option px-4 py-2 hover:bg-neutral-50 dark:hover:bg-neutral-700 cursor-pointer" data-value="option2"&gt;Option 2&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/div&gt;</code></pre>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Multi-select Dropdown -->
+        <section id="dropdown-multiselect" class="mb-16">
+          <div class="mb-8">
+            <div class="flex items-center justify-between mb-6">
+              <div>
+                <h2 class="text-2xl font-semibold text-neutral-900 dark:text-neutral-100 mb-2">Multi-select</h2>
+                <p class="text-neutral-600 dark:text-neutral-400">Multi-selection dropdown with checkboxes and selected item management.</p>
+              </div>
+              <button id="copy-multiselect-btn" class="flex items-center gap-2 px-4 py-2 bg-neutral-100 dark:bg-neutral-800 hover:bg-neutral-200 dark:hover:bg-neutral-700 text-neutral-700 dark:text-neutral-300 rounded-lg text-sm font-medium transition-colors">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
+                </svg>
+                Copy
+              </button>
+            </div>
+          </div>
+
+          <div class="mb-6">
+            <nav class="inline-flex bg-neutral-100 dark:bg-neutral-800 rounded-lg p-1">
+              <button class="tab-button active px-4 py-2 rounded-md bg-white dark:bg-neutral-700 text-neutral-900 dark:text-neutral-100 font-medium text-sm shadow-sm transition-all" data-tab="multiselect-preview">
+                Preview
+              </button>
+              <button class="tab-button px-4 py-2 rounded-md text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-100 font-medium text-sm transition-all" data-tab="multiselect-html">
+                HTML
+              </button>
+            </nav>
+          </div>
+
+          <div id="multiselect-preview" class="tab-content">
+            <div class="bg-neutral-50 dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-700 rounded-lg p-8">
+              <div class="max-w-md mx-auto">
+                <label class="block text-sm font-medium text-neutral-700 dark:text-neutral-300 mb-2">Skills</label>
+                <div class="dropdown-container relative" data-dropdown="multiselect">
+                  <button class="dropdown-toggle w-full bg-white dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700 rounded-lg px-4 py-3 text-left text-neutral-900 dark:text-neutral-100 hover:border-neutral-300 dark:hover:border-neutral-600 focus:outline-none focus:ring-2 focus:ring-primary-500 dark:focus:ring-primary-400 focus:border-transparent transition-colors min-h-[44px]" aria-haspopup="listbox" aria-expanded="false">
+                    <div class="dropdown-selected-container">
+                      <span class="dropdown-placeholder text-neutral-500 dark:text-neutral-400">Select skills...</span>
+                      <div class="dropdown-selected-items flex flex-wrap gap-1 hidden"></div>
+                    </div>
+                    <svg class="dropdown-arrow absolute right-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-neutral-400 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                  </button>
+                  <ul class="dropdown-menu absolute z-50 w-full mt-1 bg-white dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700 rounded-lg shadow-lg max-h-48 overflow-auto hidden" role="listbox">
+                    <li class="dropdown-option flex items-center px-4 py-2 text-neutral-900 dark:text-neutral-100 hover:bg-neutral-50 dark:hover:bg-neutral-700 cursor-pointer transition-colors" data-value="html" data-text="HTML" role="option">
+                      <input type="checkbox" class="option-checkbox mr-3 rounded border-neutral-300 dark:border-neutral-600 text-primary-500 focus:ring-primary-500 dark:focus:ring-primary-400" aria-label="Select HTML">
+                      <span>HTML</span>
+                    </li>
+                    <li class="dropdown-option flex items-center px-4 py-2 text-neutral-900 dark:text-neutral-100 hover:bg-neutral-50 dark:hover:bg-neutral-700 cursor-pointer transition-colors" data-value="css" data-text="CSS" role="option">
+                      <input type="checkbox" class="option-checkbox mr-3 rounded border-neutral-300 dark:border-neutral-600 text-primary-500 focus:ring-primary-500 dark:focus:ring-primary-400" aria-label="Select CSS">
+                      <span>CSS</span>
+                    </li>
+                    <li class="dropdown-option flex items-center px-4 py-2 text-neutral-900 dark:text-neutral-100 hover:bg-neutral-50 dark:hover:bg-neutral-700 cursor-pointer transition-colors" data-value="javascript" data-text="JavaScript" role="option">
+                      <input type="checkbox" class="option-checkbox mr-3 rounded border-neutral-300 dark:border-neutral-600 text-primary-500 focus:ring-primary-500 dark:focus:ring-primary-400" aria-label="Select JavaScript">
+                      <span>JavaScript</span>
+                    </li>
+                    <li class="dropdown-option flex items-center px-4 py-2 text-neutral-900 dark:text-neutral-100 hover:bg-neutral-50 dark:hover:bg-neutral-700 cursor-pointer transition-colors" data-value="react" data-text="React" role="option">
+                      <input type="checkbox" class="option-checkbox mr-3 rounded border-neutral-300 dark:border-neutral-600 text-primary-500 focus:ring-primary-500 dark:focus:ring-primary-400" aria-label="Select React">
+                      <span>React</span>
+                    </li>
+                    <li class="dropdown-option flex items-center px-4 py-2 text-neutral-900 dark:text-neutral-100 hover:bg-neutral-50 dark:hover:bg-neutral-700 cursor-pointer transition-colors" data-value="tailwind" data-text="Tailwind CSS" role="option">
+                      <input type="checkbox" class="option-checkbox mr-3 rounded border-neutral-300 dark:border-neutral-600 text-primary-500 focus:ring-primary-500 dark:focus:ring-primary-400" aria-label="Select Tailwind CSS">
+                      <span>Tailwind CSS</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div id="multiselect-html" class="tab-content hidden w-[768px]">
+            <div class="bg-neutral-900 dark:bg-neutral-950 rounded-lg overflow-hidden">
+              <div class="w-full">
+                <pre class="p-6 text-sm overflow-x-auto"><code class="language-html whitespace-pre break-words" style="word-break: break-all; max-width: 100%;"><!-- Multi-select Dropdown -->
+&lt;div class="dropdown-container relative" data-dropdown="multiselect"&gt;
+  &lt;button class="dropdown-toggle w-full bg-white dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700 rounded-lg px-4 py-3 text-left focus:ring-2 focus:ring-primary-500"&gt;
+    &lt;div class="dropdown-selected-container"&gt;
+      &lt;span class="dropdown-placeholder text-neutral-500"&gt;Select options...&lt;/span&gt;
+      &lt;div class="dropdown-selected-items flex flex-wrap gap-1 hidden"&gt;&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;svg class="dropdown-arrow absolute right-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-neutral-400"&gt;
+      &lt;path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"&gt;&lt;/path&gt;
+    &lt;/svg&gt;
+  &lt;/button&gt;
+  &lt;ul class="dropdown-menu absolute z-50 w-full mt-1 bg-white dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700 rounded-lg shadow-lg hidden"&gt;
+    &lt;li class="dropdown-option flex items-center px-4 py-2 hover:bg-neutral-50 dark:hover:bg-neutral-700 cursor-pointer" data-value="option1"&gt;
+      &lt;input type="checkbox" class="option-checkbox mr-3"&gt;
+      &lt;span&gt;Option 1&lt;/span&gt;
+    &lt;/li&gt;
+    &lt;li class="dropdown-option flex items-center px-4 py-2 hover:bg-neutral-50 dark:hover:bg-neutral-700 cursor-pointer" data-value="option2"&gt;
+      &lt;input type="checkbox" class="option-checkbox mr-3"&gt;
+      &lt;span&gt;Option 2&lt;/span&gt;
+    &lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/div&gt;</code></pre>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Usage Guidelines -->
+        <div class="bg-white dark:bg-neutral-950 border border-neutral-900 dark:border-neutral-100 rounded-lg p-4 mb-8">
+          <h3 class="text-sm font-medium text-neutral-900 dark:text-neutral-100 mb-2">Usage Guidelines</h3>
+          <ul class="text-sm text-neutral-900 dark:text-neutral-100 space-y-1">
+            <li>• Use select-like dropdowns for simple option selection</li>
+            <li>• Add search functionality when there are many options (8+)</li>
+            <li>• Implement multi-select for selecting multiple related items</li>
+            <li>• Include clear visual feedback for selected state</li>
+            <li>• Ensure proper keyboard navigation and accessibility</li>
+            <li>• Keep option text concise and descriptive</li>
+          </ul>
+        </div>
+
+        <!-- Accessibility Features -->
+        <div class="bg-white dark:bg-neutral-950 border border-neutral-900 dark:border-neutral-100 rounded-lg p-4">
+          <h3 class="text-sm font-medium text-neutral-900 dark:text-neutral-100 mb-2">Accessibility Features</h3>
+          <ul class="text-sm text-neutral-900 dark:text-neutral-100 space-y-1">
+            <li>• ARIA attributes for screen reader compatibility</li>
+            <li>• Keyboard navigation with arrow keys and Enter</li>
+            <li>• Focus management and proper tab sequence</li>
+            <li>• High contrast focus indicators</li>
+            <li>• Escape key to close dropdown</li>
+            <li>• Proper labeling and role attributes</li>
+          </ul>
+        </div>
+      </main>
+      <div id="footer-container"></div>
+    </div>
+  </div>
+
+  <script type="module">
+    import { generateHeader, generateSidebar, generateFooter, initializeSharedComponents } from '/src/shared/components.js';
+    import { themeManager } from '/src/shared/theme.js';
+    import { toast } from '/src/shared/toast.js';
+
+    document.addEventListener('DOMContentLoaded', function() {
+      // Inject shared components
+      document.getElementById('header-container').innerHTML = generateHeader('documentation');
+      document.getElementById('sidebar-container').innerHTML = generateSidebar('dropdown');
+      document.getElementById('footer-container').innerHTML = generateFooter();
+      
+      // Initialize shared functionality
+      initializeSharedComponents();
+      themeManager.initializeToggleButtons();
+      
+      // Initialize dropdown functionality
+      initializeDropdowns();
+      
+      // Initialize tab switching
+      initializeTabs();
+      
+      // Initialize copy buttons
+      initializeCopyButtons();
+    });
+
+    function initializeDropdowns() {
+      // Basic dropdown functionality
+      const dropdowns = document.querySelectorAll('.dropdown-container');
+      
+      dropdowns.forEach(dropdown => {
+        const dropdownType = dropdown.getAttribute('data-dropdown');
+        
+        if (dropdownType === 'search') {
+          initializeSearchDropdown(dropdown);
+        } else if (dropdownType === 'multiselect') {
+          initializeMultiselectDropdown(dropdown);
+        } else {
+          initializeBasicDropdown(dropdown);
+        }
+      });
+      
+      // Close dropdowns when clicking outside
+      document.addEventListener('click', (e) => {
+        if (!e.target.closest('.dropdown-container')) {
+          document.querySelectorAll('.dropdown-menu').forEach(menu => {
+            menu.classList.add('hidden');
+          });
+          document.querySelectorAll('.dropdown-arrow').forEach(arrow => {
+            arrow.classList.remove('rotate-180');
+          });
+          document.querySelectorAll('.dropdown-toggle').forEach(toggle => {
+            toggle.setAttribute('aria-expanded', 'false');
+          });
+        }
+      });
+    }
+
+    function initializeBasicDropdown(dropdown) {
+      const toggle = dropdown.querySelector('.dropdown-toggle');
+      const menu = dropdown.querySelector('.dropdown-menu');
+      const selected = dropdown.querySelector('.dropdown-selected');
+      const arrow = dropdown.querySelector('.dropdown-arrow');
+      const options = dropdown.querySelectorAll('.dropdown-option');
+      
+      // Toggle dropdown
+      toggle.addEventListener('click', () => {
+        const isOpen = !menu.classList.contains('hidden');
+        
+        // Close all other dropdowns
+        document.querySelectorAll('.dropdown-menu').forEach(m => m.classList.add('hidden'));
+        document.querySelectorAll('.dropdown-arrow').forEach(a => a.classList.remove('rotate-180'));
+        
+        if (isOpen) {
+          menu.classList.add('hidden');
+          arrow.classList.remove('rotate-180');
+          toggle.setAttribute('aria-expanded', 'false');
+        } else {
+          menu.classList.remove('hidden');
+          arrow.classList.add('rotate-180');
+          toggle.setAttribute('aria-expanded', 'true');
+        }
+      });
+      
+      // Handle option selection
+      options.forEach(option => {
+        option.addEventListener('click', () => {
+          const value = option.getAttribute('data-value');
+          const text = option.textContent.trim();
+          
+          selected.textContent = text;
+          menu.classList.add('hidden');
+          arrow.classList.remove('rotate-180');
+          toggle.setAttribute('aria-expanded', 'false');
+          
+          // Remove active state from all options
+          options.forEach(opt => opt.classList.remove('bg-neutral-100', 'dark:bg-neutral-700'));
+          // Add active state to selected option
+          option.classList.add('bg-neutral-100', 'dark:bg-neutral-700');
+        });
+      });
+    }
+
+    function initializeSearchDropdown(dropdown) {
+      const searchInput = dropdown.querySelector('.dropdown-search');
+      const menu = dropdown.querySelector('.dropdown-menu');
+      const options = dropdown.querySelectorAll('.dropdown-option');
+      const allOptions = Array.from(options);
+      
+      // Show dropdown when typing
+      searchInput.addEventListener('input', (e) => {
+        const searchTerm = e.target.value.toLowerCase();
+        
+        if (searchTerm) {
+          menu.classList.remove('hidden');
+          
+          // Filter options
+          allOptions.forEach(option => {
+            const text = option.textContent.toLowerCase();
+            if (text.includes(searchTerm)) {
+              option.style.display = 'block';
+            } else {
+              option.style.display = 'none';
+            }
+          });
+        } else {
+          menu.classList.add('hidden');
+          allOptions.forEach(option => {
+            option.style.display = 'block';
+          });
+        }
+      });
+
+      searchInput.addEventListener('focus', () => {
+        if (searchInput.value) {
+          menu.classList.remove('hidden');
+        }
+      });
+      
+      // Handle option selection
+      options.forEach(option => {
+        option.addEventListener('click', () => {
+          const text = option.getAttribute('data-text') || option.textContent.trim();
+          
+          searchInput.value = text;
+          menu.classList.add('hidden');
+          
+          // Remove active state from all options
+          options.forEach(opt => opt.classList.remove('bg-neutral-100', 'dark:bg-neutral-700'));
+          // Add active state to selected option
+          option.classList.add('bg-neutral-100', 'dark:bg-neutral-700');
+        });
+      });
+    }
+
+    function initializeMultiselectDropdown(dropdown) {
+      const toggle = dropdown.querySelector('.dropdown-toggle');
+      const menu = dropdown.querySelector('.dropdown-menu');
+      const placeholder = dropdown.querySelector('.dropdown-placeholder');
+      const selectedItemsContainer = dropdown.querySelector('.dropdown-selected-items');
+      const arrow = dropdown.querySelector('.dropdown-arrow');
+      const options = dropdown.querySelectorAll('.dropdown-option');
+      const checkboxes = dropdown.querySelectorAll('.option-checkbox');
+      
+      let selectedItems = [];
+      
+      // Toggle dropdown
+      toggle.addEventListener('click', () => {
+        const isOpen = !menu.classList.contains('hidden');
+        
+        // Close all other dropdowns
+        document.querySelectorAll('.dropdown-menu').forEach(m => m.classList.add('hidden'));
+        document.querySelectorAll('.dropdown-arrow').forEach(a => a.classList.remove('rotate-180'));
+        
+        if (isOpen) {
+          menu.classList.add('hidden');
+          arrow.classList.remove('rotate-180');
+          toggle.setAttribute('aria-expanded', 'false');
+        } else {
+          menu.classList.remove('hidden');
+          arrow.classList.add('rotate-180');
+          toggle.setAttribute('aria-expanded', 'true');
+        }
+      });
+      
+      // Handle option selection
+      options.forEach((option, index) => {
+        const checkbox = checkboxes[index];
+        
+        option.addEventListener('click', (e) => {
+          e.preventDefault();
+          
+          checkbox.checked = !checkbox.checked;
+          
+          const value = option.getAttribute('data-value');
+          const text = option.getAttribute('data-text') || option.textContent.trim();
+          
+          if (checkbox.checked) {
+            selectedItems.push({ value, text });
+          } else {
+            selectedItems = selectedItems.filter(item => item.value !== value);
+          }
+          
+          updateSelectedDisplay();
+        });
+        
+        checkbox.addEventListener('click', (e) => {
+          e.stopPropagation();
+        });
+      });
+      
+      function updateSelectedDisplay() {
+        if (selectedItems.length === 0) {
+          placeholder.classList.remove('hidden');
+          selectedItemsContainer.classList.add('hidden');
+        } else {
+          placeholder.classList.add('hidden');
+          selectedItemsContainer.classList.remove('hidden');
+          
+          selectedItemsContainer.innerHTML = selectedItems.map(item => `
+            <span class="inline-flex items-center px-2 py-1 bg-neutral-100 dark:bg-neutral-700 text-neutral-800 dark:text-neutral-200 text-xs font-medium rounded">
+              ${item.text}
+              <button type="button" class="ml-1 text-neutral-400 hover:text-neutral-600 dark:hover:text-neutral-300" onclick="removeSelectedItem('${item.value}')">
+                <svg class="w-3 h-3" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+                </svg>
+              </button>
+            </span>
+          `).join('');
+        }
+      }
+      
+      // Global function for removing selected items
+      window.removeSelectedItem = function(value) {
+        selectedItems = selectedItems.filter(item => item.value !== value);
+        
+        // Uncheck the corresponding checkbox
+        const option = dropdown.querySelector(`[data-value="${value}"]`);
+        if (option) {
+          const checkbox = option.querySelector('.option-checkbox');
+          checkbox.checked = false;
+        }
+        
+        updateSelectedDisplay();
+      };
+    }
+
+    function initializeTabs() {
+      const tabButtons = document.querySelectorAll('.tab-button');
+
+      tabButtons.forEach(button => {
+        button.addEventListener('click', () => {
+          const targetTab = button.getAttribute('data-tab');
+          const section = button.closest('section');
+          
+          // Update active states within the section
+          section.querySelectorAll('.tab-button').forEach(btn => {
+            btn.classList.remove('active', 'bg-white', 'dark:bg-neutral-700', 'text-neutral-900', 'dark:text-neutral-100', 'shadow-sm');
+            btn.classList.add('text-neutral-600', 'dark:text-neutral-400');
+          });
+          
+          button.classList.add('active', 'bg-white', 'dark:bg-neutral-700', 'text-neutral-900', 'dark:text-neutral-100', 'shadow-sm');
+          button.classList.remove('text-neutral-600', 'dark:text-neutral-400');
+          
+          // Show/hide content within the section
+          section.querySelectorAll('.tab-content').forEach(content => {
+            content.classList.add('hidden');
+          });
+          
+          const targetContent = section.querySelector(`#${targetTab}`);
+          if (targetContent) {
+            targetContent.classList.remove('hidden');
+          }
+        });
+      });
+    }
+
+    function initializeCopyButtons() {
+      document.getElementById('copy-select-btn').addEventListener('click', () => {
+        const code = document.querySelector('#select-html code').textContent;
+        navigator.clipboard.writeText(code).then(() => {
+          toast.show('Select dropdown code copied!', 'success');
+        });
+      });
+
+      document.getElementById('copy-search-btn').addEventListener('click', () => {
+        const code = document.querySelector('#search-html code').textContent;
+        navigator.clipboard.writeText(code).then(() => {
+          toast.show('Search dropdown code copied!', 'success');
+        });
+      });
+
+      document.getElementById('copy-multiselect-btn').addEventListener('click', () => {
+        const code = document.querySelector('#multiselect-html code').textContent;
+        navigator.clipboard.writeText(code).then(() => {
+          toast.show('Multi-select dropdown code copied!', 'success');
+        });
+      });
+    }
+  </script>
+</body>
+</html> 

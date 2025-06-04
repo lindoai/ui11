@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tabs - UI11 Design System</title>
+  <link href="/src/style.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-markup.min.js"></script>
+</head>
+<body class="min-h-screen bg-white dark:bg-neutral-950">
+  <div class="flex min-h-screen">
+    <div id="sidebar-container"></div>
+    <div class="flex-1 flex flex-col ml-64 mt-16">
+      <div id="header-container"></div>
+      <main class="flex-1 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <nav class="flex mb-8" aria-label="Breadcrumb">
+          <ol class="flex items-center space-x-4">
+            <li><a href="/documentation/" class="text-neutral-600 dark:text-neutral-400 hover:text-primary-500 dark:hover:text-primary-400 transition-colors">Documentation</a></li>
+            <li class="flex items-center">
+              <svg class="w-4 h-4 text-neutral-400 dark:text-neutral-500 mx-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+              </svg>
+              <span class="text-neutral-500 dark:text-neutral-400">Components</span>
+            </li>
+            <li class="flex items-center">
+              <svg class="w-4 h-4 text-neutral-400 dark:text-neutral-500 mx-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+              </svg>
+              <span class="text-primary-600 dark:text-primary-400 font-medium">Tabs</span>
+            </li>
+          </ol>
+        </nav>
+
+        <div class="mb-12">
+          <h1 class="text-4xl font-semibold text-neutral-900 dark:text-neutral-100 mb-4">Tabs</h1>
+          <p class="text-lg text-neutral-600 dark:text-neutral-400 mb-6 max-w-3xl leading-relaxed">
+            Navigation components with horizontal and vertical layouts, scrollable options, and lazy content loading.
+          </p>
+        </div>
+
+        <!-- Horizontal Tabs Section -->
+        <section id="horizontal-tabs" class="mb-16">
+          <div class="mb-8">
+            <div class="flex items-center justify-between mb-6">
+              <div>
+                <h2 class="text-2xl font-semibold text-neutral-900 dark:text-neutral-100 mb-2">Horizontal Tabs</h2>
+                <p class="text-neutral-600 dark:text-neutral-400">Standard horizontal tab navigation with content panels.</p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="mb-6">
+            <nav class="inline-flex bg-neutral-100 dark:bg-neutral-800 rounded-lg p-1">
+              <button class="tab-button active px-4 py-2 rounded-md bg-white dark:bg-neutral-700 text-neutral-900 dark:text-neutral-100 font-medium text-sm shadow-sm transition-all" data-tab="horizontal-preview">Preview</button>
+              <button class="tab-button px-4 py-2 rounded-md text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-100 font-medium text-sm transition-all" data-tab="horizontal-html">HTML</button>
+            </nav>
+          </div>
+
+          <div id="horizontal-preview" class="tab-content">
+            <div class="bg-neutral-50 dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-700 rounded-lg p-8">
+              <div class="tabs-horizontal">
+                <div class="border-b border-neutral-200 dark:border-neutral-700 mb-6">
+                  <nav class="flex space-x-8" aria-label="Tabs">
+                    <button class="h-tab-btn active border-b-2 border-primary-500 py-2 px-1 text-sm font-medium text-primary-600 dark:text-primary-400" data-target="h-tab1">Overview</button>
+                    <button class="h-tab-btn border-b-2 border-transparent py-2 px-1 text-sm font-medium text-neutral-500 dark:text-neutral-400 hover:text-neutral-700 dark:hover:text-neutral-200 hover:border-neutral-300 dark:hover:border-neutral-600" data-target="h-tab2">Features</button>
+                    <button class="h-tab-btn border-b-2 border-transparent py-2 px-1 text-sm font-medium text-neutral-500 dark:text-neutral-400 hover:text-neutral-700 dark:hover:text-neutral-200 hover:border-neutral-300 dark:hover:border-neutral-600" data-target="h-tab3">Pricing</button>
+                    <button class="h-tab-btn border-b-2 border-transparent py-2 px-1 text-sm font-medium text-neutral-500 dark:text-neutral-400 hover:text-neutral-700 dark:hover:text-neutral-200 hover:border-neutral-300 dark:hover:border-neutral-600" data-target="h-tab4">Support</button>
+                  </nav>
+                </div>
+                <div class="h-tab-content">
+                  <div id="h-tab1" class="h-tab-panel">
+                    <h3 class="text-lg font-semibold text-neutral-900 dark:text-neutral-100 mb-3">Overview</h3>
+                    <p class="text-neutral-600 dark:text-neutral-400 mb-4">Get a comprehensive overview of our product features and capabilities. This section provides a high-level summary of what you can expect.</p>
+                    <ul class="list-disc list-inside text-neutral-600 dark:text-neutral-400 space-y-2">
+                      <li>Easy to use interface</li>
+                      <li>Comprehensive documentation</li>
+                      <li>24/7 customer support</li>
+                    </ul>
+                  </div>
+                  <div id="h-tab2" class="h-tab-panel hidden">
+                    <h3 class="text-lg font-semibold text-neutral-900 dark:text-neutral-100 mb-3">Features</h3>
+                    <p class="text-neutral-600 dark:text-neutral-400 mb-4">Explore the powerful features that make our product stand out from the competition.</p>
+                    <div class="grid md:grid-cols-2 gap-4">
+                      <div class="bg-white dark:bg-neutral-800 p-4 rounded-lg border border-neutral-200 dark:border-neutral-700">
+                        <h4 class="font-medium text-neutral-900 dark:text-neutral-100 mb-2">Advanced Analytics</h4>
+                        <p class="text-sm text-neutral-600 dark:text-neutral-400">Get detailed insights into your data with our advanced analytics dashboard.</p>
+                      </div>
+                      <div class="bg-white dark:bg-neutral-800 p-4 rounded-lg border border-neutral-200 dark:border-neutral-700">
+                        <h4 class="font-medium text-neutral-900 dark:text-neutral-100 mb-2">Team Collaboration</h4>
+                        <p class="text-sm text-neutral-600 dark:text-neutral-400">Work together seamlessly with built-in collaboration tools.</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div id="h-tab3" class="h-tab-panel hidden">
+                    <h3 class="text-lg font-semibold text-neutral-900 dark:text-neutral-100 mb-3">Pricing</h3>
+                    <p class="text-neutral-600 dark:text-neutral-400 mb-4">Choose the plan that best fits your needs and budget.</p>
+                    <div class="grid md:grid-cols-3 gap-4">
+                      <div class="bg-white dark:bg-neutral-800 p-6 rounded-lg border border-neutral-200 dark:border-neutral-700 text-center">
+                        <h4 class="font-semibold text-neutral-900 dark:text-neutral-100 mb-2">Starter</h4>
+                        <div class="text-2xl font-bold text-primary-600 dark:text-primary-400 mb-4">$9/mo</div>
+                        <p class="text-sm text-neutral-600 dark:text-neutral-400">Perfect for individuals</p>
+                      </div>
+                      <div class="bg-white dark:bg-neutral-800 p-6 rounded-lg border border-neutral-200 dark:border-neutral-700 text-center">
+                        <h4 class="font-semibold text-neutral-900 dark:text-neutral-100 mb-2">Professional</h4>
+                        <div class="text-2xl font-bold text-primary-600 dark:text-primary-400 mb-4">$29/mo</div>
+                        <p class="text-sm text-neutral-600 dark:text-neutral-400">Great for small teams</p>
+                      </div>
+                      <div class="bg-white dark:bg-neutral-800 p-6 rounded-lg border border-neutral-200 dark:border-neutral-700 text-center">
+                        <h4 class="font-semibold text-neutral-900 dark:text-neutral-100 mb-2">Enterprise</h4>
+                        <div class="text-2xl font-bold text-primary-600 dark:text-primary-400 mb-4">$99/mo</div>
+                        <p class="text-sm text-neutral-600 dark:text-neutral-400">For large organizations</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div id="h-tab4" class="h-tab-panel hidden">
+                    <h3 class="text-lg font-semibold text-neutral-900 dark:text-neutral-100 mb-3">Support</h3>
+                    <p class="text-neutral-600 dark:text-neutral-400 mb-4">Get help when you need it with our comprehensive support options.</p>
+                    <div class="space-y-4">
+                      <div class="flex items-start space-x-3">
+                        <div class="flex-shrink-0 w-6 h-6 bg-primary-100 dark:bg-primary-900/30 rounded-full flex items-center justify-center">
+                          <svg class="w-3 h-3 text-primary-600 dark:text-primary-400" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                          </svg>
+                        </div>
+                        <div>
+                          <h4 class="font-medium text-neutral-900 dark:text-neutral-100">24/7 Live Chat</h4>
+                          <p class="text-sm text-neutral-600 dark:text-neutral-400">Get instant help from our support team</p>
+                        </div>
+                      </div>
+                      <div class="flex items-start space-x-3">
+                        <div class="flex-shrink-0 w-6 h-6 bg-primary-100 dark:bg-primary-900/30 rounded-full flex items-center justify-center">
+                          <svg class="w-3 h-3 text-primary-600 dark:text-primary-400" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                          </svg>
+                        </div>
+                        <div>
+                          <h4 class="font-medium text-neutral-900 dark:text-neutral-100">Knowledge Base</h4>
+                          <p class="text-sm text-neutral-600 dark:text-neutral-400">Comprehensive articles and tutorials</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div id="horizontal-html" class="tab-content hidden">
+            <div class="bg-neutral-900 dark:bg-neutral-950 rounded-lg overflow-hidden">
+              <pre class="p-6 text-sm overflow-x-auto"><code class="language-html"><!-- Horizontal Tabs -->
+<div class="border-b border-neutral-200 dark:border-neutral-700">
+  <nav class="flex space-x-8" aria-label="Tabs">
+    <button class="border-b-2 border-primary-500 py-2 px-1 text-sm font-medium text-primary-600 dark:text-primary-400">
+      Overview
+    </button>
+    <button class="border-b-2 border-transparent py-2 px-1 text-sm font-medium text-neutral-500 dark:text-neutral-400 hover:text-neutral-700 dark:hover:text-neutral-200">
+      Features
+    </button>
+    <button class="border-b-2 border-transparent py-2 px-1 text-sm font-medium text-neutral-500 dark:text-neutral-400 hover:text-neutral-700 dark:hover:text-neutral-200">
+      Pricing
+    </button>
+  </nav>
+</div>
+
+<div class="mt-6">
+  <div class="tab-panel">
+    <h3 class="text-lg font-semibold text-neutral-900 dark:text-neutral-100 mb-3">Tab Content</h3>
+    <p class="text-neutral-600 dark:text-neutral-400">Content for the active tab goes here.</p>
+  </div>
+</div></code></pre>
+            </div>
+          </div>
+        </section>
+
+        <!-- Vertical Tabs Section -->
+        <section id="vertical-tabs" class="mb-16">
+          <div class="mb-8">
+            <div class="flex items-center justify-between mb-6">
+              <div>
+                <h2 class="text-2xl font-semibold text-neutral-900 dark:text-neutral-100 mb-2">Vertical Tabs</h2>
+                <p class="text-neutral-600 dark:text-neutral-400">Vertical tab layout for sidebar-style navigation.</p>
+              </div>
+            </div>
+          </div>
+
+          <div id="vertical-preview" class="tab-content">
+            <div class="bg-neutral-50 dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-700 rounded-lg p-8">
+              <div class="flex">
+                <div class="w-48 mr-8">
+                  <nav class="space-y-1" aria-label="Vertical tabs">
+                    <button class="v-tab-btn active w-full text-left px-3 py-2 text-sm font-medium rounded-md bg-primary-100 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300" data-target="v-tab1">Account Settings</button>
+                    <button class="v-tab-btn w-full text-left px-3 py-2 text-sm font-medium rounded-md text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-100 hover:bg-neutral-100 dark:hover:bg-neutral-800" data-target="v-tab2">Privacy</button>
+                    <button class="v-tab-btn w-full text-left px-3 py-2 text-sm font-medium rounded-md text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-100 hover:bg-neutral-100 dark:hover:bg-neutral-800" data-target="v-tab3">Notifications</button>
+                    <button class="v-tab-btn w-full text-left px-3 py-2 text-sm font-medium rounded-md text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-100 hover:bg-neutral-100 dark:hover:bg-neutral-800" data-target="v-tab4">Billing</button>
+                  </nav>
+                </div>
+                <div class="flex-1">
+                  <div id="v-tab1" class="v-tab-panel">
+                    <h3 class="text-lg font-semibold text-neutral-900 dark:text-neutral-100 mb-4">Account Settings</h3>
+                    <div class="space-y-4">
+                      <div>
+                        <label class="block text-sm font-medium text-neutral-900 dark:text-neutral-100 mb-1">Display Name</label>
+                        <input type="text" value="John Doe" class="w-full px-3 py-2 border border-neutral-300 dark:border-neutral-600 rounded-lg bg-white dark:bg-neutral-700 text-neutral-900 dark:text-neutral-100">
+                      </div>
+                      <div>
+                        <label class="block text-sm font-medium text-neutral-900 dark:text-neutral-100 mb-1">Email</label>
+                        <input type="email" value="john@example.com" class="w-full px-3 py-2 border border-neutral-300 dark:border-neutral-600 rounded-lg bg-white dark:bg-neutral-700 text-neutral-900 dark:text-neutral-100">
+                      </div>
+                    </div>
+                  </div>
+                  <div id="v-tab2" class="v-tab-panel hidden">
+                    <h3 class="text-lg font-semibold text-neutral-900 dark:text-neutral-100 mb-4">Privacy Settings</h3>
+                    <div class="space-y-4">
+                      <div class="flex items-center justify-between">
+                        <div>
+                          <h4 class="font-medium text-neutral-900 dark:text-neutral-100">Profile Visibility</h4>
+                          <p class="text-sm text-neutral-600 dark:text-neutral-400">Control who can see your profile</p>
+                        </div>
+                        <label class="relative inline-flex items-center cursor-pointer">
+                          <input type="checkbox" checked class="sr-only peer">
+                          <div class="w-11 h-6 bg-neutral-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-primary-300 dark:peer-focus:ring-primary-800 rounded-full peer dark:bg-neutral-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-neutral-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-neutral-600 peer-checked:bg-primary-600"></div>
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                  <div id="v-tab3" class="v-tab-panel hidden">
+                    <h3 class="text-lg font-semibold text-neutral-900 dark:text-neutral-100 mb-4">Notification Preferences</h3>
+                    <div class="space-y-4">
+                      <div class="flex items-center">
+                        <input type="checkbox" checked class="w-4 h-4 text-primary-600 bg-neutral-100 border-neutral-300 rounded focus:ring-primary-500 dark:focus:ring-primary-600 dark:ring-offset-neutral-800 focus:ring-2 dark:bg-neutral-700 dark:border-neutral-600">
+                        <label class="ml-2 text-sm font-medium text-neutral-900 dark:text-neutral-100">Email notifications</label>
+                      </div>
+                      <div class="flex items-center">
+                        <input type="checkbox" class="w-4 h-4 text-primary-600 bg-neutral-100 border-neutral-300 rounded focus:ring-primary-500 dark:focus:ring-primary-600 dark:ring-offset-neutral-800 focus:ring-2 dark:bg-neutral-700 dark:border-neutral-600">
+                        <label class="ml-2 text-sm font-medium text-neutral-900 dark:text-neutral-100">SMS notifications</label>
+                      </div>
+                    </div>
+                  </div>
+                  <div id="v-tab4" class="v-tab-panel hidden">
+                    <h3 class="text-lg font-semibold text-neutral-900 dark:text-neutral-100 mb-4">Billing Information</h3>
+                    <div class="bg-white dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700 rounded-lg p-4">
+                      <div class="flex justify-between items-center mb-2">
+                        <span class="font-medium text-neutral-900 dark:text-neutral-100">Current Plan</span>
+                        <span class="text-primary-600 dark:text-primary-400 font-semibold">Professional</span>
+                      </div>
+                      <div class="flex justify-between items-center">
+                        <span class="text-neutral-600 dark:text-neutral-400">Next billing date</span>
+                        <span class="text-neutral-900 dark:text-neutral-100">January 15, 2024</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Usage Guidelines -->
+        <div class="bg-white dark:bg-neutral-950 border border-neutral-900 dark:border-neutral-100 rounded-lg p-4">
+          <h3 class="text-sm font-medium text-neutral-900 dark:text-neutral-100 mb-2">Usage Guidelines</h3>
+          <ul class="text-sm text-neutral-900 dark:text-neutral-100 space-y-1">
+            <li>• Use horizontal tabs for main navigation sections</li>
+            <li>• Use vertical tabs for settings and configuration pages</li>
+            <li>• Keep tab labels concise and descriptive</li>
+            <li>• Implement proper keyboard navigation and ARIA labels</li>
+          </ul>
+        </div>
+      </main>
+      <div id="footer-container"></div>
+    </div>
+  </div>
+
+  <script type="module">
+    import { generateHeader, generateSidebar, generateFooter, initializeSharedComponents } from '/src/shared/components.js';
+    import { themeManager } from '/src/shared/theme.js';
+
+    document.addEventListener('DOMContentLoaded', function() {
+      document.getElementById('header-container').innerHTML = generateHeader('documentation');
+      document.getElementById('sidebar-container').innerHTML = generateSidebar('tabs');
+      document.getElementById('footer-container').innerHTML = generateFooter();
+
+      initializeSharedComponents();
+      themeManager.initializeToggleButtons();
+
+      // Horizontal tabs functionality
+      const hTabButtons = document.querySelectorAll('.h-tab-btn');
+      hTabButtons.forEach(button => {
+        button.addEventListener('click', () => {
+          const targetId = button.getAttribute('data-target');
+          
+          // Update button states
+          hTabButtons.forEach(btn => {
+            btn.classList.remove('active', 'border-primary-500', 'text-primary-600', 'dark:text-primary-400');
+            btn.classList.add('border-transparent', 'text-neutral-500', 'dark:text-neutral-400');
+          });
+          button.classList.add('active', 'border-primary-500', 'text-primary-600', 'dark:text-primary-400');
+          button.classList.remove('border-transparent', 'text-neutral-500', 'dark:text-neutral-400');
+          
+          // Update panel visibility
+          document.querySelectorAll('.h-tab-panel').forEach(panel => {
+            panel.classList.add('hidden');
+          });
+          document.getElementById(targetId).classList.remove('hidden');
+        });
+      });
+
+      // Vertical tabs functionality
+      const vTabButtons = document.querySelectorAll('.v-tab-btn');
+      vTabButtons.forEach(button => {
+        button.addEventListener('click', () => {
+          const targetId = button.getAttribute('data-target');
+          
+          // Update button states
+          vTabButtons.forEach(btn => {
+            btn.classList.remove('active', 'bg-primary-100', 'dark:bg-primary-900/30', 'text-primary-700', 'dark:text-primary-300');
+            btn.classList.add('text-neutral-600', 'dark:text-neutral-400');
+          });
+          button.classList.add('active', 'bg-primary-100', 'dark:bg-primary-900/30', 'text-primary-700', 'dark:text-primary-300');
+          button.classList.remove('text-neutral-600', 'dark:text-neutral-400');
+          
+          // Update panel visibility
+          document.querySelectorAll('.v-tab-panel').forEach(panel => {
+            panel.classList.add('hidden');
+          });
+          document.getElementById(targetId).classList.remove('hidden');
+        });
+      });
+
+      // Standard tab functionality
+      const tabButtons = document.querySelectorAll('.tab-button');
+      tabButtons.forEach(button => {
+        button.addEventListener('click', () => {
+          const targetTab = button.getAttribute('data-tab');
+          const section = button.closest('section');
+          
+          section.querySelectorAll('.tab-button').forEach(btn => {
+            btn.classList.remove('active', 'bg-white', 'dark:bg-neutral-700', 'text-neutral-900', 'dark:text-neutral-100', 'shadow-sm');
+            btn.classList.add('text-neutral-600', 'dark:text-neutral-400');
+          });
+          
+          button.classList.add('active', 'bg-white', 'dark:bg-neutral-700', 'text-neutral-900', 'dark:text-neutral-100', 'shadow-sm');
+          button.classList.remove('text-neutral-600', 'dark:text-neutral-400');
+          
+          section.querySelectorAll('.tab-content').forEach(content => {
+            content.classList.add('hidden');
+          });
+          
+          const targetContent = section.querySelector(`#${targetTab}`);
+          if (targetContent) {
+            targetContent.classList.remove('hidden');
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html> 

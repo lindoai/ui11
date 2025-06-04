@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Spacer - UI11 Design System</title>
+  <link href="/src/style.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-markup.min.js"></script>
+</head>
+<body class="min-h-screen bg-white dark:bg-neutral-950">
+  <div class="flex min-h-screen">
+    <div id="sidebar-container"></div>
+    <div class="flex-1 flex flex-col ml-64 mt-16">
+      <div id="header-container"></div>
+      <main class="flex-1 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 overflow-hidden">
+        <!-- Breadcrumb Navigation -->
+        <nav class="flex mb-8" aria-label="Breadcrumb">
+          <ol class="flex items-center space-x-4">
+            <li><a href="/documentation/" class="text-neutral-600 dark:text-neutral-400 hover:text-primary-500 dark:hover:text-primary-400 transition-colors duration-normal">Documentation</a></li>
+            <li class="flex items-center">
+              <svg class="w-4 h-4 text-neutral-400 dark:text-neutral-500 mx-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+              </svg>
+              <span class="text-neutral-500 dark:text-neutral-400">Atomic Elements</span>
+            </li>
+            <li class="flex items-center">
+              <svg class="w-4 h-4 text-neutral-400 dark:text-neutral-500 mx-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+              </svg>
+              <span class="text-primary-600 dark:text-primary-400 font-medium">Spacer</span>
+            </li>
+          </ol>
+        </nav>
+
+        <div class="mb-12">
+          <h1 class="text-4xl font-semibold text-neutral-900 dark:text-neutral-100 mb-4">Spacer</h1>
+          <p class="text-lg text-neutral-600 dark:text-neutral-400 mb-6 max-w-3xl leading-relaxed">
+            Utility classes for consistent spacing with margin, padding, and responsive spacing controls.
+          </p>
+        </div>
+
+        <!-- Margin Utilities Section -->
+        <section id="margin-utilities" class="mb-16">
+          <div class="mb-8">
+            <div class="flex items-center justify-between mb-6">
+              <div>
+                <h2 class="text-2xl font-semibold text-neutral-900 dark:text-neutral-100 mb-2">Margin Utilities</h2>
+                <p class="text-neutral-600 dark:text-neutral-400">Margin spacing utilities for external element spacing.</p>
+              </div>
+              <div class="flex items-center gap-3">
+                <button data-theme-toggle class="p-2 rounded-lg bg-neutral-100 dark:bg-neutral-800 hover:bg-neutral-200 dark:hover:bg-neutral-700 text-neutral-600 dark:text-neutral-400 transition-colors duration-normal" aria-label="Toggle theme">
+                  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 718.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path>
+                  </svg>
+                </button>
+                <button id="copy-margin-btn" class="flex items-center gap-2 px-4 py-2 bg-neutral-100 dark:bg-neutral-800 hover:bg-neutral-200 dark:hover:bg-neutral-700 text-neutral-700 dark:text-neutral-300 rounded-lg text-sm font-medium transition-colors duration-normal">
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
+                  </svg>
+                  Copy
+                </button>
+              </div>
+            </div>
+          </div>
+          
+          <div class="mb-6">
+            <nav class="inline-flex bg-neutral-100 dark:bg-neutral-800 rounded-lg p-1">
+              <button class="tab-button active px-4 py-2 rounded-md bg-white dark:bg-neutral-700 text-neutral-900 dark:text-neutral-100 font-medium text-sm shadow-sm transition-all duration-normal" data-tab="margin-preview">Preview</button>
+              <button class="tab-button px-4 py-2 rounded-md text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-100 font-medium text-sm transition-all duration-normal" data-tab="margin-html">HTML</button>
+            </nav>
+          </div>
+
+          <div id="margin-preview" class="tab-content">
+            <div class="bg-white dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700 rounded-lg p-8">
+              <div class="space-y-8">
+                <!-- All Sides -->
+                <div>
+                  <h3 class="text-sm font-medium text-neutral-900 dark:text-neutral-100 mb-3">All Sides (m-*)</h3>
+                  <div class="bg-neutral-100 dark:bg-neutral-700 rounded-lg p-4">
+                    <div class="bg-primary-500 p-2 rounded text-white text-center text-sm">No margin</div>
+                    <div class="bg-primary-500 p-2 rounded text-white text-center text-sm m-4">m-4 (16px all sides)</div>
+                    <div class="bg-primary-500 p-2 rounded text-white text-center text-sm m-8">m-8 (32px all sides)</div>
+                  </div>
+                </div>
+
+                <!-- Horizontal/Vertical -->
+                <div>
+                  <h3 class="text-sm font-medium text-neutral-900 dark:text-neutral-100 mb-3">Horizontal & Vertical (mx-*, my-*)</h3>
+                  <div class="bg-neutral-100 dark:bg-neutral-700 rounded-lg p-4">
+                    <div class="bg-warning-500 dark:bg-warning-600 p-2 rounded text-white text-center text-sm mx-6">mx-6 (horizontal)</div>
+                    <div class="bg-warning-500 dark:bg-warning-600 p-2 rounded text-white text-center text-sm my-4">my-4 (vertical)</div>
+                  </div>
+                </div>
+
+                <!-- Individual Sides -->
+                <div>
+                  <h3 class="text-sm font-medium text-neutral-900 dark:text-neutral-100 mb-3">Individual Sides (mt-*, mr-*, mb-*, ml-*)</h3>
+                  <div class="bg-neutral-100 dark:bg-neutral-700 rounded-lg p-4">
+                    <div class="bg-error-500 dark:bg-error-600 p-2 rounded text-white text-center text-sm mt-4">mt-4 (top)</div>
+                    <div class="bg-error-500 dark:bg-error-600 p-2 rounded text-white text-center text-sm mr-6">mr-6 (right)</div>
+                    <div class="bg-error-500 dark:bg-error-600 p-2 rounded text-white text-center text-sm mb-4">mb-4 (bottom)</div>
+                    <div class="bg-error-500 dark:bg-error-600 p-2 rounded text-white text-center text-sm ml-6">ml-6 (left)</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div id="margin-html" class="tab-content hidden w-[768px]">
+            <div class="bg-neutral-900 dark:bg-neutral-950 rounded-lg overflow-hidden">
+              <div class="w-full">
+                <pre class="p-6 text-sm overflow-x-auto"><code class="language-html whitespace-pre break-words" style="word-break: break-all; max-width: 100%;">&lt;!-- All Sides Margin --&gt;
+&lt;div class="m-4"&gt;16px margin on all sides&lt;/div&gt;
+&lt;div class="m-8"&gt;32px margin on all sides&lt;/div&gt;
+
+&lt;!-- Horizontal &amp; Vertical Margin --&gt;
+&lt;div class="mx-6"&gt;24px horizontal margin&lt;/div&gt;
+&lt;div class="my-4"&gt;16px vertical margin&lt;/div&gt;
+
+&lt;!-- Individual Sides --&gt;
+&lt;div class="mt-4"&gt;16px top margin&lt;/div&gt;
+&lt;div class="mr-6"&gt;24px right margin&lt;/div&gt;
+&lt;div class="mb-4"&gt;16px bottom margin&lt;/div&gt;
+&lt;div class="ml-6"&gt;24px left margin&lt;/div&gt;
+
+&lt;!-- Common Spacing Scale --&gt;
+&lt;div class="m-0"&gt;0px&lt;/div&gt;
+&lt;div class="m-1"&gt;4px&lt;/div&gt;
+&lt;div class="m-2"&gt;8px&lt;/div&gt;
+&lt;div class="m-3"&gt;12px&lt;/div&gt;
+&lt;div class="m-4"&gt;16px&lt;/div&gt;
+&lt;div class="m-6"&gt;24px&lt;/div&gt;
+&lt;div class="m-8"&gt;32px&lt;/div&gt;
+&lt;div class="m-12"&gt;48px&lt;/div&gt;</code></pre>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Padding Utilities Section -->
+        <section id="padding-utilities" class="mb-16">
+          <div class="mb-8">
+            <div class="flex items-center justify-between mb-6">
+              <div>
+                <h2 class="text-2xl font-semibold text-neutral-900 dark:text-neutral-100 mb-2">Padding Utilities</h2>
+                <p class="text-neutral-600 dark:text-neutral-400">Padding spacing utilities for internal element spacing.</p>
+              </div>
+              <div class="flex items-center gap-3">
+                <button data-theme-toggle class="p-2 rounded-lg bg-neutral-100 dark:bg-neutral-800 hover:bg-neutral-200 dark:hover:bg-neutral-700 text-neutral-600 dark:text-neutral-400 transition-colors duration-normal" aria-label="Toggle theme">
+                  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 718.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path>
+                  </svg>
+                </button>
+                <button id="copy-padding-btn" class="flex items-center gap-2 px-4 py-2 bg-neutral-100 dark:bg-neutral-800 hover:bg-neutral-200 dark:hover:bg-neutral-700 text-neutral-700 dark:text-neutral-300 rounded-lg text-sm font-medium transition-colors duration-normal">
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
+                  </svg>
+                  Copy
+                </button>
+              </div>
+            </div>
+          </div>
+          
+          <div class="mb-6">
+            <nav class="inline-flex bg-neutral-100 dark:bg-neutral-800 rounded-lg p-1">
+              <button class="tab-button active px-4 py-2 rounded-md bg-white dark:bg-neutral-700 text-neutral-900 dark:text-neutral-100 font-medium text-sm shadow-sm transition-all duration-normal" data-tab="padding-preview">Preview</button>
+              <button class="tab-button px-4 py-2 rounded-md text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-100 font-medium text-sm transition-all duration-normal" data-tab="padding-html">HTML</button>
+            </nav>
+          </div>
+
+          <div id="padding-preview" class="tab-content">
+            <div class="bg-white dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700 rounded-lg p-8">
+              <div class="space-y-8">
+                <!-- All Sides -->
+                <div>
+                  <h3 class="text-sm font-medium text-neutral-900 dark:text-neutral-100 mb-3">All Sides (p-*)</h3>
+                  <div class="space-y-4">
+                    <div class="bg-primary-100 dark:bg-primary-900/30 border border-primary-200 dark:border-primary-800 rounded p-2">
+                      <div class="text-center text-sm text-primary-700 dark:text-primary-300">p-2 (8px padding)</div>
+                    </div>
+                    <div class="bg-primary-100 dark:bg-primary-900/30 border border-primary-200 dark:border-primary-800 rounded p-6">
+                      <div class="text-center text-sm text-primary-700 dark:text-primary-300">p-6 (24px padding)</div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Horizontal/Vertical -->
+                <div>
+                  <h3 class="text-sm font-medium text-neutral-900 dark:text-neutral-100 mb-3">Horizontal & Vertical (px-*, py-*)</h3>
+                  <div class="space-y-4">
+                    <div class="bg-warning-100 dark:bg-warning-900/30 border border-warning-200 dark:border-warning-800 rounded px-8 py-2">
+                      <div class="text-center text-sm text-warning-700 dark:text-warning-300">px-8 py-2</div>
+                    </div>
+                    <div class="bg-warning-100 dark:bg-warning-900/30 border border-warning-200 dark:border-warning-800 rounded px-4 py-6">
+                      <div class="text-center text-sm text-warning-700 dark:text-warning-300">px-4 py-6</div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Individual Sides -->
+                <div>
+                  <h3 class="text-sm font-medium text-neutral-900 dark:text-neutral-100 mb-3">Individual Sides (pt-*, pr-*, pb-*, pl-*)</h3>
+                  <div class="grid grid-cols-2 gap-4">
+                    <div class="bg-error-100 dark:bg-error-900/30 border border-error-200 dark:border-error-800 rounded pt-6 p-2">
+                      <div class="text-center text-sm text-error-700 dark:text-error-300">pt-6 (top)</div>
+                    </div>
+                    <div class="bg-error-100 dark:bg-error-900/30 border border-error-200 dark:border-error-800 rounded pr-8 p-2">
+                      <div class="text-center text-sm text-error-700 dark:text-error-300">pr-8 (right)</div>
+                    </div>
+                    <div class="bg-error-100 dark:bg-error-900/30 border border-error-200 dark:border-error-800 rounded pb-6 p-2">
+                      <div class="text-center text-sm text-error-700 dark:text-error-300">pb-6 (bottom)</div>
+                    </div>
+                    <div class="bg-error-100 dark:bg-error-900/30 border border-error-200 dark:border-error-800 rounded pl-8 p-2">
+                      <div class="text-center text-sm text-error-700 dark:text-error-300">pl-8 (left)</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div id="padding-html" class="tab-content hidden w-[768px]">
+            <div class="bg-neutral-900 dark:bg-neutral-950 rounded-lg overflow-hidden">
+              <div class="w-full">
+                <pre class="p-6 text-sm overflow-x-auto"><code class="language-html whitespace-pre break-words" style="word-break: break-all; max-width: 100%;">&lt;!-- All Sides Padding --&gt;
+&lt;div class="p-2"&gt;8px padding on all sides&lt;/div&gt;
+&lt;div class="p-6"&gt;24px padding on all sides&lt;/div&gt;
+
+&lt;!-- Horizontal &amp; Vertical Padding --&gt;
+&lt;div class="px-8"&gt;32px horizontal padding&lt;/div&gt;
+&lt;div class="py-4"&gt;16px vertical padding&lt;/div&gt;
+
+&lt;!-- Individual Sides --&gt;
+&lt;div class="pt-6"&gt;24px top padding&lt;/div&gt;
+&lt;div class="pr-8"&gt;32px right padding&lt;/div&gt;
+&lt;div class="pb-6"&gt;24px bottom padding&lt;/div&gt;
+&lt;div class="pl-8"&gt;32px left padding&lt;/div&gt;
+
+&lt;!-- Common Button Padding --&gt;
+&lt;button class="px-4 py-2"&gt;Button padding&lt;/button&gt;
+&lt;button class="px-6 py-3"&gt;Larger button&lt;/button&gt;
+
+&lt;!-- Card Padding --&gt;
+&lt;div class="p-6"&gt;Card content&lt;/div&gt;
+&lt;div class="p-8"&gt;Spacious card&lt;/div&gt;</code></pre>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Responsive Spacing Section -->
+        <section id="responsive-spacing" class="mb-16">
+          <div class="mb-8">
+            <div class="flex items-center justify-between mb-6">
+              <div>
+                <h2 class="text-2xl font-semibold text-neutral-900 dark:text-neutral-100 mb-2">Responsive Spacing</h2>
+                <p class="text-neutral-600 dark:text-neutral-400">Spacing that adapts to different screen sizes using responsive prefixes.</p>
+              </div>
+              <div class="flex items-center gap-3">
+                <button data-theme-toggle class="p-2 rounded-lg bg-neutral-100 dark:bg-neutral-800 hover:bg-neutral-200 dark:hover:bg-neutral-700 text-neutral-600 dark:text-neutral-400 transition-colors duration-normal" aria-label="Toggle theme">
+                  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 718.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path>
+                  </svg>
+                </button>
+                <button id="copy-responsive-btn" class="flex items-center gap-2 px-4 py-2 bg-neutral-100 dark:bg-neutral-800 hover:bg-neutral-200 dark:hover:bg-neutral-700 text-neutral-700 dark:text-neutral-300 rounded-lg text-sm font-medium transition-colors duration-normal">
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
+                  </svg>
+                  Copy
+                </button>
+              </div>
+            </div>
+          </div>
+          
+          <div class="mb-6">
+            <nav class="inline-flex bg-neutral-100 dark:bg-neutral-800 rounded-lg p-1">
+              <button class="tab-button active px-4 py-2 rounded-md bg-white dark:bg-neutral-700 text-neutral-900 dark:text-neutral-100 font-medium text-sm shadow-sm transition-all duration-normal" data-tab="responsive-preview">Preview</button>
+              <button class="tab-button px-4 py-2 rounded-md text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-100 font-medium text-sm transition-all duration-normal" data-tab="responsive-html">HTML</button>
+            </nav>
+          </div>
+
+          <div id="responsive-preview" class="tab-content">
+            <div class="bg-white dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700 rounded-lg p-8">
+              <div class="space-y-8">
+                <!-- Responsive Margin -->
+                <div>
+                  <h3 class="text-sm font-medium text-neutral-900 dark:text-neutral-100 mb-3">Responsive Margin</h3>
+                  <p class="text-xs text-neutral-600 dark:text-neutral-400 mb-4">Resize your browser to see the spacing change</p>
+                  <div class="bg-neutral-100 dark:bg-neutral-700 rounded-lg p-4">
+                    <div class="bg-primary-500 p-2 rounded text-white text-center text-sm m-2 sm:m-4 lg:m-8">
+                      m-2 sm:m-4 lg:m-8
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Responsive Padding -->
+                <div>
+                  <h3 class="text-sm font-medium text-neutral-900 dark:text-neutral-100 mb-3">Responsive Padding</h3>
+                  <div class="bg-warning-100 dark:bg-warning-900/30 border border-warning-200 dark:border-warning-800 rounded p-4 sm:p-6 lg:p-8">
+                    <div class="text-center text-sm text-warning-700 dark:text-warning-300">
+                      p-4 sm:p-6 lg:p-8
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Container Spacing -->
+                <div>
+                  <h3 class="text-sm font-medium text-neutral-900 dark:text-neutral-100 mb-3">Container Spacing</h3>
+                  <div class="bg-error-100 dark:bg-error-900/30 border border-error-200 dark:border-error-800 rounded">
+                    <div class="px-4 sm:px-6 lg:px-8 py-4 sm:py-6 lg:py-8">
+                      <div class="text-center text-sm text-error-700 dark:text-error-300">
+                        px-4 sm:px-6 lg:px-8<br>
+                        py-4 sm:py-6 lg:py-8
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div id="responsive-html" class="tab-content hidden w-[768px]">
+            <div class="bg-neutral-900 dark:bg-neutral-950 rounded-lg overflow-hidden">
+              <div class="w-full">
+                <pre class="p-6 text-sm overflow-x-auto"><code class="language-html"><!-- Responsive Margin -->
+<div class="m-2 sm:m-4 lg:m-8">
+  Margin increases on larger screens
+</div>
+
+<!-- Responsive Padding -->
+<div class="p-4 sm:p-6 lg:p-8">
+  Padding increases on larger screens
+</div>
+
+<!-- Container with Responsive Spacing -->
+<div class="px-4 sm:px-6 lg:px-8 py-4 sm:py-6 lg:py-8">
+  Container spacing
+</div>
+
+<!-- Mobile-first Approach -->
+<div class="p-4 md:p-6 xl:p-8">
+  Mobile: 16px → Tablet: 24px → Desktop: 32px
+</div>
+
+<!-- Breakpoint Reference -->
+<!-- sm: 640px and up -->
+<!-- md: 768px and up -->
+<!-- lg: 1024px and up -->
+<!-- xl: 1280px and up --></code></pre>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Usage Guidelines -->
+        <div class="bg-white dark:bg-neutral-950 border border-neutral-900 dark:border-neutral-100 rounded-lg p-4 mb-8">
+          <h3 class="text-sm font-medium text-neutral-900 dark:text-neutral-100 mb-2">Usage Guidelines</h3>
+          <ul class="text-sm text-neutral-900 dark:text-neutral-100 space-y-1">
+            <li>• Use the 8px-based spacing scale for consistent rhythm</li>
+            <li>• Prefer space-y-* and space-x-* for consistent element spacing</li>
+            <li>• Use responsive spacing to improve layouts across devices</li>
+            <li>• Combine margin and padding thoughtfully to avoid spacing conflicts</li>
+            <li>• Consider using gap utilities with flexbox and grid layouts</li>
+          </ul>
+        </div>
+
+        <!-- Accessibility Features -->
+        <div class="bg-white dark:bg-neutral-950 border border-neutral-900 dark:border-neutral-100 rounded-lg p-4">
+          <h3 class="text-sm font-medium text-neutral-900 dark:text-neutral-100 mb-2">Accessibility Features</h3>
+          <ul class="text-sm text-neutral-900 dark:text-neutral-100 space-y-1">
+            <li>• Consistent spacing improves visual hierarchy and readability</li>
+            <li>• Responsive spacing ensures content accessibility on all devices</li>
+            <li>• Proper spacing prevents content from feeling cramped or overwhelming</li>
+            <li>• Adequate padding improves touch target accessibility on mobile devices</li>
+          </ul>
+        </div>
+      </main>
+      <div id="footer-container"></div>
+    </div>
+  </div>
+
+  <script type="module">
+    import { generateHeader, generateSidebar, generateFooter, initializeSharedComponents } from '/src/shared/components.js';
+    import { themeManager } from '/src/shared/theme.js';
+    import { toast } from '/src/shared/toast.js';
+
+    document.addEventListener('DOMContentLoaded', function() {
+      document.getElementById('header-container').innerHTML = generateHeader('documentation');
+      document.getElementById('sidebar-container').innerHTML = generateSidebar('spacer');
+      document.getElementById('footer-container').innerHTML = generateFooter();
+
+      initializeSharedComponents();
+      themeManager.initializeToggleButtons();
+
+      // Tab functionality
+      const tabButtons = document.querySelectorAll('.tab-button');
+      tabButtons.forEach(button => {
+        button.addEventListener('click', () => {
+          const targetTab = button.getAttribute('data-tab');
+          const section = button.closest('section');
+          
+          section.querySelectorAll('.tab-button').forEach(btn => {
+            btn.classList.remove('active', 'bg-white', 'dark:bg-neutral-700', 'text-neutral-900', 'dark:text-neutral-100', 'shadow-sm');
+            btn.classList.add('text-neutral-600', 'dark:text-neutral-400');
+          });
+          
+          button.classList.add('active', 'bg-white', 'dark:bg-neutral-700', 'text-neutral-900', 'dark:text-neutral-100', 'shadow-sm');
+          button.classList.remove('text-neutral-600', 'dark:text-neutral-400');
+          
+          section.querySelectorAll('.tab-content').forEach(content => {
+            content.classList.add('hidden');
+          });
+          
+          const targetContent = section.querySelector(`#${targetTab}`);
+          if (targetContent) {
+            targetContent.classList.remove('hidden');
+          }
+        });
+      });
+
+      // Copy functionality
+      const copyButtons = document.querySelectorAll('[id^="copy-"]');
+      copyButtons.forEach(button => {
+        button.addEventListener('click', () => {
+          const section = button.closest('section');
+          const htmlTab = section.querySelector('[id$="-html"]');
+          
+          if (htmlTab) {
+            const codeElement = htmlTab.querySelector('code');
+            if (codeElement) {
+              navigator.clipboard.writeText(codeElement.textContent).then(() => {
+                toast.success('Code copied to clipboard!');
+              }).catch(() => {
+                toast.error('Failed to copy code');
+              });
+            }
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html> 

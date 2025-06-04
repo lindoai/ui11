@@ -6,10 +6,15 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "tw:watch": "tailwindcss -i ./src/input.css -o ./src/style.css --watch",
+    "tw:build": "tailwindcss -i ./src/input.css -o ./src/style.css --minify",
+    "dev:tw": "concurrently \"npm run tw:watch\" \"npm run dev\"",
+    "clean": "rm -rf dist"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.21",
+    "concurrently": "^9.1.2",
     "postcss": "^8.5.4",
     "tailwindcss": "^3.4.17",
     "vite": "^6.3.5"
