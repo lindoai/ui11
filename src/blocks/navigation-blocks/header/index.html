@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Header Block - UI11 Design System</title>
+  <link href="/src/style.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-markup.min.js"></script>
+</head>
+<body class="min-h-screen bg-white dark:bg-neutral-950">
+  <!-- Page Layout Container -->
+  <div class="flex min-h-screen">
+    <!-- Sidebar Container (Injected) -->
+    <div id="sidebar-container"></div>
+    
+    <!-- Main Content Area -->
+    <div class="flex-1 flex flex-col ml-64 mt-16">
+      <!-- Header Container (Injected) -->
+      <div id="header-container"></div>
+      
+      <!-- Page Content -->
+      <main class="flex-1 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 overflow-hidden">
+        <!-- Inner Navigation (Breadcrumb) -->
+        <nav class="flex mb-8" aria-label="Breadcrumb">
+          <ol class="flex items-center space-x-2 text-sm text-neutral-600 dark:text-neutral-400">
+            <li><a href="/src/blocks/" class="hover:text-neutral-900 dark:hover:text-neutral-100 transition-colors duration-normal">Blocks</a></li>
+            <li class="flex items-center">
+              <svg class="w-4 h-4 mx-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+              </svg>
+              <a href="/src/blocks/navigation-blocks/" class="hover:text-neutral-900 dark:hover:text-neutral-100 transition-colors duration-normal">Navigation Blocks</a>
+            </li>
+            <li class="flex items-center">
+              <svg class="w-4 h-4 mx-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+              </svg>
+              <span class="text-neutral-900 dark:text-neutral-100 font-medium">Header</span>
+            </li>
+          </ol>
+        </nav>
+
+        <!-- Page Header -->
+        <div class="mb-12">
+          <h1 class="text-4xl font-semibold text-neutral-900 dark:text-neutral-100 mb-4">Header Block</h1>
+          <p class="text-lg text-neutral-600 dark:text-neutral-400 mb-6 max-w-3xl leading-relaxed">
+            Professional navigation headers for websites and applications. Features responsive layouts, search functionality, and user menus with Apple-inspired design.
+          </p>
+        </div>
+
+        <!-- Section 1: Simple Header -->
+        <section id="simple-header" class="mb-16">
+          <div class="mb-8">
+            <div class="flex items-center justify-between mb-6">
+              <div>
+                <h2 class="text-2xl font-semibold text-neutral-900 dark:text-neutral-100 mb-2">Simple Header</h2>
+                <p class="text-neutral-600 dark:text-neutral-400">Clean header with logo and basic navigation.</p>
+              </div>
+              <div class="flex items-center gap-3">
+                <button data-theme-toggle class="p-2 rounded-lg bg-neutral-100 dark:bg-neutral-800 hover:bg-neutral-200 dark:hover:bg-neutral-700 text-neutral-600 dark:text-neutral-400 transition-colors duration-normal" aria-label="Toggle theme">
+                  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path>
+                  </svg>
+                </button>
+                <button id="copy-simple-header-btn" class="flex items-center gap-2 px-4 py-2 bg-neutral-100 dark:bg-neutral-800 hover:bg-neutral-200 dark:hover:bg-neutral-700 text-neutral-700 dark:text-neutral-300 rounded-lg text-sm font-medium transition-colors duration-normal">
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
+                  </svg>
+                  Copy
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="mb-6">
+            <nav class="inline-flex bg-neutral-100 dark:bg-neutral-800 rounded-lg p-1">
+              <button class="tab-button active px-4 py-2 rounded-md bg-white dark:bg-neutral-700 text-neutral-900 dark:text-neutral-100 font-medium text-sm shadow-sm transition-all duration-normal" data-tab="simple-header-preview">
+                Preview
+              </button>
+              <button class="tab-button px-4 py-2 rounded-md text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-100 font-medium text-sm transition-all duration-normal" data-tab="simple-header-html">
+                HTML
+              </button>
+            </nav>
+          </div>
+
+          <div id="simple-header-preview" class="tab-content">
+            <div class="bg-neutral-50 dark:bg-neutral-900 rounded-lg p-8">
+              <header class="bg-white dark:bg-neutral-950 border border-neutral-200 dark:border-neutral-700 rounded-lg shadow-sm">
+                <div class="max-w-6xl mx-auto px-6 py-4">
+                  <div class="flex justify-between items-center">
+                    <!-- Logo -->
+                    <div class="flex items-center">
+                      <div class="w-8 h-8 bg-primary-500 dark:bg-primary-400 rounded-lg mr-3"></div>
+                      <span class="text-xl font-semibold text-neutral-900 dark:text-neutral-100">Brand</span>
+                    </div>
+                    
+                    <!-- Navigation -->
+                    <nav class="hidden md:flex space-x-8">
+                      <a href="#" class="text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-100 transition-colors">Home</a>
+                      <a href="#" class="text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-100 transition-colors">About</a>
+                      <a href="#" class="text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-100 transition-colors">Services</a>
+                      <a href="#" class="text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-100 transition-colors">Contact</a>
+                    </nav>
+                    
+                    <!-- Mobile Menu Button -->
+                    <button class="md:hidden p-2 rounded-lg bg-neutral-100 dark:bg-neutral-800 text-neutral-600 dark:text-neutral-400">
+                      <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+              </header>
+            </div>
+          </div>
+
+          <div id="simple-header-html" class="tab-content hidden w-[768px]">
+            <div class="bg-neutral-900 dark:bg-neutral-950 rounded-lg overflow-hidden">
+              <div class="w-full">
+                <pre class="p-6 text-sm overflow-x-auto"><code class="language-html whitespace-pre break-words" style="word-break: break-all; max-width: 100%;">&lt;header class="bg-white dark:bg-neutral-950 border border-neutral-200 dark:border-neutral-700 shadow-sm"&gt;
+  &lt;div class="max-w-6xl mx-auto px-6 py-4"&gt;
+    &lt;div class="flex justify-between items-center"&gt;
+      &lt;!-- Logo --&gt;
+      &lt;div class="flex items-center"&gt;
+        &lt;div class="w-8 h-8 bg-primary-500 dark:bg-primary-400 rounded-lg mr-3"&gt;&lt;/div&gt;
+        &lt;span class="text-xl font-semibold text-neutral-900 dark:text-neutral-100"&gt;Brand&lt;/span&gt;
+      &lt;/div&gt;
+      
+      &lt;!-- Navigation --&gt;
+      &lt;nav class="hidden md:flex space-x-8"&gt;
+        &lt;a href="#" class="text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-100 transition-colors"&gt;Home&lt;/a&gt;
+        &lt;a href="#" class="text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-100 transition-colors"&gt;About&lt;/a&gt;
+        &lt;a href="#" class="text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-100 transition-colors"&gt;Services&lt;/a&gt;
+        &lt;a href="#" class="text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-100 transition-colors"&gt;Contact&lt;/a&gt;
+      &lt;/nav&gt;
+      
+      &lt;!-- Mobile Menu Button --&gt;
+      &lt;button class="md:hidden p-2 rounded-lg bg-neutral-100 dark:bg-neutral-800 text-neutral-600 dark:text-neutral-400"&gt;
+        &lt;svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"&gt;
+          &lt;path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"&gt;&lt;/path&gt;
+        &lt;/svg&gt;
+      &lt;/button&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/header&gt;</code></pre>
+              </div>
+            </div>
+          </div>
+        </section>
+        
+        <!-- Usage Guidelines -->
+        <div class="bg-white dark:bg-neutral-950 border border-neutral-900 dark:border-neutral-100 rounded-lg p-4 mb-8">
+          <h3 class="text-sm font-medium text-neutral-900 dark:text-neutral-100 mb-2">Usage Guidelines</h3>
+          <ul class="text-sm text-neutral-900 dark:text-neutral-100 space-y-1">
+            <li>• Keep navigation items concise and well-organized</li>
+            <li>• Include search functionality for content-heavy sites</li>
+            <li>• Ensure mobile responsiveness with hamburger menu</li>
+            <li>• Use consistent branding and clear visual hierarchy</li>
+            <li>• Include user authentication states (logged in/out)</li>
+          </ul>
+        </div>
+
+        <!-- Accessibility Features -->
+        <div class="bg-white dark:bg-neutral-950 border border-neutral-900 dark:border-neutral-100 rounded-lg p-4">
+          <h3 class="text-sm font-medium text-neutral-900 dark:text-neutral-100 mb-2">Accessibility Features</h3>
+          <ul class="text-sm text-neutral-900 dark:text-neutral-100 space-y-1">
+            <li>• Semantic HTML structure with proper nav landmarks</li>
+            <li>• Keyboard navigation support for all interactive elements</li>
+            <li>• Screen reader accessible labels and descriptions</li>
+            <li>• High contrast focus indicators on all focusable elements</li>
+            <li>• Mobile-first responsive design with touch-friendly targets</li>
+          </ul>
+        </div>
+
+      </main>
+      
+      <!-- Footer Container (Injected) -->
+      <div id="footer-container"></div>
+    </div>
+  </div>
+
+  <!-- JavaScript -->
+  <script type="module">
+    import { generateHeader, generateSidebar, generateFooter, initializeSharedComponents } from '/src/shared/components.js';
+    import { themeManager } from '/src/shared/theme.js';
+    import { toast } from '/src/shared/toast.js';
+
+    document.addEventListener('DOMContentLoaded', function() {
+      // 1. Inject shared components
+      document.getElementById('header-container').innerHTML = generateHeader('blocks');
+      document.getElementById('sidebar-container').innerHTML = generateSidebar('header');
+      document.getElementById('footer-container').innerHTML = generateFooter();
+      
+      // 2. Initialize shared functionality
+      initializeSharedComponents();
+      themeManager.initializeToggleButtons();
+      
+      // 3. Tab functionality
+      function initializeTabs() {
+        const tabButtons = document.querySelectorAll('.tab-button');
+        const tabContents = document.querySelectorAll('.tab-content');
+
+        tabButtons.forEach(button => {
+          button.addEventListener('click', () => {
+            const targetTab = button.getAttribute('data-tab');
+            
+            // Remove active class from all buttons and contents
+            tabButtons.forEach(btn => btn.classList.remove('active', 'bg-white', 'dark:bg-neutral-700', 'text-neutral-900', 'dark:text-neutral-100', 'shadow-sm'));
+            tabButtons.forEach(btn => btn.classList.add('text-neutral-600', 'dark:text-neutral-400'));
+            tabContents.forEach(content => content.classList.add('hidden'));
+            
+            // Add active class to clicked button
+            button.classList.add('active', 'bg-white', 'dark:bg-neutral-700', 'text-neutral-900', 'dark:text-neutral-100', 'shadow-sm');
+            button.classList.remove('text-neutral-600', 'dark:text-neutral-400');
+            
+            // Show target content
+            const targetContent = document.getElementById(targetTab);
+            if (targetContent) {
+              targetContent.classList.remove('hidden');
+            }
+          });
+        });
+      }
+      
+      // 4. Copy button functionality
+      function initializeCopyButtons() {
+        // Simple Header copy button
+        document.getElementById('copy-simple-header-btn').addEventListener('click', function() {
+          const htmlContent = document.querySelector('#simple-header-html code').textContent;
+          navigator.clipboard.writeText(htmlContent).then(() => {
+            toast.show('Simple header HTML copied to clipboard!', 'success');
+          });
+        });
+      }
+      
+      // Initialize page functionality
+      initializeTabs();
+      initializeCopyButtons();
+    });
+  </script>
+</body>
+</html> 

@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shopping Cart - E-commerce Blocks - UI11 Design System</title>
+  <meta name="description" content="Shopping cart components with different layouts and functionality options for e-commerce applications and online stores.">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Prism.js for Syntax Highlighting -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</head>
+<body class="min-h-screen bg-white dark:bg-neutral-950 text-neutral-900 dark:text-neutral-100">
+  <!-- Page Layout Container -->
+  <div class="flex min-h-screen">
+    <!-- Sidebar Container (Injected) -->
+    <div id="sidebar-container"></div>
+    
+    <!-- Main Content Area -->
+    <div class="flex-1 flex flex-col ml-64 mt-16">
+      <!-- Header Container (Injected) -->
+      <div id="header-container"></div>
+      
+      <!-- Inner Breadcrumb Navigation -->
+      <nav class="bg-white dark:bg-neutral-950 border-b border-neutral-200 dark:border-neutral-800 px-6 py-3">
+        <div class="flex items-center text-sm text-neutral-600 dark:text-neutral-400">
+          <a href="/index.html" class="hover:text-neutral-900 dark:hover:text-neutral-100">Home</a>
+          <span class="mx-2">›</span>
+          <a href="/src/blocks/index.html" class="hover:text-neutral-900 dark:hover:text-neutral-100">Blocks</a>
+          <span class="mx-2">›</span>
+          <a href="/src/blocks/index.html#e-commerce" class="hover:text-neutral-900 dark:hover:text-neutral-100">E-commerce</a>
+          <span class="mx-2">›</span>
+          <span class="text-neutral-900 dark:text-neutral-100 font-medium">Shopping Cart</span>
+        </div>
+      </nav>
+
+      <!-- Main Content -->
+      <main class="flex-1 p-6 lg:p-8">
+        <!-- Page Header -->
+        <div class="mb-8">
+          <h1 class="text-3xl font-semibold text-neutral-900 dark:text-neutral-100 mb-4">Shopping Cart</h1>
+          <p class="text-lg text-neutral-600 dark:text-neutral-400 max-w-3xl">Shopping cart components with different layouts and functionality options. Perfect for e-commerce applications, online stores, and checkout processes with various item management features.</p>
+        </div>
+
+        <!-- Section 1: Basic Cart -->
+        <section class="mb-16">
+          <div class="flex items-center justify-between mb-6">
+            <div>
+              <h2 class="text-2xl font-semibold text-neutral-900 dark:text-neutral-100 mb-2">Basic Cart</h2>
+              <p class="text-neutral-600 dark:text-neutral-400">Simple shopping cart with item list, quantities, and total calculation.</p>
+            </div>
+            <div class="flex items-center gap-3">
+              <button data-theme-toggle class="p-2 rounded-lg bg-neutral-100 dark:bg-neutral-800 hover:bg-neutral-200 dark:hover:bg-neutral-700 text-neutral-600 dark:text-neutral-400 transition-colors duration-normal" aria-label="Toggle theme">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path>
+                </svg>
+              </button>
+              <button id="copy-basic-btn" class="flex items-center gap-2 px-4 py-2 bg-neutral-100 dark:bg-neutral-800 hover:bg-neutral-200 dark:hover:bg-neutral-700 text-neutral-700 dark:text-neutral-300 rounded-lg text-sm font-medium transition-colors duration-normal">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
+                </svg>
+                Copy
+              </button>
+            </div>
+          </div>
+
+          <nav class="inline-flex bg-neutral-100 dark:bg-neutral-800 rounded-lg p-1 mb-6">
+            <button class="tab-button active px-4 py-2 rounded-md bg-white dark:bg-neutral-700 text-neutral-900 dark:text-neutral-100 font-medium text-sm shadow-sm transition-all duration-normal" data-tab="basic-preview">
+              Preview
+            </button>
+            <button class="tab-button px-4 py-2 rounded-md text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-100 font-medium text-sm transition-all duration-normal" data-tab="basic-html">
+              HTML
+            </button>
+          </nav>
+
+          <div id="basic-preview" class="tab-content bg-neutral-50 dark:bg-neutral-900 p-8 rounded-lg border border-neutral-200 dark:border-neutral-700">
+            <div class="max-w-2xl bg-white dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700 rounded-lg shadow-sm p-6">
+              <h3 class="text-lg font-semibold text-neutral-900 dark:text-neutral-100 mb-4">Shopping Cart</h3>
+              
+              <div class="space-y-4">
+                <!-- Cart Item 1 -->
+                <div class="flex items-center gap-4 p-4 bg-neutral-50 dark:bg-neutral-900 rounded-lg">
+                  <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=80&h=80&fit=crop&crop=center" alt="Product" class="w-16 h-16 rounded-lg object-cover">
+                  <div class="flex-1">
+                    <h4 class="font-medium text-neutral-900 dark:text-neutral-100">Wireless Headphones</h4>
+                    <p class="text-sm text-neutral-600 dark:text-neutral-400">Premium Audio Quality</p>
+                    <p class="text-sm font-medium text-neutral-900 dark:text-neutral-100">$99.99</p>
+                  </div>
+                  <div class="flex items-center gap-2">
+                    <button class="w-8 h-8 rounded-md bg-neutral-200 dark:bg-neutral-700 flex items-center justify-center text-neutral-600 dark:text-neutral-400 hover:bg-neutral-300 dark:hover:bg-neutral-600">
+                      <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 12H4"></path>
+                      </svg>
+                    </button>
+                    <span class="w-8 text-center text-sm font-medium text-neutral-900 dark:text-neutral-100">2</span>
+                    <button class="w-8 h-8 rounded-md bg-neutral-200 dark:bg-neutral-700 flex items-center justify-center text-neutral-600 dark:text-neutral-400 hover:bg-neutral-300 dark:hover:bg-neutral-600">
+                      <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path>
+                      </svg>
+                    </button>
+                  </div>
+                  <button class="p-2 text-neutral-400 hover:text-error-500 dark:hover:text-error-400">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path>
+                    </svg>
+                  </button>
+                </div>
+
+                <!-- Cart Item 2 -->
+                <div class="flex items-center gap-4 p-4 bg-neutral-50 dark:bg-neutral-900 rounded-lg">
+                  <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=80&h=80&fit=crop&crop=center" alt="Product" class="w-16 h-16 rounded-lg object-cover">
+                  <div class="flex-1">
+                    <h4 class="font-medium text-neutral-900 dark:text-neutral-100">Running Shoes</h4>
+                    <p class="text-sm text-neutral-600 dark:text-neutral-400">Comfortable & Durable</p>
+                    <p class="text-sm font-medium text-neutral-900 dark:text-neutral-100">$129.99</p>
+                  </div>
+                  <div class="flex items-center gap-2">
+                    <button class="w-8 h-8 rounded-md bg-neutral-200 dark:bg-neutral-700 flex items-center justify-center text-neutral-600 dark:text-neutral-400 hover:bg-neutral-300 dark:hover:bg-neutral-600">
+                      <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 12H4"></path>
+                      </svg>
+                    </button>
+                    <span class="w-8 text-center text-sm font-medium text-neutral-900 dark:text-neutral-100">1</span>
+                    <button class="w-8 h-8 rounded-md bg-neutral-200 dark:bg-neutral-700 flex items-center justify-center text-neutral-600 dark:text-neutral-400 hover:bg-neutral-300 dark:hover:bg-neutral-600">
+                      <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path>
+                      </svg>
+                    </button>
+                  </div>
+                  <button class="p-2 text-neutral-400 hover:text-error-500 dark:hover:text-error-400">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path>
+                    </svg>
+                  </button>
+                </div>
+              </div>
+
+              <!-- Cart Summary -->
+              <div class="mt-6 pt-6 border-t border-neutral-200 dark:border-neutral-700">
+                <div class="flex justify-between items-center mb-2">
+                  <span class="text-neutral-600 dark:text-neutral-400">Subtotal</span>
+                  <span class="font-medium text-neutral-900 dark:text-neutral-100">$329.97</span>
+                </div>
+                <div class="flex justify-between items-center mb-2">
+                  <span class="text-neutral-600 dark:text-neutral-400">Shipping</span>
+                  <span class="font-medium text-neutral-900 dark:text-neutral-100">$9.99</span>
+                </div>
+                <div class="flex justify-between items-center mb-4 text-lg font-semibold">
+                  <span class="text-neutral-900 dark:text-neutral-100">Total</span>
+                  <span class="text-neutral-900 dark:text-neutral-100">$339.96</span>
+                </div>
+                <button class="w-full bg-primary-500 hover:bg-primary-600 dark:bg-primary-600 dark:hover:bg-primary-700 text-white py-3 px-4 rounded-lg font-medium transition-colors duration-normal">
+                  Proceed to Checkout
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div id="basic-html" class="tab-content hidden w-[768px]">
+            <div class="bg-neutral-900 dark:bg-neutral-950 rounded-lg overflow-hidden">
+              <div class="w-full">
+                <pre class="p-6 text-sm overflow-x-auto"><code class="language-html whitespace-pre break-words" style="word-break: break-all; max-width: 100%;">&lt;div class="max-w-2xl bg-white dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700 rounded-lg shadow-sm p-6"&gt;
+  &lt;h3 class="text-lg font-semibold text-neutral-900 dark:text-neutral-100 mb-4"&gt;Shopping Cart&lt;/h3&gt;
+  
+  &lt;div class="space-y-4"&gt;
+    &lt;!-- Cart Item 1 --&gt;
+    &lt;div class="flex items-center gap-4 p-4 bg-neutral-50 dark:bg-neutral-900 rounded-lg"&gt;
+      &lt;img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=80&amp;h=80&amp;fit=crop&amp;crop=center" alt="Product" class="w-16 h-16 rounded-lg object-cover"&gt;
+      &lt;div class="flex-1"&gt;
+        &lt;h4 class="font-medium text-neutral-900 dark:text-neutral-100"&gt;Wireless Headphones&lt;/h4&gt;
+        &lt;p class="text-sm text-neutral-600 dark:text-neutral-400"&gt;Premium Audio Quality&lt;/p&gt;
+        &lt;p class="text-sm font-medium text-neutral-900 dark:text-neutral-100"&gt;$99.99&lt;/p&gt;
+      &lt;/div&gt;
+      &lt;div class="flex items-center gap-2"&gt;
+        &lt;button class="w-8 h-8 rounded-md bg-neutral-200 dark:bg-neutral-700 flex items-center justify-center text-neutral-600 dark:text-neutral-400 hover:bg-neutral-300 dark:hover:bg-neutral-600"&gt;
+          &lt;svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"&gt;
+            &lt;path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 12H4"&gt;&lt;/path&gt;
+          &lt;/svg&gt;
+        &lt;/button&gt;
+        &lt;span class="w-8 text-center text-sm font-medium text-neutral-900 dark:text-neutral-100"&gt;2&lt;/span&gt;
+        &lt;button class="w-8 h-8 rounded-md bg-neutral-200 dark:bg-neutral-700 flex items-center justify-center text-neutral-600 dark:text-neutral-400 hover:bg-neutral-300 dark:hover:bg-neutral-600"&gt;
+          &lt;svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"&gt;
+            &lt;path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"&gt;&lt;/path&gt;
+          &lt;/svg&gt;
+        &lt;/button&gt;
+      &lt;/div&gt;
+      &lt;button class="p-2 text-neutral-400 hover:text-error-500 dark:hover:text-error-400"&gt;
+        &lt;svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"&gt;
+          &lt;path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"&gt;&lt;/path&gt;
+        &lt;/svg&gt;
+      &lt;/button&gt;
+    &lt;/div&gt;
+
+    &lt;!-- Cart Item 2 --&gt;
+    &lt;div class="flex items-center gap-4 p-4 bg-neutral-50 dark:bg-neutral-900 rounded-lg"&gt;
+      &lt;img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=80&amp;h=80&amp;fit=crop&amp;crop=center" alt="Product" class="w-16 h-16 rounded-lg object-cover"&gt;
+      &lt;div class="flex-1"&gt;
+        &lt;h4 class="font-medium text-neutral-900 dark:text-neutral-100"&gt;Running Shoes&lt;/h4&gt;
+        &lt;p class="text-sm text-neutral-600 dark:text-neutral-400"&gt;Comfortable &amp; Durable&lt;/p&gt;
+        &lt;p class="text-sm font-medium text-neutral-900 dark:text-neutral-100"&gt;$129.99&lt;/p&gt;
+      &lt;/div&gt;
+      &lt;div class="flex items-center gap-2"&gt;
+        &lt;button class="w-8 h-8 rounded-md bg-neutral-200 dark:bg-neutral-700 flex items-center justify-center text-neutral-600 dark:text-neutral-400 hover:bg-neutral-300 dark:hover:bg-neutral-600"&gt;
+          &lt;svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"&gt;
+            &lt;path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 12H4"&gt;&lt;/path&gt;
+          &lt;/svg&gt;
+        &lt;/button&gt;
+        &lt;span class="w-8 text-center text-sm font-medium text-neutral-900 dark:text-neutral-100"&gt;1&lt;/span&gt;
+        &lt;button class="w-8 h-8 rounded-md bg-neutral-200 dark:bg-neutral-700 flex items-center justify-center text-neutral-600 dark:text-neutral-400 hover:bg-neutral-300 dark:hover:bg-neutral-600"&gt;
+          &lt;svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"&gt;
+            &lt;path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"&gt;&lt;/path&gt;
+          &lt;/svg&gt;
+        &lt;/button&gt;
+      &lt;/div&gt;
+      &lt;button class="p-2 text-neutral-400 hover:text-error-500 dark:hover:text-error-400"&gt;
+        &lt;svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"&gt;
+          &lt;path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"&gt;&lt;/path&gt;
+        &lt;/svg&gt;
+      &lt;/button&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;!-- Cart Summary --&gt;
+  &lt;div class="mt-6 pt-6 border-t border-neutral-200 dark:border-neutral-700"&gt;
+    &lt;div class="flex justify-between items-center mb-2"&gt;
+      &lt;span class="text-neutral-600 dark:text-neutral-400"&gt;Subtotal&lt;/span&gt;
+      &lt;span class="font-medium text-neutral-900 dark:text-neutral-100"&gt;$329.97&lt;/span&gt;
+    &lt;/div&gt;
+    &lt;div class="flex justify-between items-center mb-2"&gt;
+      &lt;span class="text-neutral-600 dark:text-neutral-400"&gt;Shipping&lt;/span&gt;
+      &lt;span class="font-medium text-neutral-900 dark:text-neutral-100"&gt;$9.99&lt;/span&gt;
+    &lt;/div&gt;
+    &lt;div class="flex justify-between items-center mb-4 text-lg font-semibold"&gt;
+      &lt;span class="text-neutral-900 dark:text-neutral-100"&gt;Total&lt;/span&gt;
+      &lt;span class="text-neutral-900 dark:text-neutral-100"&gt;$339.96&lt;/span&gt;
+    &lt;/div&gt;
+    &lt;button class="w-full bg-primary-500 hover:bg-primary-600 dark:bg-primary-600 dark:hover:bg-primary-700 text-white py-3 px-4 rounded-lg font-medium transition-colors duration-normal"&gt;
+      Proceed to Checkout
+    &lt;/button&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Usage Guidelines -->
+        <div class="bg-white dark:bg-neutral-950 border border-neutral-900 dark:border-neutral-100 rounded-lg p-4 mb-8">
+          <h3 class="text-sm font-medium text-neutral-900 dark:text-neutral-100 mb-2">Usage Guidelines</h3>
+          <ul class="text-sm text-neutral-900 dark:text-neutral-100 space-y-1">
+            <li>• Use clear product images and descriptions for easy identification</li>
+            <li>• Provide quantity controls with clear increment/decrement buttons</li>
+            <li>• Show real-time price calculations and totals</li>
+            <li>• Include easy removal options for each cart item</li>
+            <li>• Display shipping costs and tax calculations clearly</li>
+            <li>• Use prominent CTA buttons for checkout process</li>
+          </ul>
+        </div>
+
+        <!-- Accessibility Features -->
+        <div class="bg-white dark:bg-neutral-950 border border-neutral-900 dark:border-neutral-100 rounded-lg p-4">
+          <h3 class="text-sm font-medium text-neutral-900 dark:text-neutral-100 mb-2">Accessibility Features</h3>
+          <ul class="text-sm text-neutral-900 dark:text-neutral-100 space-y-1">
+            <li>• Keyboard navigation for all interactive elements</li>
+            <li>• Screen reader-friendly product information</li>
+            <li>• Clear focus indicators on buttons and controls</li>
+            <li>• Accessible price and quantity announcements</li>
+            <li>• High contrast colors for better visibility</li>
+            <li>• Semantic HTML structure for assistive technologies</li>
+          </ul>
+        </div>
+      </main>
+
+      <!-- Footer Container (Injected) -->
+      <div id="footer-container"></div>
+    </div>
+  </div>
+
+  <!-- JavaScript -->
+  <script type="module">
+    import { generateHeader, generateSidebar, generateFooter, initializeSharedComponents } from '/src/shared/components.js';
+    import { themeManager } from '/src/shared/theme.js';
+    import { toast } from '/src/shared/toast.js';
+
+    document.addEventListener('DOMContentLoaded', function() {
+      // Inject shared components
+      document.getElementById('header-container').innerHTML = generateHeader('blocks');
+      document.getElementById('sidebar-container').innerHTML = generateSidebar('shopping-cart');
+      document.getElementById('footer-container').innerHTML = generateFooter();
+      
+      // Initialize shared functionality
+      initializeSharedComponents();
+      themeManager.initializeToggleButtons();
+      
+      // Tab switching functionality
+      function setupTabs() {
+        const tabButtons = document.querySelectorAll('.tab-button');
+        const tabContents = document.querySelectorAll('.tab-content');
+        
+        tabButtons.forEach(button => {
+          button.addEventListener('click', () => {
+            const targetTab = button.getAttribute('data-tab');
+            const section = button.closest('section');
+            
+            // Update button states within the section
+            section.querySelectorAll('.tab-button').forEach(btn => {
+              btn.classList.remove('active', 'bg-white', 'dark:bg-neutral-700', 'text-neutral-900', 'dark:text-neutral-100', 'shadow-sm');
+              btn.classList.add('text-neutral-600', 'dark:text-neutral-400');
+            });
+            
+            button.classList.add('active', 'bg-white', 'dark:bg-neutral-700', 'text-neutral-900', 'dark:text-neutral-100', 'shadow-sm');
+            button.classList.remove('text-neutral-600', 'dark:text-neutral-400');
+            
+            // Update content within the section
+            section.querySelectorAll('.tab-content').forEach(content => {
+              content.classList.add('hidden');
+            });
+            
+            const targetContent = section.querySelector(`#${targetTab}`);
+            if (targetContent) {
+              targetContent.classList.remove('hidden');
+            }
+          });
+        });
+      }
+      
+      // Copy button functionality
+      function setupCopyButtons() {
+        const copyButtons = [
+          { id: 'copy-basic-btn', contentId: 'basic-html' }
+        ];
+        
+        copyButtons.forEach(({ id, contentId }) => {
+          const button = document.getElementById(id);
+          if (button) {
+            button.addEventListener('click', async () => {
+              const content = document.getElementById(contentId);
+              if (content) {
+                const codeElement = content.querySelector('code');
+                if (codeElement) {
+                  try {
+                    await navigator.clipboard.writeText(codeElement.textContent);
+                    toast.show('Code copied to clipboard!', 'success');
+                  } catch (err) {
+                    toast.show('Failed to copy code', 'error');
+                  }
+                }
+              }
+            });
+          }
+        });
+      }
+      
+      setupTabs();
+      setupCopyButtons();
+    });
+  </script>
+</body>
+</html> 

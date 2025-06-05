@@ -71,11 +71,15 @@ export function generateHeader(currentPage = '') {
 
 // Generate sidebar navigation component
 export function generateSidebar(currentElement = '') {
-  // Element categories and items
-  const sidebarData = {
+  // Detect page type from URL to determine which sidebar to show
+  const currentPath = window.location.pathname;
+  const isBlocksPage = currentPath.includes('/blocks/') || currentPath.includes('/src/blocks/');
+  
+  // Define sidebar data for Documentation (Atomic + Components)
+  const documentationSidebarData = {
     'Atomic Elements': {
       'Form Elements': [
-        { name: 'Button', path: '/src/atomic/button/', status: 'complete' },
+        { name: 'Button', path: '/src/atomic/button/', status: 'pending' },
         { name: 'Input', path: '/src/atomic/input/', status: 'pending' },
         { name: 'Textarea', path: '/src/atomic/textarea/', status: 'pending' },
         { name: 'Select', path: '/src/atomic/select/', status: 'pending' },
@@ -145,10 +149,14 @@ export function generateSidebar(currentElement = '') {
         { name: 'SearchBox', path: '/src/components/searchbox/', status: 'pending' },
         { name: 'Shopping Cart', path: '/src/components/shopping-cart/', status: 'pending' }
       ]
-    },
+    }
+  };
+
+  // Define sidebar data for Blocks only
+  const blocksSidebarData = {
     'Blocks': {
       'Hero Sections': [
-        { name: 'Hero', path: '/src/blocks/hero-sections/hero/', status: 'complete' },
+        { name: 'Hero', path: '/src/blocks/hero-sections/hero/', status: 'pending' },
         { name: 'Feature', path: '/src/blocks/hero-sections/feature/', status: 'pending' },
         { name: 'Call to Action', path: '/src/blocks/hero-sections/cta/', status: 'pending' },
         { name: 'Weather', path: '/src/blocks/hero-sections/weather/', status: 'pending' }
@@ -198,6 +206,9 @@ export function generateSidebar(currentElement = '') {
       ]
     }
   };
+
+  // Choose which sidebar data to use
+  const sidebarData = isBlocksPage ? blocksSidebarData : documentationSidebarData;
 
   let sidebarHtml = `
     <aside class="w-64 bg-white dark:bg-neutral-950 border-r border-neutral-200 dark:border-neutral-700 fixed left-0 top-16 bottom-0 overflow-y-auto transition-colors duration-normal z-40">

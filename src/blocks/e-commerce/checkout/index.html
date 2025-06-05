@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Checkout - E-commerce Blocks - UI11 Design System</title>
+  <meta name="description" content="Checkout process components with different layouts and functionality options for e-commerce applications and payment flows.">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Prism.js for Syntax Highlighting -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</head>
+<body class="min-h-screen bg-white dark:bg-neutral-950 text-neutral-900 dark:text-neutral-100">
+  <!-- Page Layout Container -->
+  <div class="flex min-h-screen">
+    <!-- Sidebar Container (Injected) -->
+    <div id="sidebar-container"></div>
+    
+    <!-- Main Content Area -->
+    <div class="flex-1 flex flex-col ml-64 mt-16">
+      <!-- Header Container (Injected) -->
+      <div id="header-container"></div>
+      
+      <!-- Inner Breadcrumb Navigation -->
+      <nav class="bg-white dark:bg-neutral-950 border-b border-neutral-200 dark:border-neutral-800 px-6 py-3">
+        <div class="flex items-center text-sm text-neutral-600 dark:text-neutral-400">
+          <a href="/index.html" class="hover:text-neutral-900 dark:hover:text-neutral-100">Home</a>
+          <span class="mx-2">›</span>
+          <a href="/src/blocks/index.html" class="hover:text-neutral-900 dark:hover:text-neutral-100">Blocks</a>
+          <span class="mx-2">›</span>
+          <a href="/src/blocks/index.html#e-commerce" class="hover:text-neutral-900 dark:hover:text-neutral-100">E-commerce</a>
+          <span class="mx-2">›</span>
+          <span class="text-neutral-900 dark:text-neutral-100 font-medium">Checkout</span>
+        </div>
+      </nav>
+
+      <!-- Main Content -->
+      <main class="flex-1 p-6 lg:p-8">
+        <!-- Page Header -->
+        <div class="mb-8">
+          <h1 class="text-3xl font-semibold text-neutral-900 dark:text-neutral-100 mb-4">Checkout</h1>
+          <p class="text-lg text-neutral-600 dark:text-neutral-400 max-w-3xl">Checkout process components with different layouts and functionality options. Perfect for e-commerce applications, payment flows, and order completion with various form layouts and payment methods.</p>
+        </div>
+
+        <!-- Section 1: Payment Form -->
+        <section class="mb-16">
+          <div class="flex items-center justify-between mb-6">
+            <div>
+              <h2 class="text-2xl font-semibold text-neutral-900 dark:text-neutral-100 mb-2">Payment Form</h2>
+              <p class="text-neutral-600 dark:text-neutral-400">Complete checkout form with billing, shipping, and payment information.</p>
+            </div>
+            <div class="flex items-center gap-3">
+              <button data-theme-toggle class="p-2 rounded-lg bg-neutral-100 dark:bg-neutral-800 hover:bg-neutral-200 dark:hover:bg-neutral-700 text-neutral-600 dark:text-neutral-400 transition-colors duration-normal" aria-label="Toggle theme">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path>
+                </svg>
+              </button>
+              <button id="copy-payment-btn" class="flex items-center gap-2 px-4 py-2 bg-neutral-100 dark:bg-neutral-800 hover:bg-neutral-200 dark:hover:bg-neutral-700 text-neutral-700 dark:text-neutral-300 rounded-lg text-sm font-medium transition-colors duration-normal">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
+                </svg>
+                Copy
+              </button>
+            </div>
+          </div>
+
+          <nav class="inline-flex bg-neutral-100 dark:bg-neutral-800 rounded-lg p-1 mb-6">
+            <button class="tab-button active px-4 py-2 rounded-md bg-white dark:bg-neutral-700 text-neutral-900 dark:text-neutral-100 font-medium text-sm shadow-sm transition-all duration-normal" data-tab="payment-preview">
+              Preview
+            </button>
+            <button class="tab-button px-4 py-2 rounded-md text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-100 font-medium text-sm transition-all duration-normal" data-tab="payment-html">
+              HTML
+            </button>
+          </nav>
+
+          <div id="payment-preview" class="tab-content bg-neutral-50 dark:bg-neutral-900 p-8 rounded-lg border border-neutral-200 dark:border-neutral-700">
+            <div class="max-w-4xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-8">
+              <!-- Checkout Form -->
+              <div class="lg:col-span-2">
+                <div class="bg-white dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700 rounded-lg shadow-sm p-6">
+                  <h3 class="text-xl font-semibold text-neutral-900 dark:text-neutral-100 mb-6">Checkout</h3>
+                  
+                  <!-- Contact Information -->
+                  <div class="mb-8">
+                    <h4 class="text-lg font-medium text-neutral-900 dark:text-neutral-100 mb-4">Contact Information</h4>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                      <div>
+                        <label class="block text-sm font-medium text-neutral-700 dark:text-neutral-300 mb-2">Email</label>
+                        <input type="email" class="w-full px-3 py-2 border border-neutral-300 dark:border-neutral-600 rounded-lg bg-white dark:bg-neutral-700 text-neutral-900 dark:text-neutral-100 focus:ring-2 focus:ring-primary-500 dark:focus:ring-primary-400 focus:border-transparent" placeholder="john@example.com">
+                      </div>
+                      <div>
+                        <label class="block text-sm font-medium text-neutral-700 dark:text-neutral-300 mb-2">Phone</label>
+                        <input type="tel" class="w-full px-3 py-2 border border-neutral-300 dark:border-neutral-600 rounded-lg bg-white dark:bg-neutral-700 text-neutral-900 dark:text-neutral-100 focus:ring-2 focus:ring-primary-500 dark:focus:ring-primary-400 focus:border-transparent" placeholder="+1 (555) 123-4567">
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Shipping Address -->
+                  <div class="mb-8">
+                    <h4 class="text-lg font-medium text-neutral-900 dark:text-neutral-100 mb-4">Shipping Address</h4>
+                    <div class="space-y-4">
+                      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div>
+                          <label class="block text-sm font-medium text-neutral-700 dark:text-neutral-300 mb-2">First Name</label>
+                          <input type="text" class="w-full px-3 py-2 border border-neutral-300 dark:border-neutral-600 rounded-lg bg-white dark:bg-neutral-700 text-neutral-900 dark:text-neutral-100 focus:ring-2 focus:ring-primary-500 dark:focus:ring-primary-400 focus:border-transparent" placeholder="John">
+                        </div>
+                        <div>
+                          <label class="block text-sm font-medium text-neutral-700 dark:text-neutral-300 mb-2">Last Name</label>
+                          <input type="text" class="w-full px-3 py-2 border border-neutral-300 dark:border-neutral-600 rounded-lg bg-white dark:bg-neutral-700 text-neutral-900 dark:text-neutral-100 focus:ring-2 focus:ring-primary-500 dark:focus:ring-primary-400 focus:border-transparent" placeholder="Doe">
+                        </div>
+                      </div>
+                      <div>
+                        <label class="block text-sm font-medium text-neutral-700 dark:text-neutral-300 mb-2">Address</label>
+                        <input type="text" class="w-full px-3 py-2 border border-neutral-300 dark:border-neutral-600 rounded-lg bg-white dark:bg-neutral-700 text-neutral-900 dark:text-neutral-100 focus:ring-2 focus:ring-primary-500 dark:focus:ring-primary-400 focus:border-transparent" placeholder="123 Main Street">
+                      </div>
+                      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                        <div>
+                          <label class="block text-sm font-medium text-neutral-700 dark:text-neutral-300 mb-2">City</label>
+                          <input type="text" class="w-full px-3 py-2 border border-neutral-300 dark:border-neutral-600 rounded-lg bg-white dark:bg-neutral-700 text-neutral-900 dark:text-neutral-100 focus:ring-2 focus:ring-primary-500 dark:focus:ring-primary-400 focus:border-transparent" placeholder="San Francisco">
+                        </div>
+                        <div>
+                          <label class="block text-sm font-medium text-neutral-700 dark:text-neutral-300 mb-2">State</label>
+                          <select class="w-full px-3 py-2 border border-neutral-300 dark:border-neutral-600 rounded-lg bg-white dark:bg-neutral-700 text-neutral-900 dark:text-neutral-100 focus:ring-2 focus:ring-primary-500 dark:focus:ring-primary-400 focus:border-transparent">
+                            <option>CA</option>
+                            <option>NY</option>
+                            <option>TX</option>
+                          </select>
+                        </div>
+                        <div>
+                          <label class="block text-sm font-medium text-neutral-700 dark:text-neutral-300 mb-2">ZIP Code</label>
+                          <input type="text" class="w-full px-3 py-2 border border-neutral-300 dark:border-neutral-600 rounded-lg bg-white dark:bg-neutral-700 text-neutral-900 dark:text-neutral-100 focus:ring-2 focus:ring-primary-500 dark:focus:ring-primary-400 focus:border-transparent" placeholder="94105">
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Payment Method -->
+                  <div class="mb-6">
+                    <h4 class="text-lg font-medium text-neutral-900 dark:text-neutral-100 mb-4">Payment Method</h4>
+                    <div class="space-y-4">
+                      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div>
+                          <label class="block text-sm font-medium text-neutral-700 dark:text-neutral-300 mb-2">Card Number</label>
+                          <input type="text" class="w-full px-3 py-2 border border-neutral-300 dark:border-neutral-600 rounded-lg bg-white dark:bg-neutral-700 text-neutral-900 dark:text-neutral-100 focus:ring-2 focus:ring-primary-500 dark:focus:ring-primary-400 focus:border-transparent" placeholder="1234 5678 9012 3456">
+                        </div>
+                        <div>
+                          <label class="block text-sm font-medium text-neutral-700 dark:text-neutral-300 mb-2">Cardholder Name</label>
+                          <input type="text" class="w-full px-3 py-2 border border-neutral-300 dark:border-neutral-600 rounded-lg bg-white dark:bg-neutral-700 text-neutral-900 dark:text-neutral-100 focus:ring-2 focus:ring-primary-500 dark:focus:ring-primary-400 focus:border-transparent" placeholder="John Doe">
+                        </div>
+                      </div>
+                      <div class="grid grid-cols-2 gap-4">
+                        <div>
+                          <label class="block text-sm font-medium text-neutral-700 dark:text-neutral-300 mb-2">Expiry Date</label>
+                          <input type="text" class="w-full px-3 py-2 border border-neutral-300 dark:border-neutral-600 rounded-lg bg-white dark:bg-neutral-700 text-neutral-900 dark:text-neutral-100 focus:ring-2 focus:ring-primary-500 dark:focus:ring-primary-400 focus:border-transparent" placeholder="MM/YY">
+                        </div>
+                        <div>
+                          <label class="block text-sm font-medium text-neutral-700 dark:text-neutral-300 mb-2">CVV</label>
+                          <input type="text" class="w-full px-3 py-2 border border-neutral-300 dark:border-neutral-600 rounded-lg bg-white dark:bg-neutral-700 text-neutral-900 dark:text-neutral-100 focus:ring-2 focus:ring-primary-500 dark:focus:ring-primary-400 focus:border-transparent" placeholder="123">
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Order Summary -->
+              <div class="lg:col-span-1">
+                <div class="bg-white dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700 rounded-lg shadow-sm p-6 sticky top-6">
+                  <h3 class="text-lg font-semibold text-neutral-900 dark:text-neutral-100 mb-4">Order Summary</h3>
+                  
+                  <!-- Order Items -->
+                  <div class="space-y-4 mb-6">
+                    <div class="flex items-center gap-3">
+                      <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=60&h=60&fit=crop&crop=center" alt="Product" class="w-15 h-15 rounded-lg object-cover">
+                      <div class="flex-1">
+                        <h4 class="font-medium text-neutral-900 dark:text-neutral-100">Wireless Headphones</h4>
+                        <p class="text-sm text-neutral-600 dark:text-neutral-400">Qty: 2</p>
+                      </div>
+                      <span class="font-medium text-neutral-900 dark:text-neutral-100">$199.98</span>
+                    </div>
+                    
+                    <div class="flex items-center gap-3">
+                      <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=60&h=60&fit=crop&crop=center" alt="Product" class="w-15 h-15 rounded-lg object-cover">
+                      <div class="flex-1">
+                        <h4 class="font-medium text-neutral-900 dark:text-neutral-100">Running Shoes</h4>
+                        <p class="text-sm text-neutral-600 dark:text-neutral-400">Qty: 1</p>
+                      </div>
+                      <span class="font-medium text-neutral-900 dark:text-neutral-100">$129.99</span>
+                    </div>
+                  </div>
+
+                  <!-- Price Breakdown -->
+                  <div class="border-t border-neutral-200 dark:border-neutral-700 pt-4 space-y-2">
+                    <div class="flex justify-between">
+                      <span class="text-neutral-600 dark:text-neutral-400">Subtotal</span>
+                      <span class="text-neutral-900 dark:text-neutral-100">$329.97</span>
+                    </div>
+                    <div class="flex justify-between">
+                      <span class="text-neutral-600 dark:text-neutral-400">Shipping</span>
+                      <span class="text-neutral-900 dark:text-neutral-100">$9.99</span>
+                    </div>
+                    <div class="flex justify-between">
+                      <span class="text-neutral-600 dark:text-neutral-400">Tax</span>
+                      <span class="text-neutral-900 dark:text-neutral-100">$27.20</span>
+                    </div>
+                    <div class="border-t border-neutral-200 dark:border-neutral-700 pt-2">
+                      <div class="flex justify-between text-lg font-semibold">
+                        <span class="text-neutral-900 dark:text-neutral-100">Total</span>
+                        <span class="text-neutral-900 dark:text-neutral-100">$367.16</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Complete Order Button -->
+                  <button class="w-full mt-6 bg-primary-500 hover:bg-primary-600 dark:bg-primary-600 dark:hover:bg-primary-700 text-white py-3 px-4 rounded-lg font-medium transition-colors duration-normal">
+                    Complete Order
+                  </button>
+
+                  <!-- Security Badge -->
+                  <div class="flex items-center justify-center gap-2 mt-4 text-sm text-neutral-600 dark:text-neutral-400">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path>
+                    </svg>
+                    Secure 256-bit SSL encryption
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div id="payment-html" class="tab-content hidden w-[768px]">
+            <div class="bg-neutral-900 dark:bg-neutral-950 rounded-lg overflow-hidden">
+              <div class="w-full">
+                <pre class="p-6 text-sm overflow-x-auto"><code class="language-html whitespace-pre break-words" style="word-break: break-all; max-width: 100%;">&lt;div class="max-w-4xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-8"&gt;
+  &lt;!-- Checkout Form --&gt;
+  &lt;div class="lg:col-span-2"&gt;
+    &lt;div class="bg-white dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700 rounded-lg shadow-sm p-6"&gt;
+      &lt;h3 class="text-xl font-semibold text-neutral-900 dark:text-neutral-100 mb-6"&gt;Checkout&lt;/h3&gt;
+      
+      &lt;!-- Contact Information --&gt;
+      &lt;div class="mb-8"&gt;
+        &lt;h4 class="text-lg font-medium text-neutral-900 dark:text-neutral-100 mb-4"&gt;Contact Information&lt;/h4&gt;
+        &lt;div class="grid grid-cols-1 md:grid-cols-2 gap-4"&gt;
+          &lt;div&gt;
+            &lt;label class="block text-sm font-medium text-neutral-700 dark:text-neutral-300 mb-2"&gt;Email&lt;/label&gt;
+            &lt;input type="email" class="w-full px-3 py-2 border border-neutral-300 dark:border-neutral-600 rounded-lg bg-white dark:bg-neutral-700 text-neutral-900 dark:text-neutral-100 focus:ring-2 focus:ring-primary-500 dark:focus:ring-primary-400 focus:border-transparent" placeholder="john@example.com"&gt;
+          &lt;/div&gt;
+          &lt;div&gt;
+            &lt;label class="block text-sm font-medium text-neutral-700 dark:text-neutral-300 mb-2"&gt;Phone&lt;/label&gt;
+            &lt;input type="tel" class="w-full px-3 py-2 border border-neutral-300 dark:border-neutral-600 rounded-lg bg-white dark:bg-neutral-700 text-neutral-900 dark:text-neutral-100 focus:ring-2 focus:ring-primary-500 dark:focus:ring-primary-400 focus:border-transparent" placeholder="+1 (555) 123-4567"&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+
+      &lt;!-- Shipping Address --&gt;
+      &lt;div class="mb-8"&gt;
+        &lt;h4 class="text-lg font-medium text-neutral-900 dark:text-neutral-100 mb-4"&gt;Shipping Address&lt;/h4&gt;
+        &lt;div class="space-y-4"&gt;
+          &lt;div class="grid grid-cols-1 md:grid-cols-2 gap-4"&gt;
+            &lt;div&gt;
+              &lt;label class="block text-sm font-medium text-neutral-700 dark:text-neutral-300 mb-2"&gt;First Name&lt;/label&gt;
+              &lt;input type="text" class="w-full px-3 py-2 border border-neutral-300 dark:border-neutral-600 rounded-lg bg-white dark:bg-neutral-700 text-neutral-900 dark:text-neutral-100 focus:ring-2 focus:ring-primary-500 dark:focus:ring-primary-400 focus:border-transparent" placeholder="John"&gt;
+            &lt;/div&gt;
+            &lt;div&gt;
+              &lt;label class="block text-sm font-medium text-neutral-700 dark:text-neutral-300 mb-2"&gt;Last Name&lt;/label&gt;
+              &lt;input type="text" class="w-full px-3 py-2 border border-neutral-300 dark:border-neutral-600 rounded-lg bg-white dark:bg-neutral-700 text-neutral-900 dark:text-neutral-100 focus:ring-2 focus:ring-primary-500 dark:focus:ring-primary-400 focus:border-transparent" placeholder="Doe"&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+          &lt;div&gt;
+            &lt;label class="block text-sm font-medium text-neutral-700 dark:text-neutral-300 mb-2"&gt;Address&lt;/label&gt;
+            &lt;input type="text" class="w-full px-3 py-2 border border-neutral-300 dark:border-neutral-600 rounded-lg bg-white dark:bg-neutral-700 text-neutral-900 dark:text-neutral-100 focus:ring-2 focus:ring-primary-500 dark:focus:ring-primary-400 focus:border-transparent" placeholder="123 Main Street"&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+
+      &lt;!-- Payment Method --&gt;
+      &lt;div class="mb-6"&gt;
+        &lt;h4 class="text-lg font-medium text-neutral-900 dark:text-neutral-100 mb-4"&gt;Payment Method&lt;/h4&gt;
+        &lt;div class="space-y-4"&gt;
+          &lt;div class="grid grid-cols-1 md:grid-cols-2 gap-4"&gt;
+            &lt;div&gt;
+              &lt;label class="block text-sm font-medium text-neutral-700 dark:text-neutral-300 mb-2"&gt;Card Number&lt;/label&gt;
+              &lt;input type="text" class="w-full px-3 py-2 border border-neutral-300 dark:border-neutral-600 rounded-lg bg-white dark:bg-neutral-700 text-neutral-900 dark:text-neutral-100 focus:ring-2 focus:ring-primary-500 dark:focus:ring-primary-400 focus:border-transparent" placeholder="1234 5678 9012 3456"&gt;
+            &lt;/div&gt;
+            &lt;div&gt;
+              &lt;label class="block text-sm font-medium text-neutral-700 dark:text-neutral-300 mb-2"&gt;Cardholder Name&lt;/label&gt;
+              &lt;input type="text" class="w-full px-3 py-2 border border-neutral-300 dark:border-neutral-600 rounded-lg bg-white dark:bg-neutral-700 text-neutral-900 dark:text-neutral-100 focus:ring-2 focus:ring-primary-500 dark:focus:ring-primary-400 focus:border-transparent" placeholder="John Doe"&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;!-- Order Summary --&gt;
+  &lt;div class="lg:col-span-1"&gt;
+    &lt;div class="bg-white dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700 rounded-lg shadow-sm p-6 sticky top-6"&gt;
+      &lt;h3 class="text-lg font-semibold text-neutral-900 dark:text-neutral-100 mb-4"&gt;Order Summary&lt;/h3&gt;
+      
+      &lt;!-- Order Items --&gt;
+      &lt;div class="space-y-4 mb-6"&gt;
+        &lt;div class="flex items-center gap-3"&gt;
+          &lt;img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=60&amp;h=60&amp;fit=crop&amp;crop=center" alt="Product" class="w-15 h-15 rounded-lg object-cover"&gt;
+          &lt;div class="flex-1"&gt;
+            &lt;h4 class="font-medium text-neutral-900 dark:text-neutral-100"&gt;Wireless Headphones&lt;/h4&gt;
+            &lt;p class="text-sm text-neutral-600 dark:text-neutral-400"&gt;Qty: 2&lt;/p&gt;
+          &lt;/div&gt;
+          &lt;span class="font-medium text-neutral-900 dark:text-neutral-100"&gt;$199.98&lt;/span&gt;
+        &lt;/div&gt;
+        
+        &lt;div class="flex items-center gap-3"&gt;
+          &lt;img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=60&amp;h=60&amp;fit=crop&amp;crop=center" alt="Product" class="w-15 h-15 rounded-lg object-cover"&gt;
+          &lt;div class="flex-1"&gt;
+            &lt;h4 class="font-medium text-neutral-900 dark:text-neutral-100"&gt;Running Shoes&lt;/h4&gt;
+            &lt;p class="text-sm text-neutral-600 dark:text-neutral-400"&gt;Qty: 1&lt;/p&gt;
+          &lt;/div&gt;
+          &lt;span class="font-medium text-neutral-900 dark:text-neutral-100"&gt;$129.99&lt;/span&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+
+      &lt;!-- Price Breakdown --&gt;
+      &lt;div class="border-t border-neutral-200 dark:border-neutral-700 pt-4 space-y-2"&gt;
+        &lt;div class="flex justify-between"&gt;
+          &lt;span class="text-neutral-600 dark:text-neutral-400"&gt;Subtotal&lt;/span&gt;
+          &lt;span class="text-neutral-900 dark:text-neutral-100"&gt;$329.97&lt;/span&gt;
+        &lt;/div&gt;
+        &lt;div class="flex justify-between"&gt;
+          &lt;span class="text-neutral-600 dark:text-neutral-400"&gt;Shipping&lt;/span&gt;
+          &lt;span class="text-neutral-900 dark:text-neutral-100"&gt;$9.99&lt;/span&gt;
+        &lt;/div&gt;
+        &lt;div class="flex justify-between"&gt;
+          &lt;span class="text-neutral-600 dark:text-neutral-400"&gt;Tax&lt;/span&gt;
+          &lt;span class="text-neutral-900 dark:text-neutral-100"&gt;$27.20&lt;/span&gt;
+        &lt;/div&gt;
+        &lt;div class="border-t border-neutral-200 dark:border-neutral-700 pt-2"&gt;
+          &lt;div class="flex justify-between text-lg font-semibold"&gt;
+            &lt;span class="text-neutral-900 dark:text-neutral-100"&gt;Total&lt;/span&gt;
+            &lt;span class="text-neutral-900 dark:text-neutral-100"&gt;$367.16&lt;/span&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+
+      &lt;!-- Complete Order Button --&gt;
+      &lt;button class="w-full mt-6 bg-primary-500 hover:bg-primary-600 dark:bg-primary-600 dark:hover:bg-primary-700 text-white py-3 px-4 rounded-lg font-medium transition-colors duration-normal"&gt;
+        Complete Order
+      &lt;/button&gt;
+
+      &lt;!-- Security Badge --&gt;
+      &lt;div class="flex items-center justify-center gap-2 mt-4 text-sm text-neutral-600 dark:text-neutral-400"&gt;
+        &lt;svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"&gt;
+          &lt;path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"&gt;&lt;/path&gt;
+        &lt;/svg&gt;
+        Secure 256-bit SSL encryption
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Usage Guidelines -->
+        <div class="bg-white dark:bg-neutral-950 border border-neutral-900 dark:border-neutral-100 rounded-lg p-4 mb-8">
+          <h3 class="text-sm font-medium text-neutral-900 dark:text-neutral-100 mb-2">Usage Guidelines</h3>
+          <ul class="text-sm text-neutral-900 dark:text-neutral-100 space-y-1">
+            <li>• Use clear step-by-step form organization for easy completion</li>
+            <li>• Display order summary prominently with itemized breakdown</li>
+            <li>• Include security badges and SSL indicators for trust</li>
+            <li>• Provide real-time validation for form fields</li>
+            <li>• Show total costs including taxes and shipping upfront</li>
+            <li>• Use sticky positioning for order summary on scroll</li>
+          </ul>
+        </div>
+
+        <!-- Accessibility Features -->
+        <div class="bg-white dark:bg-neutral-950 border border-neutral-900 dark:border-neutral-100 rounded-lg p-4">
+          <h3 class="text-sm font-medium text-neutral-900 dark:text-neutral-100 mb-2">Accessibility Features</h3>
+          <ul class="text-sm text-neutral-900 dark:text-neutral-100 space-y-1">
+            <li>• Proper form labels and input associations</li>
+            <li>• Keyboard navigation through all form fields</li>
+            <li>• Clear error messaging and validation feedback</li>
+            <li>• Screen reader-friendly price announcements</li>
+            <li>• High contrast focus indicators on inputs</li>
+            <li>• Semantic HTML structure for form organization</li>
+          </ul>
+        </div>
+      </main>
+
+      <!-- Footer Container (Injected) -->
+      <div id="footer-container"></div>
+    </div>
+  </div>
+
+  <!-- JavaScript -->
+  <script type="module">
+    import { generateHeader, generateSidebar, generateFooter, initializeSharedComponents } from '/src/shared/components.js';
+    import { themeManager } from '/src/shared/theme.js';
+    import { toast } from '/src/shared/toast.js';
+
+    document.addEventListener('DOMContentLoaded', function() {
+      // Inject shared components
+      document.getElementById('header-container').innerHTML = generateHeader('blocks');
+      document.getElementById('sidebar-container').innerHTML = generateSidebar('checkout');
+      document.getElementById('footer-container').innerHTML = generateFooter();
+      
+      // Initialize shared functionality
+      initializeSharedComponents();
+      themeManager.initializeToggleButtons();
+      
+      // Tab switching functionality
+      function setupTabs() {
+        const tabButtons = document.querySelectorAll('.tab-button');
+        const tabContents = document.querySelectorAll('.tab-content');
+        
+        tabButtons.forEach(button => {
+          button.addEventListener('click', () => {
+            const targetTab = button.getAttribute('data-tab');
+            const section = button.closest('section');
+            
+            // Update button states within the section
+            section.querySelectorAll('.tab-button').forEach(btn => {
+              btn.classList.remove('active', 'bg-white', 'dark:bg-neutral-700', 'text-neutral-900', 'dark:text-neutral-100', 'shadow-sm');
+              btn.classList.add('text-neutral-600', 'dark:text-neutral-400');
+            });
+            
+            button.classList.add('active', 'bg-white', 'dark:bg-neutral-700', 'text-neutral-900', 'dark:text-neutral-100', 'shadow-sm');
+            button.classList.remove('text-neutral-600', 'dark:text-neutral-400');
+            
+            // Update content within the section
+            section.querySelectorAll('.tab-content').forEach(content => {
+              content.classList.add('hidden');
+            });
+            
+            const targetContent = section.querySelector(`#${targetTab}`);
+            if (targetContent) {
+              targetContent.classList.remove('hidden');
+            }
+          });
+        });
+      }
+      
+      // Copy button functionality
+      function setupCopyButtons() {
+        const copyButtons = [
+          { id: 'copy-payment-btn', contentId: 'payment-html' }
+        ];
+        
+        copyButtons.forEach(({ id, contentId }) => {
+          const button = document.getElementById(id);
+          if (button) {
+            button.addEventListener('click', async () => {
+              const content = document.getElementById(contentId);
+              if (content) {
+                const codeElement = content.querySelector('code');
+                if (codeElement) {
+                  try {
+                    await navigator.clipboard.writeText(codeElement.textContent);
+                    toast.show('Code copied to clipboard!', 'success');
+                  } catch (err) {
+                    toast.show('Failed to copy code', 'error');
+                  }
+                }
+              }
+            });
+          }
+        });
+      }
+      
+      setupTabs();
+      setupCopyButtons();
+    });
+  </script>
+</body>
+</html> 

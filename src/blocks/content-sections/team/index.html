@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Team - UI11 Design System</title>
+  <link href="/src/style.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-markup.min.js"></script>
+</head>
+<body class="min-h-screen bg-white dark:bg-neutral-950">
+  <div class="flex min-h-screen">
+    <div id="sidebar-container"></div>
+    <div class="flex-1 flex flex-col ml-64 mt-16">
+      <div id="header-container"></div>
+      <main class="flex-1 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <!-- Page Header -->
+        <div class="mb-12">
+          <h1 class="text-4xl font-semibold text-neutral-900 dark:text-neutral-100 mb-4">Team</h1>
+          <p class="text-lg text-neutral-600 dark:text-neutral-400 mb-6 max-w-3xl leading-relaxed">
+            Team member showcases, leadership profiles, and company culture displays for building trust and highlighting the people behind your organization.
+          </p>
+        </div>
+
+        <!-- Team Grid -->
+        <section id="team-grid" class="mb-16">
+          <div class="mb-8">
+            <div class="flex items-center justify-between mb-6">
+              <div>
+                <h2 class="text-2xl font-semibold text-neutral-900 dark:text-neutral-100 mb-2">Team Grid</h2>
+                <p class="text-neutral-600 dark:text-neutral-400">Team member cards with photos, roles, and social links in a clean grid layout.</p>
+              </div>
+              <button id="copy-grid-btn" class="flex items-center gap-2 px-4 py-2 bg-neutral-100 dark:bg-neutral-800 hover:bg-neutral-200 dark:hover:bg-neutral-700 text-neutral-700 dark:text-neutral-300 rounded-lg text-sm font-medium transition-colors">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
+                </svg>
+                Copy
+              </button>
+            </div>
+          </div>
+
+          <div class="mb-6">
+            <nav class="inline-flex bg-neutral-100 dark:bg-neutral-800 rounded-lg p-1">
+              <button class="tab-button active px-4 py-2 rounded-md bg-white dark:bg-neutral-700 text-neutral-900 dark:text-neutral-100 font-medium text-sm shadow-sm transition-all" data-tab="grid-preview">
+                Preview
+              </button>
+              <button class="tab-button px-4 py-2 rounded-md text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-100 font-medium text-sm transition-all" data-tab="grid-html">
+                HTML
+              </button>
+            </nav>
+          </div>
+
+          <div id="grid-preview" class="tab-content">
+            <div class="bg-neutral-50 dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-700 rounded-lg overflow-hidden">
+              <div class="bg-white dark:bg-neutral-950 py-16">
+                <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                  <div class="text-center mb-16">
+                    <h2 class="text-3xl font-bold text-neutral-900 dark:text-neutral-100 mb-4">Meet Our Team</h2>
+                    <p class="text-lg text-neutral-600 dark:text-neutral-400 max-w-2xl mx-auto">
+                      We're a diverse group of talented individuals working together to create amazing experiences.
+                    </p>
+                  </div>
+
+                  <div class="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+                    <!-- Team Member 1 -->
+                    <div class="text-center group">
+                      <div class="relative mb-4">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="Michael Chen" class="w-24 h-24 rounded-full mx-auto object-cover group-hover:scale-105 transition-transform duration-300">
+                        <div class="absolute inset-0 rounded-full bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                      </div>
+                      <h3 class="text-lg font-semibold text-neutral-900 dark:text-neutral-100 mb-1">Michael Chen</h3>
+                      <p class="text-neutral-600 dark:text-neutral-400 text-sm mb-3">CEO & Founder</p>
+                      <div class="flex justify-center space-x-3">
+                        <a href="#" class="text-neutral-400 dark:text-neutral-500 hover:text-primary-500 dark:hover:text-primary-400 transition-colors">
+                          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M16.338 16.338H13.67V12.16c0-.995-.017-2.277-1.387-2.277-1.39 0-1.601 1.086-1.601 2.207v4.248H8.014v-8.59h2.559v1.174h.037c.356-.675 1.227-1.387 2.526-1.387 2.703 0 3.203 1.778 3.203 4.092v4.711zM5.005 6.575a1.548 1.548 0 11-.003-3.096 1.548 1.548 0 01.003 3.096zm-1.337 9.763H6.34v-8.59H3.667v8.59zM17.668 1H2.328C1.595 1 1 1.581 1 2.298v15.403C1 18.418 1.595 19 2.328 19h15.34c.734 0 1.332-.582 1.332-1.299V2.298C19 1.581 18.402 1 17.668 1z" clip-rule="evenodd"/>
+                          </svg>
+                        </a>
+                        <a href="#" class="text-neutral-400 dark:text-neutral-500 hover:text-primary-500 dark:hover:text-primary-400 transition-colors">
+                          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M6.29 18.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0020 3.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.073 4.073 0 01.8 7.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 010 16.407a11.616 11.616 0 006.29 1.84"/>
+                          </svg>
+                        </a>
+                      </div>
+                    </div>
+
+                    <!-- Team Member 2 -->
+                    <div class="text-center group">
+                      <div class="relative mb-4">
+                        <img src="https://images.unsplash.com/photo-1494790108755-2616b612e1c1?ixlib=rb-4.0.3&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="Sarah Johnson" class="w-24 h-24 rounded-full mx-auto object-cover group-hover:scale-105 transition-transform duration-300">
+                        <div class="absolute inset-0 rounded-full bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                      </div>
+                      <h3 class="text-lg font-semibold text-neutral-900 dark:text-neutral-100 mb-1">Sarah Johnson</h3>
+                      <p class="text-neutral-600 dark:text-neutral-400 text-sm mb-3">Head of Design</p>
+                      <div class="flex justify-center space-x-3">
+                        <a href="#" class="text-neutral-400 dark:text-neutral-500 hover:text-primary-500 dark:hover:text-primary-400 transition-colors">
+                          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M16.338 16.338H13.67V12.16c0-.995-.017-2.277-1.387-2.277-1.39 0-1.601 1.086-1.601 2.207v4.248H8.014v-8.59h2.559v1.174h.037c.356-.675 1.227-1.387 2.526-1.387 2.703 0 3.203 1.778 3.203 4.092v4.711zM5.005 6.575a1.548 1.548 0 11-.003-3.096 1.548 1.548 0 01.003 3.096zm-1.337 9.763H6.34v-8.59H3.667v8.59zM17.668 1H2.328C1.595 1 1 1.581 1 2.298v15.403C1 18.418 1.595 19 2.328 19h15.34c.734 0 1.332-.582 1.332-1.299V2.298C19 1.581 18.402 1 17.668 1z" clip-rule="evenodd"/>
+                          </svg>
+                        </a>
+                        <a href="#" class="text-neutral-400 dark:text-neutral-500 hover:text-primary-500 dark:hover:text-primary-400 transition-colors">
+                          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M12.586 4.586a2 2 0 112.828 2.828l-3 3a2 2 0 01-2.828 0 1 1 0 00-1.414 1.414 4 4 0 005.656 0l3-3a4 4 0 00-5.656-5.656l-1.5 1.5a1 1 0 101.414 1.414l1.5-1.5zm-5 5a2 2 0 012.828 0 1 1 0 101.414-1.414 4 4 0 00-5.656 0l-3 3a4 4 0 105.656 5.656l1.5-1.5a1 1 0 10-1.414-1.414l-1.5 1.5a2 2 0 11-2.828-2.828l3-3z" clip-rule="evenodd"/>
+                          </svg>
+                        </a>
+                      </div>
+                    </div>
+
+                    <!-- Team Member 3 -->
+                    <div class="text-center group">
+                      <div class="relative mb-4">
+                        <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="David Rodriguez" class="w-24 h-24 rounded-full mx-auto object-cover group-hover:scale-105 transition-transform duration-300">
+                        <div class="absolute inset-0 rounded-full bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                      </div>
+                      <h3 class="text-lg font-semibold text-neutral-900 dark:text-neutral-100 mb-1">David Rodriguez</h3>
+                      <p class="text-neutral-600 dark:text-neutral-400 text-sm mb-3">Lead Developer</p>
+                      <div class="flex justify-center space-x-3">
+                        <a href="#" class="text-neutral-400 dark:text-neutral-500 hover:text-primary-500 dark:hover:text-primary-400 transition-colors">
+                          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M10 0C4.477 0 0 4.484 0 10.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0110 4.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.203 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.942.359.31.678.921.678 1.856 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0020 10.017C20 4.484 15.522 0 10 0z" clip-rule="evenodd"/>
+                          </svg>
+                        </a>
+                        <a href="#" class="text-neutral-400 dark:text-neutral-500 hover:text-primary-500 dark:hover:text-primary-400 transition-colors">
+                          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M16.338 16.338H13.67V12.16c0-.995-.017-2.277-1.387-2.277-1.39 0-1.601 1.086-1.601 2.207v4.248H8.014v-8.59h2.559v1.174h.037c.356-.675 1.227-1.387 2.526-1.387 2.703 0 3.203 1.778 3.203 4.092v4.711zM5.005 6.575a1.548 1.548 0 11-.003-3.096 1.548 1.548 0 01.003 3.096zm-1.337 9.763H6.34v-8.59H3.667v8.59zM17.668 1H2.328C1.595 1 1 1.581 1 2.298v15.403C1 18.418 1.595 19 2.328 19h15.34c.734 0 1.332-.582 1.332-1.299V2.298C19 1.581 18.402 1 17.668 1z" clip-rule="evenodd"/>
+                          </svg>
+                        </a>
+                      </div>
+                    </div>
+
+                    <!-- Team Member 4 -->
+                    <div class="text-center group">
+                      <div class="relative mb-4">
+                        <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="Emma Wilson" class="w-24 h-24 rounded-full mx-auto object-cover group-hover:scale-105 transition-transform duration-300">
+                        <div class="absolute inset-0 rounded-full bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                      </div>
+                      <h3 class="text-lg font-semibold text-neutral-900 dark:text-neutral-100 mb-1">Emma Wilson</h3>
+                      <p class="text-neutral-600 dark:text-neutral-400 text-sm mb-3">Product Manager</p>
+                      <div class="flex justify-center space-x-3">
+                        <a href="#" class="text-neutral-400 dark:text-neutral-500 hover:text-primary-500 dark:hover:text-primary-400 transition-colors">
+                          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M16.338 16.338H13.67V12.16c0-.995-.017-2.277-1.387-2.277-1.39 0-1.601 1.086-1.601 2.207v4.248H8.014v-8.59h2.559v1.174h.037c.356-.675 1.227-1.387 2.526-1.387 2.703 0 3.203 1.778 3.203 4.092v4.711zM5.005 6.575a1.548 1.548 0 11-.003-3.096 1.548 1.548 0 01.003 3.096zm-1.337 9.763H6.34v-8.59H3.667v8.59zM17.668 1H2.328C1.595 1 1 1.581 1 2.298v15.403C1 18.418 1.595 19 2.328 19h15.34c.734 0 1.332-.582 1.332-1.299V2.298C19 1.581 18.402 1 17.668 1z" clip-rule="evenodd"/>
+                          </svg>
+                        </a>
+                        <a href="#" class="text-neutral-400 dark:text-neutral-500 hover:text-primary-500 dark:hover:text-primary-400 transition-colors">
+                          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M6.29 18.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0020 3.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.073 4.073 0 01.8 7.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 010 16.407a11.616 11.616 0 006.29 1.84"/>
+                          </svg>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div id="grid-html" class="tab-content hidden w-[768px]">
+            <div class="bg-neutral-900 dark:bg-neutral-950 rounded-lg overflow-hidden">
+              <pre class="p-6 text-sm overflow-x-auto"><code class="language-html">&lt;div class="bg-white dark:bg-neutral-950 py-16"&gt;
+  &lt;div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8"&gt;
+    &lt;div class="text-center mb-16"&gt;
+      &lt;h2 class="text-3xl font-bold text-neutral-900 dark:text-neutral-100 mb-4"&gt;
+        Meet Our Team
+      &lt;/h2&gt;
+      &lt;p class="text-lg text-neutral-600 dark:text-neutral-400 max-w-2xl mx-auto"&gt;
+        We're a diverse group of talented individuals working together to create amazing experiences.
+      &lt;/p&gt;
+    &lt;/div&gt;
+
+    &lt;div class="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8"&gt;
+      &lt;div class="text-center group"&gt;
+        &lt;div class="relative mb-4"&gt;
+          &lt;img src="..." alt="Team Member" class="w-24 h-24 rounded-full mx-auto object-cover group-hover:scale-105 transition-transform duration-300"&gt;
+        &lt;/div&gt;
+        &lt;h3 class="text-lg font-semibold text-neutral-900 dark:text-neutral-100 mb-1"&gt;Michael Chen&lt;/h3&gt;
+        &lt;p class="text-neutral-600 dark:text-neutral-400 text-sm mb-3"&gt;CEO &amp; Founder&lt;/p&gt;
+        &lt;div class="flex justify-center space-x-3"&gt;
+          &lt;a href="#" class="text-neutral-400 hover:text-primary-500 transition-colors"&gt;
+            &lt;!-- Social icons --&gt;
+          &lt;/a&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;!-- More team members... --&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+            </div>
+          </div>
+        </section>
+
+        <!-- Leadership Team -->
+        <section id="leadership-team" class="mb-16">
+          <div class="mb-8">
+            <div class="flex items-center justify-between mb-6">
+              <div>
+                <h2 class="text-2xl font-semibold text-neutral-900 dark:text-neutral-100 mb-2">Leadership Team</h2>
+                <p class="text-neutral-600 dark:text-neutral-400">Executive team showcase with detailed profiles and accomplishments.</p>
+              </div>
+              <button id="copy-leadership-btn" class="flex items-center gap-2 px-4 py-2 bg-neutral-100 dark:bg-neutral-800 hover:bg-neutral-200 dark:hover:bg-neutral-700 text-neutral-700 dark:text-neutral-300 rounded-lg text-sm font-medium transition-colors">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
+                </svg>
+                Copy
+              </button>
+            </div>
+          </div>
+
+          <div class="mb-6">
+            <nav class="inline-flex bg-neutral-100 dark:bg-neutral-800 rounded-lg p-1">
+              <button class="tab-button active px-4 py-2 rounded-md bg-white dark:bg-neutral-700 text-neutral-900 dark:text-neutral-100 font-medium text-sm shadow-sm transition-all" data-tab="leadership-preview">
+                Preview
+              </button>
+              <button class="tab-button px-4 py-2 rounded-md text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-100 font-medium text-sm transition-all" data-tab="leadership-html">
+                HTML
+              </button>
+            </nav>
+          </div>
+
+          <div id="leadership-preview" class="tab-content">
+            <div class="bg-neutral-50 dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-700 rounded-lg overflow-hidden">
+              <div class="bg-white dark:bg-neutral-950 py-16">
+                <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                  <div class="text-center mb-16">
+                    <h2 class="text-3xl font-bold text-neutral-900 dark:text-neutral-100 mb-4">Our Leadership</h2>
+                    <p class="text-lg text-neutral-600 dark:text-neutral-400 max-w-2xl mx-auto">
+                      Meet the visionary leaders driving our company forward with passion and expertise.
+                    </p>
+                  </div>
+
+                  <div class="space-y-12">
+                    <!-- Leader 1 -->
+                    <div class="flex flex-col lg:flex-row items-center lg:items-start gap-8">
+                      <div class="flex-shrink-0">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="Michael Chen" class="w-32 h-32 rounded-2xl object-cover">
+                      </div>
+                      <div class="flex-1 text-center lg:text-left">
+                        <h3 class="text-2xl font-bold text-neutral-900 dark:text-neutral-100 mb-2">Michael Chen</h3>
+                        <p class="text-primary-500 dark:text-primary-400 font-medium mb-4">Chief Executive Officer</p>
+                        <p class="text-neutral-600 dark:text-neutral-400 mb-6 leading-relaxed">
+                          With over 15 years of experience in technology and business strategy, Michael founded the company with a vision to revolutionize digital experiences. He previously served as VP of Product at TechCorp and holds an MBA from Stanford.
+                        </p>
+                        <div class="flex justify-center lg:justify-start space-x-4">
+                          <a href="#" class="text-neutral-400 dark:text-neutral-500 hover:text-primary-500 dark:hover:text-primary-400 transition-colors">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
+                              <path fill-rule="evenodd" d="M16.338 16.338H13.67V12.16c0-.995-.017-2.277-1.387-2.277-1.39 0-1.601 1.086-1.601 2.207v4.248H8.014v-8.59h2.559v1.174h.037c.356-.675 1.227-1.387 2.526-1.387 2.703 0 3.203 1.778 3.203 4.092v4.711zM5.005 6.575a1.548 1.548 0 11-.003-3.096 1.548 1.548 0 01.003 3.096zm-1.337 9.763H6.34v-8.59H3.667v8.59zM17.668 1H2.328C1.595 1 1 1.581 1 2.298v15.403C1 18.418 1.595 19 2.328 19h15.34c.734 0 1.332-.582 1.332-1.299V2.298C19 1.581 18.402 1 17.668 1z" clip-rule="evenodd"/>
+                            </svg>
+                          </a>
+                          <a href="#" class="text-neutral-400 dark:text-neutral-500 hover:text-primary-500 dark:hover:text-primary-400 transition-colors">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
+                              <path d="M6.29 18.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0020 3.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.073 4.073 0 01.8 7.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 010 16.407a11.616 11.616 0 006.29 1.84"/>
+                            </svg>
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- Leader 2 -->
+                    <div class="flex flex-col lg:flex-row-reverse items-center lg:items-start gap-8">
+                      <div class="flex-shrink-0">
+                        <img src="https://images.unsplash.com/photo-1494790108755-2616b612e1c1?ixlib=rb-4.0.3&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="Sarah Johnson" class="w-32 h-32 rounded-2xl object-cover">
+                      </div>
+                      <div class="flex-1 text-center lg:text-right">
+                        <h3 class="text-2xl font-bold text-neutral-900 dark:text-neutral-100 mb-2">Sarah Johnson</h3>
+                        <p class="text-primary-500 dark:text-primary-400 font-medium mb-4">Chief Technology Officer</p>
+                        <p class="text-neutral-600 dark:text-neutral-400 mb-6 leading-relaxed">
+                          Sarah brings deep technical expertise and innovation to our engineering team. With a background in distributed systems and AI, she previously led engineering teams at Google and holds a PhD in Computer Science from MIT.
+                        </p>
+                        <div class="flex justify-center lg:justify-end space-x-4">
+                          <a href="#" class="text-neutral-400 dark:text-neutral-500 hover:text-primary-500 dark:hover:text-primary-400 transition-colors">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
+                              <path fill-rule="evenodd" d="M10 0C4.477 0 0 4.484 0 10.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0110 4.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.203 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.942.359.31.678.921.678 1.856 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0020 10.017C20 4.484 15.522 0 10 0z" clip-rule="evenodd"/>
+                            </svg>
+                          </a>
+                          <a href="#" class="text-neutral-400 dark:text-neutral-500 hover:text-primary-500 dark:hover:text-primary-400 transition-colors">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
+                              <path fill-rule="evenodd" d="M16.338 16.338H13.67V12.16c0-.995-.017-2.277-1.387-2.277-1.39 0-1.601 1.086-1.601 2.207v4.248H8.014v-8.59h2.559v1.174h.037c.356-.675 1.227-1.387 2.526-1.387 2.703 0 3.203 1.778 3.203 4.092v4.711zM5.005 6.575a1.548 1.548 0 11-.003-3.096 1.548 1.548 0 01.003 3.096zm-1.337 9.763H6.34v-8.59H3.667v8.59zM17.668 1H2.328C1.595 1 1 1.581 1 2.298v15.403C1 18.418 1.595 19 2.328 19h15.34c.734 0 1.332-.582 1.332-1.299V2.298C19 1.581 18.402 1 17.668 1z" clip-rule="evenodd"/>
+                            </svg>
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div id="leadership-html" class="tab-content hidden w-[768px]">
+            <div class="bg-neutral-900 dark:bg-neutral-950 rounded-lg overflow-hidden">
+              <pre class="p-6 text-sm overflow-x-auto"><code class="language-html">&lt;div class="bg-white dark:bg-neutral-950 py-16"&gt;
+  &lt;div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8"&gt;
+    &lt;div class="text-center mb-16"&gt;
+      &lt;h2 class="text-3xl font-bold text-neutral-900 dark:text-neutral-100 mb-4"&gt;
+        Our Leadership
+      &lt;/h2&gt;
+      &lt;p class="text-lg text-neutral-600 dark:text-neutral-400 max-w-2xl mx-auto"&gt;
+        Meet the visionary leaders driving our company forward.
+      &lt;/p&gt;
+    &lt;/div&gt;
+
+    &lt;div class="space-y-12"&gt;
+      &lt;div class="flex flex-col lg:flex-row items-center lg:items-start gap-8"&gt;
+        &lt;div class="flex-shrink-0"&gt;
+          &lt;img src="..." alt="Leader" class="w-32 h-32 rounded-2xl object-cover"&gt;
+        &lt;/div&gt;
+        &lt;div class="flex-1 text-center lg:text-left"&gt;
+          &lt;h3 class="text-2xl font-bold text-neutral-900 dark:text-neutral-100 mb-2"&gt;Michael Chen&lt;/h3&gt;
+          &lt;p class="text-primary-500 font-medium mb-4"&gt;Chief Executive Officer&lt;/p&gt;
+          &lt;p class="text-neutral-600 dark:text-neutral-400 mb-6"&gt;
+            Leadership bio and experience details...
+          &lt;/p&gt;
+          &lt;div class="flex justify-center lg:justify-start space-x-4"&gt;
+            &lt;!-- Social links --&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+            </div>
+          </div>
+        </section>
+
+        <!-- Usage Guidelines -->
+        <div class="bg-white dark:bg-neutral-950 border border-neutral-900 dark:border-neutral-100 rounded-lg p-4 mb-8">
+          <h3 class="text-sm font-medium text-neutral-900 dark:text-neutral-100 mb-2">Usage Guidelines</h3>
+          <ul class="text-sm text-neutral-900 dark:text-neutral-100 space-y-1">
+            <li>• Use high-quality, professional headshots for consistency</li>
+            <li>• Include relevant social media and professional links</li>
+            <li>• Keep role descriptions concise but descriptive</li>
+            <li>• Maintain consistent photo dimensions and styling</li>
+            <li>• Consider diversity and inclusion in team representation</li>
+          </ul>
+        </div>
+
+        <!-- Accessibility Features -->
+        <div class="bg-white dark:bg-neutral-950 border border-neutral-900 dark:border-neutral-100 rounded-lg p-4">
+          <h3 class="text-sm font-medium text-neutral-900 dark:text-neutral-100 mb-2">Accessibility Features</h3>
+          <ul class="text-sm text-neutral-900 dark:text-neutral-100 space-y-1">
+            <li>• Alt text for all team member photos</li>
+            <li>• Proper heading hierarchy for screen readers</li>
+            <li>• Keyboard navigation for interactive elements</li>
+            <li>• High contrast text and background colors</li>
+            <li>• Semantic markup for team member information</li>
+          </ul>
+        </div>
+      </main>
+      <div id="footer-container"></div>
+    </div>
+  </div>
+
+  <script type="module">
+    import { generateHeader, generateSidebar, generateFooter, initializeSharedComponents } from '/src/shared/components.js';
+    import { themeManager } from '/src/shared/theme.js';
+    import { toast } from '/src/shared/toast.js';
+
+    document.addEventListener('DOMContentLoaded', function() {
+      // Inject shared components
+      document.getElementById('header-container').innerHTML = generateHeader('blocks');
+      document.getElementById('sidebar-container').innerHTML = generateSidebar('team');
+      document.getElementById('footer-container').innerHTML = generateFooter();
+      
+      // Initialize shared functionality
+      initializeSharedComponents();
+      themeManager.initializeToggleButtons();
+      
+      // Initialize tab switching
+      initializeTabs();
+      
+      // Initialize copy buttons
+      initializeCopyButtons();
+    });
+
+    function initializeCopyButtons() {
+      document.getElementById('copy-grid-btn')?.addEventListener('click', () => {
+        const code = document.querySelector('#grid-html code').textContent;
+        navigator.clipboard.writeText(code).then(() => {
+          toast.show('Team grid code copied!', 'success');
+        });
+      });
+
+      document.getElementById('copy-leadership-btn')?.addEventListener('click', () => {
+        const code = document.querySelector('#leadership-html code').textContent;
+        navigator.clipboard.writeText(code).then(() => {
+          toast.show('Leadership team code copied!', 'success');
+        });
+      });
+    }
+
+    function initializeTabs() {
+      const tabButtons = document.querySelectorAll('.tab-button');
+
+      tabButtons.forEach(button => {
+        button.addEventListener('click', () => {
+          const targetTab = button.getAttribute('data-tab');
+          const section = button.closest('section');
+          
+          // Update active states within the section
+          section.querySelectorAll('.tab-button').forEach(btn => {
+            btn.classList.remove('active', 'bg-white', 'dark:bg-neutral-700', 'text-neutral-900', 'dark:text-neutral-100', 'shadow-sm');
+            btn.classList.add('text-neutral-600', 'dark:text-neutral-400');
+          });
+          
+          button.classList.add('active', 'bg-white', 'dark:bg-neutral-700', 'text-neutral-900', 'dark:text-neutral-100', 'shadow-sm');
+          button.classList.remove('text-neutral-600', 'dark:text-neutral-400');
+          
+          // Show/hide content within the section
+          section.querySelectorAll('.tab-content').forEach(content => {
+            content.classList.add('hidden');
+          });
+          
+          const targetContent = section.querySelector(`#${targetTab}`);
+          if (targetContent) {
+            targetContent.classList.remove('hidden');
+          }
+        });
+      });
+    }
+  </script>
+</body>
+</html> 

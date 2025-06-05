@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Review - E-commerce Blocks - UI11 Design System</title>
+  <meta name="description" content="Review and rating components with different layouts and functionality options for e-commerce applications and feedback systems.">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Prism.js for Syntax Highlighting -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</head>
+<body class="min-h-screen bg-white dark:bg-neutral-950 text-neutral-900 dark:text-neutral-100">
+  <!-- Page Layout Container -->
+  <div class="flex min-h-screen">
+    <!-- Sidebar Container (Injected) -->
+    <div id="sidebar-container"></div>
+    
+    <!-- Main Content Area -->
+    <div class="flex-1 flex flex-col ml-64 mt-16">
+      <!-- Header Container (Injected) -->
+      <div id="header-container"></div>
+      
+      <!-- Inner Breadcrumb Navigation -->
+      <nav class="bg-white dark:bg-neutral-950 border-b border-neutral-200 dark:border-neutral-800 px-6 py-3">
+        <div class="flex items-center text-sm text-neutral-600 dark:text-neutral-400">
+          <a href="/index.html" class="hover:text-neutral-900 dark:hover:text-neutral-100">Home</a>
+          <span class="mx-2">›</span>
+          <a href="/src/blocks/index.html" class="hover:text-neutral-900 dark:hover:text-neutral-100">Blocks</a>
+          <span class="mx-2">›</span>
+          <a href="/src/blocks/index.html#e-commerce" class="hover:text-neutral-900 dark:hover:text-neutral-100">E-commerce</a>
+          <span class="mx-2">›</span>
+          <span class="text-neutral-900 dark:text-neutral-100 font-medium">Review</span>
+        </div>
+      </nav>
+
+      <!-- Main Content -->
+      <main class="flex-1 p-6 lg:p-8">
+        <!-- Page Header -->
+        <div class="mb-8">
+          <h1 class="text-3xl font-semibold text-neutral-900 dark:text-neutral-100 mb-4">Review</h1>
+          <p class="text-lg text-neutral-600 dark:text-neutral-400 max-w-3xl">Review and rating components with different layouts and functionality options. Perfect for e-commerce applications, feedback systems, and user-generated content with various display formats.</p>
+        </div>
+
+        <!-- Section 1: Review Card -->
+        <section class="mb-16">
+          <div class="flex items-center justify-between mb-6">
+            <div>
+              <h2 class="text-2xl font-semibold text-neutral-900 dark:text-neutral-100 mb-2">Review Card</h2>
+              <p class="text-neutral-600 dark:text-neutral-400">Individual review display with user information, rating, and feedback content.</p>
+            </div>
+            <div class="flex items-center gap-3">
+              <button data-theme-toggle class="p-2 rounded-lg bg-neutral-100 dark:bg-neutral-800 hover:bg-neutral-200 dark:hover:bg-neutral-700 text-neutral-600 dark:text-neutral-400 transition-colors duration-normal" aria-label="Toggle theme">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path>
+                </svg>
+              </button>
+              <button id="copy-review-btn" class="flex items-center gap-2 px-4 py-2 bg-neutral-100 dark:bg-neutral-800 hover:bg-neutral-200 dark:hover:bg-neutral-700 text-neutral-700 dark:text-neutral-300 rounded-lg text-sm font-medium transition-colors duration-normal">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
+                </svg>
+                Copy
+              </button>
+            </div>
+          </div>
+
+          <nav class="inline-flex bg-neutral-100 dark:bg-neutral-800 rounded-lg p-1 mb-6">
+            <button class="tab-button active px-4 py-2 rounded-md bg-white dark:bg-neutral-700 text-neutral-900 dark:text-neutral-100 font-medium text-sm shadow-sm transition-all duration-normal" data-tab="review-preview">
+              Preview
+            </button>
+            <button class="tab-button px-4 py-2 rounded-md text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-100 font-medium text-sm transition-all duration-normal" data-tab="review-html">
+              HTML
+            </button>
+          </nav>
+
+          <div id="review-preview" class="tab-content bg-neutral-50 dark:bg-neutral-900 p-8 rounded-lg border border-neutral-200 dark:border-neutral-700">
+            <div class="max-w-2xl bg-white dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700 rounded-lg shadow-sm p-6">
+              <div class="flex items-start gap-4">
+                <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=50&h=50&fit=crop&crop=center" alt="User Avatar" class="w-12 h-12 rounded-full object-cover">
+                
+                <div class="flex-1">
+                  <div class="flex items-center justify-between mb-2">
+                    <div>
+                      <h4 class="font-semibold text-neutral-900 dark:text-neutral-100">Alex Johnson</h4>
+                      <p class="text-sm text-neutral-600 dark:text-neutral-400">Verified Purchase</p>
+                    </div>
+                    <div class="text-right">
+                      <div class="flex items-center">
+                        <svg class="w-4 h-4 text-warning-500" fill="currentColor" viewBox="0 0 20 20">
+                          <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                        </svg>
+                        <svg class="w-4 h-4 text-warning-500" fill="currentColor" viewBox="0 0 20 20">
+                          <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                        </svg>
+                        <svg class="w-4 h-4 text-warning-500" fill="currentColor" viewBox="0 0 20 20">
+                          <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                        </svg>
+                        <svg class="w-4 h-4 text-warning-500" fill="currentColor" viewBox="0 0 20 20">
+                          <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                        </svg>
+                        <svg class="w-4 h-4 text-warning-500" fill="currentColor" viewBox="0 0 20 20">
+                          <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                        </svg>
+                      </div>
+                      <p class="text-xs text-neutral-500 dark:text-neutral-500 mt-1">3 days ago</p>
+                    </div>
+                  </div>
+                  
+                  <h5 class="font-medium text-neutral-900 dark:text-neutral-100 mb-2">Amazing sound quality!</h5>
+                  
+                  <p class="text-neutral-600 dark:text-neutral-400 text-sm mb-4">
+                    These headphones exceeded my expectations. The noise cancellation is incredible, and the battery life lasts all day. Perfect for working from home or traveling. Highly recommend!
+                  </p>
+                  
+                  <div class="flex items-center justify-between">
+                    <div class="flex items-center gap-4">
+                      <button class="flex items-center gap-1 text-sm text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-100 transition-colors duration-normal">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 10h4.764a2 2 0 011.789 2.894l-3.5 7A2 2 0 0115.263 21h-4.017c-.163 0-.326-.02-.485-.06L7 20m7-10V5a2 2 0 00-2-2h-.095c-.5 0-.905.405-.905.905 0 .714-.211 1.412-.608 2.006L9 7v3m-3 7h6m6 0v-7"></path>
+                        </svg>
+                        <span>24</span>
+                      </button>
+                      <button class="flex items-center gap-1 text-sm text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-100 transition-colors duration-normal">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 14H5.236a2 2 0 01-1.789-2.894l3.5-7A2 2 0 018.736 3h4.018c.163 0 .326.02.485.06L17 4m-7 10v2a2 2 0 002 2h.095c.5 0 .905-.405.905-.905 0-.714.211-1.412.608-2.006L15 17v-3m-6-6h6m6 0v7"></path>
+                        </svg>
+                        <span>2</span>
+                      </button>
+                    </div>
+                    <button class="text-sm text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-100 transition-colors duration-normal">
+                      Reply
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div id="review-html" class="tab-content hidden w-[768px]">
+            <div class="bg-neutral-900 dark:bg-neutral-950 rounded-lg overflow-hidden">
+              <div class="w-full">
+                <pre class="p-6 text-sm overflow-x-auto"><code class="language-html whitespace-pre break-words" style="word-break: break-all; max-width: 100%;">&lt;div class="max-w-2xl bg-white dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700 rounded-lg shadow-sm p-6"&gt;
+  &lt;div class="flex items-start gap-4"&gt;
+    &lt;img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=50&amp;h=50&amp;fit=crop&amp;crop=center" alt="User Avatar" class="w-12 h-12 rounded-full object-cover"&gt;
+    
+    &lt;div class="flex-1"&gt;
+      &lt;div class="flex items-center justify-between mb-2"&gt;
+        &lt;div&gt;
+          &lt;h4 class="font-semibold text-neutral-900 dark:text-neutral-100"&gt;Alex Johnson&lt;/h4&gt;
+          &lt;p class="text-sm text-neutral-600 dark:text-neutral-400"&gt;Verified Purchase&lt;/p&gt;
+        &lt;/div&gt;
+        &lt;div class="text-right"&gt;
+          &lt;div class="flex items-center"&gt;
+            &lt;svg class="w-4 h-4 text-warning-500" fill="currentColor" viewBox="0 0 20 20"&gt;
+              &lt;path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"&gt;&lt;/path&gt;
+            &lt;/svg&gt;
+            &lt;svg class="w-4 h-4 text-warning-500" fill="currentColor" viewBox="0 0 20 20"&gt;
+              &lt;path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"&gt;&lt;/path&gt;
+            &lt;/svg&gt;
+            &lt;svg class="w-4 h-4 text-warning-500" fill="currentColor" viewBox="0 0 20 20"&gt;
+              &lt;path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"&gt;&lt;/path&gt;
+            &lt;/svg&gt;
+            &lt;svg class="w-4 h-4 text-warning-500" fill="currentColor" viewBox="0 0 20 20"&gt;
+              &lt;path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"&gt;&lt;/path&gt;
+            &lt;/svg&gt;
+            &lt;svg class="w-4 h-4 text-warning-500" fill="currentColor" viewBox="0 0 20 20"&gt;
+              &lt;path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"&gt;&lt;/path&gt;
+            &lt;/svg&gt;
+          &lt;/div&gt;
+          &lt;p class="text-xs text-neutral-500 dark:text-neutral-500 mt-1"&gt;3 days ago&lt;/p&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+      
+      &lt;h5 class="font-medium text-neutral-900 dark:text-neutral-100 mb-2"&gt;Amazing sound quality!&lt;/h5&gt;
+      
+      &lt;p class="text-neutral-600 dark:text-neutral-400 text-sm mb-4"&gt;
+        These headphones exceeded my expectations. The noise cancellation is incredible, and the battery life lasts all day. Perfect for working from home or traveling. Highly recommend!
+      &lt;/p&gt;
+      
+      &lt;div class="flex items-center justify-between"&gt;
+        &lt;div class="flex items-center gap-4"&gt;
+          &lt;button class="flex items-center gap-1 text-sm text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-100 transition-colors duration-normal"&gt;
+            &lt;svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"&gt;
+              &lt;path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 10h4.764a2 2 0 011.789 2.894l-3.5 7A2 2 0 0115.263 21h-4.017c-.163 0-.326-.02-.485-.06L7 20m7-10V5a2 2 0 00-2-2h-.095c-.5 0-.905.405-.905.905 0 .714-.211 1.412-.608 2.006L9 7v3m-3 7h6m6 0v-7"&gt;&lt;/path&gt;
+            &lt;/svg&gt;
+            &lt;span&gt;24&lt;/span&gt;
+          &lt;/button&gt;
+          &lt;button class="flex items-center gap-1 text-sm text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-100 transition-colors duration-normal"&gt;
+            &lt;svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"&gt;
+              &lt;path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 14H5.236a2 2 0 01-1.789-2.894l3.5-7A2 2 0 018.736 3h4.018c.163 0 .326.02.485.06L17 4m-7 10v2a2 2 0 002 2h.095c.5 0 .905-.405.905-.905 0-.714.211-1.412.608-2.006L15 17v-3m-6-6h6m6 0v7"&gt;&lt;/path&gt;
+            &lt;/svg&gt;
+            &lt;span&gt;2&lt;/span&gt;
+          &lt;/button&gt;
+        &lt;/div&gt;
+        &lt;button class="text-sm text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-100 transition-colors duration-normal"&gt;
+          Reply
+        &lt;/button&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;</code></pre>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Usage Guidelines -->
+        <div class="bg-white dark:bg-neutral-950 border border-neutral-900 dark:border-neutral-100 rounded-lg p-4 mb-8">
+          <h3 class="text-sm font-medium text-neutral-900 dark:text-neutral-100 mb-2">Usage Guidelines</h3>
+          <ul class="text-sm text-neutral-900 dark:text-neutral-100 space-y-1">
+            <li>• Display user avatars and names for personal connection</li>
+            <li>• Show star ratings prominently for quick assessment</li>
+            <li>• Include verification badges for authentic reviews</li>
+            <li>• Provide helpful/unhelpful voting mechanisms</li>
+            <li>• Display review dates for relevance context</li>
+            <li>• Use clear typography hierarchy for review titles and content</li>
+          </ul>
+        </div>
+
+        <!-- Accessibility Features -->
+        <div class="bg-white dark:bg-neutral-950 border border-neutral-900 dark:border-neutral-100 rounded-lg p-4">
+          <h3 class="text-sm font-medium text-neutral-900 dark:text-neutral-100 mb-2">Accessibility Features</h3>
+          <ul class="text-sm text-neutral-900 dark:text-neutral-100 space-y-1">
+            <li>• Screen reader-friendly star rating descriptions</li>
+            <li>• Keyboard navigation for all interactive elements</li>
+            <li>• Clear focus indicators on buttons and links</li>
+            <li>• Descriptive alt text for user profile images</li>
+            <li>• High contrast design for better readability</li>
+            <li>• Semantic HTML structure for content hierarchy</li>
+          </ul>
+        </div>
+      </main>
+
+      <!-- Footer Container (Injected) -->
+      <div id="footer-container"></div>
+    </div>
+  </div>
+
+  <!-- JavaScript -->
+  <script type="module">
+    import { generateHeader, generateSidebar, generateFooter, initializeSharedComponents } from '/src/shared/components.js';
+    import { themeManager } from '/src/shared/theme.js';
+    import { toast } from '/src/shared/toast.js';
+
+    document.addEventListener('DOMContentLoaded', function() {
+      // Inject shared components
+      document.getElementById('header-container').innerHTML = generateHeader('blocks');
+      document.getElementById('sidebar-container').innerHTML = generateSidebar('review');
+      document.getElementById('footer-container').innerHTML = generateFooter();
+      
+      // Initialize shared functionality
+      initializeSharedComponents();
+      themeManager.initializeToggleButtons();
+      
+      // Tab switching functionality
+      function setupTabs() {
+        const tabButtons = document.querySelectorAll('.tab-button');
+        const tabContents = document.querySelectorAll('.tab-content');
+        
+        tabButtons.forEach(button => {
+          button.addEventListener('click', () => {
+            const targetTab = button.getAttribute('data-tab');
+            const section = button.closest('section');
+            
+            // Update button states within the section
+            section.querySelectorAll('.tab-button').forEach(btn => {
+              btn.classList.remove('active', 'bg-white', 'dark:bg-neutral-700', 'text-neutral-900', 'dark:text-neutral-100', 'shadow-sm');
+              btn.classList.add('text-neutral-600', 'dark:text-neutral-400');
+            });
+            
+            button.classList.add('active', 'bg-white', 'dark:bg-neutral-700', 'text-neutral-900', 'dark:text-neutral-100', 'shadow-sm');
+            button.classList.remove('text-neutral-600', 'dark:text-neutral-400');
+            
+            // Update content within the section
+            section.querySelectorAll('.tab-content').forEach(content => {
+              content.classList.add('hidden');
+            });
+            
+            const targetContent = section.querySelector(`#${targetTab}`);
+            if (targetContent) {
+              targetContent.classList.remove('hidden');
+            }
+          });
+        });
+      }
+      
+      // Copy button functionality
+      function setupCopyButtons() {
+        const copyButtons = [
+          { id: 'copy-review-btn', contentId: 'review-html' }
+        ];
+        
+        copyButtons.forEach(({ id, contentId }) => {
+          const button = document.getElementById(id);
+          if (button) {
+            button.addEventListener('click', async () => {
+              const content = document.getElementById(contentId);
+              if (content) {
+                const codeElement = content.querySelector('code');
+                if (codeElement) {
+                  try {
+                    await navigator.clipboard.writeText(codeElement.textContent);
+                    toast.show('Code copied to clipboard!', 'success');
+                  } catch (err) {
+                    toast.show('Failed to copy code', 'error');
+                  }
+                }
+              }
+            });
+          }
+        });
+      }
+      
+      setupTabs();
+      setupCopyButtons();
+    });
+  </script>
+</body>
+</html> 
