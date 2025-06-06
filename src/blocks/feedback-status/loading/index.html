@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Loading Block - UI11 Design System</title>
+  <link href="/src/style.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-markup.min.js"></script>
+</head>
+<body class="min-h-screen bg-white dark:bg-neutral-950">
+  <div class="flex min-h-screen">
+    <div id="sidebar-container"></div>
+    <div class="flex-1 flex flex-col ml-64 mt-16">
+      <div id="header-container"></div>
+      <main class="flex-1 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 overflow-hidden">
+        <nav class="flex mb-8" aria-label="Breadcrumb">
+          <ol class="flex items-center space-x-2 text-sm text-neutral-600 dark:text-neutral-400">
+            <li><a href="/src/blocks/" class="hover:text-neutral-900 dark:hover:text-neutral-100 transition-colors duration-normal">Blocks</a></li>
+            <li class="flex items-center">
+              <svg class="w-4 h-4 mx-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+              <a href="/src/blocks/feedback-status/" class="hover:text-neutral-900 dark:hover:text-neutral-100 transition-colors duration-normal">Feedback &amp; Status</a>
+            </li>
+            <li class="flex items-center">
+              <svg class="w-4 h-4 mx-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+              <span class="text-neutral-900 dark:text-neutral-100 font-medium">Loading</span>
+            </li>
+          </ol>
+        </nav>
+        <div class="mb-12">
+          <h1 class="text-4xl font-semibold text-neutral-900 dark:text-neutral-100 mb-4">Loading Block</h1>
+          <p class="text-lg text-neutral-600 dark:text-neutral-400 mb-6 max-w-3xl leading-relaxed">
+            Loading indicators and skeleton screens for application states.
+          </p>
+        </div>
+
+        <!-- Section: Page Loading -->
+        <section id="page-loading" class="mb-16">
+          <div class="mb-8">
+            <div class="flex items-center justify-between mb-6">
+              <div>
+                <h2 class="text-2xl font-semibold text-neutral-900 dark:text-neutral-100 mb-2">Page Loading</h2>
+                <p class="text-neutral-600 dark:text-neutral-400">Fullscreen spinner overlay.</p>
+              </div>
+              <button id="copy-page-loading-btn" class="flex items-center gap-2 px-4 py-2 bg-neutral-100 dark:bg-neutral-800 hover:bg-neutral-200 dark:hover:bg-neutral-700 text-neutral-700 dark:text-neutral-300 rounded-lg text-sm font-medium transition-colors duration-normal">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg>
+                Copy
+              </button>
+            </div>
+            <nav class="inline-flex bg-neutral-100 dark:bg-neutral-800 rounded-lg p-1 mb-6">
+              <button class="tab-button active px-4 py-2 rounded-md bg-white dark:bg-neutral-700 text-neutral-900 dark:text-neutral-100 font-medium text-sm shadow-sm transition-all duration-normal" data-tab="page-loading-preview">Preview</button>
+              <button class="tab-button px-4 py-2 rounded-md text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-100 font-medium text-sm transition-all duration-normal" data-tab="page-loading-html">HTML</button>
+            </nav>
+          </div>
+          <div id="page-loading-preview" class="tab-content">
+            <div class="relative h-64 flex items-center justify-center bg-neutral-50 dark:bg-neutral-900 rounded-lg overflow-hidden">
+              <div class="absolute inset-0 bg-gradient-to-br from-primary-500/5 via-neutral-200/5 to-neutral-100/5 dark:from-primary-500/10 dark:via-neutral-800/20 dark:to-neutral-700/20 animate-pulse"></div>
+              <svg class="relative animate-spin h-10 w-10 text-primary-500" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                <circle class="opacity-25" cx="12" cy="12" r="10" stroke-width="4"></circle>
+                <path class="opacity-75" d="M4 12a8 8 0 018-8v8H4z" stroke-width="4"></path>
+              </svg>
+            </div>
+          </div>
+          <div id="page-loading-html" class="tab-content hidden w-[768px]">
+            <div class="bg-neutral-900 dark:bg-neutral-950 rounded-lg overflow-hidden">
+              <pre class="p-6 text-sm overflow-x-auto"><code class="language-html whitespace-pre break-words">&lt;div class=&quot;relative h-64 flex items-center justify-center bg-neutral-50 dark:bg-neutral-900 rounded-lg overflow-hidden&quot;&gt;
+  &lt;div class=&quot;absolute inset-0 bg-gradient-to-br from-primary-500/5 via-neutral-200/5 to-neutral-100/5 dark:from-primary-500/10 dark:via-neutral-800/20 dark:to-neutral-700/20 animate-pulse&quot;&gt;&lt;/div&gt;
+  &lt;svg class=&quot;relative animate-spin h-10 w-10 text-primary-500&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot;&gt;
+    &lt;circle class=&quot;opacity-25&quot; cx=&quot;12&quot; cy=&quot;12&quot; r=&quot;10&quot; stroke-width=&quot;4&quot;&gt;&lt;/circle&gt;
+    &lt;path class=&quot;opacity-75&quot; d=&quot;M4 12a8 8 0 018-8v8H4z&quot; stroke-width=&quot;4&quot;&gt;&lt;/path&gt;
+  &lt;/svg&gt;
+&lt;/div&gt;</code></pre>
+            </div>
+          </div>
+        </section>
+
+        <!-- Section: Content Loading -->
+        <section id="content-loading" class="mb-16">
+          <div class="mb-8">
+            <div class="flex items-center justify-between mb-6">
+              <div>
+                <h2 class="text-2xl font-semibold text-neutral-900 dark:text-neutral-100 mb-2">Content Loading</h2>
+                <p class="text-neutral-600 dark:text-neutral-400">Spinner within a section.</p>
+              </div>
+              <button id="copy-content-loading-btn" class="flex items-center gap-2 px-4 py-2 bg-neutral-100 dark:bg-neutral-800 hover:bg-neutral-200 dark:hover:bg-neutral-700 text-neutral-700 dark:text-neutral-300 rounded-lg text-sm font-medium transition-colors duration-normal">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg>
+                Copy
+              </button>
+            </div>
+            <nav class="inline-flex bg-neutral-100 dark:bg-neutral-800 rounded-lg p-1 mb-6">
+              <button class="tab-button active px-4 py-2 rounded-md bg-white dark:bg-neutral-700 text-neutral-900 dark:text-neutral-100 font-medium text-sm shadow-sm transition-all duration-normal" data-tab="content-loading-preview">Preview</button>
+              <button class="tab-button px-4 py-2 rounded-md text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-100 font-medium text-sm transition-all duration-normal" data-tab="content-loading-html">HTML</button>
+            </nav>
+          </div>
+          <div id="content-loading-preview" class="tab-content">
+            <div class="relative border border-neutral-200 dark:border-neutral-700 rounded-lg p-4 h-32 flex flex-col justify-between">
+              <div class="space-y-2">
+                <div class="h-4 bg-neutral-200 dark:bg-neutral-700 rounded w-3/4"></div>
+                <div class="h-4 bg-neutral-200 dark:bg-neutral-700 rounded w-5/6"></div>
+              </div>
+              <svg class="absolute bottom-4 right-4 animate-spin h-6 w-6 text-primary-500" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                <circle class="opacity-25" cx="12" cy="12" r="10" stroke-width="4"></circle>
+                <path class="opacity-75" d="M4 12a8 8 0 018-8v8H4z" stroke-width="4"></path>
+              </svg>
+            </div>
+          </div>
+          <div id="content-loading-html" class="tab-content hidden w-[768px]">
+            <div class="bg-neutral-900 dark:bg-neutral-950 rounded-lg overflow-hidden">
+              <pre class="p-6 text-sm overflow-x-auto"><code class="language-html whitespace-pre break-words">&lt;div class=&quot;relative border border-neutral-200 dark:border-neutral-700 rounded-lg p-4 h-32 flex flex-col justify-between&quot;&gt;
+  &lt;div class=&quot;space-y-2&quot;&gt;
+    &lt;div class=&quot;h-4 bg-neutral-200 dark:bg-neutral-700 rounded w-3/4&quot;&gt;&lt;/div&gt;
+    &lt;div class=&quot;h-4 bg-neutral-200 dark:bg-neutral-700 rounded w-5/6&quot;&gt;&lt;/div&gt;
+  &lt;/div&gt;
+  &lt;svg class=&quot;absolute bottom-4 right-4 animate-spin h-6 w-6 text-primary-500&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot;&gt;
+    &lt;circle class=&quot;opacity-25&quot; cx=&quot;12&quot; cy=&quot;12&quot; r=&quot;10&quot; stroke-width=&quot;4&quot;&gt;&lt;/circle&gt;
+    &lt;path class=&quot;opacity-75&quot; d=&quot;M4 12a8 8 0 018-8v8H4z&quot; stroke-width=&quot;4&quot;&gt;&lt;/path&gt;
+  &lt;/svg&gt;
+&lt;/div&gt;</code></pre>
+            </div>
+          </div>
+        </section>
+
+        <!-- Section: Progress Indicator -->
+        <section id="progress-indicator" class="mb-16">
+          <div class="mb-8">
+            <div class="flex items-center justify-between mb-6">
+              <div>
+                <h2 class="text-2xl font-semibold text-neutral-900 dark:text-neutral-100 mb-2">Progress Indicator</h2>
+                <p class="text-neutral-600 dark:text-neutral-400">Simple progress bar.</p>
+              </div>
+              <button id="copy-progress-indicator-btn" class="flex items-center gap-2 px-4 py-2 bg-neutral-100 dark:bg-neutral-800 hover:bg-neutral-200 dark:hover:bg-neutral-700 text-neutral-700 dark:text-neutral-300 rounded-lg text-sm font-medium transition-colors duration-normal">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg>
+                Copy
+              </button>
+            </div>
+            <nav class="inline-flex bg-neutral-100 dark:bg-neutral-800 rounded-lg p-1 mb-6">
+              <button class="tab-button active px-4 py-2 rounded-md bg-white dark:bg-neutral-700 text-neutral-900 dark:text-neutral-100 font-medium text-sm shadow-sm transition-all duration-normal" data-tab="progress-indicator-preview">Preview</button>
+              <button class="tab-button px-4 py-2 rounded-md text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-100 font-medium text-sm transition-all duration-normal" data-tab="progress-indicator-html">HTML</button>
+            </nav>
+          </div>
+          <div id="progress-indicator-preview" class="tab-content">
+            <div class="w-full bg-neutral-200 dark:bg-neutral-700 rounded-full h-2 overflow-hidden">
+              <div class="bg-gradient-to-r from-primary-500 to-primary-700 h-2 rounded-full animate-pulse" style="width:50%"></div>
+            </div>
+          </div>
+          <div id="progress-indicator-html" class="tab-content hidden w-[768px]">
+            <div class="bg-neutral-900 dark:bg-neutral-950 rounded-lg overflow-hidden">
+              <pre class="p-6 text-sm overflow-x-auto"><code class="language-html whitespace-pre break-words">&lt;div class=&quot;w-full bg-neutral-200 dark:bg-neutral-700 rounded-full h-2 overflow-hidden&quot;&gt;
+  &lt;div class=&quot;bg-gradient-to-r from-primary-500 to-primary-700 h-2 rounded-full animate-pulse&quot; style=&quot;width:50%&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+            </div>
+          </div>
+        </section>
+
+        <!-- Section: Skeleton Loading -->
+        <section id="skeleton-loading" class="mb-16">
+          <div class="mb-8">
+            <div class="flex items-center justify-between mb-6">
+              <div>
+                <h2 class="text-2xl font-semibold text-neutral-900 dark:text-neutral-100 mb-2">Skeleton Loading</h2>
+                <p class="text-neutral-600 dark:text-neutral-400">Placeholder content.</p>
+              </div>
+              <button id="copy-skeleton-loading-btn" class="flex items-center gap-2 px-4 py-2 bg-neutral-100 dark:bg-neutral-800 hover:bg-neutral-200 dark:hover:bg-neutral-700 text-neutral-700 dark:text-neutral-300 rounded-lg text-sm font-medium transition-colors duration-normal">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg>
+                Copy
+              </button>
+            </div>
+            <nav class="inline-flex bg-neutral-100 dark:bg-neutral-800 rounded-lg p-1 mb-6">
+              <button class="tab-button active px-4 py-2 rounded-md bg-white dark:bg-neutral-700 text-neutral-900 dark:text-neutral-100 font-medium text-sm shadow-sm transition-all duration-normal" data-tab="skeleton-loading-preview">Preview</button>
+              <button class="tab-button px-4 py-2 rounded-md text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-100 font-medium text-sm transition-all duration-normal" data-tab="skeleton-loading-html">HTML</button>
+            </nav>
+          </div>
+          <div id="skeleton-loading-preview" class="tab-content">
+            <div class="animate-pulse space-y-4 max-w-sm border border-neutral-200 dark:border-neutral-700 rounded-lg p-4">
+              <div class="h-32 bg-neutral-300 dark:bg-neutral-700 rounded"></div>
+              <div class="space-y-2">
+                <div class="h-4 bg-neutral-300 dark:bg-neutral-700 rounded"></div>
+                <div class="h-4 bg-neutral-300 dark:bg-neutral-700 rounded w-5/6"></div>
+              </div>
+            </div>
+          </div>
+          <div id="skeleton-loading-html" class="tab-content hidden w-[768px]">
+            <div class="bg-neutral-900 dark:bg-neutral-950 rounded-lg overflow-hidden">
+              <pre class="p-6 text-sm overflow-x-auto"><code class="language-html whitespace-pre break-words">&lt;div class=&quot;animate-pulse space-y-4 max-w-sm border border-neutral-200 dark:border-neutral-700 rounded-lg p-4&quot;&gt;
+  &lt;div class=&quot;h-32 bg-neutral-300 dark:bg-neutral-700 rounded&quot;&gt;&lt;/div&gt;
+  &lt;div class=&quot;space-y-2&quot;&gt;
+    &lt;div class=&quot;h-4 bg-neutral-300 dark:bg-neutral-700 rounded&quot;&gt;&lt;/div&gt;
+    &lt;div class=&quot;h-4 bg-neutral-300 dark:bg-neutral-700 rounded w-5/6&quot;&gt;&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+            </div>
+          </div>
+        </section>
+      </main>
+      <div id="footer-container"></div>
+    </div>
+  </div>
+
+  <script type="module">
+    import { generateHeader, generateSidebar, generateFooter, initializeSharedComponents } from '/src/shared/components.js';
+    import { themeManager } from '/src/shared/theme.js';
+    import { toast } from '/src/shared/toast.js';
+
+    document.addEventListener('DOMContentLoaded', function() {
+      document.getElementById('header-container').innerHTML = generateHeader('blocks');
+      document.getElementById('sidebar-container').innerHTML = generateSidebar('loading');
+      document.getElementById('footer-container').innerHTML = generateFooter();
+
+      initializeSharedComponents();
+      themeManager.initializeToggleButtons();
+
+      function initTabs() {
+        const tabButtons = document.querySelectorAll('.tab-button');
+        tabButtons.forEach(btn => {
+          btn.addEventListener('click', () => {
+            const target = btn.getAttribute('data-tab');
+            const section = btn.closest('section');
+            section.querySelectorAll('.tab-button').forEach(b => {
+              b.classList.remove('active', 'bg-white', 'dark:bg-neutral-700', 'text-neutral-900', 'dark:text-neutral-100', 'shadow-sm');
+              b.classList.add('text-neutral-600', 'dark:text-neutral-400');
+            });
+            btn.classList.add('active', 'bg-white', 'dark:bg-neutral-700', 'text-neutral-900', 'dark:text-neutral-100', 'shadow-sm');
+            btn.classList.remove('text-neutral-600', 'dark:text-neutral-400');
+            section.querySelectorAll('.tab-content').forEach(c => c.classList.add('hidden'));
+            const content = section.querySelector(`#${target}`);
+            if (content) content.classList.remove('hidden');
+          });
+        });
+      }
+
+      function initCopyButtons() {
+        const buttons = [
+          { id: 'copy-page-loading-btn', content: 'page-loading-html' },
+          { id: 'copy-content-loading-btn', content: 'content-loading-html' },
+          { id: 'copy-progress-indicator-btn', content: 'progress-indicator-html' },
+          { id: 'copy-skeleton-loading-btn', content: 'skeleton-loading-html' }
+        ];
+        buttons.forEach(({ id, content }) => {
+          const el = document.getElementById(id);
+          if (el) {
+            el.addEventListener('click', () => {
+              const code = document.querySelector(`#${content} code`).textContent;
+              navigator.clipboard.writeText(code).then(() => {
+                toast.show('Code copied to clipboard!', 'success');
+              });
+            });
+          }
+        });
+      }
+
+      initTabs();
+      initCopyButtons();
+    });
+  </script>
+</body>
+</html>
