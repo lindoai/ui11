@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Table - UI11 Design System</title>
+  <link href="/src/style.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-markup.min.js"></script>
+</head>
+<body class="min-h-screen bg-white dark:bg-neutral-950">
+  <div class="flex min-h-screen">
+    <div id="sidebar-container"></div>
+    <div class="flex-1 flex flex-col ml-64 mt-16">
+      <div id="header-container"></div>
+      <main class="flex-1 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div class="mb-12">
+          <h1 class="text-4xl font-semibold text-neutral-900 dark:text-neutral-100 mb-4">Table</h1>
+          <p class="text-lg text-neutral-600 dark:text-neutral-400 mb-6 max-w-3xl leading-relaxed">
+            Data tables for displaying structured information.
+          </p>
+        </div>
+
+        <!-- Basic Table -->
+        <section id="table-basic" class="mb-16">
+          <div class="mb-8">
+            <div class="flex items-center justify-between mb-6">
+              <div>
+                <h2 class="text-2xl font-semibold text-neutral-900 dark:text-neutral-100 mb-2">Basic Table</h2>
+                <p class="text-neutral-600 dark:text-neutral-400">Simple rows and headers.</p>
+              </div>
+              <div class="flex items-center gap-3">
+                <button data-theme-toggle class="p-2 rounded-lg bg-neutral-100 dark:bg-neutral-800 hover:bg-neutral-200 dark:hover:bg-neutral-700 text-neutral-600 dark:text-neutral-400 transition-colors" aria-label="Toggle theme">
+                  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" /></svg>
+                </button>
+                <button id="copy-table-basic-btn" class="flex items-center gap-2 px-4 py-2 bg-neutral-100 dark:bg-neutral-800 hover:bg-neutral-200 dark:hover:bg-neutral-700 text-neutral-700 dark:text-neutral-300 rounded-lg text-sm font-medium transition-colors">
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" /></svg>
+                  Copy
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="mb-6">
+            <nav class="inline-flex bg-neutral-100 dark:bg-neutral-800 rounded-lg p-1">
+              <button class="tab-button active px-4 py-2 rounded-md bg-white dark:bg-neutral-700 text-neutral-900 dark:text-neutral-100 font-medium text-sm shadow-sm transition-all" data-tab="table-basic-preview">Preview</button>
+              <button class="tab-button px-4 py-2 rounded-md text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-100 font-medium text-sm transition-all" data-tab="table-basic-html">HTML</button>
+            </nav>
+          </div>
+          <div id="table-basic-preview" class="tab-content">
+            <div class="overflow-x-auto">
+              <table class="min-w-full divide-y divide-neutral-200 dark:divide-neutral-700">
+                <thead class="bg-neutral-100 dark:bg-neutral-800">
+                  <tr>
+                    <th class="px-4 py-2 text-left text-sm font-semibold text-neutral-700 dark:text-neutral-300">Name</th>
+                    <th class="px-4 py-2 text-left text-sm font-semibold text-neutral-700 dark:text-neutral-300">Title</th>
+                    <th class="px-4 py-2 text-left text-sm font-semibold text-neutral-700 dark:text-neutral-300">Email</th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-neutral-200 dark:divide-neutral-700">
+                  <tr>
+                    <td class="px-4 py-2 whitespace-nowrap text-neutral-800 dark:text-neutral-200">Jane Doe</td>
+                    <td class="px-4 py-2 whitespace-nowrap text-neutral-800 dark:text-neutral-200">Developer</td>
+                    <td class="px-4 py-2 whitespace-nowrap text-neutral-800 dark:text-neutral-200">jane@example.com</td>
+                  </tr>
+                  <tr>
+                    <td class="px-4 py-2 whitespace-nowrap text-neutral-800 dark:text-neutral-200">John Smith</td>
+                    <td class="px-4 py-2 whitespace-nowrap text-neutral-800 dark:text-neutral-200">Designer</td>
+                    <td class="px-4 py-2 whitespace-nowrap text-neutral-800 dark:text-neutral-200">john@example.com</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div id="table-basic-html" class="tab-content hidden w-[768px]">
+            <div class="bg-neutral-900 dark:bg-neutral-950 rounded-lg overflow-hidden">
+              <div class="w-full">
+                <pre class="p-6 text-sm overflow-x-auto"><code class="language-html whitespace-pre break-words">&lt;table class=&quot;min-w-full divide-y divide-neutral-200 dark:divide-neutral-700&quot;&gt;
+  &lt;thead class=&quot;bg-neutral-100 dark:bg-neutral-800&quot;&gt;
+    &lt;tr&gt;
+      &lt;th class=&quot;px-4 py-2 text-left text-sm font-semibold text-neutral-700 dark:text-neutral-300&quot;&gt;Name&lt;/th&gt;
+      &lt;th class=&quot;px-4 py-2 text-left text-sm font-semibold text-neutral-700 dark:text-neutral-300&quot;&gt;Title&lt;/th&gt;
+      &lt;th class=&quot;px-4 py-2 text-left text-sm font-semibold text-neutral-700 dark:text-neutral-300&quot;&gt;Email&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody class=&quot;divide-y divide-neutral-200 dark:divide-neutral-700&quot;&gt;
+    &lt;tr&gt;
+      &lt;td class=&quot;px-4 py-2 whitespace-nowrap text-neutral-800 dark:text-neutral-200&quot;&gt;Jane Doe&lt;/td&gt;
+      &lt;td class=&quot;px-4 py-2 whitespace-nowrap text-neutral-800 dark:text-neutral-200&quot;&gt;Developer&lt;/td&gt;
+      &lt;td class=&quot;px-4 py-2 whitespace-nowrap text-neutral-800 dark:text-neutral-200&quot;&gt;jane@example.com&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td class=&quot;px-4 py-2 whitespace-nowrap text-neutral-800 dark:text-neutral-200&quot;&gt;John Smith&lt;/td&gt;
+      &lt;td class=&quot;px-4 py-2 whitespace-nowrap text-neutral-800 dark:text-neutral-200&quot;&gt;Designer&lt;/td&gt;
+      &lt;td class=&quot;px-4 py-2 whitespace-nowrap text-neutral-800 dark:text-neutral-200&quot;&gt;john@example.com&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;</code></pre>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Striped Table -->
+        <section id="table-striped" class="mb-16">
+          <div class="mb-8">
+            <div class="flex items-center justify-between mb-6">
+              <div>
+                <h2 class="text-2xl font-semibold text-neutral-900 dark:text-neutral-100 mb-2">Striped Table</h2>
+                <p class="text-neutral-600 dark:text-neutral-400">Alternating row colors.</p>
+              </div>
+              <div class="flex items-center gap-3">
+                <button data-theme-toggle class="p-2 rounded-lg bg-neutral-100 dark:bg-neutral-800 hover:bg-neutral-200 dark:hover:bg-neutral-700 text-neutral-600 dark:text-neutral-400 transition-colors" aria-label="Toggle theme">
+                  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" /></svg>
+                </button>
+                <button id="copy-table-striped-btn" class="flex items-center gap-2 px-4 py-2 bg-neutral-100 dark:bg-neutral-800 hover:bg-neutral-200 dark:hover:bg-neutral-700 text-neutral-700 dark:text-neutral-300 rounded-lg text-sm font-medium transition-colors">
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" /></svg>
+                  Copy
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="mb-6">
+            <nav class="inline-flex bg-neutral-100 dark:bg-neutral-800 rounded-lg p-1">
+              <button class="tab-button active px-4 py-2 rounded-md bg-white dark:bg-neutral-700 text-neutral-900 dark:text-neutral-100 font-medium text-sm shadow-sm transition-all" data-tab="table-striped-preview">Preview</button>
+              <button class="tab-button px-4 py-2 rounded-md text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-100 font-medium text-sm transition-all" data-tab="table-striped-html">HTML</button>
+            </nav>
+          </div>
+          <div id="table-striped-preview" class="tab-content">
+            <div class="overflow-x-auto">
+              <table class="min-w-full divide-y divide-neutral-200 dark:divide-neutral-700">
+                <thead class="bg-neutral-100 dark:bg-neutral-800">
+                  <tr>
+                    <th class="px-4 py-2 text-left text-sm font-semibold text-neutral-700 dark:text-neutral-300">Name</th>
+                    <th class="px-4 py-2 text-left text-sm font-semibold text-neutral-700 dark:text-neutral-300">Title</th>
+                    <th class="px-4 py-2 text-left text-sm font-semibold text-neutral-700 dark:text-neutral-300">Email</th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-neutral-200 dark:divide-neutral-700">
+                  <tr class="odd:bg-neutral-50 odd:dark:bg-neutral-800">
+                    <td class="px-4 py-2 whitespace-nowrap text-neutral-800 dark:text-neutral-200">Jane Doe</td>
+                    <td class="px-4 py-2 whitespace-nowrap text-neutral-800 dark:text-neutral-200">Developer</td>
+                    <td class="px-4 py-2 whitespace-nowrap text-neutral-800 dark:text-neutral-200">jane@example.com</td>
+                  </tr>
+                  <tr class="odd:bg-neutral-50 odd:dark:bg-neutral-800">
+                    <td class="px-4 py-2 whitespace-nowrap text-neutral-800 dark:text-neutral-200">John Smith</td>
+                    <td class="px-4 py-2 whitespace-nowrap text-neutral-800 dark:text-neutral-200">Designer</td>
+                    <td class="px-4 py-2 whitespace-nowrap text-neutral-800 dark:text-neutral-200">john@example.com</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div id="table-striped-html" class="tab-content hidden w-[768px]">
+            <div class="bg-neutral-900 dark:bg-neutral-950 rounded-lg overflow-hidden">
+              <div class="w-full">
+                <pre class="p-6 text-sm overflow-x-auto"><code class="language-html whitespace-pre break-words">&lt;table class=&quot;min-w-full divide-y divide-neutral-200 dark:divide-neutral-700&quot;&gt;
+  &lt;thead class=&quot;bg-neutral-100 dark:bg-neutral-800&quot;&gt;
+    &lt;tr&gt;
+      &lt;th class=&quot;px-4 py-2 text-left text-sm font-semibold text-neutral-700 dark:text-neutral-300&quot;&gt;Name&lt;/th&gt;
+      &lt;th class=&quot;px-4 py-2 text-left text-sm font-semibold text-neutral-700 dark:text-neutral-300&quot;&gt;Title&lt;/th&gt;
+      &lt;th class=&quot;px-4 py-2 text-left text-sm font-semibold text-neutral-700 dark:text-neutral-300&quot;&gt;Email&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody class=&quot;divide-y divide-neutral-200 dark:divide-neutral-700&quot;&gt;
+    &lt;tr class=&quot;odd:bg-neutral-50 odd:dark:bg-neutral-800&quot;&gt;
+      &lt;td class=&quot;px-4 py-2 whitespace-nowrap text-neutral-800 dark:text-neutral-200&quot;&gt;Jane Doe&lt;/td&gt;
+      &lt;td class=&quot;px-4 py-2 whitespace-nowrap text-neutral-800 dark:text-neutral-200&quot;&gt;Developer&lt;/td&gt;
+      &lt;td class=&quot;px-4 py-2 whitespace-nowrap text-neutral-800 dark:text-neutral-200&quot;&gt;jane@example.com&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr class=&quot;odd:bg-neutral-50 odd:dark:bg-neutral-800&quot;&gt;
+      &lt;td class=&quot;px-4 py-2 whitespace-nowrap text-neutral-800 dark:text-neutral-200&quot;&gt;John Smith&lt;/td&gt;
+      &lt;td class=&quot;px-4 py-2 whitespace-nowrap text-neutral-800 dark:text-neutral-200&quot;&gt;Designer&lt;/td&gt;
+      &lt;td class=&quot;px-4 py-2 whitespace-nowrap text-neutral-800 dark:text-neutral-200&quot;&gt;john@example.com&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;</code></pre>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Table with Actions -->
+        <section id="table-actions" class="mb-16">
+          <div class="mb-8">
+            <div class="flex items-center justify-between mb-6">
+              <div>
+                <h2 class="text-2xl font-semibold text-neutral-900 dark:text-neutral-100 mb-2">Table with Actions</h2>
+                <p class="text-neutral-600 dark:text-neutral-400">Rows with edit/delete buttons.</p>
+              </div>
+              <div class="flex items-center gap-3">
+                <button data-theme-toggle class="p-2 rounded-lg bg-neutral-100 dark:bg-neutral-800 hover:bg-neutral-200 dark:hover:bg-neutral-700 text-neutral-600 dark:text-neutral-400 transition-colors" aria-label="Toggle theme">
+                  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" /></svg>
+                </button>
+                <button id="copy-table-actions-btn" class="flex items-center gap-2 px-4 py-2 bg-neutral-100 dark:bg-neutral-800 hover:bg-neutral-200 dark:hover:bg-neutral-700 text-neutral-700 dark:text-neutral-300 rounded-lg text-sm font-medium transition-colors">
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" /></svg>
+                  Copy
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="mb-6">
+            <nav class="inline-flex bg-neutral-100 dark:bg-neutral-800 rounded-lg p-1">
+              <button class="tab-button active px-4 py-2 rounded-md bg-white dark:bg-neutral-700 text-neutral-900 dark:text-neutral-100 font-medium text-sm shadow-sm transition-all" data-tab="table-actions-preview">Preview</button>
+              <button class="tab-button px-4 py-2 rounded-md text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-100 font-medium text-sm transition-all" data-tab="table-actions-html">HTML</button>
+            </nav>
+          </div>
+          <div id="table-actions-preview" class="tab-content">
+            <div class="overflow-x-auto">
+              <table class="min-w-full divide-y divide-neutral-200 dark:divide-neutral-700">
+                <thead class="bg-neutral-100 dark:bg-neutral-800">
+                  <tr>
+                    <th class="px-4 py-2 text-left text-sm font-semibold text-neutral-700 dark:text-neutral-300">Name</th>
+                    <th class="px-4 py-2 text-left text-sm font-semibold text-neutral-700 dark:text-neutral-300">Title</th>
+                    <th class="px-4 py-2 text-left text-sm font-semibold text-neutral-700 dark:text-neutral-300">Actions</th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-neutral-200 dark:divide-neutral-700">
+                  <tr>
+                    <td class="px-4 py-2 whitespace-nowrap text-neutral-800 dark:text-neutral-200">Jane Doe</td>
+                    <td class="px-4 py-2 whitespace-nowrap text-neutral-800 dark:text-neutral-200">Developer</td>
+                    <td class="px-4 py-2 whitespace-nowrap space-x-2">
+                      <button class="px-2 py-1 bg-primary-500 text-white rounded text-sm">Edit</button>
+                      <button class="px-2 py-1 bg-neutral-200 dark:bg-neutral-700 text-neutral-700 dark:text-neutral-300 rounded text-sm">Delete</button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div id="table-actions-html" class="tab-content hidden w-[768px]">
+            <div class="bg-neutral-900 dark:bg-neutral-950 rounded-lg overflow-hidden">
+              <div class="w-full">
+                <pre class="p-6 text-sm overflow-x-auto"><code class="language-html whitespace-pre break-words">&lt;table class=&quot;min-w-full divide-y divide-neutral-200 dark:divide-neutral-700&quot;&gt;
+  &lt;thead class=&quot;bg-neutral-100 dark:bg-neutral-800&quot;&gt;
+    &lt;tr&gt;
+      &lt;th class=&quot;px-4 py-2 text-left text-sm font-semibold text-neutral-700 dark:text-neutral-300&quot;&gt;Name&lt;/th&gt;
+      &lt;th class=&quot;px-4 py-2 text-left text-sm font-semibold text-neutral-700 dark:text-neutral-300&quot;&gt;Title&lt;/th&gt;
+      &lt;th class=&quot;px-4 py-2 text-left text-sm font-semibold text-neutral-700 dark:text-neutral-300&quot;&gt;Actions&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody class=&quot;divide-y divide-neutral-200 dark:divide-neutral-700&quot;&gt;
+    &lt;tr&gt;
+      &lt;td class=&quot;px-4 py-2 whitespace-nowrap text-neutral-800 dark:text-neutral-200&quot;&gt;Jane Doe&lt;/td&gt;
+      &lt;td class=&quot;px-4 py-2 whitespace-nowrap text-neutral-800 dark:text-neutral-200&quot;&gt;Developer&lt;/td&gt;
+      &lt;td class=&quot;px-4 py-2 whitespace-nowrap space-x-2&quot;&gt;
+        &lt;button class=&quot;px-2 py-1 bg-primary-500 text-white rounded text-sm&quot;&gt;Edit&lt;/button&gt;
+        &lt;button class=&quot;px-2 py-1 bg-neutral-200 dark:bg-neutral-700 text-neutral-700 dark:text-neutral-300 rounded text-sm&quot;&gt;Delete&lt;/button&gt;
+      &lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;</code></pre>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Responsive Table -->
+        <section id="table-responsive" class="mb-16">
+          <div class="mb-8">
+            <div class="flex items-center justify-between mb-6">
+              <div>
+                <h2 class="text-2xl font-semibold text-neutral-900 dark:text-neutral-100 mb-2">Responsive Table</h2>
+                <p class="text-neutral-600 dark:text-neutral-400">Horizontally scrollable.</p>
+              </div>
+              <div class="flex items-center gap-3">
+                <button data-theme-toggle class="p-2 rounded-lg bg-neutral-100 dark:bg-neutral-800 hover:bg-neutral-200 dark:hover:bg-neutral-700 text-neutral-600 dark:text-neutral-400 transition-colors" aria-label="Toggle theme">
+                  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" /></svg>
+                </button>
+                <button id="copy-table-responsive-btn" class="flex items-center gap-2 px-4 py-2 bg-neutral-100 dark:bg-neutral-800 hover:bg-neutral-200 dark:hover:bg-neutral-700 text-neutral-700 dark:text-neutral-300 rounded-lg text-sm font-medium transition-colors">
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" /></svg>
+                  Copy
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="mb-6">
+            <nav class="inline-flex bg-neutral-100 dark:bg-neutral-800 rounded-lg p-1">
+              <button class="tab-button active px-4 py-2 rounded-md bg-white dark:bg-neutral-700 text-neutral-900 dark:text-neutral-100 font-medium text-sm shadow-sm transition-all" data-tab="table-responsive-preview">Preview</button>
+              <button class="tab-button px-4 py-2 rounded-md text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-100 font-medium text-sm transition-all" data-tab="table-responsive-html">HTML</button>
+            </nav>
+          </div>
+          <div id="table-responsive-preview" class="tab-content">
+            <div class="overflow-x-auto">
+              <table class="min-w-[600px] divide-y divide-neutral-200 dark:divide-neutral-700">
+                <thead class="bg-neutral-100 dark:bg-neutral-800">
+                  <tr>
+                    <th class="px-4 py-2 text-left text-sm font-semibold text-neutral-700 dark:text-neutral-300">Name</th>
+                    <th class="px-4 py-2 text-left text-sm font-semibold text-neutral-700 dark:text-neutral-300">Title</th>
+                    <th class="px-4 py-2 text-left text-sm font-semibold text-neutral-700 dark:text-neutral-300">Email</th>
+                    <th class="px-4 py-2 text-left text-sm font-semibold text-neutral-700 dark:text-neutral-300">Phone</th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-neutral-200 dark:divide-neutral-700">
+                  <tr>
+                    <td class="px-4 py-2 whitespace-nowrap text-neutral-800 dark:text-neutral-200">Jane Doe</td>
+                    <td class="px-4 py-2 whitespace-nowrap text-neutral-800 dark:text-neutral-200">Developer</td>
+                    <td class="px-4 py-2 whitespace-nowrap text-neutral-800 dark:text-neutral-200">jane@example.com</td>
+                    <td class="px-4 py-2 whitespace-nowrap text-neutral-800 dark:text-neutral-200">123-456-7890</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div id="table-responsive-html" class="tab-content hidden w-[768px]">
+            <div class="bg-neutral-900 dark:bg-neutral-950 rounded-lg overflow-hidden">
+              <div class="w-full">
+                <pre class="p-6 text-sm overflow-x-auto"><code class="language-html whitespace-pre break-words">&lt;div class=&quot;overflow-x-auto&quot;&gt;
+  &lt;table class=&quot;min-w-[600px] divide-y divide-neutral-200 dark:divide-neutral-700&quot;&gt;
+    &lt;thead class=&quot;bg-neutral-100 dark:bg-neutral-800&quot;&gt;
+      &lt;tr&gt;
+        &lt;th class=&quot;px-4 py-2 text-left text-sm font-semibold text-neutral-700 dark:text-neutral-300&quot;&gt;Name&lt;/th&gt;
+        &lt;th class=&quot;px-4 py-2 text-left text-sm font-semibold text-neutral-700 dark:text-neutral-300&quot;&gt;Title&lt;/th&gt;
+        &lt;th class=&quot;px-4 py-2 text-left text-sm font-semibold text-neutral-700 dark:text-neutral-300&quot;&gt;Email&lt;/th&gt;
+        &lt;th class=&quot;px-4 py-2 text-left text-sm font-semibold text-neutral-700 dark:text-neutral-300&quot;&gt;Phone&lt;/th&gt;
+      &lt;/tr&gt;
+    &lt;/thead&gt;
+    &lt;tbody class=&quot;divide-y divide-neutral-200 dark:divide-neutral-700&quot;&gt;
+      &lt;tr&gt;
+        &lt;td class=&quot;px-4 py-2 whitespace-nowrap text-neutral-800 dark:text-neutral-200&quot;&gt;Jane Doe&lt;/td&gt;
+        &lt;td class=&quot;px-4 py-2 whitespace-nowrap text-neutral-800 dark:text-neutral-200&quot;&gt;Developer&lt;/td&gt;
+        &lt;td class=&quot;px-4 py-2 whitespace-nowrap text-neutral-800 dark:text-neutral-200&quot;&gt;jane@example.com&lt;/td&gt;
+        &lt;td class=&quot;px-4 py-2 whitespace-nowrap text-neutral-800 dark:text-neutral-200&quot;&gt;123-456-7890&lt;/td&gt;
+      &lt;/tr&gt;
+    &lt;/tbody&gt;
+  &lt;/table&gt;
+&lt;/div&gt;</code></pre>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+      <div id="footer-container"></div>
+    </div>
+  </div>
+
+  <script type="module">
+    import { generateHeader, generateSidebar, generateFooter, initializeSharedComponents } from '/src/shared/components.js';
+    import { themeManager } from '/src/shared/theme.js';
+    import { toast } from '/src/shared/toast.js';
+
+    document.addEventListener('DOMContentLoaded', function() {
+      document.getElementById('header-container').innerHTML = generateHeader('blocks');
+      document.getElementById('sidebar-container').innerHTML = generateSidebar('table');
+      document.getElementById('footer-container').innerHTML = generateFooter();
+
+      initializeSharedComponents();
+      themeManager.initializeToggleButtons();
+      initializeTabs();
+      initializeCopyButtons();
+    });
+
+    function initializeCopyButtons() {
+      const buttons = [
+        { id: 'copy-table-basic-btn', content: 'table-basic-html' },
+        { id: 'copy-table-striped-btn', content: 'table-striped-html' },
+        { id: 'copy-table-actions-btn', content: 'table-actions-html' },
+        { id: 'copy-table-responsive-btn', content: 'table-responsive-html' }
+      ];
+      buttons.forEach(({ id, content }) => {
+        const el = document.getElementById(id);
+        if (el) {
+          el.addEventListener('click', () => {
+            const code = document.querySelector(`#${content} code`).textContent;
+            navigator.clipboard.writeText(code).then(() => {
+              toast.show('Code copied to clipboard!', 'success');
+            });
+          });
+        }
+      });
+    }
+
+    function initializeTabs() {
+      const tabButtons = document.querySelectorAll('.tab-button');
+      tabButtons.forEach(button => {
+        button.addEventListener('click', () => {
+          const targetTab = button.getAttribute('data-tab');
+          const section = button.closest('section');
+          section.querySelectorAll('.tab-button').forEach(btn => {
+            btn.classList.remove('active', 'bg-white', 'dark:bg-neutral-700', 'text-neutral-900', 'dark:text-neutral-100', 'shadow-sm');
+            btn.classList.add('text-neutral-600', 'dark:text-neutral-400');
+          });
+          button.classList.add('active', 'bg-white', 'dark:bg-neutral-700', 'text-neutral-900', 'dark:text-neutral-100', 'shadow-sm');
+          button.classList.remove('text-neutral-600', 'dark:text-neutral-400');
+          section.querySelectorAll('.tab-content').forEach(content => content.classList.add('hidden'));
+          const targetContent = section.querySelector(`#${targetTab}`);
+          if (targetContent) targetContent.classList.remove('hidden');
+        });
+      });
+    }
+  </script>
+</body>
+</html>
