@@ -54,8 +54,9 @@
             </nav>
           </div>
           <div id="page-loading-preview" class="tab-content">
-            <div class="flex items-center justify-center h-64">
-              <svg class="animate-spin h-10 w-10 text-primary-500" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <div class="relative h-64 flex items-center justify-center bg-neutral-50 dark:bg-neutral-900 rounded-lg overflow-hidden">
+              <div class="absolute inset-0 bg-gradient-to-br from-primary-500/5 via-neutral-200/5 to-neutral-100/5 dark:from-primary-500/10 dark:via-neutral-800/20 dark:to-neutral-700/20 animate-pulse"></div>
+              <svg class="relative animate-spin h-10 w-10 text-primary-500" viewBox="0 0 24 24" fill="none" stroke="currentColor">
                 <circle class="opacity-25" cx="12" cy="12" r="10" stroke-width="4"></circle>
                 <path class="opacity-75" d="M4 12a8 8 0 018-8v8H4z" stroke-width="4"></path>
               </svg>
@@ -63,8 +64,9 @@
           </div>
           <div id="page-loading-html" class="tab-content hidden w-[768px]">
             <div class="bg-neutral-900 dark:bg-neutral-950 rounded-lg overflow-hidden">
-              <pre class="p-6 text-sm overflow-x-auto"><code class="language-html whitespace-pre break-words">&lt;div class=&quot;flex items-center justify-center h-64&quot;&gt;
-  &lt;svg class=&quot;animate-spin h-10 w-10 text-primary-500&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot;&gt;
+              <pre class="p-6 text-sm overflow-x-auto"><code class="language-html whitespace-pre break-words">&lt;div class=&quot;relative h-64 flex items-center justify-center bg-neutral-50 dark:bg-neutral-900 rounded-lg overflow-hidden&quot;&gt;
+  &lt;div class=&quot;absolute inset-0 bg-gradient-to-br from-primary-500/5 via-neutral-200/5 to-neutral-100/5 dark:from-primary-500/10 dark:via-neutral-800/20 dark:to-neutral-700/20 animate-pulse&quot;&gt;&lt;/div&gt;
+  &lt;svg class=&quot;relative animate-spin h-10 w-10 text-primary-500&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot;&gt;
     &lt;circle class=&quot;opacity-25&quot; cx=&quot;12&quot; cy=&quot;12&quot; r=&quot;10&quot; stroke-width=&quot;4&quot;&gt;&lt;/circle&gt;
     &lt;path class=&quot;opacity-75&quot; d=&quot;M4 12a8 8 0 018-8v8H4z&quot; stroke-width=&quot;4&quot;&gt;&lt;/path&gt;
   &lt;/svg&gt;
@@ -92,8 +94,12 @@
             </nav>
           </div>
           <div id="content-loading-preview" class="tab-content">
-            <div class="h-32 flex items-center justify-center">
-              <svg class="animate-spin h-8 w-8 text-primary-500" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <div class="relative border border-neutral-200 dark:border-neutral-700 rounded-lg p-4 h-32 flex flex-col justify-between">
+              <div class="space-y-2">
+                <div class="h-4 bg-neutral-200 dark:bg-neutral-700 rounded w-3/4"></div>
+                <div class="h-4 bg-neutral-200 dark:bg-neutral-700 rounded w-5/6"></div>
+              </div>
+              <svg class="absolute bottom-4 right-4 animate-spin h-6 w-6 text-primary-500" viewBox="0 0 24 24" fill="none" stroke="currentColor">
                 <circle class="opacity-25" cx="12" cy="12" r="10" stroke-width="4"></circle>
                 <path class="opacity-75" d="M4 12a8 8 0 018-8v8H4z" stroke-width="4"></path>
               </svg>
@@ -101,8 +107,12 @@
           </div>
           <div id="content-loading-html" class="tab-content hidden w-[768px]">
             <div class="bg-neutral-900 dark:bg-neutral-950 rounded-lg overflow-hidden">
-              <pre class="p-6 text-sm overflow-x-auto"><code class="language-html whitespace-pre break-words">&lt;div class=&quot;h-32 flex items-center justify-center&quot;&gt;
-  &lt;svg class=&quot;animate-spin h-8 w-8 text-primary-500&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot;&gt;
+              <pre class="p-6 text-sm overflow-x-auto"><code class="language-html whitespace-pre break-words">&lt;div class=&quot;relative border border-neutral-200 dark:border-neutral-700 rounded-lg p-4 h-32 flex flex-col justify-between&quot;&gt;
+  &lt;div class=&quot;space-y-2&quot;&gt;
+    &lt;div class=&quot;h-4 bg-neutral-200 dark:bg-neutral-700 rounded w-3/4&quot;&gt;&lt;/div&gt;
+    &lt;div class=&quot;h-4 bg-neutral-200 dark:bg-neutral-700 rounded w-5/6&quot;&gt;&lt;/div&gt;
+  &lt;/div&gt;
+  &lt;svg class=&quot;absolute bottom-4 right-4 animate-spin h-6 w-6 text-primary-500&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot;&gt;
     &lt;circle class=&quot;opacity-25&quot; cx=&quot;12&quot; cy=&quot;12&quot; r=&quot;10&quot; stroke-width=&quot;4&quot;&gt;&lt;/circle&gt;
     &lt;path class=&quot;opacity-75&quot; d=&quot;M4 12a8 8 0 018-8v8H4z&quot; stroke-width=&quot;4&quot;&gt;&lt;/path&gt;
   &lt;/svg&gt;
@@ -130,14 +140,14 @@
             </nav>
           </div>
           <div id="progress-indicator-preview" class="tab-content">
-            <div class="w-full bg-neutral-200 dark:bg-neutral-700 rounded-full h-2">
-              <div class="bg-primary-500 h-2 rounded-full" style="width:50%"></div>
+            <div class="w-full bg-neutral-200 dark:bg-neutral-700 rounded-full h-2 overflow-hidden">
+              <div class="bg-gradient-to-r from-primary-500 to-primary-700 h-2 rounded-full animate-pulse" style="width:50%"></div>
             </div>
           </div>
           <div id="progress-indicator-html" class="tab-content hidden w-[768px]">
             <div class="bg-neutral-900 dark:bg-neutral-950 rounded-lg overflow-hidden">
-              <pre class="p-6 text-sm overflow-x-auto"><code class="language-html whitespace-pre break-words">&lt;div class=&quot;w-full bg-neutral-200 dark:bg-neutral-700 rounded-full h-2&quot;&gt;
-  &lt;div class=&quot;bg-primary-500 h-2 rounded-full&quot; style=&quot;width:50%&quot;&gt;&lt;/div&gt;
+              <pre class="p-6 text-sm overflow-x-auto"><code class="language-html whitespace-pre break-words">&lt;div class=&quot;w-full bg-neutral-200 dark:bg-neutral-700 rounded-full h-2 overflow-hidden&quot;&gt;
+  &lt;div class=&quot;bg-gradient-to-r from-primary-500 to-primary-700 h-2 rounded-full animate-pulse&quot; style=&quot;width:50%&quot;&gt;&lt;/div&gt;
 &lt;/div&gt;</code></pre>
             </div>
           </div>
@@ -162,18 +172,22 @@
             </nav>
           </div>
           <div id="skeleton-loading-preview" class="tab-content">
-            <div class="animate-pulse space-y-2">
-              <div class="h-4 bg-neutral-300 dark:bg-neutral-700 rounded w-3/4"></div>
-              <div class="h-4 bg-neutral-300 dark:bg-neutral-700 rounded w-full"></div>
-              <div class="h-4 bg-neutral-300 dark:bg-neutral-700 rounded w-5/6"></div>
+            <div class="animate-pulse space-y-4 max-w-sm border border-neutral-200 dark:border-neutral-700 rounded-lg p-4">
+              <div class="h-32 bg-neutral-300 dark:bg-neutral-700 rounded"></div>
+              <div class="space-y-2">
+                <div class="h-4 bg-neutral-300 dark:bg-neutral-700 rounded"></div>
+                <div class="h-4 bg-neutral-300 dark:bg-neutral-700 rounded w-5/6"></div>
+              </div>
             </div>
           </div>
           <div id="skeleton-loading-html" class="tab-content hidden w-[768px]">
             <div class="bg-neutral-900 dark:bg-neutral-950 rounded-lg overflow-hidden">
-              <pre class="p-6 text-sm overflow-x-auto"><code class="language-html whitespace-pre break-words">&lt;div class=&quot;animate-pulse space-y-2&quot;&gt;
-  &lt;div class=&quot;h-4 bg-neutral-300 dark:bg-neutral-700 rounded w-3/4&quot;&gt;&lt;/div&gt;
-  &lt;div class=&quot;h-4 bg-neutral-300 dark:bg-neutral-700 rounded w-full&quot;&gt;&lt;/div&gt;
-  &lt;div class=&quot;h-4 bg-neutral-300 dark:bg-neutral-700 rounded w-5/6&quot;&gt;&lt;/div&gt;
+              <pre class="p-6 text-sm overflow-x-auto"><code class="language-html whitespace-pre break-words">&lt;div class=&quot;animate-pulse space-y-4 max-w-sm border border-neutral-200 dark:border-neutral-700 rounded-lg p-4&quot;&gt;
+  &lt;div class=&quot;h-32 bg-neutral-300 dark:bg-neutral-700 rounded&quot;&gt;&lt;/div&gt;
+  &lt;div class=&quot;space-y-2&quot;&gt;
+    &lt;div class=&quot;h-4 bg-neutral-300 dark:bg-neutral-700 rounded&quot;&gt;&lt;/div&gt;
+    &lt;div class=&quot;h-4 bg-neutral-300 dark:bg-neutral-700 rounded w-5/6&quot;&gt;&lt;/div&gt;
+  &lt;/div&gt;
 &lt;/div&gt;</code></pre>
             </div>
           </div>
