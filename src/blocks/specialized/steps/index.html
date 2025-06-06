@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Steps - UI11 Design System</title>
+  <link href="/src/style.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-markup.min.js"></script>
+</head>
+<body class="min-h-screen bg-white dark:bg-neutral-950">
+  <div class="flex min-h-screen">
+    <div id="sidebar-container"></div>
+    <div class="flex-1 flex flex-col ml-64 mt-16">
+      <div id="header-container"></div>
+      <main class="flex-1 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div class="mb-12">
+          <h1 class="text-4xl font-semibold text-neutral-900 dark:text-neutral-100 mb-4">Steps</h1>
+          <p class="text-lg text-neutral-600 dark:text-neutral-400 mb-6 max-w-3xl leading-relaxed">
+            Step indicators for multi-step processes and progress tracking.
+          </p>
+        </div>
+
+        <!-- Horizontal Steps -->
+        <section id="steps-horizontal" class="mb-16">
+          <div class="mb-8">
+            <div class="flex items-center justify-between mb-6">
+              <div>
+                <h2 class="text-2xl font-semibold text-neutral-900 dark:text-neutral-100 mb-2">Horizontal Steps</h2>
+                <p class="text-neutral-600 dark:text-neutral-400">Simple horizontal indicator.</p>
+              </div>
+              <div class="flex items-center gap-3">
+                <button data-theme-toggle class="p-2 rounded-lg bg-neutral-100 dark:bg-neutral-800 hover:bg-neutral-200 dark:hover:bg-neutral-700 text-neutral-600 dark:text-neutral-400 transition-colors" aria-label="Toggle theme">
+                  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" /></svg>
+                </button>
+                <button id="copy-steps-horizontal-btn" class="flex items-center gap-2 px-4 py-2 bg-neutral-100 dark:bg-neutral-800 hover:bg-neutral-200 dark:hover:bg-neutral-700 text-neutral-700 dark:text-neutral-300 rounded-lg text-sm font-medium transition-colors">
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" /></svg>
+                  Copy
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="mb-6">
+            <nav class="inline-flex bg-neutral-100 dark:bg-neutral-800 rounded-lg p-1">
+              <button class="tab-button active px-4 py-2 rounded-md bg-white dark:bg-neutral-700 text-neutral-900 dark:text-neutral-100 font-medium text-sm shadow-sm transition-all" data-tab="steps-horizontal-preview">Preview</button>
+              <button class="tab-button px-4 py-2 rounded-md text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-100 font-medium text-sm transition-all" data-tab="steps-horizontal-html">HTML</button>
+            </nav>
+          </div>
+          <div id="steps-horizontal-preview" class="tab-content">
+            <ol class="flex justify-between max-w-xl mx-auto text-neutral-600 dark:text-neutral-400">
+              <li class="flex flex-col items-center">
+                <span class="w-10 h-10 flex items-center justify-center rounded-full bg-gradient-to-br from-primary-500 to-primary-600 text-white mb-1 shadow-apple-sm">1</span>
+                <span class="text-sm font-medium">Start</span>
+              </li>
+              <li class="flex-1 h-px bg-neutral-300 dark:bg-neutral-700 self-center"></li>
+              <li class="flex flex-col items-center">
+                <span class="w-10 h-10 flex items-center justify-center rounded-full bg-neutral-200 dark:bg-neutral-700 mb-1 shadow-apple-sm">2</span>
+                <span class="text-sm font-medium">Details</span>
+              </li>
+              <li class="flex-1 h-px bg-neutral-300 dark:bg-neutral-700 self-center"></li>
+              <li class="flex flex-col items-center">
+                <span class="w-10 h-10 flex items-center justify-center rounded-full bg-neutral-200 dark:bg-neutral-700 mb-1 shadow-apple-sm">3</span>
+                <span class="text-sm font-medium">Confirm</span>
+              </li>
+            </ol>
+          </div>
+          <div id="steps-horizontal-html" class="tab-content hidden w-[768px]">
+            <div class="bg-neutral-900 dark:bg-neutral-950 rounded-lg overflow-hidden">
+              <div class="w-full">
+                <pre class="p-6 text-sm overflow-x-auto"><code class="language-html whitespace-pre break-words">&lt;ol class=&quot;flex justify-between max-w-xl mx-auto text-neutral-600 dark:text-neutral-400&quot;&gt;
+  &lt;li class=&quot;flex flex-col items-center&quot;&gt;
+    &lt;span class=&quot;w-10 h-10 flex items-center justify-center rounded-full bg-gradient-to-br from-primary-500 to-primary-600 text-white mb-1 shadow-apple-sm&quot;&gt;1&lt;/span&gt;
+    &lt;span class=&quot;text-sm font-medium&quot;&gt;Start&lt;/span&gt;
+  &lt;/li&gt;
+  &lt;li class=&quot;flex-1 h-px bg-neutral-300 dark:bg-neutral-700 self-center&quot;&gt;&lt;/li&gt;
+  &lt;li class=&quot;flex flex-col items-center&quot;&gt;
+    &lt;span class=&quot;w-10 h-10 flex items-center justify-center rounded-full bg-neutral-200 dark:bg-neutral-700 mb-1 shadow-apple-sm&quot;&gt;2&lt;/span&gt;
+    &lt;span class=&quot;text-sm font-medium&quot;&gt;Details&lt;/span&gt;
+  &lt;/li&gt;
+  &lt;li class=&quot;flex-1 h-px bg-neutral-300 dark:bg-neutral-700 self-center&quot;&gt;&lt;/li&gt;
+  &lt;li class=&quot;flex flex-col items-center&quot;&gt;
+    &lt;span class=&quot;w-10 h-10 flex items-center justify-center rounded-full bg-neutral-200 dark:bg-neutral-700 mb-1 shadow-apple-sm&quot;&gt;3&lt;/span&gt;
+    &lt;span class=&quot;text-sm font-medium&quot;&gt;Confirm&lt;/span&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;</code></pre>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Vertical Steps -->
+        <section id="steps-vertical" class="mb-16">
+          <div class="mb-8">
+            <div class="flex items-center justify-between mb-6">
+              <div>
+                <h2 class="text-2xl font-semibold text-neutral-900 dark:text-neutral-100 mb-2">Vertical Steps</h2>
+                <p class="text-neutral-600 dark:text-neutral-400">Step list stacked.</p>
+              </div>
+              <div class="flex items-center gap-3">
+                <button data-theme-toggle class="p-2 rounded-lg bg-neutral-100 dark:bg-neutral-800 hover:bg-neutral-200 dark:hover:bg-neutral-700 text-neutral-600 dark:text-neutral-400 transition-colors" aria-label="Toggle theme">
+                  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" /></svg>
+                </button>
+                <button id="copy-steps-vertical-btn" class="flex items-center gap-2 px-4 py-2 bg-neutral-100 dark:bg-neutral-800 hover:bg-neutral-200 dark:hover:bg-neutral-700 text-neutral-700 dark:text-neutral-300 rounded-lg text-sm font-medium transition-colors">
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" /></svg>
+                  Copy
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="mb-6">
+            <nav class="inline-flex bg-neutral-100 dark:bg-neutral-800 rounded-lg p-1">
+              <button class="tab-button active px-4 py-2 rounded-md bg-white dark:bg-neutral-700 text-neutral-900 dark:text-neutral-100 font-medium text-sm shadow-sm transition-all" data-tab="steps-vertical-preview">Preview</button>
+              <button class="tab-button px-4 py-2 rounded-md text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-100 font-medium text-sm transition-all" data-tab="steps-vertical-html">HTML</button>
+            </nav>
+          </div>
+          <div id="steps-vertical-preview" class="tab-content">
+            <ol class="space-y-6 max-w-xs mx-auto border-l-2 border-neutral-200 dark:border-neutral-700 pl-6">
+              <li class="flex items-center gap-3">
+                <span class="w-8 h-8 flex items-center justify-center rounded-full bg-primary-500 text-white shadow-apple-sm">1</span>
+                <span class="text-neutral-700 dark:text-neutral-300 font-medium">Start</span>
+              </li>
+              <li class="flex items-center gap-3">
+                <span class="w-8 h-8 flex items-center justify-center rounded-full bg-neutral-200 dark:bg-neutral-700 shadow-apple-sm">2</span>
+                <span class="text-neutral-700 dark:text-neutral-300 font-medium">Details</span>
+              </li>
+              <li class="flex items-center gap-3">
+                <span class="w-8 h-8 flex items-center justify-center rounded-full bg-neutral-200 dark:bg-neutral-700 shadow-apple-sm">3</span>
+                <span class="text-neutral-700 dark:text-neutral-300 font-medium">Confirm</span>
+              </li>
+            </ol>
+          </div>
+          <div id="steps-vertical-html" class="tab-content hidden w-[768px]">
+            <div class="bg-neutral-900 dark:bg-neutral-950 rounded-lg overflow-hidden">
+              <div class="w-full">
+                <pre class="p-6 text-sm overflow-x-auto"><code class="language-html whitespace-pre break-words">&lt;ol class=&quot;space-y-6 max-w-xs mx-auto border-l-2 border-neutral-200 dark:border-neutral-700 pl-6&quot;&gt;
+  &lt;li class=&quot;flex items-center gap-3&quot;&gt;
+    &lt;span class=&quot;w-8 h-8 flex items-center justify-center rounded-full bg-primary-500 text-white shadow-apple-sm&quot;&gt;1&lt;/span&gt;
+    &lt;span class=&quot;text-neutral-700 dark:text-neutral-300 font-medium&quot;&gt;Start&lt;/span&gt;
+  &lt;/li&gt;
+  &lt;li class=&quot;flex items-center gap-3&quot;&gt;
+    &lt;span class=&quot;w-8 h-8 flex items-center justify-center rounded-full bg-neutral-200 dark:bg-neutral-700 shadow-apple-sm&quot;&gt;2&lt;/span&gt;
+    &lt;span class=&quot;text-neutral-700 dark:text-neutral-300 font-medium&quot;&gt;Details&lt;/span&gt;
+  &lt;/li&gt;
+  &lt;li class=&quot;flex items-center gap-3&quot;&gt;
+    &lt;span class=&quot;w-8 h-8 flex items-center justify-center rounded-full bg-neutral-200 dark:bg-neutral-700 shadow-apple-sm&quot;&gt;3&lt;/span&gt;
+    &lt;span class=&quot;text-neutral-700 dark:text-neutral-300 font-medium&quot;&gt;Confirm&lt;/span&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;</code></pre>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Progress Steps -->
+        <section id="steps-progress" class="mb-16">
+          <div class="mb-8">
+            <div class="flex items-center justify-between mb-6">
+              <div>
+                <h2 class="text-2xl font-semibold text-neutral-900 dark:text-neutral-100 mb-2">Progress Steps</h2>
+                <p class="text-neutral-600 dark:text-neutral-400">Progress bar style.</p>
+              </div>
+              <div class="flex items-center gap-3">
+                <button data-theme-toggle class="p-2 rounded-lg bg-neutral-100 dark:bg-neutral-800 hover:bg-neutral-200 dark:hover:bg-neutral-700 text-neutral-600 dark:text-neutral-400 transition-colors" aria-label="Toggle theme">
+                  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" /></svg>
+                </button>
+                <button id="copy-steps-progress-btn" class="flex items-center gap-2 px-4 py-2 bg-neutral-100 dark:bg-neutral-800 hover:bg-neutral-200 dark:hover:bg-neutral-700 text-neutral-700 dark:text-neutral-300 rounded-lg text-sm font-medium transition-colors">
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" /></svg>
+                  Copy
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="mb-6">
+            <nav class="inline-flex bg-neutral-100 dark:bg-neutral-800 rounded-lg p-1">
+              <button class="tab-button active px-4 py-2 rounded-md bg-white dark:bg-neutral-700 text-neutral-900 dark:text-neutral-100 font-medium text-sm shadow-sm transition-all" data-tab="steps-progress-preview">Preview</button>
+              <button class="tab-button px-4 py-2 rounded-md text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-100 font-medium text-sm transition-all" data-tab="steps-progress-html">HTML</button>
+            </nav>
+          </div>
+          <div id="steps-progress-preview" class="tab-content">
+            <div class="max-w-xl mx-auto">
+              <div class="h-2 bg-neutral-200 dark:bg-neutral-700 rounded-full overflow-hidden mb-4">
+                <div class="h-2 bg-gradient-to-r from-primary-500 to-primary-600 w-1/2"></div>
+              </div>
+              <div class="flex justify-between text-sm text-neutral-600 dark:text-neutral-400 font-medium">
+                <span>Start</span>
+                <span>Details</span>
+                <span>Confirm</span>
+              </div>
+            </div>
+          </div>
+          <div id="steps-progress-html" class="tab-content hidden w-[768px]">
+            <div class="bg-neutral-900 dark:bg-neutral-950 rounded-lg overflow-hidden">
+              <div class="w-full">
+                <pre class="p-6 text-sm overflow-x-auto"><code class="language-html whitespace-pre break-words">&lt;div class=&quot;max-w-xl mx-auto&quot;&gt;
+  &lt;div class=&quot;h-2 bg-neutral-200 dark:bg-neutral-700 rounded-full overflow-hidden mb-4&quot;&gt;
+    &lt;div class=&quot;h-2 bg-gradient-to-r from-primary-500 to-primary-600 w-1/2&quot;&gt;&lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;flex justify-between text-sm text-neutral-600 dark:text-neutral-400 font-medium&quot;&gt;
+    &lt;span&gt;Start&lt;/span&gt;
+    &lt;span&gt;Details&lt;/span&gt;
+    &lt;span&gt;Confirm&lt;/span&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Icon Steps -->
+        <section id="steps-icons" class="mb-16">
+          <div class="mb-8">
+            <div class="flex items-center justify-between mb-6">
+              <div>
+                <h2 class="text-2xl font-semibold text-neutral-900 dark:text-neutral-100 mb-2">Icon Steps</h2>
+                <p class="text-neutral-600 dark:text-neutral-400">Steps with icons.</p>
+              </div>
+              <div class="flex items-center gap-3">
+                <button data-theme-toggle class="p-2 rounded-lg bg-neutral-100 dark:bg-neutral-800 hover:bg-neutral-200 dark:hover:bg-neutral-700 text-neutral-600 dark:text-neutral-400 transition-colors" aria-label="Toggle theme">
+                  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" /></svg>
+                </button>
+                <button id="copy-steps-icons-btn" class="flex items-center gap-2 px-4 py-2 bg-neutral-100 dark:bg-neutral-800 hover:bg-neutral-200 dark:hover:bg-neutral-700 text-neutral-700 dark:text-neutral-300 rounded-lg text-sm font-medium transition-colors">
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" /></svg>
+                  Copy
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="mb-6">
+            <nav class="inline-flex bg-neutral-100 dark:bg-neutral-800 rounded-lg p-1">
+              <button class="tab-button active px-4 py-2 rounded-md bg-white dark:bg-neutral-700 text-neutral-900 dark:text-neutral-100 font-medium text-sm shadow-sm transition-all" data-tab="steps-icons-preview">Preview</button>
+              <button class="tab-button px-4 py-2 rounded-md text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-100 font-medium text-sm transition-all" data-tab="steps-icons-html">HTML</button>
+            </nav>
+          </div>
+          <div id="steps-icons-preview" class="tab-content">
+            <ol class="flex justify-between max-w-xl mx-auto text-neutral-600 dark:text-neutral-400">
+              <li class="flex flex-col items-center">
+                <span class="w-10 h-10 flex items-center justify-center rounded-full bg-gradient-to-br from-primary-500 to-primary-600 text-white mb-1 shadow-apple-sm">
+                  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 11c0 .552-.895 1-2 1s-2-.448-2-1 .895-1 2-1 2 .448 2 1z"/></svg>
+                </span>
+                <span class="text-sm font-medium">Start</span>
+              </li>
+              <li class="flex-1 h-px bg-neutral-300 dark:bg-neutral-700 self-center"></li>
+              <li class="flex flex-col items-center">
+                <span class="w-10 h-10 flex items-center justify-center rounded-full bg-neutral-200 dark:bg-neutral-700 mb-1 shadow-apple-sm">
+                  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 11c0 .552-.895 1-2 1s-2-.448-2-1 .895-1 2-1 2 .448 2 1z"/></svg>
+                </span>
+                <span class="text-sm font-medium">Details</span>
+              </li>
+              <li class="flex-1 h-px bg-neutral-300 dark:bg-neutral-700 self-center"></li>
+              <li class="flex flex-col items-center">
+                <span class="w-10 h-10 flex items-center justify-center rounded-full bg-neutral-200 dark:bg-neutral-700 mb-1 shadow-apple-sm">
+                  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 11c0 .552-.895 1-2 1s-2-.448-2-1 .895-1 2-1 2 .448 2 1z"/></svg>
+                </span>
+                <span class="text-sm font-medium">Confirm</span>
+              </li>
+            </ol>
+          </div>
+          <div id="steps-icons-html" class="tab-content hidden w-[768px]">
+            <div class="bg-neutral-900 dark:bg-neutral-950 rounded-lg overflow-hidden">
+              <div class="w-full">
+                <pre class="p-6 text-sm overflow-x-auto"><code class="language-html whitespace-pre break-words">&lt;ol class=&quot;flex justify-between max-w-xl mx-auto text-neutral-600 dark:text-neutral-400&quot;&gt;
+  &lt;li class=&quot;flex flex-col items-center&quot;&gt;
+    &lt;span class=&quot;w-10 h-10 flex items-center justify-center rounded-full bg-gradient-to-br from-primary-500 to-primary-600 text-white mb-1 shadow-apple-sm&quot;&gt;
+      &lt;svg class=&quot;w-5 h-5&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; viewBox=&quot;0 0 24 24&quot;&gt;&lt;path stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot; stroke-width=&quot;2&quot; d=&quot;M12 11c0 .552-.895 1-2 1s-2-.448-2-1 .895-1 2-1 2 .448 2 1z&quot;/&gt;&lt;/svg&gt;
+    &lt;/span&gt;
+    &lt;span class=&quot;text-sm font-medium&quot;&gt;Start&lt;/span&gt;
+  &lt;/li&gt;
+  &lt;li class=&quot;flex-1 h-px bg-neutral-300 dark:bg-neutral-700 self-center&quot;&gt;&lt;/li&gt;
+  &lt;li class=&quot;flex flex-col items-center&quot;&gt;
+    &lt;span class=&quot;w-10 h-10 flex items-center justify-center rounded-full bg-neutral-200 dark:bg-neutral-700 mb-1 shadow-apple-sm&quot;&gt;
+      &lt;svg class=&quot;w-5 h-5&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; viewBox=&quot;0 0 24 24&quot;&gt;&lt;path stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot; stroke-width=&quot;2&quot; d=&quot;M12 11c0 .552-.895 1-2 1s-2-.448-2-1 .895-1 2-1 2 .448 2 1z&quot;/&gt;&lt;/svg&gt;
+    &lt;/span&gt;
+    &lt;span class=&quot;text-sm font-medium&quot;&gt;Details&lt;/span&gt;
+  &lt;/li&gt;
+  &lt;li class=&quot;flex-1 h-px bg-neutral-300 dark:bg-neutral-700 self-center&quot;&gt;&lt;/li&gt;
+  &lt;li class=&quot;flex flex-col items-center&quot;&gt;
+    &lt;span class=&quot;w-10 h-10 flex items-center justify-center rounded-full bg-neutral-200 dark:bg-neutral-700 mb-1 shadow-apple-sm&quot;&gt;
+      &lt;svg class=&quot;w-5 h-5&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; viewBox=&quot;0 0 24 24&quot;&gt;&lt;path stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot; stroke-width=&quot;2&quot; d=&quot;M12 11c0 .552-.895 1-2 1s-2-.448-2-1 .895-1 2-1 2 .448 2 1z&quot;/&gt;&lt;/svg&gt;
+    &lt;/span&gt;
+    &lt;span class=&quot;text-sm font-medium&quot;&gt;Confirm&lt;/span&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;</code></pre>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+      <div id="footer-container"></div>
+    </div>
+  </div>
+
+  <script type="module">
+    import { generateHeader, generateSidebar, generateFooter, initializeSharedComponents } from '/src/shared/components.js';
+    import { themeManager } from '/src/shared/theme.js';
+    import { toast } from '/src/shared/toast.js';
+
+    document.addEventListener('DOMContentLoaded', function() {
+      document.getElementById('header-container').innerHTML = generateHeader('blocks');
+      document.getElementById('sidebar-container').innerHTML = generateSidebar('steps');
+      document.getElementById('footer-container').innerHTML = generateFooter();
+
+      initializeSharedComponents();
+      themeManager.initializeToggleButtons();
+      initializeTabs();
+      initializeCopyButtons();
+    });
+
+    function initializeCopyButtons() {
+      const buttons = [
+        { id: 'copy-steps-horizontal-btn', content: 'steps-horizontal-html' },
+        { id: 'copy-steps-vertical-btn', content: 'steps-vertical-html' },
+        { id: 'copy-steps-progress-btn', content: 'steps-progress-html' },
+        { id: 'copy-steps-icons-btn', content: 'steps-icons-html' }
+      ];
+      buttons.forEach(({ id, content }) => {
+        const el = document.getElementById(id);
+        if (el) {
+          el.addEventListener('click', () => {
+            const code = document.querySelector(`#${content} code`).textContent;
+            navigator.clipboard.writeText(code).then(() => {
+              toast.show('Code copied to clipboard!', 'success');
+            });
+          });
+        }
+      });
+    }
+
+    function initializeTabs() {
+      const tabButtons = document.querySelectorAll('.tab-button');
+      tabButtons.forEach(button => {
+        button.addEventListener('click', () => {
+          const targetTab = button.getAttribute('data-tab');
+          const section = button.closest('section');
+          section.querySelectorAll('.tab-button').forEach(btn => {
+            btn.classList.remove('active', 'bg-white', 'dark:bg-neutral-700', 'text-neutral-900', 'dark:text-neutral-100', 'shadow-sm');
+            btn.classList.add('text-neutral-600', 'dark:text-neutral-400');
+          });
+          button.classList.add('active', 'bg-white', 'dark:bg-neutral-700', 'text-neutral-900', 'dark:text-neutral-100', 'shadow-sm');
+          button.classList.remove('text-neutral-600', 'dark:text-neutral-400');
+          section.querySelectorAll('.tab-content').forEach(content => content.classList.add('hidden'));
+          const targetContent = section.querySelector(`#${targetTab}`);
+          if (targetContent) targetContent.classList.remove('hidden');
+        });
+      });
+    }
+  </script>
+</body>
+</html>
